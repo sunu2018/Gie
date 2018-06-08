@@ -28,7 +28,7 @@ from googletrans import Translator
 botStart = time.time()
 
 gye = LINE()
-gye.login(qr=True)
+gye.login(token="EtJGqnNsntw6gZhqu6tf.4YSrMg2oNLZ3c2qS97Qi+W.hRyhG3PGubromtC0lgZoD2K7tT9Vldz2DSPDOcHyPlc=")
 gye.loginResult()
 
 
