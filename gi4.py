@@ -64,13 +64,13 @@ gye.log("Channel Token : " + str(channelToken))
 #ki4 = LINE("EtWyu42OHWKSaxPHY3yd.jTri3xzV4E2Z1xvWxjTrRq.s1oy5gbYMT2haZV7l6yzV0bp5gONcnu+bGSSJ1mbT0c=")
 
 KAC = [gye]#,ais,ki2,ki3,ki4]
-GUE = [ais]#,ki2,ki3,ki4] # ini jangan luh hapus peak ini fungsi Ciak alias kick
+#GUE = [ais]#,ki2,ki3,ki4] # ini jangan luh hapus peak ini fungsi Ciak alias kick
 #maksudnya agar bot sb/induk gak ikutan nge kick Mudeng ora
 gyeMID = gye.profile.mid
-aisMID = ais.profile.mid
-ki2MID = ki2.profile.mid
-ki3MID = ki3.profile.mid
-ki4MID = ki4.profile.mid
+#aisMID = ais.profile.mid
+#ki2MID = ki2.profile.mid
+#ki3MID = ki3.profile.mid
+#ki4MID = ki4.profile.mid
 Bots = [gyeMID]#,aisMID,ki2MID,ki3MID,ki4MID] #ini jangan dinrubah Gunanya agar bot tidak saling kick
 creator = ["u104e95aaefb53cf411f77353f6a96ece"]
 Owner = ["u104e95aaefb53cf411f77353f6a96ece"]
