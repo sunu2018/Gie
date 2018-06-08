@@ -28,9 +28,9 @@ from googletrans import Translator
 botStart = time.time()
 #kalo mau login code qr disini pake
 #gye = LINE()
-gye.log("Auth Token : " + str(gye.authToken))
-channelToken = gye.getChannelResult()
-gye.log("Channel Token : " + str(channelToken))
+#gye.log("Auth Token : " + str(gye.authToken))
+#channelToken = gye.getChannelResult()
+#gye.log("Channel Token : " + str(channelToken))
 
 #ais = LINE()
 #ais.log("Auth Token : " + str(ais.authToken))
