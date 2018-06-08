@@ -27,7 +27,12 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 
-gye = LINE("EtycuE8aqJyPhWK3FOSf.4YSrMg2oNLZ3c2qS97Qi+W.Dr06XQPY1flVK2WTmw2movvObWJ/aDEshnKipYRzNfE=")
+gye = TOBY.LINE()
+gye.login(qr=True)
+gye.loginResult()
+
+
+#gye = LINE("EtycuE8aqJyPhWK3FOSf.4YSrMg2oNLZ3c2qS97Qi+W.Dr06XQPY1flVK2WTmw2movvObWJ/aDEshnKipYRzNfE=")
 #ais = LINE("Etska0dbjsHvPgZKwmj9.EikS5M3O+L4fOqxjjVgLsq.KlWfvmGVaXdM0yvKM8WGKARpcbAbiKVF9yORPt8QBJw=")
 #ki2 = LINE("EtQsqzdJMWn73m72Gup0.OdjJmVnqXLeaZxpJzxDMOa.Z+6ApCht+0H1NeyX50QMD0Yq8oIhYyJ14Yg2yoM/tfc=")
 #ki3 = LINE("EtDOOeYj4Rvl5PVfOEaa.ETpCu8czFapUIJQDqIA82G.tcOaI+VmHhWwMbyDL/7yXupWfdIvUJh80yWzu/UJXp8=")
