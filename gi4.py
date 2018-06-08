@@ -404,7 +404,7 @@ def lineBot(op):
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
 #==============================================================================#
-                elif text.lower() == 'status':
+                elif text.lower() == 'ระบบป้องกัน':
                     try:
                         ret_ = "╭════════╬♥╬════════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
                         if settings["protect"] == True: ret_ += "║͜͡☆➣ Protect ✅"
@@ -539,7 +539,7 @@ def lineBot(op):
                             mc = "╔═══════════════\n╠PHANTOM GHOST\n╠══✪〘 Admin List 〙✪═══\n"
                             for mi_d in admin:
                                 mc += "╠✪ " +gye.getContact(mi_d).displayName + "\n"
-                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 line.me/ti/p/~aisyagye 〙\n╚═══════════════")
+                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 http://line.me/ti/p/t39FP9K59s 〙\n╚═══════════════")
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'protect on':
                         if settings["protect"] == True:
@@ -749,7 +749,7 @@ def lineBot(op):
                 elif text.lower() == 'me':
                     sendMessageWithMention(to, gyeMID)
                     gye.sendContact(to, gyeMID)
-                    gye.sendMessage(msg.to,"➲ Jangan Songong Pake Sc Orang")
+                    gye.sendMessage(msg.to,"➲ คนนี้ไง น่ารัก อย่า แอดมามั่วล่ะ เดียวจะหลงรัก")
                 elif text.lower() == 'mymid':
                     gye.sendMessage(msg.to,"[MID]\n" +  gyeMID)
                 elif text.lower() == 'myname':
