@@ -27,37 +27,37 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 #kalo mau login code qr disini pake
-gye = LINE()
+#gye = LINE()
 gye.log("Auth Token : " + str(gye.authToken))
 channelToken = gye.getChannelResult()
 gye.log("Channel Token : " + str(channelToken))
 
-ais = LINE()
-ais.log("Auth Token : " + str(ais.authToken))
-channelToken = ais.getChannelResult()
-ais.log("Channel Token : " + str(channelToken))
+#ais = LINE()
+#ais.log("Auth Token : " + str(ais.authToken))
+#channelToken = ais.getChannelResult()
+#ais.log("Channel Token : " + str(channelToken))
 
-ki2 = LINE()
-ki2.log("Auth Token : " + str(ki2.authToken))
-channelToken = ki2.getChannelResult()
-ki2.log("Channel Token : " + str(channelToken))
+#ki2 = LINE()
+#ki2.log("Auth Token : " + str(ki2.authToken))
+#channelToken = ki2.getChannelResult()
+#ki2.log("Channel Token : " + str(channelToken))
 
-ki3 = LINE()
-ki3.log("Auth Token : " + str(ki3.authToken))
-channelToken = ki3.getChannelResult()
-ki3.log("Channel Token : " + str(channelToken))
+#ki3 = LINE()
+#ki3.log("Auth Token : " + str(ki3.authToken))
+#channelToken = ki3.getChannelResult()
+#ki3.log("Channel Token : " + str(channelToken))
 
-ki4 = LINE()
-ki4.log("Auth Token : " + str(gye.authToken))
-channelToken = ki4.getChannelResult()
-ki4.log("Channel Token : " + str(channelToken))
+#ki4 = LINE()
+#ki4.log("Auth Token : " + str(gye.authToken))
+#channelToken = ki4.getChannelResult()
+#ki4.log("Channel Token : " + str(channelToken))
 
 #kalo mau login menggunakan token
 #gunakan disini hapus tanda pagarnya 
 #yg atas dinpagar atau bisa juga token di atas 
 #di dalam tanda LINE ("TOKEN MU ")
 
-#gye = LINE("EtycuE8aqJyPhWK3FOSf.4YSrMg2oNLZ3c2qS97Qi+W.Dr06XQPY1flVK2WTmw2movvObWJ/aDEshnKipYRzNfE=")
+gye = LINE("EtqirWLBXJyMFb278zif.4YSrMg2oNLZ3c2qS97Qi+W.Li+KoSkmz/LWgjk7T3HP46LAG8MkAKtBctY5eB3uBV0=")
 #ais = LINE("Etska0dbjsHvPgZKwmj9.EikS5M3O+L4fOqxjjVgLsq.KlWfvmGVaXdM0yvKM8WGKARpcbAbiKVF9yORPt8QBJw=")
 #ki2 = LINE("EtQsqzdJMWn73m72Gup0.OdjJmVnqXLeaZxpJzxDMOa.Z+6ApCht+0H1NeyX50QMD0Yq8oIhYyJ14Yg2yoM/tfc=")
 #ki3 = LINE("EtDOOeYj4Rvl5PVfOEaa.ETpCu8czFapUIJQDqIA82G.tcOaI+VmHhWwMbyDL/7yXupWfdIvUJh80yWzu/UJXp8=")
