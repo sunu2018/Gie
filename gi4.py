@@ -27,7 +27,7 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 
-gye = TOBY.LINE()
+gye = LINE()
 gye.login(qr=True)
 gye.loginResult()
 
