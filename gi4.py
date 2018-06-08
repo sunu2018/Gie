@@ -729,7 +729,7 @@ def lineBot(op):
                     ki2.leaveGroup(msg.to)
                     ki3.leaveGroup(msg.to)
                     ki4.leaveGroup(msg.to)      
-                elif text.lower() in ["halo"]:    
+                elif text.lower() in ["all On"]:    
                     G = gye.getGroup(msg.to)
                     ginfo = gye.getGroup(msg.to)
                     G.preventedJoinByTicket = False
@@ -1102,7 +1102,7 @@ def lineBot(op):
                                                 except:
                                                     gye.sendMessage(msg.to,"") 
 #==============================================================================#          
-                elif text.lower() == 'tag':
+                elif text.lower() == 'แท็ก':
                     group = gye.getGroup(msg.to)
                     nama = [contact.mid for contact in group.members]
                     k = len(nama)//100
@@ -1115,7 +1115,7 @@ def lineBot(op):
                             s += 7
                             txt += u'@Alin \n'
                         gye.sendMessage(to, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
-                        gye.sendMessage(to, "Total {} Mention".format(str(len(nama))))          
+                        gye.sendMessage(to, "จำนวนสมาชิคทั้งหมด {} Mention".format(str(len(nama))))          
                 elif text.lower() == 'lurking on':
                     tz = pytz.timezone("Asia/Jakarta")
                     timeNow = datetime.now(tz=tz)
