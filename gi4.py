@@ -37,10 +37,10 @@ botStart = time.time()
 #channelToken = ais.getChannelResult()
 #ais.log("Channel Token : " + str(channelToken))
 
-ki2 = LINE()
-ki2.log("Auth Token : " + str(ki2.authToken))
-channelToken = ki2.getChannelResult()
-ki2.log("Channel Token : " + str(channelToken))
+#ki2 = LINE()
+#ki2.log("Auth Token : " + str(ki2.authToken))
+#channelToken = ki2.getChannelResult()
+#ki2.log("Channel Token : " + str(channelToken))
 
 #ki3 = LINE()
 #ki3.log("Auth Token : " + str(ki3.authToken))
@@ -58,7 +58,7 @@ ki2.log("Channel Token : " + str(channelToken))
 #di dalam tanda LINE ("TOKEN MU ")
 
 gye = LINE("EtHO8rZgTw1q6juRoVvf.4YSrMg2oNLZ3c2qS97Qi+W.k2TeLOz1HTtz2jJ+CuaaDHN+R9wcNMOY2hfRLRA6GvA=")
-#ki2 = LINE("EthMa23Jo9YtaVKFhCwd.SPS+quoffhJbcv30K1vAdq.vhCE3hbM5haXvNFzfghf7M8sn7PL848g9R7IE5RfMHs=")
+ki2 = LINE("Et4ETau6jDvT3vtP91d0.ZaBHUQRqncLKKv+uKgw/qa.4Fe2QIPt1afhs5u+kE0dZr88y70V/dL2AXi8oLNwlQI=")
 ki3 = LINE("EtdB1W22oK7hQrOQPTP0.ZaBHUQRqncLKKv+uKgw/qa.iAAutFi4/7csS9+fAy5vrrHDNdoBRdC4s7mocefp6l4=")
 ki4 = LINE("EtVBXMgH19HE1FZuNrpe.lVN3XpWByvHZ/lHSAQFaBG.Tw8XfRLe4HeZrCvAzpuSoHNIVp3xL1OVTTGCFUrYlSQ=")
 
