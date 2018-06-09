@@ -404,7 +404,7 @@ def lineBot(op):
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
 #==============================================================================#
-                elif text.lower() == 'ระบบป้องกัน':
+                elif text.lower() == 'เช็คระบบป้องกัน':
                     try:
                         ret_ = "╭════════╬♥╬════════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
                         if settings["protect"] == True: ret_ += "║͜͡☆➣ Protect ✅"
@@ -637,7 +637,7 @@ def lineBot(op):
                             else:
                                 gye.sendMessage(msg.to,"➲ Protection Cancel Invite Already Off")
 #-------------------------------------------------------------------------------
-                elif text.lower() == 'pro on':
+                elif text.lower() == '*เปิดระบบป้องกัน':
                         settings["protect"] = True
                         settings["qrprotect"] = True
                         settings["inviteprotect"] = True
@@ -650,7 +650,7 @@ def lineBot(op):
                         gye.sendMessage(msg.to,"Cancelprotect on")
                         gye.sendMessage(msg.to,"➲ All Protect Set To On")
                         		            
-                elif text.lower() == 'pro off':
+                elif text.lower() == '*ปิดระบบป้องกัน':
              #       if msg._from in Owner:
                         settings["protect"] = False
                         settings["qrprotect"] = False
@@ -711,7 +711,7 @@ def lineBot(op):
                     settings["autoJoinTicket"] = False
                     gye.sendMessage(to, "Berhasil menonaktifkan Auto Join Link")                    
 #==============================================================================#
-                elif msg.text.lower() == 'cekk':
+                elif msg.text.lower() == 'โชว์':
                         gye.sendContact(to, gyeMID)
                         ais.sendContact(to, aisMID)
                         ki2.sendContact(to, ki2MID)
@@ -950,7 +950,7 @@ def lineBot(op):
                             gye.sendMessage(to, "[ Group Ticket ]\nhttps://line.me/R/ti/g/{}".format(str(ticket)))
                         else:
                             gye.sendMessage(to, "Grup qr tidak terbuka silahkan buka terlebih dahulu dengan perintah {}openqr".format(str(settings["keyCommand"])))
-                elif text.lower() == 'gt on':
+                elif text.lower() == 'เปิดห้อง':
                     if msg.toType == 2:
                         group = gye.getGroup(to)
                         if group.preventedJoinByTicket == False:
@@ -959,7 +959,7 @@ def lineBot(op):
                             group.preventedJoinByTicket = False
                             gye.updateGroup(group)
                             gye.sendMessage(to, "Berhasil membuka grup qr")
-                elif text.lower() == 'gt off':
+                elif text.lower() == 'ปิดห้อง':
                     if msg.toType == 2:
                         group = gye.getGroup(to)
                         if group.preventedJoinByTicket == True:
