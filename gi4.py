@@ -25,7 +25,7 @@ from googletrans import Translator
 # Jangan Lupa Add Admin 
 # id Line ( aisyagye )
 #==============================================================================#
-botStart = time.time()
+#botStart = time.time()
 #kalo mau login code qr disini pake
 #gye = LINE()
 #gye.log("Auth Token : " + str(gye.authToken))
