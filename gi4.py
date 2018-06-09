@@ -42,15 +42,15 @@ botStart = time.time()
 #channelToken = ki2.getChannelResult()
 #ki2.log("Channel Token : " + str(channelToken))
 
-ki3 = LINE()
-ki3.log("Auth Token : " + str(ki3.authToken))
-channelToken = ki3.getChannelResult()
-ki3.log("Channel Token : " + str(channelToken))
+#ki3 = LINE()
+#ki3.log("Auth Token : " + str(ki3.authToken))
+#channelToken = ki3.getChannelResult()
+#ki3.log("Channel Token : " + str(channelToken))
 
-#ki4 = LINE()
-#ki4.log("Auth Token : " + str(gye.authToken))
-#channelToken = ki4.getChannelResult()
-#ki4.log("Channel Token : " + str(channelToken))
+ki4 = LINE()
+ki4.log("Auth Token : " + str(gye.authToken))
+channelToken = ki4.getChannelResult()
+ki4.log("Channel Token : " + str(channelToken))
 
 #kalo mau login menggunakan token
 #gunakan disini hapus tanda pagarnya 
@@ -60,17 +60,17 @@ ki3.log("Channel Token : " + str(channelToken))
 gye = LINE("EtFP4Dbygr8x6uOWe93f.4YSrMg2oNLZ3c2qS97Qi+W.DojprpU7OlQDrbUC2RrIDmqbi+fAQVTXKMwl5PxvDEQ=")
 ais = LINE("EteEZHYnHDTCyQviPRod.ZumT2/Y29n7tOJ4IwPo4tq.oUx/RoEunofiuvtYKFytTLJMnxbCsPVZkVJa5d8bFIQ=")
 ki2 = LINE("EthMa23Jo9YtaVKFhCwd.SPS+quoffhJbcv30K1vAdq.vhCE3hbM5haXvNFzfghf7M8sn7PL848g9R7IE5RfMHs=")
-#ki3 = LINE("EtDOOeYj4Rvl5PVfOEaa.ETpCu8czFapUIJQDqIA82G.tcOaI+VmHhWwMbyDL/7yXupWfdIvUJh80yWzu/UJXp8=")
+ki3 = LINE("EtdB1W22oK7hQrOQPTP0.ZaBHUQRqncLKKv+uKgw/qa.iAAutFi4/7csS9+fAy5vrrHDNdoBRdC4s7mocefp6l4=")
 #ki4 = LINE("EtWyu42OHWKSaxPHY3yd.jTri3xzV4E2Z1xvWxjTrRq.s1oy5gbYMT2haZV7l6yzV0bp5gONcnu+bGSSJ1mbT0c=")
 
-KAC = [gye,ais]#,ki2,ki3,ki4]
-GUE = [ais,ki2]#,ki3,ki4] # ini jangan luh hapus peak ini fungsi Ciak alias kick
+KAC = [gye,ais,ki2,ki3,ki4]
+GUE = [ais,ki2,ki3,ki4] # ini jangan luh hapus peak ini fungsi Ciak alias kick
 #maksudnya agar bot sb/induk gak ikutan nge kick Mudeng ora
 gyeMID = gye.profile.mid
 aisMID = ais.profile.mid
 ki2MID = ki2.profile.mid
 ki3MID = ki3.profile.mid
-#ki4MID = ki4.profile.mid
+ki4MID = ki4.profile.mid
 Bots = [gyeMID,aisMID]#,ki2MID,ki3MID,ki4MID] #ini jangan dinrubah Gunanya agar bot tidak saling kick
 creator = ["u104e95aaefb53cf411f77353f6a96ece"]
 Owner = ["u104e95aaefb53cf411f77353f6a96ece"]
@@ -80,25 +80,25 @@ gyeProfile = gye.getProfile()
 aisProfile = ais.getProfile()
 ki2Profile = ki2.getProfile()
 ki2Profile = ki3.getProfile()
-#ki2Profile = ki4.getProfile()
+ki2Profile = ki4.getProfile()
 
 lineSettings = gye.getSettings()
 aisSettings = ais.getSettings()
 ki2Settings = ki2.getSettings()
 ki3Settings = ki3.getSettings()
-#ki4Settings = ki4.getSettings()
+ki4Settings = ki4.getSettings()
 
 oepoll = OEPoll(gye)
 oepoll1 = OEPoll(ais)
 oepoll2 = OEPoll(ki2)
 oepoll3 = OEPoll(ki3)
-#oepoll4 = OEPoll(ki4)
+oepoll4 = OEPoll(ki4)
 
 responsename = gye.getProfile().displayName
 responsename2 = ais.getProfile().displayName
 responsename3 = ki2.getProfile().displayName
 responsename2 = ki3.getProfile().displayName
-#responsename3 = ki4.getProfile().displayName
+responsename3 = ki4.getProfile().displayName
 #==============================================================================#
 
 
