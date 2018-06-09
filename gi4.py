@@ -1115,7 +1115,7 @@ def lineBot(op):
                             s += 7
                             txt += u'@Alin \n'
                         gye.sendMessage(to, text=txt, contentMetadata={u'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
-                        gye.sendMessage(to, "จำนวนสมาชิคทั้งหมด {} Mention".format(str(len(nama))))          
+                        gye.sendMessage(to, "จำนวนสมาชิคทั้งหมด {} คน".format(str(len(nama))))          
                 elif text.lower() == 'lurking on':
                     tz = pytz.timezone("Asia/Jakarta")
                     timeNow = datetime.now(tz=tz)
