@@ -48,8 +48,8 @@ botStart = time.time()
 #ki3.log("Channel Token : " + str(channelToken))
 
 ki4 = LINE()
-ki4.log("Auth Token : " + str(ki3.authToken))
-channelToken = ki3.getChannelResult()
+ki4.log("Auth Token : " + str(ki4.authToken))
+channelToken = ki4.getChannelResult()
 ki4.log("Channel Token : " + str(channelToken))
 
 #kalo mau login menggunakan token
