@@ -47,10 +47,10 @@ botStart = time.time()
 #channelToken = ki3.getChannelResult()
 #ki3.log("Channel Token : " + str(channelToken))
 
-ki4 = LINE()
-ki4.log("Auth Token : " + str(ki4.authToken))
-channelToken = ki4.getChannelResult()
-ki4.log("Channel Token : " + str(channelToken))
+#ki4 = LINE()
+#ki4.log("Auth Token : " + str(ki4.authToken))
+#channelToken = ki4.getChannelResult()
+#ki4.log("Channel Token : " + str(channelToken))
 
 #kalo mau login menggunakan token
 #gunakan disini hapus tanda pagarnya 
@@ -58,10 +58,9 @@ ki4.log("Channel Token : " + str(channelToken))
 #di dalam tanda LINE ("TOKEN MU ")
 
 gye = LINE("EtHO8rZgTw1q6juRoVvf.4YSrMg2oNLZ3c2qS97Qi+W.k2TeLOz1HTtz2jJ+CuaaDHN+R9wcNMOY2hfRLRA6GvA=")
-ais = LINE("EteEZHYnHDTCyQviPRod.ZumT2/Y29n7tOJ4IwPo4tq.oUx/RoEunofiuvtYKFytTLJMnxbCsPVZkVJa5d8bFIQ=")
 ki2 = LINE("EthMa23Jo9YtaVKFhCwd.SPS+quoffhJbcv30K1vAdq.vhCE3hbM5haXvNFzfghf7M8sn7PL848g9R7IE5RfMHs=")
 ki3 = LINE("EtdB1W22oK7hQrOQPTP0.ZaBHUQRqncLKKv+uKgw/qa.iAAutFi4/7csS9+fAy5vrrHDNdoBRdC4s7mocefp6l4=")
-#ki4 = LINE("EtWyu42OHWKSaxPHY3yd.jTri3xzV4E2Z1xvWxjTrRq.s1oy5gbYMT2haZV7l6yzV0bp5gONcnu+bGSSJ1mbT0c=")
+ki4 = LINE("EtVBXMgH19HE1FZuNrpe.lVN3XpWByvHZ/lHSAQFaBG.Tw8XfRLe4HeZrCvAzpuSoHNIVp3xL1OVTTGCFUrYlSQ=")
 
 KAC = [gye,ais,ki2,ki3,ki4]
 GUE = [ais,ki2,ki3,ki4]  #ini jangan luh hapus peak ini fungsi Ciak alias kick
