@@ -42,15 +42,15 @@ botStart = time.time()
 #channelToken = ki2.getChannelResult()
 #ki2.log("Channel Token : " + str(channelToken))
 
-ki3 = LINE()
-ki3.log("Auth Token : " + str(ki3.authToken))
-channelToken = ki3.getChannelResult()
-ki3.log("Channel Token : " + str(channelToken))
+#ki3 = LINE()
+#ki3.log("Auth Token : " + str(ki3.authToken))
+#channelToken = ki3.getChannelResult()
+#ki3.log("Channel Token : " + str(channelToken))
 
-#ki4 = LINE()
-#ki4.log("Auth Token : " + str(ki4.authToken))
-#channelToken = ki4.getChannelResult()
-#ki4.log("Channel Token : " + str(channelToken))
+ki4 = LINE()
+ki4.log("Auth Token : " + str(ki4.authToken))
+channelToken = ki4.getChannelResult()
+ki4.log("Channel Token : " + str(channelToken))
 
 #kalo mau login menggunakan token
 #gunakan disini hapus tanda pagarnya 
@@ -60,18 +60,18 @@ ki3.log("Channel Token : " + str(channelToken))
 gye = LINE("EtwLPhhrzFXFghuik5Gc.ugJ+9dMgaAs1/HYyDUOxda.IgpAE9ylg6XFX8UJuq2o4aptVFpjkG1QN5Bidk5ewWk=")
 ais = LINE("EtKGt9Aea04KryxIOx8b.OaW45w5kEMyRG/7qK2fnwW.WQ+hsjVxt8KOWcfNrX2V4RLOgfd2Mz9PhWtYDPIXZVU=")
 ki2 = LINE("EtZREl8uhl6VAapUjlTc.WSbM8Imh8gKzhGhc98UuVa.feeQQaWBEpieqDeI+TBL9t7uKaW9tBVFmRZfAB9tHUk=")
-#ki3 = LINE("Etd3jyDm4HvJdQssnkVe.lVN3XpWByvHZ/lHSAQFaBG.c79DnqrDN7NYEI72exfE5BTww9/LMbkew9BB0uIM8TA=")
-#ki4 = LINE("EtCusl6Ltdu31R4NtIQd.SPS+quoffhJbcv30K1vAdq.ZwQho3bBqQbrIDLJs+6RdlwZRAY072xc1FgSOzAUgiw=")
+ki3 = LINE("Et1R1XGdZj2GVVWVYRud.dCZhkZtrJsP18XdGxTjDlq.oMaLwiyz0XGoj5+69rFNYbV65stIZKnfe4kqjE/YMKE=")
+#ki4 = LINE(".SPS+quoffhJbcv30K1vAdq.ZwQho3bBqQbrIDLJs+6RdlwZRAY072xc1FgSOzAUgiw=")
 
-KAC = [gye,ais,ki2,ki3]#,ki4]
-GUE = [ais,ki2,ki3]#,ki4]  #ini jangan luh hapus peak ini fungsi Ciak alias kick
+KAC = [gye,ais,ki2,ki3,ki4]
+GUE = [ais,ki2,ki3,ki4]  #ini jangan luh hapus peak ini fungsi Ciak alias kick
 #maksudnya agar bot sb/induk gak ikutan nge kick Mudeng ora
 gyeMID = gye.profile.mid
 aisMID = ais.profile.mid
 ki2MID = ki2.profile.mid
 ki3MID = ki3.profile.mid
-#ki4MID = ki4.profile.mid
-Bots = [gyeMID,aisMID,ki2MID,ki3MID]#,ki4MID]# ini jangan dinrubah Gunanya agar bot tidak saling kick
+ki4MID = ki4.profile.mid
+Bots = [gyeMID,aisMID,ki2MID,ki3MID,ki4MID]# ini jangan dinrubah Gunanya agar bot tidak saling kick
 creator = ["u104e95aaefb53cf411f77353f6a96ece"]
 Owner = ["u104e95aaefb53cf411f77353f6a96ece"]
 admin = ["u104e95aaefb53cf411f77353f6a96ece"]
@@ -80,25 +80,25 @@ gyeProfile = gye.getProfile()
 aisProfile = ais.getProfile()
 ki2Profile = ki2.getProfile()
 ki2Profile = ki3.getProfile()
-#ki2Profile = ki4.getProfile()
+ki2Profile = ki4.getProfile()
 
 lineSettings = gye.getSettings()
 aisSettings = ais.getSettings()
 ki2Settings = ki2.getSettings()
 ki3Settings = ki3.getSettings()
-#ki4Settings = ki4.getSettings()
+ki4Settings = ki4.getSettings()
 
 oepoll = OEPoll(gye)
 oepoll1 = OEPoll(ais)
 oepoll2 = OEPoll(ki2)
 oepoll3 = OEPoll(ki3)
-#oepoll4 = OEPoll(ki4)
+oepoll4 = OEPoll(ki4)
 
 responsename = gye.getProfile().displayName
 responsename2 = ais.getProfile().displayName
 responsename3 = ki2.getProfile().displayName
 responsename2 = ki3.getProfile().displayName
-#responsename3 = ki4.getProfile().displayName
+responsename3 = ki4.getProfile().displayName
 #==============================================================================#
 
 
