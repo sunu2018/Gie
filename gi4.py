@@ -2078,6 +2078,26 @@ def lineBot(op):
                         
     except Exception as error:
         logError(error)
+#==============================================================================# 
+while True:
+    try:
+        ops=poll.singleTrace(count=50)
+        for op in ops:
+            if op.type == 26:
+                msg = op.message
+                if msg.text != None:
+                    if msg.toType == 2:
+                        may = client.getProfile().mid
+                        if may in str(msg.contentMetadata) and 'MENTION' in str(msg.contentMetadata):
+                            pilih = ['yang tag sy semoga jomblo seumur hidup','ngapain tag tag woe, kangen?','แท๊กทมอย ไม่ว่างอมควยยุ่','duhh kena tag, dianya kesepian kali yah','แท็กทำไมไม่ว่าง เยส อยู่']
+                            rslt = random.choice(pilih)
+                            client.sendText(msg.to, str(rslt))
+                        else:
+                            pass
+                    else:
+                        pass
+                else:
+                    pass
 #==============================================================================#
 # Auto join if BOT invited to group
 def NOTIFIED_INVITE_INTO_GROUP(op):
