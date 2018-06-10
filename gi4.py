@@ -153,11 +153,11 @@ def helpmessage():
                   "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ HELP" + "\n" + \
+                  "║͜͡☆➣ คำสั่งทั้งหมด" + "\n" + \
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ Help 1" + "\n" + \
-                  "║͜͡☆➣ Help 2" + "\n" + \
+                  "║͜͡☆➣ คำสั่ง1" + "\n" + \
+                  "║͜͡☆➣ คำสั่ง2" + "\n" + \
                   "║͜͡☆➣ Tag" + "\n" + \
                   "║͜͡☆➣ Halo ( panggil bot ) " + "\n" + \
                   "║͜͡☆➣ Absen" + "\n" + \
@@ -180,11 +180,11 @@ def helptexttospeech():
                   "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ HELP 2" + "\n" + \
+                  "║͜͡☆➣ คำสั่งที่ 2" + "\n" + \
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ Help 1" + "\n" + \
-                  "║͜͡☆➣ Help 2" + "\n" + \
+                  "║͜͡☆➣ คำสั่ง1" + "\n" + \
+                  "║͜͡☆➣ คำสั่ง2" + "\n" + \
                   "║͜͡☆➣ Protect on/off" + "\n" + \
                   "║͜͡☆➣ QrProtect on/off" + "\n" + \
                   "║͜͡☆➣ InviteProtect on/off" + "\n" + \
@@ -222,7 +222,7 @@ def helptranslate():
                   "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ HELP 3" + "\n" + \
+                  "║͜͡☆➣ คำสั่ง 3" + "\n" + \
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
                   "║͜͡☆➣ AdminLit" + "\n" + \
@@ -353,16 +353,16 @@ def lineBot(op):
                 if text is None:
                     return
 #==============================================================================#
-                if text.lower() == 'help':
+                if text.lower() == 'คำสั่ง':
                     helpMessage = helpmessage()
                     gye.sendMessage(to, str(helpMessage))
                     gye.sendContact(to, "ue32b11986d8e9e5cf70b642cf7ba88ff")
                     gye.sendMessage(to,"█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
-                elif text.lower() == 'help 1':
+                elif text.lower() == 'คำสั่ง1':
                     helpTextToSpeech = helptexttospeech()
                     gye.sendMessage(to, str(helpTextToSpeech))
                     gye.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
-                elif text.lower() == 'help 2':
+                elif text.lower() == 'คำสั่ง2':
                     helpTranslate = helptranslate()
                     gye.sendMessage(to, str(helpTranslate))
                     gye.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
@@ -492,7 +492,7 @@ def lineBot(op):
                             mc = "╔═══════════════\n╠PHANTOM GHOST\n╠══✪〘 Owner List 〙✪═══\n"
                             for mi_d in admin:
                                 mc += "╠✪ " +gye.getContact(mi_d).displayName + "\n"
-                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 line.me/ti/p/~aisyagye 〙\n╚═══════════════")
+                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 http://line.me/ti/p/t39FP9K59s 〙\n╚═══════════════")
 #-------------------------------------------------------------------------------
                 elif msg.text.lower().startswith("adminadd "):
                         targets = []
@@ -539,7 +539,7 @@ def lineBot(op):
                             mc = "╔═══════════════\n╠PHANTOM GHOST\n╠══✪〘 Admin List 〙✪═══\n"
                             for mi_d in admin:
                                 mc += "╠✪ " +gye.getContact(mi_d).displayName + "\n"
-                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 http://line.me/ti/p/t39FP9K59s 〙\n╚═══════════════")
+                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 http://line.me/ti/p/t39FP9K59s  〙\n╚═══════════════")
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'protect on':
                         if settings["protect"] == True:
