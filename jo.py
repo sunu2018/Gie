@@ -492,7 +492,7 @@ def lineBot(op):
                             mc = "╔═══════════════\n╠PHANTOM GHOST\n╠══✪〘 Owner List 〙✪═══\n"
                             for mi_d in admin:
                                 mc += "╠✪ " +gye.getContact(mi_d).displayName + "\n"
-                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 http://line.me/ti/p/t39FP9K59s 〙\n╚═══════════════")
+                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 https://line.me/ti/p/_SnII2cQTs 〙\n╚═══════════════")
 #-------------------------------------------------------------------------------
                 elif msg.text.lower().startswith("adminadd "):
                         targets = []
@@ -539,7 +539,7 @@ def lineBot(op):
                             mc = "╔═══════════════\n╠PHANTOM GHOST\n╠══✪〘 Admin List 〙✪═══\n"
                             for mi_d in admin:
                                 mc += "╠✪ " +gye.getContact(mi_d).displayName + "\n"
-                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 http://line.me/ti/p/t39FP9K59s  〙\n╚═══════════════")
+                            gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 https://line.me/ti/p/_SnII2cQTs  〙\n╚═══════════════")
 #-------------------------------------------------------------------------------
                 elif text.lower() == 'protect on':
                         if settings["protect"] == True:
