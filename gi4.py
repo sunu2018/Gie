@@ -293,7 +293,7 @@ while True:
                 else:
                     pass
 #==============================================================================#
- def backupData():
+def backupData():
     try:
         backup = settings
         f = codecs.open('temp.json','w','utf-8')
