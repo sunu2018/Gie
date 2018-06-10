@@ -47,10 +47,10 @@ botStart = time.time()
 #channelToken = ki3.getChannelResult()
 #ki3.log("Channel Token : " + str(channelToken))
 
-ki4 = LINE()
-ki4.log("Auth Token : " + str(ki4.authToken))
-channelToken = ki4.getChannelResult()
-ki4.log("Channel Token : " + str(channelToken))
+#ki4 = LINE()
+#ki4.log("Auth Token : " + str(ki4.authToken))
+#channelToken = ki4.getChannelResult()
+#ki4.log("Channel Token : " + str(channelToken))
 
 #kalo mau login menggunakan token
 #gunakan disini hapus tanda pagarnya 
@@ -61,7 +61,7 @@ gye = LINE("Et6sEigK6EKPFGK1Tyu8.06A+2McPvSYG9y8QflROca.Trv+J5Cfue9yFqTzeEHl4bvB
 ais = LINE("Et03oL51UZsrgvvtipI8.Wt/YUebfKcqU+KFC8aE2Qa.gRgQxQXy3zImfzS+V3nHyUQ7qUKOp/q6sP7akLBsLZ0=")
 ki2 = LINE("EtZQYCljPB20vFk7lhMf.C6uUUOle4xvTyhRqRUt3ZW.g5dl2gYOW8cbMUMQtEiGBZxCAyq7Cewzl4b0w95zPl8=")
 ki3 = LINE("EtLmQUwgi4aaqMpxpeja.CS3aZ7gG42fDqnPSw7Eh6G.WyY2R6c7P/pjNdH4xp68kAnAYAiSiS/i3ouRPrMRmMs=")
-#ki4 = LINE("EtCusl6Ltdu31R4NtIQd.SPS+quoffhJbcv30K1vAdq.ZwQho3bBqQbrIDLJs+6RdlwZRAY072xc1FgSOzAUgiw=")
+ki4 = LINE("Eti3jixZyomSekysnkab.KjDN9JBsWpSVnKHbTD0jYW.bDcL2DBnnsO3e/zhHO1kzyp3ghMmwx+R5iMRlbnqz6E=")
 
 KAC = [gye,ais,ki2,ki3,ki4]
 GUE = [ais,ki2,ki3,ki4]  #ini jangan luh hapus peak ini fungsi Ciak alias kick
@@ -156,8 +156,8 @@ def helpmessage():
                   "║͜͡☆➣ คำสั่งทั้งหมด" + "\n" + \
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ คำสั่ง1" + "\n" + \
-                  "║͜͡☆➣ คำสั่ง2" + "\n" + \
+                  "║͜͡☆➣ help1" + "\n" + \
+                  "║͜͡☆➣ help2" + "\n" + \
                   "║͜͡☆➣ Tag" + "\n" + \
                   "║͜͡☆➣ Halo ( panggil bot ) " + "\n" + \
                   "║͜͡☆➣ Absen" + "\n" + \
@@ -180,11 +180,11 @@ def helptexttospeech():
                   "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ คำสั่งที่ 2" + "\n" + \
+                  "║͜͡☆➣ help 2" + "\n" + \
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ คำสั่ง1" + "\n" + \
-                  "║͜͡☆➣ คำสั่ง2" + "\n" + \
+                  "║͜͡☆➣ help1" + "\n" + \
+                  "║͜͡☆➣ help2" + "\n" + \
                   "║͜͡☆➣ Protect on/off" + "\n" + \
                   "║͜͡☆➣ QrProtect on/off" + "\n" + \
                   "║͜͡☆➣ InviteProtect on/off" + "\n" + \
@@ -353,16 +353,16 @@ def lineBot(op):
                 if text is None:
                     return
 #==============================================================================#
-                if text.lower() == 'คำสั่ง':
+                if text.lower() == 'help':
                     helpMessage = helpmessage()
                     gye.sendMessage(to, str(helpMessage))
                     gye.sendContact(to, "ue32b11986d8e9e5cf70b642cf7ba88ff")
                     gye.sendMessage(to,"█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
-                elif text.lower() == 'คำสั่ง1':
+                elif text.lower() == 'help1':
                     helpTextToSpeech = helptexttospeech()
                     gye.sendMessage(to, str(helpTextToSpeech))
                     gye.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
-                elif text.lower() == 'คำสั่ง2':
+                elif text.lower() == 'help2':
                     helpTranslate = helptranslate()
                     gye.sendMessage(to, str(helpTranslate))
                     gye.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
@@ -717,19 +717,19 @@ def lineBot(op):
                         ki2.sendContact(to, ki2MID)
                         ki3.sendContact(to, ki3MID)
                         ki4.sendContact(to, ki4MID)
-                elif text.lower() in ["*ไป"]:    
+                elif text.lower() in ["B."]:    
                     #gye.leaveGroup(msg.to)
                     ais.leaveGroup(msg.to)
                     ki2.leaveGroup(msg.to)
                     ki3.leaveGroup(msg.to)
                     ki4.leaveGroup(msg.to)
-                elif text.lower() in ["*ลาก่อน"]:    
+                elif text.lower() in ["Bye"]:    
                     gye.leaveGroup(msg.to)
                     ais.leaveGroup(msg.to)
                     ki2.leaveGroup(msg.to)
                     ki3.leaveGroup(msg.to)
                     ki4.leaveGroup(msg.to)      
-                elif text.lower() in ["*มา"]:    
+                elif text.lower() in ["K."]:    
                     G = gye.getGroup(msg.to)
                     ginfo = gye.getGroup(msg.to)
                     G.preventedJoinByTicket = False
