@@ -2093,11 +2093,7 @@ while True:
                             rslt = random.choice(pilih)
                             client.sendText(msg.to, str(rslt))
                         else:
-                            pass
-                    else:
-                        pass
-                else:
-                    pass
+                            pass                   
 #==============================================================================#
 # Auto join if BOT invited to group
 def NOTIFIED_INVITE_INTO_GROUP(op):
