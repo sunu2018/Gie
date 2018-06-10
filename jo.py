@@ -47,10 +47,10 @@ botStart = time.time()
 #channelToken = ki3.getChannelResult()
 #ki3.log("Channel Token : " + str(channelToken))
 
-ki4 = LINE()
-ki4.log("Auth Token : " + str(ki4.authToken))
-channelToken = ki4.getChannelResult()
-ki4.log("Channel Token : " + str(channelToken))
+#ki4 = LINE()
+#ki4.log("Auth Token : " + str(ki4.authToken))
+#channelToken = ki4.getChannelResult()
+#ki4.log("Channel Token : " + str(channelToken))
 
 #kalo mau login menggunakan token
 #gunakan disini hapus tanda pagarnya 
@@ -61,7 +61,7 @@ gye = LINE("EtwLPhhrzFXFghuik5Gc.ugJ+9dMgaAs1/HYyDUOxda.IgpAE9ylg6XFX8UJuq2o4apt
 ais = LINE("EtKGt9Aea04KryxIOx8b.OaW45w5kEMyRG/7qK2fnwW.WQ+hsjVxt8KOWcfNrX2V4RLOgfd2Mz9PhWtYDPIXZVU=")
 ki2 = LINE("EtZREl8uhl6VAapUjlTc.WSbM8Imh8gKzhGhc98UuVa.feeQQaWBEpieqDeI+TBL9t7uKaW9tBVFmRZfAB9tHUk=")
 ki3 = LINE("Et1R1XGdZj2GVVWVYRud.dCZhkZtrJsP18XdGxTjDlq.oMaLwiyz0XGoj5+69rFNYbV65stIZKnfe4kqjE/YMKE=")
-#ki4 = LINE(".SPS+quoffhJbcv30K1vAdq.ZwQho3bBqQbrIDLJs+6RdlwZRAY072xc1FgSOzAUgiw=")
+ki4 = LINE("Et8llZ0PwVr5fdkv0zz9.NLEdVUFE9zK89Wsdc4+xQq.Mrlvk46xgkmNFquNEzwbx46i1km7wRtssu1wEHYhxFM=")
 
 KAC = [gye,ais,ki2,ki3,ki4]
 GUE = [ais,ki2,ki3,ki4]  #ini jangan luh hapus peak ini fungsi Ciak alias kick
@@ -156,8 +156,8 @@ def helpmessage():
                   "║͜͡☆➣ คำสั่งทั้งหมด" + "\n" + \
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ คำสั่ง1" + "\n" + \
-                  "║͜͡☆➣ คำสั่ง2" + "\n" + \
+                  "║͜͡☆➣ help1" + "\n" + \
+                  "║͜͡☆➣ help2" + "\n" + \
                   "║͜͡☆➣ Tag" + "\n" + \
                   "║͜͡☆➣ Halo ( panggil bot ) " + "\n" + \
                   "║͜͡☆➣ Absen" + "\n" + \
@@ -183,8 +183,8 @@ def helptexttospeech():
                   "║͜͡☆➣ คำสั่งที่ 2" + "\n" + \
                   "╰════════╬♥╬════════╯" + "\n" + \
                   "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ คำสั่ง1" + "\n" + \
-                  "║͜͡☆➣ คำสั่ง2" + "\n" + \
+                  "║͜͡☆➣ help1" + "\n" + \
+                  "║͜͡☆➣ help2" + "\n" + \
                   "║͜͡☆➣ Protect on/off" + "\n" + \
                   "║͜͡☆➣ QrProtect on/off" + "\n" + \
                   "║͜͡☆➣ InviteProtect on/off" + "\n" + \
@@ -353,16 +353,16 @@ def lineBot(op):
                 if text is None:
                     return
 #==============================================================================#
-                if text.lower() == 'คำสั่ง':
+                if text.lower() == 'help':
                     helpMessage = helpmessage()
                     gye.sendMessage(to, str(helpMessage))
-                    gye.sendContact(to, "ue32b11986d8e9e5cf70b642cf7ba88ff")
+                    gye.sendContact(to, "u5068fff4398601a4b5fa1c9876ea170c")
                     gye.sendMessage(to,"█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
-                elif text.lower() == 'คำสั่ง1':
+                elif text.lower() == 'help1':
                     helpTextToSpeech = helptexttospeech()
                     gye.sendMessage(to, str(helpTextToSpeech))
                     gye.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
-                elif text.lower() == 'คำสั่ง2':
+                elif text.lower() == 'help2':
                     helpTranslate = helptranslate()
                     gye.sendMessage(to, str(helpTranslate))
                     gye.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
@@ -404,7 +404,7 @@ def lineBot(op):
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
 #==============================================================================#
-                elif text.lower() == 'เช็คระบบป้องกัน':
+                elif text.lower() == 'เช็คป้องกัน':
                     try:
                         ret_ = "╭════════╬♥╬════════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
                         if settings["protect"] == True: ret_ += "║͜͡☆➣ Protect ✅"
@@ -637,7 +637,7 @@ def lineBot(op):
                             else:
                                 gye.sendMessage(msg.to,"➲ Protection Cancel Invite Already Off")
 #-------------------------------------------------------------------------------
-                elif text.lower() == '*เปิดระบบป้องกัน':
+                elif text.lower() == '*เปิดป้องกัน':
                         settings["protect"] = True
                         settings["qrprotect"] = True
                         settings["inviteprotect"] = True
@@ -650,7 +650,7 @@ def lineBot(op):
                         gye.sendMessage(msg.to,"Cancelprotect on")
                         gye.sendMessage(msg.to,"➲ All Protect Set To On")
                         		            
-                elif text.lower() == '*ปิดระบบป้องกัน':
+                elif text.lower() == '*ปิดป้องกัน':
              #       if msg._from in Owner:
                         settings["protect"] = False
                         settings["qrprotect"] = False
@@ -717,7 +717,7 @@ def lineBot(op):
                         ki2.sendContact(to, ki2MID)
                         ki3.sendContact(to, ki3MID)
                         ki4.sendContact(to, ki4MID)
-                elif text.lower() in ["*ไป"]:    
+                elif text.lower() in ["*หนีหำ"]:    
                     #gye.leaveGroup(msg.to)
                     ais.leaveGroup(msg.to)
                     ki2.leaveGroup(msg.to)
@@ -729,7 +729,7 @@ def lineBot(op):
                     ki2.leaveGroup(msg.to)
                     ki3.leaveGroup(msg.to)
                     ki4.leaveGroup(msg.to)      
-                elif text.lower() in ["*มา"]:    
+                elif text.lower() in ["*มาหำ"]:    
                     G = gye.getGroup(msg.to)
                     ginfo = gye.getGroup(msg.to)
                     G.preventedJoinByTicket = False
