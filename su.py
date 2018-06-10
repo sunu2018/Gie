@@ -356,7 +356,7 @@ def lineBot(op):
                 if text.lower() == 'help':
                     helpMessage = helpmessage()
                     gye.sendMessage(to, str(helpMessage))
-                    gye.sendContact(to, "ue32b11986d8e9e5cf70b642cf7ba88ff")
+                    gye.sendContact(to, "ud3a6bfda60a956cca0f58f2a14bae808")
                     gye.sendMessage(to,"█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
                 elif text.lower() == 'help1':
                     helpTextToSpeech = helptexttospeech()
@@ -404,7 +404,7 @@ def lineBot(op):
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
 #==============================================================================#
-                elif text.lower() == 'เช็คระบบป้องกัน':
+                elif text.lower() == 'เช็คป้องกัน':
                     try:
                         ret_ = "╭════════╬♥╬════════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
                         if settings["protect"] == True: ret_ += "║͜͡☆➣ Protect ✅"
@@ -637,7 +637,7 @@ def lineBot(op):
                             else:
                                 gye.sendMessage(msg.to,"➲ Protection Cancel Invite Already Off")
 #-------------------------------------------------------------------------------
-                elif text.lower() == '*เปิดระบบป้องกัน':
+                elif text.lower() == 'เปิดป้องกัน':
                         settings["protect"] = True
                         settings["qrprotect"] = True
                         settings["inviteprotect"] = True
@@ -650,7 +650,7 @@ def lineBot(op):
                         gye.sendMessage(msg.to,"Cancelprotect on")
                         gye.sendMessage(msg.to,"➲ All Protect Set To On")
                         		            
-                elif text.lower() == '*ปิดระบบป้องกัน':
+                elif text.lower() == 'ปิดป้องกัน':
              #       if msg._from in Owner:
                         settings["protect"] = False
                         settings["qrprotect"] = False
