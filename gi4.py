@@ -296,7 +296,7 @@ def lineBot(op):
             return
 #-------------------------------------------------------------------------------
 while True:
-    try:
+     try:
         ops=poll.singleTrace(count=50)
         for op in ops:
             if op.type == 26:
