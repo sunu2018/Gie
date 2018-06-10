@@ -27,51 +27,51 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 #kalo mau login code qr disini pake
-gye = LINE()
-gye.log("Auth Token : " + str(gye.authToken))
-channelToken = gye.getChannelResult()
-gye.log("Channel Token : " + str(channelToken))
+#gye = LINE()
+#gye.log("Auth Token : " + str(gye.authToken))
+#channelToken = gye.getChannelResult()
+#gye.log("Channel Token : " + str(channelToken))
 
-ais = LINE()
-ais.log("Auth Token : " + str(ais.authToken))
-channelToken = ais.getChannelResult()
-ais.log("Channel Token : " + str(channelToken))
+#ais = LINE()
+#ais.log("Auth Token : " + str(ais.authToken))
+#channelToken = ais.getChannelResult()
+#ais.log("Channel Token : " + str(channelToken))
 
-ki2 = LINE()
-ki2.log("Auth Token : " + str(ki2.authToken))
-channelToken = ki2.getChannelResult()
-ki2.log("Channel Token : " + str(channelToken))
+#ki2 = LINE()
+#ki2.log("Auth Token : " + str(ki2.authToken))
+#channelToken = ki2.getChannelResult()
+#ki2.log("Channel Token : " + str(channelToken))
 
-ki3 = LINE()
-ki3.log("Auth Token : " + str(ki3.authToken))
-channelToken = ki3.getChannelResult()
-ki3.log("Channel Token : " + str(channelToken))
+#ki3 = LINE()
+#ki3.log("Auth Token : " + str(ki3.authToken))
+#channelToken = ki3.getChannelResult()
+#ki3.log("Channel Token : " + str(channelToken))
 
-#ki4 = LINE()
-#ki4.log("Auth Token : " + str(ki4.authToken))
-#channelToken = ki4.getChannelResult()
-#ki4.log("Channel Token : " + str(channelToken))
+ki4 = LINE()
+ki4.log("Auth Token : " + str(ki4.authToken))
+channelToken = ki4.getChannelResult()
+ki4.log("Channel Token : " + str(channelToken))
 
 #kalo mau login menggunakan token
 #gunakan disini hapus tanda pagarnya 
 #yg atas dinpagar atau bisa juga token di atas 
 #di dalam tanda LINE ("TOKEN MU ")
 
-#gye = LINE("EtHO8rZgTw1q6juRoVvf.4YSrMg2oNLZ3c2qS97Qi+W.k2TeLOz1HTtz2jJ+CuaaDHN+R9wcNMOY2hfRLRA6GvA=")
-#ais = LINE("EtqO0Ug4Dx9zZT8oxkYd.ZumT2/Y29n7tOJ4IwPo4tq.HNAYcVHBJLm3e2NfzQNT1N3x5/B6UPZCcNmgW5+mD5k=")
-#ki2 = LINE("Et4ETau6jDvT3vtP91d0.ZaBHUQRqncLKKv+uKgw/qa.4Fe2QIPt1afhs5u+kE0dZr88y70V/dL2AXi8oLNwlQI=")
-#ki3 = LINE("Etd3jyDm4HvJdQssnkVe.lVN3XpWByvHZ/lHSAQFaBG.c79DnqrDN7NYEI72exfE5BTww9/LMbkew9BB0uIM8TA=")
+gye = LINE("Et6sEigK6EKPFGK1Tyu8.06A+2McPvSYG9y8QflROca.Trv+J5Cfue9yFqTzeEHl4bvBIKplhQeaw5r2AMftjJ0=")
+ais = LINE("Et03oL51UZsrgvvtipI8.Wt/YUebfKcqU+KFC8aE2Qa.gRgQxQXy3zImfzS+V3nHyUQ7qUKOp/q6sP7akLBsLZ0=")
+ki2 = LINE("EtZQYCljPB20vFk7lhMf.C6uUUOle4xvTyhRqRUt3ZW.g5dl2gYOW8cbMUMQtEiGBZxCAyq7Cewzl4b0w95zPl8=")
+ki3 = LINE("EtLmQUwgi4aaqMpxpeja.CS3aZ7gG42fDqnPSw7Eh6G.WyY2R6c7P/pjNdH4xp68kAnAYAiSiS/i3ouRPrMRmMs=")
 #ki4 = LINE("EtCusl6Ltdu31R4NtIQd.SPS+quoffhJbcv30K1vAdq.ZwQho3bBqQbrIDLJs+6RdlwZRAY072xc1FgSOzAUgiw=")
 
-KAC = [gye,ais,ki2,ki3]#,ki4]
-GUE = [ais,ki2,ki3]#,ki4]  #ini jangan luh hapus peak ini fungsi Ciak alias kick
+KAC = [gye,ais,ki2,ki3,ki4]
+GUE = [ais,ki2,ki3,ki4]  #ini jangan luh hapus peak ini fungsi Ciak alias kick
 #maksudnya agar bot sb/induk gak ikutan nge kick Mudeng ora
 gyeMID = gye.profile.mid
 aisMID = ais.profile.mid
 ki2MID = ki2.profile.mid
 ki3MID = ki3.profile.mid
-#ki4MID = ki4.profile.mid
-Bots = [gyeMID,aisMID,ki2MID,ki3MID]#,ki4MID]# ini jangan dinrubah Gunanya agar bot tidak saling kick
+ki4MID = ki4.profile.mid
+Bots = [gyeMID,aisMID,ki2MID,ki3MID,ki4MID]# ini jangan dinrubah Gunanya agar bot tidak saling kick
 creator = ["u104e95aaefb53cf411f77353f6a96ece"]
 Owner = ["u104e95aaefb53cf411f77353f6a96ece"]
 admin = ["u104e95aaefb53cf411f77353f6a96ece"]
@@ -80,25 +80,25 @@ gyeProfile = gye.getProfile()
 aisProfile = ais.getProfile()
 ki2Profile = ki2.getProfile()
 ki2Profile = ki3.getProfile()
-#ki2Profile = ki4.getProfile()
+ki2Profile = ki4.getProfile()
 
 lineSettings = gye.getSettings()
 aisSettings = ais.getSettings()
 ki2Settings = ki2.getSettings()
 ki3Settings = ki3.getSettings()
-#ki4Settings = ki4.getSettings()
+ki4Settings = ki4.getSettings()
 
 oepoll = OEPoll(gye)
 oepoll1 = OEPoll(ais)
 oepoll2 = OEPoll(ki2)
 oepoll3 = OEPoll(ki3)
-#oepoll4 = OEPoll(ki4)
+oepoll4 = OEPoll(ki4)
 
 responsename = gye.getProfile().displayName
 responsename2 = ais.getProfile().displayName
 responsename3 = ki2.getProfile().displayName
 responsename2 = ki3.getProfile().displayName
-#responsename3 = ki4.getProfile().displayName
+responsename3 = ki4.getProfile().displayName
 #==============================================================================#
 
 
