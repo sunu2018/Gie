@@ -1059,7 +1059,7 @@ def lineBot(op):
                             msgs+="\n═══T E R S A N G K A═══\n\nTotal Tersangka :  %i" % len(settings["blacklist"])
                             gye.sendMessage(msg.to, msgs)
 #=======================================================================================
-                elif msg.text.lower().startswith("ciak "):
+                elif msg.text.lower().startswith("บาย "):
                        targets = []
                        key = eval(msg.contentMetadata["MENTION"])
                        key["MENTIONEES"][0]["M"]
