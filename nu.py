@@ -10,11 +10,11 @@ from gtts import gTTS
 from googletrans import Translator
  
 # Ini Untuk Login Via Lik Dan Via Emal
-gye = LINE()
+#gye = LINE()
 #gye = LINE("Email","Password")
-gye.log("Auth Token : " + str(gye.authToken))
-channelToken = gye.getChannelResult()
-gye.log("Channel Token : " + str(channelToken))
+#gye.log("Auth Token : " + str(gye.authToken))
+#channelToken = gye.getChannelResult()
+#gye.log("Channel Token : " + str(channelToken))
 
 # Silahkan Edit Sesukamu
 # Asalkan Rapih Dan Respon
