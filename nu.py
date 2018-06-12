@@ -664,8 +664,52 @@ def lineBot(op):
             #        else:
              #           gye.sendMessage(msg.to,"Just for Owner")
 #-------------------------------------------------------------------------------
-
-                    
+             elif text.lower() == 'autoadd on':
+                    settings["autoAdd"] = True
+                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Add")
+                elif text.lower() == 'autoadd off':
+                    settings["autoAdd"] = False
+                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Add")
+                elif text.lower() == 'autojoin on':
+             #     if msg._from in Owner:    
+                    settings["autoJoin"] = True
+                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Join")
+                elif text.lower() == 'autojoin off':
+                #  if msg._from in Owner:    
+                    settings["autoJoin"] = False
+                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Join")
+                elif text.lower() == 'autoleave on':
+               #   if msg._from in Owner:
+                    settings["autoLeave"] = True
+                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Leave")
+                elif text.lower() == 'autoleave off':
+             #     if msg._from in Owner:
+                    settings["autoLeave"] = False
+                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Leave")
+                elif text.lower() == 'autoread on':
+                    settings["autoRead"] = True
+                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Read")
+                elif text.lower() == 'autoread off':
+                    settings["autoRead"] = False
+                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Read")
+                elif text.lower() == 'checksticker on':
+                    settings["checkSticker"] = True
+                    gye.sendMessage(to, "Berhasil mengaktifkan Check Details Sticker")
+                elif text.lower() == 'checksticker off':
+                    settings["checkSticker"] = False
+                    gye.sendMessage(to, "Berhasil menonaktifkan Check Details Sticker")
+                elif text.lower() == 'detectmention on':
+                    settings["datectMention"] = True
+                    gye.sendMessage(to, "Berhasil mengaktifkan Detect Mention")
+                elif text.lower() == 'detectmention off':
+                    settings["datectMention"] = False
+                    gye.sendMessage(to, "Berhasil menonaktifkan Detect Mention")
+                elif text.lower() == 'join link on':
+                    settings["autoJoinTicket"] = True
+                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Join Link")
+                elif text.lower() == 'join link off':
+                    settings["autoJoinTicket"] = False
+                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Join Link")                                  
 #==============================================================================#
                 elif msg.text.lower() == 'โชว์':
                         gye.sendContact(to, gyeMID)
@@ -1051,7 +1095,7 @@ def lineBot(op):
                                         if not target in Owner:
                                             if not target in admin:
                                                 try:
-                                                    klist=[line,ais,ki2,ki3,ki4]
+                                                    klist=[gye,ais,ki2,ki3,ki4]
                                                     kicker=random.choice(klist)
                                                     kicker.kickoutFromGroup(msg.to,[target])
                                                     print (msg.to,[g.mid])
