@@ -696,9 +696,9 @@ def lineBot(op):
                         if RfuProtect["Protectjoin"] == True: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✔"
                         else: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✘ "						
                         ret_ += "\n╚════[ Status ]═════┛"
-                         gye.sendMessage(to, str(ret_))
+                        gye.sendMessage(to, str(ret_))
                     except Exception as e:
-                         gye.sendMessage(msg.to, str(e))
+                        gye.sendMessage(msg.to, str(e))
                 elif text.lower() == 'autoadd on':
                     settings["autoAdd"] = True
                     gye.sendMessage(to, "Autoadd enabled.")
