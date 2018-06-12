@@ -664,7 +664,7 @@ def lineBot(op):
             #        else:
              #           gye.sendMessage(msg.to,"Just for Owner")
 #-------------------------------------------------------------------------------
-                elif text.lower() == '*เชค':
+                elif text.lower() == 'set':
                     try:
                         ret_ = "╔════[ Status ]═════┓"
                         if settings["autoAdd"] == True: ret_ += "\n╠ รับแอดออโต้ ✔"
