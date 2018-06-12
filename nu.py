@@ -696,60 +696,60 @@ def lineBot(op):
                         if RfuProtect["Protectjoin"] == True: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✔"
                         else: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✘ "						
                         ret_ += "\n╚════[ Status ]═════┛"
-                        line.sendMessage(to, str(ret_))
+                        gye.sendMessage(to, str(ret_))
                     except Exception as e:
-                        line.sendMessage(msg.to, str(e))
+                        gye.sendMessage(msg.to, str(e))
                 elif text.lower() == 'autoadd on':
                     settings["autoAdd"] = True
-                    line.sendMessage(to, "Autoadd enabled.")
+                    gye.sendMessage(to, "Autoadd enabled.")
                 elif text.lower() == 'autoadd off':
                     settings["autoAdd"] = False
-                    line.sendMessage(to, "Autoadd disabled.")
+                    gye.sendMessage(to, "Autoadd disabled.")
                 elif text.lower() == 'autojoin on':
                     settings["autoJoin"] = True
-                    line.sendMessage(to, "Autojoin enabled.")
+                    gye.sendMessage(to, "Autojoin enabled.")
                 elif text.lower() == 'autojoin off':
                     settings["autoJoin"] = False
-                    line.sendMessage(to, "Auto Join disabled.")
+                    gye.sendMessage(to, "Auto Join disabled.")
                 elif "Gcancel:" in msg.text:
                     try:
                         strnum = msg.text.replace("Gcancel:","")
                         if strnum == "off":
                                 settings["autoCancel"]["on"] = False
                                 if settings["lang"] == "JP":
-                                    line.sendText(msg.to,"Invitation refused turned off\nTo turn on please specify the number of people and send")
+                                    gye.sendText(msg.to,"Invitation refused turned off\nTo turn on please specify the number of people and send")
                                 else:
-                                    line.sendText(msg.to,"关了邀请拒绝。要时开请指定人数发送")
+                                    gyee.sendText(msg.to,"关了邀请拒绝。要时开请指定人数发送")
                         else:
                                 num =  int(strnum)
                                 settings["autoCancel"]["on"] = True
                                 if settings["lang"] == "JP":
-                                    line.sendText(msg.to,strnum + " สมาชิกในกลุ่มจะปฏิเสธคำเชิญโดยอัตโนมัติ")
+                                    gye.sendText(msg.to,strnum + " สมาชิกในกลุ่มจะปฏิเสธคำเชิญโดยอัตโนมัติ")
                                 else:
-                                    line.sendText(msg.to,strnum + "使人以下的小组用自动邀请拒绝")
+                                    gye.sendText(msg.to,strnum + "使人以下的小组用自动邀请拒绝")
                     except:
                         if settings["lang"] == "JP":
-                                line.sendText(msg.to,"Value is wrong")
+                                gye.sendText(msg.to,"Value is wrong")
                         else:
-                                line.sendText(msg.to,"Bizarre ratings")					
+                                gye.sendText(msg.to,"Bizarre ratings")					
                 elif text.lower() == 'autoleave on':
                     settings["autoLeave"] = True
-                    line.sendMessage(to, "Autoleave enabled.")
+                    gyee.sendMessage(to, "Autoleave enabled.")
                 elif text.lower() == 'autoleave off':
                     settings["autoLeave"] = False
-                    line.sendMessage(to, "Autoleave disabled.")
+                    gye.sendMessage(to, "Autoleave disabled.")
                 elif text.lower() == 'autoread on':
                     settings["autoRead"] = True
-                    line.sendMessage(to, "Autoread message enabled.")
+                    gye.sendMessage(to, "Autoread message enabled.")
                 elif text.lower() == 'autoread off':
                     settings["autoRead"] = False
-                    line.sendMessage(to, "Autoread message disabled.")
+                    gye.sendMessage(to, "Autoread message disabled.")
                 elif text.lower() == 'sticker on':
                     settings["checkSticker"] = True
-                    line.sendMessage(to, "Check sticker enabled.")
+                    gye.sendMessage(to, "Check sticker enabled.")
                 elif text.lower() == 'sticker off':
                     settings["checkSticker"] = False
-                    line.sendMessage(to, "Check sticker disabled.")                
+                    gye.sendMessage(to, "Check sticker disabled.")                
 #==============================================================================#                              
 #==============================================================================#
                 elif msg.text.lower() == 'โชว์':
