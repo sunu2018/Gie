@@ -72,9 +72,9 @@ ki2MID = ki2.profile.mid
 ki3MID = ki3.profile.mid
 ki4MID = ki4.profile.mid
 Bots = [gyeMID,aisMID,ki2MID,ki3MID,ki4MID]# ini jangan dinrubah Gunanya agar bot tidak saling kick
-creator = ["u104e95aaefb53cf411f77353f6a96ece"]
-Owner = ["u104e95aaefb53cf411f77353f6a96ece"]
-admin = ["u104e95aaefb53cf411f77353f6a96ece"]
+creator = ["ue32b11986d8e9e5cf70b642cf7ba88ff"]
+Owner = ["ue32b11986d8e9e5cf70b642cf7ba88ff"]
+admin = ["ue32b11986d8e9e5cf70b642cf7ba88ff"]
 
 gyeProfile = gye.getProfile()
 aisProfile = ais.getProfile()
@@ -356,7 +356,7 @@ def lineBot(op):
                 if text.lower() == 'help':
                     helpMessage = helpmessage()
                     gye.sendMessage(to, str(helpMessage))
-                    gye.sendContact(to, "u5068fff4398601a4b5fa1c9876ea170c")
+                    gye.sendContact(to, "ue32b11986d8e9e5cf70b642cf7ba88ff")
                     gye.sendMessage(to,"█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
                 elif text.lower() == 'help1':
                     helpTextToSpeech = helptexttospeech()
