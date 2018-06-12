@@ -528,7 +528,7 @@ def summon(to, nama):
     try:
        vipro.sendMessage(msg)
     except Exception as error:
-       print error          
+       print (error)         
                         
        
 
