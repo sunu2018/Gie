@@ -734,7 +734,7 @@ def lineBot(op):
                                 gye.sendText(msg.to,"Bizarre ratings")					
                 elif text.lower() == 'autoleave on':
                     settings["autoLeave"] = True
-                    gyee.sendMessage(to, "Autoleave enabled.")
+                    gye.sendMessage(to, "Autoleave enabled.")
                 elif text.lower() == 'autoleave off':
                     settings["autoLeave"] = False
                     gye.sendMessage(to, "Autoleave disabled.")
