@@ -950,7 +950,7 @@ def lineBot(op):
                             gye.sendMessage(to, "[ Group Ticket ]\nhttps://line.me/R/ti/g/{}".format(str(ticket)))
                         else:
                             gye.sendMessage(to, "Grup qr tidak terbuka silahkan buka terlebih dahulu dengan perintah {}openqr".format(str(settings["keyCommand"])))
-                elif text.lower() == 'เปิดห้อง':
+                elif text.lower() == 'เปิดลิ้ง':
                     if msg.toType == 2:
                         group = gye.getGroup(to)
                         if group.preventedJoinByTicket == False:
@@ -959,7 +959,7 @@ def lineBot(op):
                             group.preventedJoinByTicket = False
                             gye.updateGroup(group)
                             gye.sendMessage(to, "Berhasil membuka grup qr")
-                elif text.lower() == 'ปิดห้อง':
+                elif text.lower() == 'ปิดลิ้ง':
                     if msg.toType == 2:
                         group = gye.getGroup(to)
                         if group.preventedJoinByTicket == True:
