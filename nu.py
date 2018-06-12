@@ -57,7 +57,7 @@ botStart = time.time()
 #yg atas dinpagar atau bisa juga token di atas 
 #di dalam tanda LINE ("TOKEN MU ")
 
-#gye = LINE("EtHO8rZgTw1q6juRoVvf.4YSrMg2oNLZ3c2qS97Qi+W.k2TeLOz1HTtz2jJ+CuaaDHN+R9wcNMOY2hfRLRA6GvA=")
+gye = LINE("EtHO8rZgTw1q6juRoVvf.4YSrMg2oNLZ3c2qS97Qi+W.k2TeLOz1HTtz2jJ+CuaaDHN+R9wcNMOY2hfRLRA6GvA=")
 ais = LINE("EtQQZ5O8Q9ZNn47rzMCd.ZumT2/Y29n7tOJ4IwPo4tq.1TFAsQAvYzlyAp1XEM5RsdIZwZtoEnir3y6dea1fo1E=")
 ki2 = LINE("Et0Oj6SRTe8eGtw9jK3d.SPS+quoffhJbcv30K1vAdq.gD9LSFBUBorGs552hX0ltdIVxai6oaF/Ox4aGWcOFJA=")
 ki3 = LINE("EtuabQyPa4w1jYNY3sm0.ZaBHUQRqncLKKv+uKgw/qa.uBKyRSqmAN14wzFVY5K/nO+ja0fHE1IoLuFUqDALCsA=")
@@ -664,52 +664,94 @@ def lineBot(op):
             #        else:
              #           gye.sendMessage(msg.to,"Just for Owner")
 #-------------------------------------------------------------------------------
+#==============================================================================#
+                elif text.lower() == 'set':
+                    try:
+                        ret_ = "╔════[ Status ]═════┓"
+                        if settings["autoAdd"] == True: ret_ += "\n╠ รับแอดออโต้ ✔"
+                        else: ret_ += "\n╠ รับแอดออโต้    ✘ "
+                        if settings["autoJoin"] == True: ret_ += "\n╠ เข้าห้องออโต้ ✔"
+                        else: ret_ += "\n╠ เข้าห้องออโต้    ✘ "
+                        if settings["autoCancel"]["on"] == True:ret_+="\n╠ ยกเลิกเชิญกลุ่มเมื่อมีสมาชิกต่ำกว่า: " + str(settings["autoCancel"]["members"]) + " → ✔"
+                        else: ret_ += "\n╠ ยกเลิกเชิญกลุ่ม    ✘ "						
+                        if settings["autoLeave"] == True: ret_ += "\n╠ ออกแชทรวม ✔"
+                        else: ret_ += "\n╠ ออกแชทรวม ✘ "
+                        if settings["autoRead"] == True: ret_ += "\n╠ อ่านออโต้ ✔"
+                        else: ret_ += "\n╠ อ่านออโต้   ✘ "				
+                        if settings["checkSticker"] == True: ret_ += "\n╠ Sticker ✔"
+                        else: ret_ += "\n╠ Sticker        ✘ "
+                        if settings["detectMention"] == True: ret_ += "\n╠ ตอบกลับคนแทค ✔"
+                        else: ret_ += "\n╠ ตอบกลับคนแทค ✘ "
+                        if settings["potoMention"] == True: ret_ += "\n╠ แสดงภาพคนแทค ✔"
+                        else: ret_ += "\n╠ แสดงภาพคนแทค ✘ "						
+                        if RfuProtect["inviteprotect"] == True: ret_ += "\n╠ กันเชิญ ✔"
+                        else: ret_ += "\n╠ กันเชิญ ✘ "
+                        if RfuProtect["cancelprotect"] == True: ret_ += "\n╠ กันยกเชิญ ✔"
+                        else: ret_ += "\n╠ กันยกเชิญ ✘ "
+                        if RfuProtect["protect"] == True: ret_ += "\n╠ ป้องกัน ✔"
+                        else: ret_ += "\n╠ ป้องกัน ✘ "
+                        if RfuProtect["linkprotect"] == True: ret_ += "\n╠ ป้องกันเปิดลิ้ง ✔"
+                        else: ret_ += "\n╠ ป้องกันเปิดลิ้ง ✘ "
+                        if RfuProtect["Protectguest"] == True: ret_ += "\n╠ ป้องกันสมาชิก ✔"
+                        else: ret_ += "\n╠ ป้องกันสมาชิก ✘ "
+                        if RfuProtect["Protectjoin"] == True: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✔"
+                        else: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✘ "						
+                        ret_ += "\n╚════[ Status ]═════┛"
+                        line.sendMessage(to, str(ret_))
+                    except Exception as e:
+                        line.sendMessage(msg.to, str(e))
                 elif text.lower() == 'autoadd on':
                     settings["autoAdd"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Add")
+                    line.sendMessage(to, "Autoadd enabled.")
                 elif text.lower() == 'autoadd off':
                     settings["autoAdd"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Add")
+                    line.sendMessage(to, "Autoadd disabled.")
                 elif text.lower() == 'autojoin on':
-             #     if msg._from in Owner:    
                     settings["autoJoin"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Join")
+                    line.sendMessage(to, "Autojoin enabled.")
                 elif text.lower() == 'autojoin off':
-                #  if msg._from in Owner:    
                     settings["autoJoin"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Join")
+                    line.sendMessage(to, "Auto Join disabled.")
+                elif "Gcancel:" in msg.text:
+                    try:
+                        strnum = msg.text.replace("Gcancel:","")
+                        if strnum == "off":
+                                settings["autoCancel"]["on"] = False
+                                if settings["lang"] == "JP":
+                                    line.sendText(msg.to,"Invitation refused turned off\nTo turn on please specify the number of people and send")
+                                else:
+                                    line.sendText(msg.to,"关了邀请拒绝。要时开请指定人数发送")
+                        else:
+                                num =  int(strnum)
+                                settings["autoCancel"]["on"] = True
+                                if settings["lang"] == "JP":
+                                    line.sendText(msg.to,strnum + " สมาชิกในกลุ่มจะปฏิเสธคำเชิญโดยอัตโนมัติ")
+                                else:
+                                    line.sendText(msg.to,strnum + "使人以下的小组用自动邀请拒绝")
+                    except:
+                        if settings["lang"] == "JP":
+                                line.sendText(msg.to,"Value is wrong")
+                        else:
+                                line.sendText(msg.to,"Bizarre ratings")					
                 elif text.lower() == 'autoleave on':
-               #   if msg._from in Owner:
                     settings["autoLeave"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Leave")
+                    line.sendMessage(to, "Autoleave enabled.")
                 elif text.lower() == 'autoleave off':
-             #     if msg._from in Owner:
                     settings["autoLeave"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Leave")
+                    line.sendMessage(to, "Autoleave disabled.")
                 elif text.lower() == 'autoread on':
                     settings["autoRead"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Read")
+                    line.sendMessage(to, "Autoread message enabled.")
                 elif text.lower() == 'autoread off':
                     settings["autoRead"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Read")
-                elif text.lower() == 'checksticker on':
+                    line.sendMessage(to, "Autoread message disabled.")
+                elif text.lower() == 'sticker on':
                     settings["checkSticker"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Check Details Sticker")
-                elif text.lower() == 'checksticker off':
+                    line.sendMessage(to, "Check sticker enabled.")
+                elif text.lower() == 'sticker off':
                     settings["checkSticker"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Check Details Sticker")
-                elif text.lower() == 'detectmention on':
-                    settings["datectMention"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Detect Mention")
-                elif text.lower() == 'detectmention off':
-                    settings["datectMention"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Detect Mention")
-                elif text.lower() == 'join link on':
-                    settings["autoJoinTicket"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Join Link")
-                elif text.lower() == 'join link off':
-                    settings["autoJoinTicket"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Join Link")                    
+                    line.sendMessage(to, "Check sticker disabled.")                
+#==============================================================================#                              
 #==============================================================================#
                 elif msg.text.lower() == 'โชว์':
                         gye.sendContact(to, gyeMID)
