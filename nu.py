@@ -112,7 +112,7 @@ with open('admin.json', 'r') as fp:
     
 myProfile = {
 	"displayName": "",
-	"statusMessage": "",
+	"statusMessage": "ถ่อว",
 	"pictureStatus": ""
 }
 
@@ -664,8 +664,7 @@ def lineBot(op):
             #        else:
              #           gye.sendMessage(msg.to,"Just for Owner")
 #-------------------------------------------------------------------------------
-#==============================================================================#
-                elif text.lower() == 'set':
+                elif text.lower() == '*เชค':
                     try:
                         ret_ = "╔════[ Status ]═════┓"
                         if settings["autoAdd"] == True: ret_ += "\n╠ รับแอดออโต้ ✔"
