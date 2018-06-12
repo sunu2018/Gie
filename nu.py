@@ -696,9 +696,9 @@ def lineBot(op):
                         if RfuProtect["Protectjoin"] == True: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✔"
                         else: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✘ "						
                         ret_ += "\n╚════[ Status ]═════┛"
-                        gye.sendMessage(to, str(ret_))
+                         gye.sendMessage(to, str(ret_))
                     except Exception as e:
-                        gye.sendMessage(msg.to, str(e))
+                         gye.sendMessage(msg.to, str(e))
                 elif text.lower() == 'autoadd on':
                     settings["autoAdd"] = True
                     gye.sendMessage(to, "Autoadd enabled.")
@@ -719,7 +719,7 @@ def lineBot(op):
                                 if settings["lang"] == "JP":
                                     gye.sendText(msg.to,"Invitation refused turned off\nTo turn on please specify the number of people and send")
                                 else:
-                                    gyee.sendText(msg.to,"关了邀请拒绝。要时开请指定人数发送")
+                                    gye.sendText(msg.to,"关了邀请拒绝。要时开请指定人数发送")
                         else:
                                 num =  int(strnum)
                                 settings["autoCancel"]["on"] = True
