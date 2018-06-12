@@ -42,10 +42,10 @@ botStart = time.time()
 #channelToken = ki2.getChannelResult()
 #ki2.log("Channel Token : " + str(channelToken))
 
-#ki3 = LINE()
-#ki3.log("Auth Token : " + str(ki3.authToken))
-#channelToken = ki3.getChannelResult()
-#ki3.log("Channel Token : " + str(channelToken))
+ki3 = LINE()
+ki3.log("Auth Token : " + str(ki3.authToken))
+channelToken = ki3.getChannelResult()
+ki3.log("Channel Token : " + str(channelToken))
 
 #ki4 = LINE()
 #ki4.log("Auth Token : " + str(ki4.authToken))
@@ -57,11 +57,11 @@ botStart = time.time()
 #yg atas dinpagar atau bisa juga token di atas 
 #di dalam tanda LINE ("TOKEN MU ")
 
-gye = LINE("EtJK5At10gbYcySwFy7c.ugJ+9dMgaAs1/HYyDUOxda.B8nHphAzET3gpq/+2lyfW22R+fWSICiovadWNxsiC+Y=")
-ais = LINE("EtKGt9Aea04KryxIOx8b.OaW45w5kEMyRG/7qK2fnwW.WQ+hsjVxt8KOWcfNrX2V4RLOgfd2Mz9PhWtYDPIXZVU=")
-ki2 = LINE("EtZREl8uhl6VAapUjlTc.WSbM8Imh8gKzhGhc98UuVa.feeQQaWBEpieqDeI+TBL9t7uKaW9tBVFmRZfAB9tHUk=")
-ki3 = LINE("Et1R1XGdZj2GVVWVYRud.dCZhkZtrJsP18XdGxTjDlq.oMaLwiyz0XGoj5+69rFNYbV65stIZKnfe4kqjE/YMKE=")
-ki4 = LINE("Et8llZ0PwVr5fdkv0zz9.NLEdVUFE9zK89Wsdc4+xQq.Mrlvk46xgkmNFquNEzwbx46i1km7wRtssu1wEHYhxFM=")
+LINE("EtHO8rZgTw1q6juRoVvf.4YSrMg2oNLZ3c2qS97Qi+W.k2TeLOz1HTtz2jJ+CuaaDHN+R9wcNMOY2hfRLRA6GvA=")
+ais = LINE("EtQQZ5O8Q9ZNn47rzMCd.ZumT2/Y29n7tOJ4IwPo4tq.1TFAsQAvYzlyAp1XEM5RsdIZwZtoEnir3y6dea1fo1E=")
+ki2 = LINE("Et0Oj6SRTe8eGtw9jK3d.SPS+quoffhJbcv30K1vAdq.gD9LSFBUBorGs552hX0ltdIVxai6oaF/Ox4aGWcOFJA=")
+#ki3 = LINE("Etd3jyDm4HvJdQssnkVe.lVN3XpWByvHZ/lHSAQFaBG.c79DnqrDN7NYEI72exfE5BTww9/LMbkew9BB0uIM8TA=")
+#ki4 = LINE("EtCusl6Ltdu31R4NtIQd.SPS+quoffhJbcv30K1vAdq.ZwQho3bBqQbrIDLJs+6RdlwZRAY072xc1FgSOzAUgiw=")
 
 KAC = [gye,ais,ki2,ki3,ki4]
 GUE = [ais,ki2,ki3,ki4]  #ini jangan luh hapus peak ini fungsi Ciak alias kick
