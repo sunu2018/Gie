@@ -113,64 +113,6 @@ myProfile = {
 	"pictureStatus": ""
 }
 
-while True:
-    try:
-        ops=poll.singleTrace(count=50)
-        for op in ops:
-            if op.type == 26:
-                msg = op.message
-                if msg.text != None:
-                    if msg.toType == 2:
-                        may = client.getProfile().mid
-                        if may in str(msg.contentMetadata) and 'MENTION' in str(msg.contentMetadata):
-                            pilih = ['yang tag sy semoga jomblo seumur hidup','ngapain tag tag woe, kangen?','ada apa ini? ko di tag?','duhh kena tag, dianya kesepian kali yah','gk usah tag, gift tikel aja']
-                            rslt = random.choice(pilih)
-                            client.sendText(msg.to, str(rslt))
-                        else:
-                            pass
-                    else:
-                        pass
-                else:
-                    pass
-            elif op.type == 25:
-                msg = op.message
-                text = msg.text
-                msg_id = msg.id
-                receiver = msg.to
-                sender = msg._from
-                try:
-                    if msg.contentType == 0:
-                        if msg.toType == 2:
-                            gye.sendChatChecked(receiver, msg_id)
-                            contact = gye.getContact(sender)
-                            if text.lower() == 'me':
-                                gye.sendMessage(receiver, None, contentMetadata={'mid': sender}, contentType=13)
-                            elif text.lower() == 'speed':
-                                start = time.time()
-                                gye.sendText(receiver, "TestSpeed")
-                                elapsed_time = time.time() - start
-                                gye.sendText(receiver, "%sdetik" % (elapsed_time))
-                            elif 'spic' in text.lower():
-                                try:
-                                    key = eval(msg.contentMetadata["MENTION"])
-                                    u = key["MENTIONEES"][0]["M"]
-                                    a = gye.getContact(u).pictureStatus
-                                    client.sendImageWithURL(receiver, 'http://dl.profile.line.naver.jp/'+a)
-                                except Exception as e:
-                                    gye.sendText(receiver, str(e))
-                            elif 'scover' in text.lower():
-                                try:
-                                    key = eval(msg.contentMetadata["MENTION"])
-                                    u = key["MENTIONEES"][0]["M"]
-                                    a = channel.getProfileCoverURL(mid=u)
-                                    gye.sendImageWithURL(receiver, a)
-                                except Exception as e:
-                                    gye.sendText(receiver, str(e))
-                            elif text.lower() == 'tagall':
-                                group = gye.getGroup(msg.to)
-                                nama = [contact.mid for contact in group.members]
-                                nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
-		
 myProfile["displayName"] = gyeProfile.displayName
 myProfile["statusMessage"] = gyeProfile.statusMessage
 myProfile["pictureStatus"] = gyeProfile.pictureStatus
