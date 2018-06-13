@@ -207,20 +207,20 @@ rfuSet = {
     'ricoinvite':{},
     }
 
-user1 = lineMID
+user1 = gyeMID
 user2 = ""
 	
 setTime = {}
 setTime = rfuSet['setTime']
 
-contact = line.getProfile() 
-backup = line.getProfile() 
+contact = gye.getProfile() 
+backup = gye.getProfile() 
 backup.dispalyName = contact.displayName 
 backup.statusMessage = contact.statusMessage
 backup.pictureStatus = contact.pictureStatus
 
 mulai = time.time() 
-dangerMessage = ["cleanse","group cleansed.","mulai",".winebot",".kickall","mayhem","kick on","makasih :d","!kickall","nuke","บิน",".???","งงไปดิ","บินไปดิ","เซลกากจัง","@พี่อาร์ท","@ATR","ขอคลิปหน่อยครับ"]
+dangerMessage = ["cleanse","group cleansed.","mulai",".winebot",".kickall","mayhem","kick on","makasih :d","!kickall","nuke","บิน",".???","งงไปดิ","บินไปดิ","เซลกากจัง","ถ่อว","ถ่อว2","ขอคลิปหน่อยครับ"]
 
 myProfile["displayName"] = lineProfile.displayName
 myProfile["statusMessage"] = lineProfile.statusMessage
