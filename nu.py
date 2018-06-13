@@ -439,6 +439,7 @@ def lineBot(op):
                         gye.sendMessage(to, str(ret_))
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
+			
                 elif text.lower() == 'autoadd on':
                     settings["autoAdd"] = True
                     gye.sendMessage(to, "Autoadd enabled.")
@@ -520,7 +521,7 @@ def lineBot(op):
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
                         
-                elif msg.text.lower().startswith("spaminvite "):
+                elif msg.text.lower().startswith("spaminvite"):
                    #if msg._from in admin:
                     dan = text.split("|")
                     userid = dan[0]
