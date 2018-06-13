@@ -402,7 +402,7 @@ def lineBot(op):
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
 #==============================================================================#
-
+                
 #==============================================================================#
                         
                 elif text.lower() == 'เช็ค':
@@ -544,6 +544,16 @@ def lineBot(op):
                             #else:
                                 gye.sendMessage(to, "@! kebanyakan njer!!", [sender])
 #-------------------------------------------------------------------------------
+                      
+                elif msg.text in ["Ourl","Url on"]:
+                   if msg.toType == 2:
+                    X = vipro.getGroup(msg.to)
+                    X.preventJoinByTicket = False
+                    gye.updateGroup(X)
+                    gye.sendText(msg.to,"Url Sudah Aktif")
+                else:
+                    gye.sendText(msg.to,"Can not be used outside the group")
+      
                 elif msg.text.lower().startswith("owneradd "):
                         key = eval(msg.contentMetadata["MENTION"])
                         key["MENTIONEES"][0]["M"]
