@@ -42,7 +42,7 @@ botStart = time.time()
 #ki4 = LINE()
 #ki4 = LINE("TOKEN KAMU")
 #ki4 = LINE("Email","Password")
-ki4.log("Auth Token : " + str(ki4.authToken))
+#ki4.log("Auth Token : " + str(ki4.authToken))
 #channelToken = ki4.getChannelResult()
 #ki4.log("Channel Token : " + str(channelToken))
 
