@@ -404,9 +404,9 @@ def lineBot(op):
 #==============================================================================#
 
 #==============================================================================#
-                elif text.lower() == 'set':
+                   elif text.lower() == 'เช็ค*':
                     try:
-                        ret_ = "╔════[ Status ]═════┓"
+                        ret_ = "╭════════╬♥╬════════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"                    
                         if settings["autoAdd"] == True: ret_ += "\n╠ รับแอดออโต้ ✔"
                         else: ret_ += "\n╠ รับแอดออโต้    ✘ "
                         if settings["autoJoin"] == True: ret_ += "\n╠ เข้าห้องออโต้ ✔"
@@ -435,11 +435,11 @@ def lineBot(op):
                         else: ret_ += "\n╠ ป้องกันสมาชิก ✘ "
                         if RfuProtect["Protectjoin"] == True: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✔"
                         else: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✘ "						
-                        ret_ += "\n╚════[ Status ]═════┛"
+                        ret_ += "\n╰════════╬♥╬════════╯\n╭════════╬♥╬════════╮\n  ║͜͡☆➣ ♥ GYEVHA BOTS ♥\n╰════════╬♥╬════════╯"
                         gye.sendMessage(to, str(ret_))
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
-			
+                        
                 elif text.lower() == 'autoadd on':
                     settings["autoAdd"] = True
                     gye.sendMessage(to, "Autoadd enabled.")
