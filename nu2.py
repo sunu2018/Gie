@@ -11,44 +11,48 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 
-nadya = LINE()
+#nadya = LINE()
 #nadya = LINE("TOKEN KAMU")
 #nadya = LINE("Email","Password")
-nadya.log("Auth Token : " + str(nadya.authToken))
-channelToken = nadya.getChannelResult()
-nadya.log("Channel Token : " + str(channelToken))
+#nadya.log("Auth Token : " + str(nadya.authToken))
+#channelToken = nadya.getChannelResult()
+#nadya.log("Channel Token : " + str(channelToken))
 
-ki = LINE()
+#ki = LINE()
 #ki = LINE("TOKEN KAMU")
 #ki = LINE("Email","Password")
-ki.log("Auth Token : " + str(ki.authToken))
-channelToken = ki.getChannelResult()
-ki.log("Channel Token : " + str(channelToken))
+#ki.log("Auth Token : " + str(ki.authToken))
+#channelToken = ki.getChannelResult()
+#ki.log("Channel Token : " + str(channelToken))
 
-ki2 = LINE()
+#ki2 = LINE()
 #ki2 = LINE("TOKEN KAMU")
 #ki2 = LINE("Email","Password")
-ki2.log("Auth Token : " + str(ki2.authToken))
-channelToken = ki2.getChannelResult()
-ki2.log("Channel Token : " + str(channelToken))
+#ki2.log("Auth Token : " + str(ki2.authToken))
+#channelToken = ki2.getChannelResult()
+#ki2.log("Channel Token : " + str(channelToken))
 
-ki3 = LINE()
+#ki3 = LINE()
 #ki3 = LINE("TOKEN KAMU")
 #ki3 = LINE("Email","Password")
-ki3.log("Auth Token : " + str(ki3.authToken))
-channelToken = ki3.getChannelResult()
-ki3.log("Channel Token : " + str(channelToken))
+#ki3.log("Auth Token : " + str(ki3.authToken))
+#channelToken = ki3.getChannelResult()
+#ki3.log("Channel Token : " + str(channelToken))
 
-ki4 = LINE()
+#ki4 = LINE()
 #ki4 = LINE("TOKEN KAMU")
 #ki4 = LINE("Email","Password")
 ki4.log("Auth Token : " + str(ki4.authToken))
-channelToken = ki4.getChannelResult()
-ki4.log("Channel Token : " + str(channelToken))
+#channelToken = ki4.getChannelResult()
+#ki4.log("Channel Token : " + str(channelToken))
 
+nadya = LINE ( " EtHO8rZgTw1q6juRoVvf.4YSrMg2oNLZ3c2qS97Qi + W.k2TeLOz1HTtz2jJ + CuaaDHN + R9wcNMOY2hfRLRA6GvA = " )
+ki = LINE ( " EtQQZ5O8Q9ZNn47rzMCd.ZumT2 / Y29n7tOJ4IwPo4tq.1TFAsQAvYzlyAp1XEM5RsdIZwZtoEnir3y6dea1fo1E = " )
+ki2 = LINE ( " Et0Oj6SRTe8eGtw9jK3d.SPS + quoffhJbcv30K1vAdq.gD9LSFBUBorGs552hX0ltdIVxai6oaF / Ox4aGWcOFJA = " )
+ki3 = LINE ( " EtuabQyPa4w1jYNY3sm0.ZaBHUQRqncLKKv + uKgw / qa.uBKyRSqmAN14wzFVY5K / nO + ja0fHE1IoLuFUqDALCsA = " )
+ki4 = LINE ( " EtRhFIGABsjUHKYKVoqe.lVN3XpWByvHZ / lHSAQFaBG.Fo8l69iIhSLOiMhTWoKoj6JIgftT7HEjwC0RykLYwZc = " )
 
 KAC = [nadya,ki,ki2,ki3,ki4]
-
 nadyaMID = nadya.profile.mid
 kiMID = ki.profile.mid
 ki2MID = ki2.profile.mid
