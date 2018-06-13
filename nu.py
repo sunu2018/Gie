@@ -788,7 +788,7 @@ def lineBot(op):
             #        else:
              #           gye.sendMessage(msg.to,"Just for Owner")
 #-------------------------------------------------------------------------------
-             elif text.lower() == 'autoadd on':
+                elif text.lower() == 'autoadd on':
                     settings["autoAdd"] = True
                     gye.sendMessage(to, "Berhasil mengaktifkan Auto Add")
                 elif text.lower() == 'autoadd off':
