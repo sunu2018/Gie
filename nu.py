@@ -113,6 +113,27 @@ myProfile = {
 	"pictureStatus": ""
 }
 
+while True:
+    try:
+        ops=poll.singleTrace(count=50)
+        for op in ops:
+            if op.type == 26:
+                msg = op.message
+                if msg.text != None:
+                    if msg.toType == 2:
+                        may = gye.getProfile().mid
+                        if may in str(msg.contentMetadata) and 'MENTION' in str(msg.contentMetadata):
+                            pilih = ['yang tag sy semoga jomblo seumur hidup','ngapain tag tag woe, kangen?','ada apa ini? ko di tag?','duhh kena tag, dianya kesepian kali yah','gk usah tag, gift tikel aja']
+                            rslt = random.choice(pilih)
+                            gye.sendText(msg.to, str(rslt))
+                        else:
+                            pass
+                    else:
+                        pass
+                else:
+                    pass
+
+
 myProfile["displayName"] = gyeProfile.displayName
 myProfile["statusMessage"] = gyeProfile.statusMessage
 myProfile["pictureStatus"] = gyeProfile.pictureStatus
