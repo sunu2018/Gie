@@ -128,9 +128,9 @@ while True:
                             gye.sendText(msg.to, str(rslt))
                         else:
                             pass
-myProfile["displayName"] = gyeProfile.displayName
-myProfile["statusMessage"] = gyeProfile.statusMessage
-myProfile["pictureStatus"] = gyeProfile.pictureStatus
+#myProfile["displayName"] = gyeProfile.displayName
+#myProfile["statusMessage"] = gyeProfile.statusMessage
+#myProfile["pictureStatus"] = gyeProfile.pictureStatus
 
 readOpen = codecs.open("read.json","r","utf-8")
 settingsOpen = codecs.open("temp.json","r","utf-8")
