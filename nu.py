@@ -1098,7 +1098,7 @@ def lineBot(op):
                                                     kicker.kickoutFromGroup(msg.to,[target])
                                                     print (msg.to,[g.mid])
                                                 except:
-                                                    gye.sendMessage(msg.to,"") 
+                                                    gye.sendMessage(msg.to,"😊") 
 #==============================================================================#          
                 elif text.lower() == 'แท็ก':
                     group = gye.getGroup(msg.to)
