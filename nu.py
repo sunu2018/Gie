@@ -128,12 +128,6 @@ while True:
                             gye.sendText(msg.to, str(rslt))
                         else:
                             pass
-                    else:
-                        pass
-                else:
-                    pass
-
-
 myProfile["displayName"] = gyeProfile.displayName
 myProfile["statusMessage"] = gyeProfile.statusMessage
 myProfile["pictureStatus"] = gyeProfile.pictureStatus
