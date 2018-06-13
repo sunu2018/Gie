@@ -222,9 +222,9 @@ backup.pictureStatus = contact.pictureStatus
 mulai = time.time() 
 dangerMessage = ["cleanse","group cleansed.","mulai",".winebot",".kickall","mayhem","kick on","makasih :d","!kickall","nuke","บิน",".???","งงไปดิ","บินไปดิ","เซลกากจัง","ถ่อว","ถ่อว2","ขอคลิปหน่อยครับ"]
 
-myProfile["displayName"] = lineProfile.displayName
-myProfile["statusMessage"] = lineProfile.statusMessage
-myProfile["pictureStatus"] = lineProfile.pictureStatus
+myProfile["displayName"] = gyeProfile.displayName
+myProfile["statusMessage"] = gyeProfile.statusMessage
+myProfile["pictureStatus"] = gyeProfile.pictureStatus
 #==============================================================================#
 
 
