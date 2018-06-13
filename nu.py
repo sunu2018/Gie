@@ -128,9 +128,53 @@ while True:
                             gye.sendText(msg.to, str(rslt))
                         else:
                             pass
-#myProfile["displayName"] = gyeProfile.displayName
-#myProfile["statusMessage"] = gyeProfile.statusMessage
-#myProfile["pictureStatus"] = gyeProfile.pictureStatus
+		        pass
+                    else:
+                        pass
+                else:
+                    pass
+            elif op.type == 25:
+                msg = op.message
+                text = msg.text
+                msg_id = msg.id
+                receiver = msg.to
+                sender = msg._from
+                try:
+                    if msg.contentType == 0:
+                        if msg.toType == 2:
+                            client.sendChatChecked(receiver, msg_id)
+                            contact = client.getContact(sender)
+                            if text.lower() == 'me':
+                                client.sendMessage(receiver, None, contentMetadata={'mid': sender}, contentType=13)
+                            elif text.lower() == 'speed':
+                                start = time.time()
+                                client.sendText(receiver, "TestSpeed")
+                                elapsed_time = time.time() - start
+                                client.sendText(receiver, "%sdetik" % (elapsed_time))
+                            elif 'spic' in text.lower():
+                                try:
+                                    key = eval(msg.contentMetadata["MENTION"])
+                                    u = key["MENTIONEES"][0]["M"]
+                                    a = client.getContact(u).pictureStatus
+                                    client.sendImageWithURL(receiver, 'http://dl.profile.line.naver.jp/'+a)
+                                except Exception as e:
+                                    client.sendText(receiver, str(e))
+                            elif 'scover' in text.lower():
+                                try:
+                                    key = eval(msg.contentMetadata["MENTION"])
+                                    u = key["MENTIONEES"][0]["M"]
+                                    a = channel.getProfileCoverURL(mid=u)
+                                    client.sendImageWithURL(receiver, a)
+                                except Exception as e:
+                                    client.sendText(receiver, str(e))
+                            elif text.lower() == 'tagall':
+                                group = client.getGroup(msg.to)
+                                nama = [contact.mid for contact in group.members]
+                                nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
+		
+myProfile["displayName"] = gyeProfile.displayName
+myProfile["statusMessage"] = gyeProfile.statusMessage
+myProfile["pictureStatus"] = gyeProfile.pictureStatus
 
 readOpen = codecs.open("read.json","r","utf-8")
 settingsOpen = codecs.open("temp.json","r","utf-8")
