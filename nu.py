@@ -491,7 +491,16 @@ def lineBot(op):
                     gye.sendMessage(to, "Check sticker enabled.")
                 elif text.lower() == 'sticker off':
                     settings["checkSticker"] = False
-                    gye.sendMessage(to, "Check sticker disabled.")                
+                    gye.sendMessage(to, "Check sticker disabled.")     
+			
+                elif msg.text in ["Ourl","Url on"]:
+                   if msg.toType == 2:
+                    X = vipro.getGroup(msg.to)
+                    X.preventJoinByTicket = False
+                    gye.updateGroup(X)
+                    gye.sendText(msg.to,"Url Sudah Aktif")
+                else:
+                    gye.sendText(msg.to,"Can not be used outside the group"			
 #==============================================================================#
 
                 elif text.lower() == 'เช็คป้องกัน':
@@ -544,16 +553,6 @@ def lineBot(op):
                             #else:
                                 gye.sendMessage(to, "@! kebanyakan njer!!", [sender])
 #-------------------------------------------------------------------------------
-                      
-                elif msg.text in ["Ourl","Url on"]:
-                   if msg.toType == 2:
-                    X = vipro.getGroup(msg.to)
-                    X.preventJoinByTicket = False
-                    gye.updateGroup(X)
-                    gye.sendText(msg.to,"Url Sudah Aktif")
-                else:
-                    gye.sendText(msg.to,"Can not be used outside the group")
-      
                 elif msg.text.lower().startswith("owneradd "):
                         key = eval(msg.contentMetadata["MENTION"])
                         key["MENTIONEES"][0]["M"]
