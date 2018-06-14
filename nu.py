@@ -63,6 +63,8 @@ ki2 = LINE("Et0Oj6SRTe8eGtw9jK3d.SPS+quoffhJbcv30K1vAdq.gD9LSFBUBorGs552hX0ltdIV
 ki3 = LINE("EtuabQyPa4w1jYNY3sm0.ZaBHUQRqncLKKv+uKgw/qa.uBKyRSqmAN14wzFVY5K/nO+ja0fHE1IoLuFUqDALCsA=")
 ki4 = LINE("EtRhFIGABsjUHKYKVoqe.lVN3XpWByvHZ/lHSAQFaBG.Fo8l69iIhSLOiMhTWoKoj6JIgftT7HEjwC0RykLYwZc=")
 
+
+
 KAC = [gye,ais,ki2,ki3,ki4]
 GUE = [ais,ki2,ki3,ki4]  #ini jangan luh hapus peak ini fungsi Ciak alias kick
 #maksudnya agar bot sb/induk gak ikutan nge kick Mudeng ora
@@ -101,72 +103,109 @@ responsename2 = ki3.getProfile().displayName
 responsename3 = ki4.getProfile().displayName
 #==============================================================================#
 wait = {
-    "LeaveRoom":True,
-    "Bot":True,
-    "AutoJoin":False,
-    "AutoJoinCancel":False,
-    "memberscancel":30,
-    "Members":1,
-    "AutoCancel":False,
-    "AutoKick":False,
-    'pap':{},
-    'invite':{},
-    'steal':{},
-    'gift':{},
-    'copy':{},    
-    'likeOn':{},
-    'detectMention':False,
-    'detectMention2':True,
-    'detectMention3':False,
-    'kickMention':False,  
-    'sticker':False,  
-    'timeline':True,
-    "Timeline":True,
-    "comment":"Bot Auto Like ©By : Vipro\nContact Me : 👉 line.me/ti/p/~nunu_kap123",    
+    'contact':False,
+    'autoJoin':True,
+    'autoCancel':{"on":False,"members":50},
+    'leaveRoom':True,
+    'timeline':False,
+    'autoAdd':True,
+    'message':"Thanks For Add ☆ TK  B̴̡̛͈̖̺͖̙̝̩̞̐̂̀͂̏̚͟͠O̊̑̾͘T Ç̵͔̟̫̰̮̺̟̥̂̋̂͋͐͛͑̔̚̚O̷̧̺̠̰̳̿́͆̕̕͠ͅ N̶͖̜̻̰͍̮̼̒́̐̑͒́̕ͅŢ̢̯̱͕̠͙̤̙̄̂͗̊̈́̕R̶̛̙̩̱̗̯͌̈͆̆Ơ̴̡͈̖̺͖̙̝̩̞̐̂̀͂̏̚͟͠L̸̡̩̣̲̣̜̊̑̾̾͊̃͘͜ͅ  ☆\n\n\Support By ~ ҳ̸Ҳ̸ҳ Сўв∝я тҝ ҳ̸Ҳ̸ҳ\n\n✯==== Creator ====✯\n\nhttp://line.me/ti/p/~cybertk0",
+    "lang":"JP",
+    "comment":"Thanks For Add ☆ TK  B̴̡̛͈̖̺͖̙̝̩̞̐̂̀͂̏̚͟͠O̊̑̾͘T Ç̵͔̟̫̰̮̺̟̥̂̋̂͋͐͛͑̔̚̚O̷̧̺̠̰̳̿́͆̕̕͠ͅ N̶͖̜̻̰͍̮̼̒́̐̑͒́̕ͅŢ̢̯̱͕̠͙̤̙̄̂͗̊̈́̕R̶̛̙̩̱̗̯͌̈͆̆Ơ̴̡͈̖̺͖̙̝̩̞̐̂̀͂̏̚͟͠L̸̡̩̣̲̣̜̊̑̾̾͊̃͘͜ͅ  ☆\n\n[∆√ cувєя тк™ √∆]\n\n✯==== Creator ====✯\n\nhttp://line.me/ti/p/~cybertk0",
     "commentOn":True,
     "commentBlack":{},
-    "message":"Thx For Add Me (^_^)\nInvite Me To Your Group ヘ(^_^)ヘ",    
+    "wblack":False,
+    "dblack":False,
+    "clock":False,
+    "cNames":"",
+    "cNames":"",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
-    "Qr":False,
-    "Contact":False,
-    "Sambutan":False,
-    "inviteprotect":False,    
-    "alwaysRead":False,    
-    "Sider":{},
-    "Simi":{},    
-    "lang":"JP",
-    "BlGroup":{}
+    "protect":True,
+    "cancelprotect":True,
+    "inviteprotect":True,
+    "linkprotect":True,
 }
 
-settings = {
-    "simiSimi":{}
-    }
-    
-cctv = {
-    "cyduk":{},
-    "point":{},
-    "sidermem":{}
-}    
-
 wait2 = {
-    "readPoint":{},
-    "readMember":{},
-    "setTime":{},
-    "ROM":{}
+    'readPoint':{},
+    'readMember':{},
+    'setTime':{},
+    'ROM':{}
     }
-    
-mimic = {
-    "copy":False,
-    "copy2":False,
-    "status":False,
-    "target":{}
-    }    
 
 setTime = {}
 setTime = wait2['setTime']
-mulai = time.time() 
+
+contact = gye.getProfile()
+mybackup = gye.getProfile()
+mybackup.displayName = contact.displayName
+mybackup.statusMessage = contact.statusMessage
+mybackup.pictureStatus = contact.pictureStatus
+
+contact = ais.getProfile()
+backup = ais.getProfile()
+backup.displayName = contact.displayName
+backup.statusMessage = contact.statusMessage
+backup.pictureStatus = contact.pictureStatus
+
+def cms(string, commands): #/XXX, >XXX, ;XXX, ^XXX, %XXX, $XXX...
+    tex = ["+","@","/",">",";","^","%","$","＾","サテラ:","サテラ:","サテラ：","サテラ："]
+    for texX in tex:
+        for command in commands:
+            if string ==command:
+                return True
+    return False
+
+def bot(op):
+    try:
+        if op.type == 0:
+            return
+        if op.type == 13:
+            if mid in op.param3:
+                G = gye.getGroup(op.param1)
+                if wait["autoJoin"] == True:
+                    if wait["autoCancel"]["on"] == True:
+                        if len(G.members) <= wait["autoCancel"]["members"]:
+			    gye.rejectGroupInvitation(op.param1)
+                            ais.rejectGroupInvitation(op.param1)
+                            ki2.rejectGroupInvitation(op.param1)
+                            ki3.rejectGroupInvitation(op.param1)
+                            ki4.rejectGroupInvitation(op.param1)
+                            ki4.rejectGroupInvitation(op.param1)
+                            ki6.rejectGroupInvitation(op.param1)
+                            ki7.rejectGroupInvitation(op.param1)
+                            ki8.rejectGroupInvitation(op.param1)
+                            ki9.rejectGroupInvitation(op.param1)
+                            ki10.rejectGroupInvitation(op.param1)
+                        else:
+                            gye.acceptGroupInvitation(op.param1)
+                            ais.acceptGroupInvitation(op.param1)
+                            ki2.acceptGroupInvitation(op.param1)
+                            ki3.acceptGroupInvitation(op.param1)
+                            ki4.acceptGroupInvitation(op.param1)
+                            ki5.acceptGroupInvitation(op.param1)
+                            ki6.acceptGroupInvitation(op.param1)
+                            ki7.acceptGroupInvitation(op.param1)
+                            ki8.acceptGroupInvitation(op.param1)
+                            ki9.acceptGroupInvitation(op.param1)
+                            ki10.acceptGroupInvitation(op.param1)
+                    else:  
+                        gye.acceptGroupInvitation(op.param1)
+                        ais.acceptGroupInvitation(op.param1)
+                        ki2.acceptGroupInvitation(op.param1)
+                        ki3.acceptGroupInvitation(op.param1)
+                        ki4.acceptGroupInvitation(op.param1)
+                        ki5.acceptGroupInvitation(op.param1)
+                        ki6.acceptGroupInvitation(op.param1)
+                        ki7.acceptGroupInvitation(op.param1)
+                        ki8.acceptGroupInvitation(op.param1)
+                        ki9.acceptGroupInvitation(op.param1)
+                        ki10.acceptGroupInvitation(op.param1)
+                elif wait["autoCancel"]["on"] == True:
+                    if len(G.members) <= wait["autoCancel"]["members"]:
+                        gye.rejectGroupInvitation(op.param1)   
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 with open('Owner.json', 'r') as fp:
     Owner = json.load(fp)
@@ -213,30 +252,7 @@ def sendMessageWithMention(to, mid):
         logError(error)
         
 def helpmessage():
-    helpMessage = "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ คำสั่งทั้งหมด" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ help1" + "\n" + \
-                  "║͜͡☆➣ help2" + "\n" + \
-                  "║͜͡☆➣ Tag" + "\n" + \
-                  "║͜͡☆➣ Halo ( panggil bot ) " + "\n" + \
-                  "║͜͡☆➣ Absen" + "\n" + \
-                  "║͜͡☆➣ Balik ( usir bot ) " + "\n" + \
-                  "║͜͡☆➣ Aku balik ( kluar semua ) " + "\n" + \
-                  "║͜͡☆➣ Cekk ( cek semua bot )" + "\n" + \
-                  "║͜͡☆➣ Me" + "\n" + \
-                  "║͜͡☆➣ Sp" + "\n" + \
-                  "║͜͡☆➣ Status" + "\n" + \
-                  "║͜͡☆➣ Ciak @" + "\n" + \
-                  "║͜͡☆➣ Kickallmember" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════════╬♥╬════════╯"
+    helpMessage =
     return helpMessage
     
 def helptexttospeech():
