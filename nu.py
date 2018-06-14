@@ -212,25 +212,25 @@ def bot(op):
 #read = json.load(readOpen)
 #settings = json.load(settingsOpen)
 
-def restartBot():
-    print ("[ INFO ] BOT RESETTED")
-    backupData()
-    python = sys.executable
-    os.execl(python, python, *sys.argv)
+#def restartBot():
+    #print ("[ INFO ] BOT RESETTED")
+    #backupData()
+    #python = sys.executable
+    #os.execl(python, python, *sys.argv)
     
-def logError(text):
-    gye.log("[ ERROR ] " + str(text))
-    time_ = datetime.now()
-    with open("errorLog.txt","a") as error:
-        error.write("\n[%s] %s" % (str(time), text))
+#def logError(text):
+    #gye.log("[ ERROR ] " + str(text))
+    #time_ = datetime.now()
+    #with open("errorLog.txt","a") as error:
+        #error.write("\n[%s] %s" % (str(time), text))
         
-def sendMessageWithMention(to, mid):
-    try:
-        aa = '{"S":"0","E":"3","M":'+json.dumps(mid)+'}'
-        text_ = '@x '
-        gye.sendMessage(to, text_, contentMetadata={'MENTION':'{"MENTIONEES":['+aa+']}'}, contentType=0)
-    except Exception as error:
-        logError(error)
+#def sendMessageWithMention(to, mid):
+    #try:
+        #aa = '{"S":"0","E":"3","M":'+json.dumps(mid)+'}'
+        #text_ = '@x '
+       # gye.sendMessage(to, text_, contentMetadata={'MENTION':'{"MENTIONEES":['+aa+']}'}, contentType=0)
+   # except Exception as error:
+      #  logError(error)
         
 def helpmessage():
     helpMessage = """ กำลังทดลอง 
