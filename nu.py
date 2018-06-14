@@ -418,55 +418,147 @@ def lineBot(op):
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
 #==============================================================================#
-                elif text.lower() == 'เช็คป้องกัน':
-                    try:
-                        ret_ = "╭════════╬♥╬════════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
-                        if settings["protect"] == True: ret_ += "║͜͡☆➣ Protect ✅"
-                        else: ret_ += "║͜͡☆➣  Protect ❌"
-                        if settings["qrprotect"] == True: ret_ += "\n║͜͡☆➣ Qr Protect ✅"
-                        else: ret_ += "\n║͜͡☆➣ Qr Protect ❌"
-                        if settings["inviteprotect"] == True: ret_ += "\n║͜͡☆➣ Invite Protect ✅"
-                        else: ret_ += "\n║͜͡☆➣ Invite Protect ❌"
-                        if settings["cancelprotect"] == True: ret_ += "\n║͜͡☆➣ Cancel Protect ✅"
-                        else: ret_ += "\n║͜͡☆➣ Cancel Protect ❌"
-                        if settings["autoAdd"] == True: ret_ += "\n║͜͡☆➣ Auto Add ✅"
-                        else: ret_ += "\n║͜͡☆➣ Auto Add ❌"
-                        if settings["autoJoin"] == True: ret_ += "\n║͜͡☆➣ Auto Join ✅"
-                        else: ret_ += "\n║͜͡☆➣ Auto Join ❌"
-                        if settings["autoLeave"] == True: ret_ += "\n║͜͡☆➣ Auto Leave ✅"
-                        else: ret_ += "\n║͜͡☆➣ Auto Leave ❌"
-                        if settings["autoRead"] == True: ret_ += "\n║͜͡☆➣ Auto Read ✅"
-                        else: ret_ += "\n║͜͡☆➣ Auto Read ❌"
-                        if settings["checkSticker"] == True: ret_ += "\n║͜͡☆➣ Check Sticker ✅"
-                        else: ret_ += "\n║͜͡☆➣ Check Sticker ❌"
-                        if settings["detectMention"] == True: ret_ += "\n║͜͡☆➣ Detect Mention ✅"
-                        else: ret_ += "\n║͜͡☆➣ Detect Mention ❌"
-                        ret_ += "\n╰════════╬♥╬════════╯\n╭════════╬♥╬════════╮\n  ║͜͡☆➣ ♥ GYEVHA BOTS ♥\n╰════════╬♥╬════════╯"
-                        gye.sendMessage(to, str(ret_))
-                    except Exception as e:
-                        gye.sendMessage(msg.to, str(e))
+               # elif text.lower() == 'เช็คป้องกัน':
+                    #try:
+                       # ret_ = "╭════════╬♥╬════════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
+                       # if settings["protect"] == True: ret_ += "║͜͡☆➣ Protect ✅"
+                        #else: ret_ += "║͜͡☆➣  Protect ❌"
+                       # if settings["qrprotect"] == True: ret_ += "\n║͜͡☆➣ Qr Protect ✅"
+                       # else: ret_ += "\n║͜͡☆➣ Qr Protect ❌"
+                       # if settings["inviteprotect"] == True: ret_ += "\n║͜͡☆➣ Invite Protect ✅"
+                        #else: ret_ += "\n║͜͡☆➣ Invite Protect ❌"
+                       # if settings["cancelprotect"] == True: ret_ += "\n║͜͡☆➣ Cancel Protect ✅"
+                       # else: ret_ += "\n║͜͡☆➣ Cancel Protect ❌"
+                       # if settings["autoAdd"] == True: ret_ += "\n║͜͡☆➣ Auto Add ✅"
+                       # else: ret_ += "\n║͜͡☆➣ Auto Add ❌"
+                        #if settings["autoJoin"] == True: ret_ += "\n║͜͡☆➣ Auto Join ✅"
+                       # else: ret_ += "\n║͜͡☆➣ Auto Join ❌"
+                       # if settings["autoLeave"] == True: ret_ += "\n║͜͡☆➣ Auto Leave ✅"
+                       # else: ret_ += "\n║͜͡☆➣ Auto Leave ❌"
+                      #  if settings["autoRead"] == True: ret_ += "\n║͜͡☆➣ Auto Read ✅"
+                       # else: ret_ += "\n║͜͡☆➣ Auto Read ❌"
+                      #  if settings["checkSticker"] == True: ret_ += "\n║͜͡☆➣ Check Sticker ✅"
+                      #  else: ret_ += "\n║͜͡☆➣ Check Sticker ❌"
+                      #  if settings["detectMention"] == True: ret_ += "\n║͜͡☆➣ Detect Mention ✅"
+                      #  else: ret_ += "\n║͜͡☆➣ Detect Mention ❌"
+                      #  ret_ += "\n╰════════╬♥╬════════╯\n╭════════╬♥╬════════╮\n  ║͜͡☆➣ ♥ GYEVHA BOTS ♥\n╰════════╬♥╬════════╯"
+                      #  gye.sendMessage(to, str(ret_))
+                   # except Exception as e:
+                       # gye.sendMessage(msg.to, str(e))
                         
-                elif msg.text.lower().startswith("spaminvite "):
+               # elif msg.text.lower().startswith("spaminvite "):
                    #if msg._from in admin:
-                    dan = text.split("|")
-                    userid = dan[0]
-                    namagrup = dan[0]
-                    jumlah = int(dan[0])
-                    grups = gye.groups
-                    tgb = gye.findContactsByUserid(userid)
-                    if jumlah <= 10000000:
-                        for var in range(0,jumlah):
-                            try:
-                                gye.createGroup(str(namagrup), [tgb.mid])
-                                for i in grups:
-                                    grup = gye.getGroup(i)
-                                    if grup.name == namagrup:
-                                        gye.inviteIntoGroup(grup.id, [tgb.mid])
-                                        gye.sendMessage(to, "@! sukses spam grup!\n\nkorban: @!\njumlah: {}\nnama grup: {}".format(jumlah, str(namagrup)), [sender, tgb.mid])
-                            except Exception as Nigga:
-                                gye.sendMessage(to, str(Nigga))
+                    #dan = text.split("|")
+                    #userid = dan[0]
+                    #namagrup = dan[0]
+                  #  jumlah = int(dan[0])
+                  #  grups = gye.groups
+                  #  tgb = gye.findContactsByUserid(userid)
+                   # if jumlah <= 10000000:
+                    #    for var in range(0,jumlah):
+                         #   try:
+                             #   gye.createGroup(str(namagrup), [tgb.mid])
+                              #  for i in grups:
+                                   # grup = gye.getGroup(i)
+                                    #if grup.name == namagrup:
+                                 #       gye.inviteIntoGroup(grup.id, [tgb.mid])
+                                       # gye.sendMessage(to, "@! sukses spam grup!\n\nkorban: @!\njumlah: {}\nnama grup: {}".format(jumlah, str(namagrup)), [sender, tgb.mid])
+                           # except Exception as Nigga:
+                                #gye.sendMessage(to, str(Nigga))
                             #else:
-                                gye.sendMessage(to, "@! kebanyakan njer!!", [sender])
+                               # gye.sendMessage(to, "@! kebanyakan njer!!", [sender])
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ทดลองนุ$สุ~~~~~~~~~~~~~~~~~~~~~~~~~~~~#	                   	
+# Pembatas Script #
+                            elif cmd == "autoadd on":
+                                settings["autoAdd"] = True
+                                client.sendMessage(to, "Berhasil mengaktifkan auto add")
+                            elif cmd == "autoadd off":
+                                settings["autoAdd"] = False
+                                client.sendMessage(to, "Berhasil menonaktifkan auto add")
+                            elif cmd == "autojoin on":
+                                settings["autoJoin"] = True
+                                client.sendMessage(to, "Berhasil mengaktifkan auto join")
+                            elif cmd == "autojoin off":
+                                settings["autoJoin"] = False
+                                client.sendMessage(to, "Berhasil menonaktifkan auto join")
+                            elif cmd == "autoleave on":
+                                settings["autoLeave"] = True
+                                client.sendMessage(to, "Berhasil mengaktifkan auto leave")
+                            elif cmd == "autoleave off":
+                                settings["autoLeave"] = False
+                                client.sendMessage(to, "Berhasil menonaktifkan auto leave")
+                            elif cmd == "autorespon on":
+                                settings["autoRespon"] = True
+                                client.sendMessage(to, "Berhasil mengaktifkan auto respon")
+                            elif cmd == "autorespon off":
+                                settings["autoRespon"] = False
+                                client.sendMessage(to, "Berhasil menonaktifkan auto respon")
+                            elif cmd == "autoread on":
+                                settings["autoRead"] = True
+                                client.sendMessage(to, "Berhasil mengaktifkan auto read")
+                            elif cmd == "autoread off":
+                                settings["autoRead"] = False
+                                client.sendMessage(to, "Berhasil menonaktifkan auto read")
+                            elif cmd == "autojointicket on":
+                                settings["autoJoinTicket"] = True
+                                client.sendMessage(to, "Berhasil mengaktifkan auto join by ticket")
+                            elif cmd == "autoJoinTicket off":
+                                settings["autoJoin"] = False
+                                client.sendMessage(to, "Berhasil menonaktifkan auto join by ticket")
+                            elif cmd == "checkcontact on":
+                                settings["checkContact"] = True
+                                client.sendMessage(to, "Berhasil mengaktifkan check details contact")
+                            elif cmd == "checkcontact off":
+                                settings["checkContact"] = False
+                                client.sendMessage(to, "Berhasil menonaktifkan check details contact")
+                            elif cmd == "checkpost on":
+                                settings["checkPost"] = True
+                                client.sendMessage(to, "Berhasil mengaktifkan check details post")
+                            elif cmd == "checkpost off":
+                                settings["checkPost"] = False
+                                client.sendMessage(to, "Berhasil menonaktifkan check details post")
+                            elif cmd == "checksticker on":
+                                settings["checkSticker"] = True
+                                client.sendMessage(to, "Berhasil mengaktifkan check details sticker")
+                            elif cmd == "checksticker off":
+                                settings["checkSticker"] = False
+                                client.sendMessage(to, "Berhasil menonaktifkan check details sticker")
+                            elif cmd == "unsendchat on":
+                                settings["unsendMessage"] = True
+                                client.sendMessage(to, "Berhasil mengaktifkan unsend message")
+                            elif cmd == "unsendchat off":
+                                settings["unsendMessage"] = False
+                                client.sendMessage(to, "Berhasil menonaktifkan unsend message")
+                            elif cmd == "status":
+                                try:
+                                    ret_ = "╔══[ Status ]"
+                                    if settings["autoAdd"] == True: ret_ += "\n╠══[ ON ] Auto Add"
+                                    else: ret_ += "\n╠══[ OFF ] Auto Add"
+                                    if settings["autoJoin"] == True: ret_ += "\n╠══[ ON ] Auto Join"
+                                    else: ret_ += "\n╠══[ OFF ] Auto Join"
+                                    if settings["autoLeave"] == True: ret_ += "\n╠══[ ON ] Auto Leave Room"
+                                    else: ret_ += "\n╠══[ OFF ] Auto Leave Room"
+                                    if settings["autoJoinTicket"] == True: ret_ += "\n╠══[ ON ] Auto Join Ticket"
+                                    else: ret_ += "\n╠══[ OFF ] Auto Join Ticket"
+                                    if settings["autoRead"] == True: ret_ += "\n╠══[ ON ] Auto Read"
+                                    else: ret_ += "\n╠══[ OFF ] Auto Read"
+                                    if settings["autoRespon"] == True: ret_ += "\n╠══[ ON ] Detect Mention"
+                                    else: ret_ += "\n╠══[ OFF ] Detect Mention"
+                                    if settings["checkContact"] == True: ret_ += "\n╠══[ ON ] Check Contact"
+                                    else: ret_ += "\n╠══[ OFF ] Check Contact"
+                                    if settings["checkPost"] == True: ret_ += "\n╠══[ ON ] Check Post"
+                                    else: ret_ += "\n╠══[ OFF ] Check Post"
+                                    if settings["checkSticker"] == True: ret_ += "\n╠══[ ON ] Check Sticker"
+                                    else: ret_ += "\n╠══[ OFF ] Check Sticker"
+                                    if settings["setKey"] == True: ret_ += "\n╠══[ ON ] Set Key"
+                                    else: ret_ += "\n╠══[ OFF ] Set Key"
+                                    if settings["unsendMessage"] == True: ret_ += "\n╠══[ ON ] Unsend Message"
+                                    else: ret_ += "\n╠══[ OFF ] Unsend Message"
+                                    ret_ += "\n╚══[ Status ]"
+                                    client.sendMessage(to, str(ret_))
+                                except Exception as e:
+                                    client.sendMessage(msg.to, str(e))
+# Pembatas Script #      
 #-------------------------------------------------------------------------------
                 elif msg.text.lower().startswith("owneradd "):
                         key = eval(msg.contentMetadata["MENTION"])
