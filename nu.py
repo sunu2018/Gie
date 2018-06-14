@@ -168,13 +168,13 @@ def bot(op):
                 if wait["autoJoin"] == True:
                     if wait["autoCancel"]["on"] == True:
                         if len(G.members) <= wait["autoCancel"]["members"]:
-			    gye.rejectGroupInvitation(op.param1)
+			    #gye.rejectGroupInvitation(op.param1)
+                            gye.rejectGroupInvitation(op.param1)
                             ais.rejectGroupInvitation(op.param1)
                             ki2.rejectGroupInvitation(op.param1)
                             ki3.rejectGroupInvitation(op.param1)
                             ki4.rejectGroupInvitation(op.param1)
-                            ki4.rejectGroupInvitation(op.param1)
-                            ki6.rejectGroupInvitation(op.param1)
+                            ki5.rejectGroupInvitation(op.param1)
                             ki7.rejectGroupInvitation(op.param1)
                             ki8.rejectGroupInvitation(op.param1)
                             ki9.rejectGroupInvitation(op.param1)
