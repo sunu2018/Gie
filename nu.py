@@ -101,6 +101,74 @@ responsename2 = ki3.getProfile().displayName
 responsename3 = ki4.getProfile().displayName
 #==============================================================================#
 
+wait = {
+    "LeaveRoom":True,
+    "Bot":True,
+    "AutoJoin":False,
+    "AutoJoinCancel":False,
+    "memberscancel":30,
+    "Members":1,
+    "AutoCancel":False,
+    "AutoKick":False,
+    'pap':{},
+    'invite':{},
+    'steal':{},
+    'gift':{},
+    'copy':{},    
+    'likeOn':{},
+    'detectMention':False,
+    'detectMention2':True,
+    'detectMention3':False,
+    'kickMention':False,  
+    'sticker':False,  
+    'timeline':True,
+    "Timeline":True,
+    "comment":"Bot Auto Like ©By : Vipro\nContact Me : 👉 line.me/ti/p/~nunu_kap123",    
+    "commentOn":True,
+    "commentBlack":{},
+    "message":"Thx For Add Me (^_^)\nInvite Me To Your Group ヘ(^_^)ヘ",    
+    "blacklist":{},
+    "wblacklist":False,
+    "dblacklist":False,
+    "Qr":False,
+    "Contact":False,
+    "Sambutan":False,
+    "inviteprotect":False,    
+    "alwaysRead":False,    
+    "Sider":{},
+    "Simi":{},    
+    "lang":"JP",
+    "BlGroup":{}
+}
+
+settings = {
+    "simiSimi":{}
+    }
+    
+cctv = {
+    "cyduk":{},
+    "point":{},
+    "sidermem":{}
+}    
+
+wait2 = {
+    "readPoint":{},
+    "readMember":{},
+    "setTime":{},
+    "ROM":{}
+    }
+    
+mimic = {
+    "copy":False,
+    "copy2":False,
+    "status":False,
+    "target":{}
+    }    
+
+setTime = {}
+setTime = wait2['setTime']
+mulai = time.time() 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 with open('Owner.json', 'r') as fp:
     Owner = json.load(fp)
     
@@ -402,45 +470,9 @@ def lineBot(op):
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
 #==============================================================================#
-                
-#==============================================================================#
-                        
-                elif text.lower() == 'เช็ค':
-                    try:	
-                        ret_ = "╭════════╬♥╬════════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"                    
-                        if settings["autoAdd"] == True: ret_ += "\n╠ รับแอดออโต้ ✔"
-                        else: ret_ += "\n╠ รับแอดออโต้    ✘ "
-                        if settings["autoJoin"] == True: ret_ += "\n╠ เข้าห้องออโต้ ✔"
-                        else: ret_ += "\n╠ เข้าห้องออโต้    ✘ "
-                        if settings["autoCancel"]["on"] == True:ret_+="\n╠ ยกเลิกเชิญกลุ่มเมื่อมีสมาชิกต่ำกว่า: " + str(settings["autoCancel"]["members"]) + " → ✔"
-                        else: ret_ += "\n╠ ยกเลิกเชิญกลุ่ม    ✘ "						
-                        if settings["autoLeave"] == True: ret_ += "\n╠ ออกแชทรวม ✔"
-                        else: ret_ += "\n╠ ออกแชทรวม ✘ "
-                        if settings["autoRead"] == True: ret_ += "\n╠ อ่านออโต้ ✔"
-                        else: ret_ += "\n╠ อ่านออโต้   ✘ "				
-                        if settings["checkSticker"] == True: ret_ += "\n╠ Sticker ✔"
-                        else: ret_ += "\n╠ Sticker        ✘ "
-                        if settings["detectMention"] == True: ret_ += "\n╠ ตอบกลับคนแทค ✔"
-                        else: ret_ += "\n╠ ตอบกลับคนแทค ✘ "
-                        if settings["potoMention"] == True: ret_ += "\n╠ แสดงภาพคนแทค ✔"
-                        else: ret_ += "\n╠ แสดงภาพคนแทค ✘ "						
-                        if RfuProtect["inviteprotect"] == True: ret_ += "\n╠ กันเชิญ ✔"
-                        else: ret_ += "\n╠ กันเชิญ ✘ "
-                        if RfuProtect["cancelprotect"] == True: ret_ += "\n╠ กันยกเชิญ ✔"
-                        else: ret_ += "\n╠ กันยกเชิญ ✘ "
-                        if RfuProtect["protect"] == True: ret_ += "\n╠ ป้องกัน ✔"
-                        else: ret_ += "\n╠ ป้องกัน ✘ "
-                        if RfuProtect["linkprotect"] == True: ret_ += "\n╠ ป้องกันเปิดลิ้ง ✔"
-                        else: ret_ += "\n╠ ป้องกันเปิดลิ้ง ✘ "
-                        if RfuProtect["Protectguest"] == True: ret_ += "\n╠ ป้องกันสมาชิก ✔"
-                        else: ret_ += "\n╠ ป้องกันสมาชิก ✘ "
-                        if RfuProtect["Protectjoin"] == True: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✔"
-                        else: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✘ "						
-                        ret_ += "\n╰════════╬♥╬════════╯\n╭════════╬♥╬════════╮\n  ║͜͡☆➣ ♥ GYEVHA BOTS ♥\n╰════════╬♥╬════════╯"
-                        gye.sendMessage(to, str(ret_))
-                    except Exception as e:
-                        gye.sendMessage(msg.to, str(e))
-                        
+                                                   
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                        #คำสั่งพิเศษ
                 elif text.lower() == 'autoadd on':
                     settings["autoAdd"] = True
                     gye.sendMessage(to, "Autoadd enabled.")
@@ -494,7 +526,7 @@ def lineBot(op):
                     gye.sendMessage(to, "Check sticker disabled.")							 
 #==============================================================================#
 
-                elif text.lower() == 'เช็คป้องกัน':
+                elif text.lower() == 'เช็ค':
                     try:
                         ret_ = "╭════════╬♥╬════════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
                         if settings["protect"] == True: ret_ += "║͜͡☆➣ Protect ✅"
@@ -734,7 +766,7 @@ def lineBot(op):
                         settings["inviteprotect"] = True
                         settings["cancelprotect"] = True
                         settings["join link"] = True
-                        gye.sendMessage(msg.to,"Join link on")
+                        gye.sendMessage(msg.to,"join link on")
                         gye.sendMessage(msg.to,"Qrprotect on")
                         gye.sendMessage(msg.to,"Protect on")
                         gye.sendMessage(msg.to,"Inviteprotect on")
@@ -756,25 +788,7 @@ def lineBot(op):
              #           gye.sendMessage(msg.to,"Just for Owner")
 		
 #-------------------------------------------------------------------------------     
-                  elif msg.text in ["Url on"]:
-                      if msg.toType == 2:
-                          X = gye.getGroup(msg.to)
-                          X.preventJoinByTicket = False
-                          gye.updateGroup(X)
-                          gye.sendText(msg.to,"Url Sudah Aktif")
-                      else:
-                          gye.sendText(msg.to,"Can not be used outside the group")
- 
-                  elif msg.text in ["Url off"]:
-                      if msg.toType == 2:
-                          X = gye.getGroup(msg.to)
-                          X.preventJoinByTicket = True
-                          gye.updateGroup(X)
-                          gye.sendText(msg.to,"Url Sudah Di Nonaktifkan")
-
-                      else:
-                          gye.sendText(msg.to,"Can not be used outside the group")                 
-
+                  
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             
                 elif text.lower() == 'autoadd on':
