@@ -252,7 +252,7 @@ def sendMessageWithMention(to, mid):
         logError(error)
         
 def helpmessage():
-    helpMessage =
+    helpMessage = """ กำลังทดลอง 
     return helpMessage
     
 def helptexttospeech():
