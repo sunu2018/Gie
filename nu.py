@@ -209,8 +209,8 @@ def bot(op):
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #==============================================================================#
 
-read = json.load(readOpen)
-settings = json.load(settingsOpen)
+#read = json.load(readOpen)
+#settings = json.load(settingsOpen)
 
 def restartBot():
     print ("[ INFO ] BOT RESETTED")
