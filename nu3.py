@@ -425,7 +425,7 @@ def bot(op):
             elif msg.text in ["TK Help","help","[∆√ cувєя тк™ √∆]"]:
             	if msg.from_ in admin:
                     ki.sendText(msg.to,helpMessage)
-                else:
+                #else:
                     ki.sendText(msg.to,helpt)         
             elif msg.text in ["Invite:on"]:
             	if msg.from_ in admin:
