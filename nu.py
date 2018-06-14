@@ -207,25 +207,6 @@ def bot(op):
                     if len(G.members) <= wait["autoCancel"]["members"]:
                         gye.rejectGroupInvitation(op.param1)   
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-with open('Owner.json', 'r') as fp:
-    Owner = json.load(fp)
-    
-with open('admin.json', 'r') as fp:
-    admin = json.load(fp)
-    
-myProfile = {
-	"displayName": "",
-	"statusMessage": "ถ่อว",
-	"pictureStatus": ""
-}
-
-myProfile["displayName"] = gyeProfile.displayName
-myProfile["statusMessage"] = gyeProfile.statusMessage
-myProfile["pictureStatus"] = gyeProfile.pictureStatus
-
-readOpen = codecs.open("read.json","r","utf-8")
-settingsOpen = codecs.open("temp.json","r","utf-8")
-
 #==============================================================================#
 
 read = json.load(readOpen)
