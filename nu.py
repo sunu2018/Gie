@@ -57,11 +57,11 @@ botStart = time.time()
 #yg atas dinpagar atau bisa juga token di atas 
 #di dalam tanda LINE ("TOKEN MU ")
 
-gye = LINE("EtJK5At10gbYcySwFy7c.ugJ+9dMgaAs1/HYyDUOxda.B8nHphAzET3gpq/+2lyfW22R+fWSICiovadWNxsiC+Y=")
-ais = LINE("EtKGt9Aea04KryxIOx8b.OaW45w5kEMyRG/7qK2fnwW.WQ+hsjVxt8KOWcfNrX2V4RLOgfd2Mz9PhWtYDPIXZVU=")
-ki2 = LINE("EtZREl8uhl6VAapUjlTc.WSbM8Imh8gKzhGhc98UuVa.feeQQaWBEpieqDeI+TBL9t7uKaW9tBVFmRZfAB9tHUk=")
-ki3 = LINE("Et1R1XGdZj2GVVWVYRud.dCZhkZtrJsP18XdGxTjDlq.oMaLwiyz0XGoj5+69rFNYbV65stIZKnfe4kqjE/YMKE=")
-ki4 = LINE("Et8llZ0PwVr5fdkv0zz9.NLEdVUFE9zK89Wsdc4+xQq.Mrlvk46xgkmNFquNEzwbx46i1km7wRtssu1wEHYhxFM=")
+gye = LINE("EtHO8rZgTw1q6juRoVvf.4YSrMg2oNLZ3c2qS97Qi+W.k2TeLOz1HTtz2jJ+CuaaDHN+R9wcNMOY2hfRLRA6GvA=")
+ais = LINE("EtQQZ5O8Q9ZNn47rzMCd.ZumT2/Y29n7tOJ4IwPo4tq.1TFAsQAvYzlyAp1XEM5RsdIZwZtoEnir3y6dea1fo1E=")
+ki2 = LINE("Et0Oj6SRTe8eGtw9jK3d.SPS+quoffhJbcv30K1vAdq.gD9LSFBUBorGs552hX0ltdIVxai6oaF/Ox4aGWcOFJA=")
+ki3 = LINE("EtuabQyPa4w1jYNY3sm0.ZaBHUQRqncLKKv+uKgw/qa.uBKyRSqmAN14wzFVY5K/nO+ja0fHE1IoLuFUqDALCsA=")
+ki4 = LINE("EtRhFIGABsjUHKYKVoqe.lVN3XpWByvHZ/lHSAQFaBG.Fo8l69iIhSLOiMhTWoKoj6JIgftT7HEjwC0RykLYwZc=")
 
 KAC = [gye,ais,ki2,ki3,ki4]
 GUE = [ais,ki2,ki3,ki4]  #ini jangan luh hapus peak ini fungsi Ciak alias kick
@@ -111,8 +111,22 @@ with open('admin.json', 'r') as fp:
     admin = json.load(fp)
     
 myProfile = {
-	"displayName": "",
-	"statusMessage": "",
+	
+    "autoAdd": False,
+    "autoJoin": False,
+    "autoLeave": False,
+    "autoRead": False,
+    "autoRespon": False,
+    "autoJoinTicket": False,
+    "checkContact": False,
+    "checkPost": False,
+    "checkSticker": False,
+    "changePictureProfile": False,
+    "changeGroupPicture": [],
+    "keyCommand": "",
+    "myProfile": {
+	"displayName": "9⃣..Nu..9⃣􀈂􀅣.􏿿",
+	"statusMessage": " สวัดดี นี้เป็นข้อความอัตโนมัติ ",
 	"pictureStatus": ""
 }
 
