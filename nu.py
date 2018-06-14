@@ -128,14 +128,43 @@ myProfile = {
 	"displayName": "9⃣..Nu..9⃣􀈂􀅣.􏿿",
 	"statusMessage": " สวัดดี นี้เป็นข้อความอัตโนมัติ ",
 	"pictureStatus": ""
+    },
+    "mimic": {
+        "copy": False,
+        "status": False,
+        "target": {}
+    },
+    "setKey": False,
+    "unsendMessage": False
 }
 
-myProfile["displayName"] = gyeProfile.displayName
-myProfile["statusMessage"] = gyeProfile.statusMessage
-myProfile["pictureStatus"] = gyeProfile.pictureStatus
+read = {
+    "ROM": {},
+    "readPoint": {},
+    "readMember": {},
+    "readTime": {}
+}
 
-readOpen = codecs.open("read.json","r","utf-8")
-settingsOpen = codecs.open("temp.json","r","utf-8")
+
+try:
+    with open("Log_data.json","r",encoding="utf_8_sig") as f:
+        msg_dict = json.loads(f.read())
+except:
+    print("Couldn't read Log data")
+    
+settings["myProfile"]["displayName"] = clientProfile.displayName
+settings["myProfile"]["statusMessage"] = clientProfile.statusMessage
+settings["myProfile"]["pictureStatus"] = clientProfile.pictureStatus
+coverId = client.getProfileDetail()["result"]["objectId"]
+settings["myProfile"]["coverId"] = coverId
+
+
+#myProfile["displayName"] = gyeProfile.displayName
+#myProfile["statusMessage"] = gyeProfile.statusMessage
+#myProfile["pictureStatus"] = gyeProfile.pictureStatus
+
+#readOpen = codecs.open("read.json","r","utf-8")
+#settingsOpen = codecs.open("temp.json","r","utf-8")
 
 #==============================================================================#
 
