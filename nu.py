@@ -584,25 +584,7 @@ def lineBot(op):
                                 mc += "╠✪ " +gye.getContact(mi_d).displayName + "\n"
                             gye.sendMessage(msg.to,mc + "╠═══════════════\n╠✪〘 line.me/ti/p/~nunu_kap123 〙\n╚═══════════════")
 #-------------------------------------------------------------------------------
-            elif msg.text in ["Ourl","Url on"]:
-                if msg.toType == 2:
-                    X = gye.getGroup(msg.to)
-                    X.preventJoinByTicket = False
-                    gye.updateGroup(X)
-                    gye.sendText(msg.to,"Url Sudah Aktif")
-                else:
-                    gye.sendText(msg.to,"Can not be used outside the group")
- 
-            elif msg.text in ["Curl","Url off"]:
-                if msg.toType == 2:
-                    X = gye.getGroup(msg.to)
-                    X.preventJoinByTicket = True
-                    gye.updateGroup(X)
-                    gye.sendText(msg.to,"Url Sudah Di Nonaktifkan")
-
-                else:
-                    gye.sendText(msg.to,"Can not be used outside the group")                 
-
+            
                 elif msg.text.lower().startswith("adminadd "):
                         targets = []
                         key = eval(msg.contentMetadata["MENTION"])
@@ -773,7 +755,27 @@ def lineBot(op):
             #        else:
              #           gye.sendMessage(msg.to,"Just for Owner")
 		
-#-------------------------------------------------------------------------------             
+#-------------------------------------------------------------------------------     
+                  elif msg.text in ["Url on"]:
+                      if msg.toType == 2:
+                          X = gye.getGroup(msg.to)
+                          X.preventJoinByTicket = False
+                          gye.updateGroup(X)
+                          gye.sendText(msg.to,"Url Sudah Aktif")
+                      else:
+                          gye.sendText(msg.to,"Can not be used outside the group")
+ 
+                  elif msg.text in ["Url off"]:
+                      if msg.toType == 2:
+                          X = gye.getGroup(msg.to)
+                          X.preventJoinByTicket = True
+                          gye.updateGroup(X)
+                          gye.sendText(msg.to,"Url Sudah Di Nonaktifkan")
+
+                      else:
+                          gye.sendText(msg.to,"Can not be used outside the group")                 
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
             
                 elif text.lower() == 'autoadd on':
                     settings["autoAdd"] = True
