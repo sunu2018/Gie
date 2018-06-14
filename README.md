@@ -1,29 +1,32 @@
-#SELFBOT PYHON3
-------
-- `apt update`
-- `apt upgrade`
-- `apt install git`
-- `apt install python3-pip`
-- `pip3 install rsa`
-- `pip3 install thrift==0.11.0`
-- `pip3 install requests`
-- `pip3 install bs4`
-- `pip3 install gtts`
-- `pip3 install pytz`
-- `pip3 install humanfriendly`
-- `pip3 install googletrans`
-- `git clone https://github.com/gyevha2/Gie`
+# ![logo](LINE-sm.png) LINE Python
 
-- 'Cara Run Bot'
-- Ketik -> `cd Gye`
-- Ketik -> `python3 gi4.py`
-- `Jangan Lupa Kalian isi Dulu Token nya`
-- `Edit via nano Atau storage`
+*LINE Messaging's private API*
 
-- 'untuk Run Via storage'
-- `cd storage`
-- `cd downloads`
-- `cd Gye`
-- `python3 gi4.py`
+----
 
-- thank id Line me ( aisyagye )
+## Installation
+
+Installation is simple. It can be installed from pip using the following command:
+```sh
+$ python -m pip install -r requirements.txt
+```
+
+## Usage
+
+```python
+>>> from LineAPI.linepy import *
+>>> client = LINE("")
+>>> client.log("Auth Token : " + str(line.authToken))
+```
+
+## LINE
+[HelloWorld Square](https://line.me/ti/g2/LPYXUFI1YE)
+
+## Discord
+[HelloWorld](https://discord.gg/5jqbutB)
+
+## Author
+Muhammad Mursalin Darmamawan / [@Alin](https://line.me/t/p/~muhmursalind)
+
+## Author Linepy
+Fadhiil Rachman / [@fadhiilrachman](https://www.instagram.com/fadhiilrachman)
