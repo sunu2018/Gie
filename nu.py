@@ -100,7 +100,6 @@ responsename3 = ki2.getProfile().displayName
 responsename2 = ki3.getProfile().displayName
 responsename3 = ki4.getProfile().displayName
 #==============================================================================#
-
 wait = {
     "LeaveRoom":True,
     "Bot":True,
