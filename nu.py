@@ -471,64 +471,64 @@ def lineBot(op):
 # Pembatas Script #
                             elif cmd == "autoadd on":
                                 settings["autoAdd"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan auto add")
+                                gye.sendMessage(to, "Berhasil mengaktifkan auto add")
                             elif cmd == "autoadd off":
                                 settings["autoAdd"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan auto add")
+                                gye.sendMessage(to, "Berhasil menonaktifkan auto add")
                             elif cmd == "autojoin on":
                                 settings["autoJoin"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan auto join")
+                                gye.sendMessage(to, "Berhasil mengaktifkan auto join")
                             elif cmd == "autojoin off":
                                 settings["autoJoin"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan auto join")
+                                gye.sendMessage(to, "Berhasil menonaktifkan auto join")
                             elif cmd == "autoleave on":
                                 settings["autoLeave"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan auto leave")
+                                gye.sendMessage(to, "Berhasil mengaktifkan auto leave")
                             elif cmd == "autoleave off":
                                 settings["autoLeave"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan auto leave")
+                                gye.sendMessage(to, "Berhasil menonaktifkan auto leave")
                             elif cmd == "autorespon on":
                                 settings["autoRespon"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan auto respon")
+                                gye.sendMessage(to, "Berhasil mengaktifkan auto respon")
                             elif cmd == "autorespon off":
                                 settings["autoRespon"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan auto respon")
+                                gye.sendMessage(to, "Berhasil menonaktifkan auto respon")
                             elif cmd == "autoread on":
                                 settings["autoRead"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan auto read")
+                                gye.sendMessage(to, "Berhasil mengaktifkan auto read")
                             elif cmd == "autoread off":
                                 settings["autoRead"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan auto read")
+                                gye.sendMessage(to, "Berhasil menonaktifkan auto read")
                             elif cmd == "autojointicket on":
                                 settings["autoJoinTicket"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan auto join by ticket")
+                                gye.sendMessage(to, "Berhasil mengaktifkan auto join by ticket")
                             elif cmd == "autoJoinTicket off":
                                 settings["autoJoin"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan auto join by ticket")
+                                gye.sendMessage(to, "Berhasil menonaktifkan auto join by ticket")
                             elif cmd == "checkcontact on":
                                 settings["checkContact"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan check details contact")
+                                gye.sendMessage(to, "Berhasil mengaktifkan check details contact")
                             elif cmd == "checkcontact off":
                                 settings["checkContact"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan check details contact")
+                                gye.sendMessage(to, "Berhasil menonaktifkan check details contact")
                             elif cmd == "checkpost on":
                                 settings["checkPost"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan check details post")
+                                gye.sendMessage(to, "Berhasil mengaktifkan check details post")
                             elif cmd == "checkpost off":
                                 settings["checkPost"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan check details post")
+                                gye.sendMessage(to, "Berhasil menonaktifkan check details post")
                             elif cmd == "checksticker on":
                                 settings["checkSticker"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan check details sticker")
+                                gye.sendMessage(to, "Berhasil mengaktifkan check details sticker")
                             elif cmd == "checksticker off":
                                 settings["checkSticker"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan check details sticker")
+                                gye.sendMessage(to, "Berhasil menonaktifkan check details sticker")
                             elif cmd == "unsendchat on":
                                 settings["unsendMessage"] = True
-                                client.sendMessage(to, "Berhasil mengaktifkan unsend message")
+                                gye.sendMessage(to, "Berhasil mengaktifkan unsend message")
                             elif cmd == "unsendchat off":
                                 settings["unsendMessage"] = False
-                                client.sendMessage(to, "Berhasil menonaktifkan unsend message")
+                                gye.sendMessage(to, "Berhasil menonaktifkan unsend message")
                             elif cmd == "status":
                                 try:
                                     ret_ = "╔══[ Status ]"
@@ -555,11 +555,11 @@ def lineBot(op):
                                     if settings["unsendMessage"] == True: ret_ += "\n╠══[ ON ] Unsend Message"
                                     else: ret_ += "\n╠══[ OFF ] Unsend Message"
                                     ret_ += "\n╚══[ Status ]"
-                                    client.sendMessage(to, str(ret_))
+                                    gye.sendMessage(to, str(ret_))
                                 except Exception as e:
-                                    client.sendMessage(msg.to, str(e))
+                                    gye.sendMessage(msg.to, str(e))
 # Pembatas Script #      
-#-------------------------------------------------------------------------------
+#--------------------------------------------------นุ&สุ-----------------------------
                 elif msg.text.lower().startswith("owneradd "):
                         key = eval(msg.contentMetadata["MENTION"])
                         key["MENTIONEES"][0]["M"]
