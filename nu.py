@@ -498,95 +498,95 @@ def lineBot(op):
                                # gye.sendMessage(to, "@! kebanyakan njer!!", [sender])
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ทดลองนุ$สุ~~~~~~~~~~~~~~~~~~~~~~~~~~~~#	                   	
 # Pembatas Script #
-                            elif cmd == "autoadd on":
-                                settings["autoAdd"] = True
-                                gye.sendMessage(to, "Berhasil mengaktifkan auto add")
-                            elif cmd == "autoadd off":
-                                settings["autoAdd"] = False
-                                gye.sendMessage(to, "Berhasil menonaktifkan auto add")
-                            elif cmd == "autojoin on":
-                                settings["autoJoin"] = True
-                                gye.sendMessage(to, "Berhasil mengaktifkan auto join")
-                            elif cmd == "autojoin off":
-                                settings["autoJoin"] = False
-                                gye.sendMessage(to, "Berhasil menonaktifkan auto join")
-                            elif cmd == "autoleave on":
-                                settings["autoLeave"] = True
-                                gye.sendMessage(to, "Berhasil mengaktifkan auto leave")
-                            elif cmd == "autoleave off":
-                                settings["autoLeave"] = False
-                                gye.sendMessage(to, "Berhasil menonaktifkan auto leave")
-                            elif cmd == "autorespon on":
-                                settings["autoRespon"] = True
-                                gye.sendMessage(to, "Berhasil mengaktifkan auto respon")
-                            elif cmd == "autorespon off":
-                                settings["autoRespon"] = False
-                                gye.sendMessage(to, "Berhasil menonaktifkan auto respon")
-                            elif cmd == "autoread on":
-                                settings["autoRead"] = True
-                                gye.sendMessage(to, "Berhasil mengaktifkan auto read")
-                            elif cmd == "autoread off":
-                                settings["autoRead"] = False
-                                gye.sendMessage(to, "Berhasil menonaktifkan auto read")
-                            elif cmd == "autojointicket on":
-                                settings["autoJoinTicket"] = True
-                                gye.sendMessage(to, "Berhasil mengaktifkan auto join by ticket")
-                            elif cmd == "autoJoinTicket off":
-                                settings["autoJoin"] = False
-                                gye.sendMessage(to, "Berhasil menonaktifkan auto join by ticket")
-                            elif cmd == "checkcontact on":
-                                settings["checkContact"] = True
-                                gye.sendMessage(to, "Berhasil mengaktifkan check details contact")
-                            elif cmd == "checkcontact off":
-                                settings["checkContact"] = False
-                                gye.sendMessage(to, "Berhasil menonaktifkan check details contact")
-                            elif cmd == "checkpost on":
-                                settings["checkPost"] = True
-                                gye.sendMessage(to, "Berhasil mengaktifkan check details post")
-                            elif cmd == "checkpost off":
-                                settings["checkPost"] = False
-                                gye.sendMessage(to, "Berhasil menonaktifkan check details post")
-                            elif cmd == "checksticker on":
-                                settings["checkSticker"] = True
-                                gye.sendMessage(to, "Berhasil mengaktifkan check details sticker")
-                            elif cmd == "checksticker off":
-                                settings["checkSticker"] = False
-                                gye.sendMessage(to, "Berhasil menonaktifkan check details sticker")
-                            elif cmd == "unsendchat on":
-                                settings["unsendMessage"] = True
-                                gye.sendMessage(to, "Berhasil mengaktifkan unsend message")
-                            elif cmd == "unsendchat off":
-                                settings["unsendMessage"] = False
-                                gye.sendMessage(to, "Berhasil menonaktifkan unsend message")
-                            elif cmd == "status":
-                                try:
-                                    ret_ = "╔══[ Status ]"
-                                    if settings["autoAdd"] == True: ret_ += "\n╠══[ ON ] Auto Add"
-                                    else: ret_ += "\n╠══[ OFF ] Auto Add"
-                                    if settings["autoJoin"] == True: ret_ += "\n╠══[ ON ] Auto Join"
-                                    else: ret_ += "\n╠══[ OFF ] Auto Join"
-                                    if settings["autoLeave"] == True: ret_ += "\n╠══[ ON ] Auto Leave Room"
-                                    else: ret_ += "\n╠══[ OFF ] Auto Leave Room"
-                                    if settings["autoJoinTicket"] == True: ret_ += "\n╠══[ ON ] Auto Join Ticket"
-                                    else: ret_ += "\n╠══[ OFF ] Auto Join Ticket"
-                                    if settings["autoRead"] == True: ret_ += "\n╠══[ ON ] Auto Read"
-                                    else: ret_ += "\n╠══[ OFF ] Auto Read"
-                                    if settings["autoRespon"] == True: ret_ += "\n╠══[ ON ] Detect Mention"
-                                    else: ret_ += "\n╠══[ OFF ] Detect Mention"
-                                    if settings["checkContact"] == True: ret_ += "\n╠══[ ON ] Check Contact"
-                                    else: ret_ += "\n╠══[ OFF ] Check Contact"
-                                    if settings["checkPost"] == True: ret_ += "\n╠══[ ON ] Check Post"
-                                    else: ret_ += "\n╠══[ OFF ] Check Post"
-                                    if settings["checkSticker"] == True: ret_ += "\n╠══[ ON ] Check Sticker"
-                                    else: ret_ += "\n╠══[ OFF ] Check Sticker"
-                                    if settings["setKey"] == True: ret_ += "\n╠══[ ON ] Set Key"
-                                    else: ret_ += "\n╠══[ OFF ] Set Key"
-                                    if settings["unsendMessage"] == True: ret_ += "\n╠══[ ON ] Unsend Message"
-                                    else: ret_ += "\n╠══[ OFF ] Unsend Message"
-                                    ret_ += "\n╚══[ Status ]"
-                                    gye.sendMessage(to, str(ret_))
-                                except Exception as e:
-                                    gye.sendMessage(msg.to, str(e))
+                         elif cmd == "autoadd on":
+                             settings["autoAdd"] = True
+                             gye.sendMessage(to, "Berhasil mengaktifkan auto add")
+                         elif cmd == "autoadd off":
+                             settings["autoAdd"] = False
+                             gye.sendMessage(to, "Berhasil menonaktifkan auto add")
+                         elif cmd == "autojoin on":
+                             settings["autoJoin"] = True
+                             gye.sendMessage(to, "Berhasil mengaktifkan auto join")
+                         elif cmd == "autojoin off":
+                             settings["autoJoin"] = False
+                             gye.sendMessage(to, "Berhasil menonaktifkan auto join")
+                         elif cmd == "autoleave on":
+                             settings["autoLeave"] = True
+                             gye.sendMessage(to, "Berhasil mengaktifkan auto leave")
+                         elif cmd == "autoleave off":
+                             settings["autoLeave"] = False
+                             gye.sendMessage(to, "Berhasil menonaktifkan auto leave")
+                         elif cmd == "autorespon on":
+                             settings["autoRespon"] = True
+                             gye.sendMessage(to, "Berhasil mengaktifkan auto respon")
+                         elif cmd == "autorespon off":
+                             settings["autoRespon"] = False
+                             gye.sendMessage(to, "Berhasil menonaktifkan auto respon")
+                         elif cmd == "autoread on":
+                             settings["autoRead"] = True
+                             gye.sendMessage(to, "Berhasil mengaktifkan auto read")
+                         elif cmd == "autoread off":
+                             settings["autoRead"] = False
+                             gye.sendMessage(to, "Berhasil menonaktifkan auto read")
+                         elif cmd == "autojointicket on":
+                             settings["autoJoinTicket"] = True
+                             gye.sendMessage(to, "Berhasil mengaktifkan auto join by ticket")
+                         elif cmd == "autoJoinTicket off":
+                             settings["autoJoin"] = False
+                             gye.sendMessage(to, "Berhasil menonaktifkan auto join by ticket")
+                         elif cmd == "checkcontact on":
+                             settings["checkContact"] = True
+                             gye.sendMessage(to, "Berhasil mengaktifkan check details contact")
+                         elif cmd == "checkcontact off":
+                             settings["checkContact"] = False
+                             gye.sendMessage(to, "Berhasil menonaktifkan check details contact")
+                         elif cmd == "checkpost on":
+                             settings["checkPost"] = True
+                             gye.sendMessage(to, "Berhasil mengaktifkan check details post")
+                         elif cmd == "checkpost off":
+                             settings["checkPost"] = False
+                             gye.sendMessage(to, "Berhasil menonaktifkan check details post")
+                         elif cmd == "checksticker on":
+                             settings["checkSticker"] = True
+                             gye.sendMessage(to, "Berhasil mengaktifkan check details sticker")
+                         elif cmd == "checksticker off":
+                             settings["checkSticker"] = False
+                             gye.sendMessage(to, "Berhasil menonaktifkan check details sticker")
+                         elif cmd == "unsendchat on":
+                             settings["unsendMessage"] = True
+                             gye.sendMessage(to, "Berhasil mengaktifkan unsend message")
+                         elif cmd == "unsendchat off":
+                             settings["unsendMessage"] = False
+                             gye.sendMessage(to, "Berhasil menonaktifkan unsend message")
+                         elif cmd == "status":
+                             try:
+                                 ret_ = "╔══[ Status ]"
+                                 if settings["autoAdd"] == True: ret_ += "\n╠══[ ON ] Auto Add"
+                                 else: ret_ += "\n╠══[ OFF ] Auto Add"
+                                 if settings["autoJoin"] == True: ret_ += "\n╠══[ ON ] Auto Join"
+                                 else: ret_ += "\n╠══[ OFF ] Auto Join"
+                                 if settings["autoLeave"] == True: ret_ += "\n╠══[ ON ] Auto Leave Room"
+                                 else: ret_ += "\n╠══[ OFF ] Auto Leave Room"
+                                 if settings["autoJoinTicket"] == True: ret_ += "\n╠══[ ON ] Auto Join Ticket"
+                                 else: ret_ += "\n╠══[ OFF ] Auto Join Ticket"
+                                 if settings["autoRead"] == True: ret_ += "\n╠══[ ON ] Auto Read"
+                                 else: ret_ += "\n╠══[ OFF ] Auto Read"
+                                 if settings["autoRespon"] == True: ret_ += "\n╠══[ ON ] Detect Mention"
+                                 else: ret_ += "\n╠══[ OFF ] Detect Mention"
+                                 if settings["checkContact"] == True: ret_ += "\n╠══[ ON ] Check Contact"
+                                 else: ret_ += "\n╠══[ OFF ] Check Contact"
+                                 if settings["checkPost"] == True: ret_ += "\n╠══[ ON ] Check Post"
+                                 else: ret_ += "\n╠══[ OFF ] Check Post"
+                                 if settings["checkSticker"] == True: ret_ += "\n╠══[ ON ] Check Sticker"
+                                 else: ret_ += "\n╠══[ OFF ] Check Sticker"
+                                 if settings["setKey"] == True: ret_ += "\n╠══[ ON ] Set Key"
+                                 else: ret_ += "\n╠══[ OFF ] Set Key"
+                                 if settings["unsendMessage"] == True: ret_ += "\n╠══[ ON ] Unsend Message"
+                                 else: ret_ += "\n╠══[ OFF ] Unsend Message"
+                                 ret_ += "\n╚══[ Status ]"
+                                 gye.sendMessage(to, str(ret_))
+                            except Exception as e:
+                                 gye.sendMessage(msg.to, str(e))
 # Pembatas Script #      
 #--------------------------------------------------นุ&สุ-----------------------------
                 elif msg.text.lower().startswith("owneradd "):
