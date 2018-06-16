@@ -57,7 +57,7 @@ botStart = time.time()
 #yg atas dinpagar atau bisa juga token di atas 
 #di dalam tanda LINE ("TOKEN MU ")
 
-gye = LINE("EtHO8rZgTw1q6juRoVvf.4YSrMg2oNLZ3c2qS97Qi+W.k2TeLOz1HTtz2jJ+CuaaDHN+R9wcNMOY2hfRLRA6GvA=")
+#gye = LINE("EtHO8rZgTw1q6juRoVvf.4YSrMg2oNLZ3c2qS97Qi+W.k2TeLOz1HTtz2jJ+CuaaDHN+R9wcNMOY2hfRLRA6GvA=")
 ais = LINE("EtQQZ5O8Q9ZNn47rzMCd.ZumT2/Y29n7tOJ4IwPo4tq.1TFAsQAvYzlyAp1XEM5RsdIZwZtoEnir3y6dea1fo1E=")
 ki2 = LINE("Et0Oj6SRTe8eGtw9jK3d.SPS+quoffhJbcv30K1vAdq.gD9LSFBUBorGs552hX0ltdIVxai6oaF/Ox4aGWcOFJA=")
 ki3 = LINE("EtuabQyPa4w1jYNY3sm0.ZaBHUQRqncLKKv+uKgw/qa.uBKyRSqmAN14wzFVY5K/nO+ja0fHE1IoLuFUqDALCsA=")
@@ -100,72 +100,131 @@ responsename3 = ki2.getProfile().displayName
 responsename2 = ki3.getProfile().displayName
 responsename3 = ki4.getProfile().displayName
 #==============================================================================#
-
-
-
-
-with open('Owner.json', 'r') as fp:
-    Owner = json.load(fp)
-    
-with open('admin.json', 'r') as fp:
-    admin = json.load(fp)
-    
-myProfile = {
-	
-    "autoAdd": False,
+#==============================================================================#
+settings = {
+    "autoAdd": True,
     "autoJoin": False,
+    'autoCancel':{"on":True,"members":10},	
     "autoLeave": False,
     "autoRead": False,
-    "autoRespon": False,
-    "autoJoinTicket": False,
-    "checkContact": False,
-    "checkPost": False,
+    "leaveRoom": False,
+    "detectMention": True,
     "checkSticker": False,
-    "changePictureProfile": False,
-    "changeGroupPicture": [],
-    "keyCommand": "",
-    "myProfile": {
-	"displayName": "9⃣..Nu..9⃣􀈂􀅣.􏿿",
-	"statusMessage": " สวัดดี นี้เป็นข้อความอัตโนมัติ ",
-	"pictureStatus": ""
-    },
+    "kickMention": False,
+    "potoMention": True,
+    "lang":"JP",
+    "Wc": False,
+    "Lv": False,
+    "blacklist":{},
+    "winvite": False,
+    "wblacklist": False,
+    "dblacklist": False,
+    "commentBlack":{},
+    "wblack": False,
+    "dblack": False,
+    "clock": False,
+    "cName":"",
+    "cNames":"",
+    "invite": {},
+    "winvite": False,
+    "pnharfbot": {},
+    "pname": {},
+    "pro_name": {},
+    "message":"บัญชีนี้ได้การป้องกันโดย PZGuard ระบบได้ทำการบล็อคคุณอัตโนมัติ",
+    "comment":"Thanks for add me",
+    "userAgent": [
+        "Mozilla/5.0 (X11; U; Linux i586; de; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (X11; U; Linux amd64; rv:5.0) Gecko/20100101 Firefox/5.0 (Debian)",
+        "Mozilla/5.0 (X11; U; Linux amd64; en-US; rv:5.0) Gecko/20110619 Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux) Gecko Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux x86_64; rv:5.0) Gecko/20100101 Firefox/5.0 FirePHP/0.5",
+        "Mozilla/5.0 (X11; Linux x86_64; rv:5.0) Gecko/20100101 Firefox/5.0 Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux x86_64) Gecko Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux ppc; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (X11; Linux AMD64) Gecko Firefox/5.0",
+        "Mozilla/5.0 (X11; FreeBSD amd64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:5.0) Gecko/20110619 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.1; rv:6.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 6.1.1; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.2; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.1; U; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.1; rv:2.0.1) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.0; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0",
+        "Mozilla/5.0 (Windows NT 5.0; rv:5.0) Gecko/20100101 Firefox/5.0"
+    ],
     "mimic": {
         "copy": False,
         "status": False,
         "target": {}
-    },
-    "setKey": False,
-    "unsendMessage": False
+    }
+}
+
+RfuProtect = {
+    "protect": False,
+    "cancelprotect": False,
+    "inviteprotect": False,
+    "linkprotect": False,
+    "Protectguest": False,
+    "Protectjoin": False,
+    "autoAdd": True,
+}
+
+Setmain = {
+    "foto": {},
 }
 
 read = {
-    "ROM": {},
     "readPoint": {},
     "readMember": {},
-    "readTime": {}
+    "readTime": {},
+    "ROM": {}
 }
 
+myProfile = {
+	"displayName": "",
+	"statusMessage": "",
+	"pictureStatus": ""
+}
 
-try:
-    with open("Log_data.json","r",encoding="utf_8_sig") as f:
-        msg_dict = json.loads(f.read())
-except:
-    print("Couldn't read Log data")
+mimic = {
+    "copy":False,
+    "copy2":False,
+    "status":False,
+    "target":{}
+    }
     
-settings["myProfile"]["displayName"] = clientProfile.displayName
-settings["myProfile"]["statusMessage"] = clientProfile.statusMessage
-settings["myProfile"]["pictureStatus"] = clientProfile.pictureStatus
-coverId = client.getProfileDetail()["result"]["objectId"]
-settings["myProfile"]["coverId"] = coverId
+RfuCctv={
+    "cyduk":{},
+    "point":{},
+    "sidermem":{}
+}
 
+rfuSet = {
+    'setTime':{},
+    'ricoinvite':{},
+    }
 
-#myProfile["displayName"] = gyeProfile.displayName
-#myProfile["statusMessage"] = gyeProfile.statusMessage
-#myProfile["pictureStatus"] = gyeProfile.pictureStatus
+user1 = lineMID
+user2 = ""
+	
+setTime = {}
+setTime = rfuSet['setTime']
 
-#readOpen = codecs.open("read.json","r","utf-8")
-#settingsOpen = codecs.open("temp.json","r","utf-8")
+contact = line.getProfile() 
+backup = line.getProfile() 
+backup.dispalyName = contact.displayName 
+backup.statusMessage = contact.statusMessage
+backup.pictureStatus = contact.pictureStatus
 
+mulai = time.time() 
+dangerMessage = ["cleanse","group cleansed.","mulai",".winebot",".kickall","mayhem","kick on","makasih :d","!kickall","nuke","บิน",".???","งงไปดิ","บินไปดิ","เซลกากจัง","@พี่อาร์ท","@ATR","ขอคลิปหน่อยครับ"]
+
+myProfile["displayName"] = lineProfile.displayName
+myProfile["statusMessage"] = lineProfile.statusMessage
+myProfile["pictureStatus"] = lineProfile.pictureStatus
+#==============================================================================
 #==============================================================================#
 
 read = json.load(readOpen)
