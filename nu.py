@@ -510,7 +510,7 @@ def lineBot(op):
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
 #==============================================================================#
-                elif text.lower() == 'เช็คป้องกัน':
+                elif text.lower() == 'เช็ค':
                     try:
                         ret_ = "╭════════╬♥╬════════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
                         if settings["protect"] == True: ret_ += "║͜͡☆➣ Protect ✅"
@@ -818,25 +818,25 @@ def lineBot(op):
                     settings["autoJoinTicket"] = False
                     gye.sendMessage(to, "Berhasil menonaktifkan Auto Join Link")                    
 #==============================================================================#
-                elif msg.text.lower() == 'โชว์':
+                elif msg.text.lower() == 'สาวๆรายงานตัว':
                         gye.sendContact(to, gyeMID)
                         ais.sendContact(to, aisMID)
                         ki2.sendContact(to, ki2MID)
                         ki3.sendContact(to, ki3MID)
                         ki4.sendContact(to, ki4MID)
-                elif text.lower() in ["*หนีหำ"]:    
+                elif text.lower() in ["หนีหำ"]:    
                     #gye.leaveGroup(msg.to)
                     ais.leaveGroup(msg.to)
                     ki2.leaveGroup(msg.to)
                     ki3.leaveGroup(msg.to)
                     ki4.leaveGroup(msg.to)
-                elif text.lower() in ["*ลาก่อน"]:    
+                elif text.lower() in ["ลาก่อน"]:    
                     gye.leaveGroup(msg.to)
                     ais.leaveGroup(msg.to)
                     ki2.leaveGroup(msg.to)
                     ki3.leaveGroup(msg.to)
                     ki4.leaveGroup(msg.to)      
-                elif text.lower() in ["*มาหำ"]:    
+                elif text.lower() in ["มาหำ"]:    
                     G = gye.getGroup(msg.to)
                     ginfo = gye.getGroup(msg.to)
                     G.preventedJoinByTicket = False
@@ -856,7 +856,7 @@ def lineBot(op):
                 elif text.lower() == 'me':
                     sendMessageWithMention(to, gyeMID)
                     gye.sendContact(to, gyeMID)
-                    gye.sendMessage(msg.to,"➲ คนนี้ไง น่ารัก อย่า แอดมามั่วล่ะ เดียวจะหลงรัก")
+                    gye.sendMessage(msg.to,"คนนี้ใคร ว่ะ!!ขี้เหล่จัง😑")
                 elif text.lower() == 'mymid':
                     gye.sendMessage(msg.to,"[MID]\n" +  gyeMID)
                 elif text.lower() == 'myname':
