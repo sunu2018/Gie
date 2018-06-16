@@ -206,14 +206,14 @@ rfuSet = {
     'ricoinvite':{},
     }
 
-user1 = lineMID
+user1 = gyeMID
 user2 = ""
 	
 setTime = {}
 setTime = rfuSet['setTime']
 
-contact = line.getProfile() 
-backup = line.getProfile() 
+contact = gye.getProfile() 
+backup = gye.getProfile() 
 backup.dispalyName = contact.displayName 
 backup.statusMessage = contact.statusMessage
 backup.pictureStatus = contact.pictureStatus
