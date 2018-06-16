@@ -2175,16 +2175,16 @@ def lineBot(op):
             if RfuProtect["protect"] == True:
                 if settings["blacklist"][op.param2] == True:
                     try:
-                        line.kickoutFromGroup(op.param1,[op.param2])
-                        G = line.getGroup(op.param1)
+                        gye.kickoutFromGroup(op.param1,[op.param2])
+                        G = gye.getGroup(op.param1)
                         G.preventedJoinByTicket = True
-                        line.updateGroup(G)
+                        gye.updateGroup(G)
                     except:
                         try:
-                            line.kickoutFromGroup(op.param1,[op.param2])
-                            G = line.getGroup(op.param1)
+                            gye.kickoutFromGroup(op.param1,[op.param2])
+                            G = gye.getGroup(op.param1)
                             G.preventedJoinByTicket = True
-                            line.updateGroup(G)
+                            gye.updateGroup(G)
                         except:
                             pass
         if op.type == 19:
@@ -2224,9 +2224,9 @@ def lineBot(op):
                     pass
                 elif RfuProtect["linkprotect"] == True:
                     settings ["blacklist"][op.param2] = True
-                    G = line.getGroup(op.param1)
+                    G = gye.getGroup(op.param1)
                     G.preventedJoinByTicket = True
-                    line.updateGroup(G)
+                    gye.updateGroup(G)
                     random.choice(Rfu).kickoutFromGroup(op.param1,[op.param2])
         if op.type == 5:
             if RfuProtect["autoAdd"] == True:
@@ -2238,7 +2238,7 @@ def lineBot(op):
         if op.type == 11:
             if RfuProtect["linkprotect"] == True:
                 if op.param2 not in Family:
-                    G = line.getGroup(op.param1)
+                    G = gye.getGroup(op.param1)
                     G.preventedJoinByTicket = True
                     random.choice(Rfu).updateGroup(G)
                     random.choice(Rfu).kickoutFromGroup(op.param1,[op.param3])                    
@@ -2256,10 +2256,10 @@ def lineBot(op):
 
         if op.type == 1:
             if sender in Setmain["foto"]:
-                path = line.downloadObjectMsg(msg_id)
+                path = gye.downloadObjectMsg(msg_id)
                 del Setmain["foto"][sender]
-                line.updateProfilePicture(path)
-                line.sendMessage(to,"Foto berhasil dirubah")
+                gye.updateProfilePicture(path)
+                gye.sendMessage(to,"Foto berhasil dirubah")
 
         if op.type == 26:
             msg = op.message
@@ -2275,31 +2275,31 @@ def lineBot(op):
             else:
                 to = receiver
                 if settings["autoRead"] == True:
-                    line.sendChatChecked(to, msg_id)				
+                    gye.sendChatChecked(to, msg_id)				
                 if to in read["readPoint"]:
                     if sender not in read["ROM"][to]:
                         read["ROM"][to][sender] = True
                 if sender in settings["mimic"]["target"] and settings["mimic"]["status"] == True and settings["mimic"]["target"][sender] == True:
                     text = msg.text
                     if text is not None:
-                        line.sendMessage(msg.to,text)
-                if msg.contentType == 0 and sender not in lineMID and msg.toType == 2:
+                        gye.sendMessage(msg.to,text)
+                if msg.contentType == 0 and sender not in gyeMID and msg.toType == 2:
                     if "MENTION" in list(msg.contentMetadata.keys())!= None:
                          if settings['potoMention'] == True:
-                             contact = line.getContact(msg._from)
+                             contact = gye.getContact(msg._from)
                              cName = contact.pictureStatus
                              balas = ["http://dl.profile.line-cdn.net/" + cName]
                              ret_ = random.choice(balas)
                              mention = ast.literal_eval(msg.contentMetadata["MENTION"])
                              mentionees = mention["MENTIONEES"]
                              for mention in mentionees:
-                                   if mention["M"] in lineMID:
-                                          line.sendImageWithURL(to,ret_)
+                                   if mention["M"] in gyeMID:
+                                          gye.sendImageWithURL(to,ret_)
                                           break  
-                if msg.contentType == 0 and sender not in lineMID and msg.toType == 2:
+                if msg.contentType == 0 and sender not in gyeMID and msg.toType == 2:
                     if "MENTION" in list(msg.contentMetadata.keys()) != None:
                          if settings['detectMention'] == True:
-                             contact = line.getContact(msg._from)
+                             contact = gye.getContact(msg._from)
                              cName = contact.displayName
                              balas = ["『 Auto Respon』\n " + cName + "\n『แทคทำไมหรอ?』"]
                              ret_ = "" + random.choice(balas)
@@ -2307,35 +2307,35 @@ def lineBot(op):
                              mention = ast.literal_eval(msg.contentMetadata["MENTION"])
                              mentionees = mention['MENTIONEES']
                              for mention in mentionees:
-                                   if mention['M'] in lineMID:
-                                          line.sendMessage(to,ret_)
+                                   if mention['M'] in gyeMID:
+                                          gye.sendMessage(to,ret_)
                                           sendMessageWithMention(to, contact.mid)
                                           break										  
                 if msg.text in ["Me","me",".me",".Me","คท","/me"]:
-                    line.sendText(msg.to,"😜เชคจัง กลัวบอทหลุดละสิ😂")
+                    gye.sendText(msg.to,"😜เชคจัง กลัวบอทหลุดละสิ😂")
                 if msg.text in ["sp","speed",".speed","/speed","Sp",".Speed"]:
-                    line.sendText(msg.to,"😜แรงครับแรงแล้ว😂")
+                    gye.sendText(msg.to,"😜แรงครับแรงแล้ว😂")
                 if msg.text in ["runtime","Runtime","/uptime","ออน",".uptime"]:
-                    line.sendText(msg.to,"จะล็อคเซลนานไปไหน")				
+                    gye.sendText(msg.to,"จะล็อคเซลนานไปไหน")				
                 if msg.text in dangerMessage:
                     random.choice(Rfu).kickoutFromGroup(receiver,[sender])
                     random.choice(Rfu).sendText(msg.to,"ตรวจพบคำสั่งของบอทลบกลุ่ม จำเป็นต้องนำออกเพื่อความปลอดภัยของสมาชิก (｀・ω・´)")										
         if op.type == 17:
-        	dan = line.getContact(op.param2)
-        	tgb = line.getGroup(op.param1)
-        	line.sendMessage(op.param1, "สวัสดี {}, Welcome to Group {}\nเข้ามาแล้วทำตัวดีๆละ\nอ่ย่าไปเป็นบ้าลบเพื่อนๆออกกลุ่มนะ (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
-        	line.sendContact(op.param1, op.param2)
-        	line.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
+        	dan = gye.getContact(op.param2)
+        	tgb = gye.getGroup(op.param1)
+        	gye.sendMessage(op.param1, "สวัสดี {}, Welcome to Group {}\nเข้ามาแล้วทำตัวดีๆละ\nอ่ย่าไปเป็นบ้าลบเพื่อนๆออกกลุ่มนะ (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
+        	gye.sendContact(op.param1, op.param2)
+        	gye.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
         if op.type == 15:
-        	dan = line.getContact(op.param2)
-        	tgb = line.getGroup(op.param1)
-        	line.sendMessage(op.param1, "เอ้า {}, ได้ออกจากกลุ่ม {} \nยืนไว้อาลัยแด่เขาเป็นเวลา3วินาที  (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
-        	line.sendContact(op.param1, op.param2)
+        	dan = gye.getContact(op.param2)
+        	tgb = gye.getGroup(op.param1)
+        	gye.sendMessage(op.param1, "เอ้า {}, ได้ออกจากกลุ่ม {} \nยืนไว้อาลัยแด่เขาเป็นเวลา3วินาที  (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
+        	gye.sendContact(op.param1, op.param2)
         if op.type == 55:
             try:
                 if RfuCctv['cyduk'][op.param1]==True:
                     if op.param1 in RfuCctv['point']:
-                        Name = line.getContact(op.param2).displayName
+                        Name = gye.getContact(op.param2).displayName
                         if Name in RfuCctv['sidermem'][op.param1]:
                             pass
                         else:
@@ -2361,7 +2361,7 @@ def lineBot(op):
                             if " " in Name:
                             	nick = Name.split(' ')
                             if len(nick) == 2:
-                            	line.sendMessage(op.param1, "Nah " +nick[0])
+                            	gye.sendMessage(op.param1, "Nah " +nick[0])
                             summon(op.param1, [op.param2])
                     else:
                         pass
