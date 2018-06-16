@@ -2167,7 +2167,154 @@ def lineBot(op):
      #   backupData()
     #except Exception as error:
      #   logError(error)
+#==============FINNISHING PROTECT========================#
+                elif msg.text.lower() == 'welcomemessage on':
+                        if settings["Wc"] == True:
+                            if settings["lang"] == "JP":
+                                gye.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   .")
+                        else:
+                            settings["Wc"] = True
+                            if settings["lang"] == "JP":
+                                gye.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   ")
+                elif msg.text.lower() == 'welcomemessage off':
+                        if settings["Wc"] == False:
+                            if settings["lang"] == "JP":
+                                gye.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   ")
+                        else:
+                            settings["Wc"] = False
+                            if settings["lang"] == "JP":
+                                gye.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   ")
 
+                elif msg.text.lower() == 'leavemessage on':
+                        if settings["Lv"] == True:
+                            if settings["lang"] == "JP":
+                                gye.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
+                        else:
+                            settings["Lv"] = True
+                            if settings["lang"] == "JP":
+                                gye.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
+                elif msg.text.lower() == 'leavemessage off':
+                        if settings["Lv"] == False:
+                            if settings["lang"] == "JP":
+                                gye.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
+                        else:
+                            settings["Lv"] = False
+                            if settings["lang"] == "JP":
+                                gye.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
+
+                elif text.lower() == '/ลบรัน':
+                    gid = gye.getGroupIdsInvited()
+                    start = time.time()
+                    for i in gid:
+                        gye.rejectGroupInvitation(i)
+                    elapsed_time = time.time() - start
+                    gye.sendMessage(to, "ลบรันเสร็จแล้วขอรับ")
+                    gye.sendMessage(to, "ระยะเวลาที่ใช้: %sวินาที" % (elapsed_time))											
+								
+                elif "Allban" in msg.text:
+                  if msg._from in Family:
+                      if msg.toType == 2:
+                           print ("All Banlist")
+                           _name = msg.text.replace("Allban","")
+                           gs = gye.getGroup(msg.to)
+                           gye.sendMessage(msg.to,"Banned all")
+                           targets = []
+                           for g in gs.members:
+                               if _name in g.displayName:
+                                    targets.append(g.mid)
+                           if targets == []:
+                                gye.sendMessage(msg.to,"Maaf")
+                           else:
+                               for target in targets:
+                                   if not target in Family:
+                                       try:
+                                           settings["blacklist"][target] = True
+                                           f=codecs.open('st2__b.json','w','utf-8')
+                                           json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                                       except:
+                                           gye.sentMessage(msg.to,"All members has been added ban.")
+										   
+                elif 'ban' in text.lower():
+                       targets = []
+                       key = eval(msg.contentMetadata["MENTION"])
+                       key["MENTIONEES"] [0] ["M"]
+                       for x in key["MENTIONEES"]:
+                           targets.append(x["M"])
+                       for target in targets:
+                           try:
+                               settings["blacklist"][target] = True
+                               f=codecs.open('st2__b.json','w','utf-8')
+                               json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                               gye.sendMessage(msg.to,"Succes added for the blacklist ")
+                               print ("Banned User")
+                           except:
+                               gye.sendMessage(msg.to,"Contact Not Found")
+
+                elif 'unban' in text.lower():
+                       targets = []
+                       key = eval(msg.contentMetadata["MENTION"])
+                       key["MENTIONEES"] [0] ["M"]
+                       for x in key["MENTIONEES"]:
+                           targets.append(x["M"])
+                       for target in targets:
+                           try:
+                               del settings["blacklist"][target]
+                               f=codecs.open('st2__b.json','w','utf-8')
+                               json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                               gye.sendMessage(msg.to,"Succes unban from the blacklist. ")
+                               print ("Unbanned User")
+                           except:
+                               gye.sendMessage(msg.to,"Contact Not Found")
+
+                elif msg.text in ["เชคดำ"]:
+                  if msg._from in Family:
+                    if settings["blacklist"] == {}:
+                        gye.sendMessage(msg.to,"ไม่พบ") 
+                    else:
+                        gye.sendMessage(msg.to,"รายชื่อผู้ติดดำ")
+                        mc = "Blacklist User\n"
+                        for mi_d in settings["blacklist"]:
+                            mc += "[√] " + gye.getContact(mi_d).displayName + " \n"
+                        gye.sendMessage(msg.to, mc + "")
+
+                elif msg.text.lower().startswith("urban "):
+                    sep = msg.text.split(" ")
+                    judul = msg.text.replace(sep[0] + " ","")
+                    url = "http://api.urbandictionary.com/v0/define?term="+str(judul)
+                    with requests.session() as s:
+                        s.headers["User-Agent"] = random.choice(settings["userAgent"])
+                        r = s.get(url)
+                        data = r.text
+                        data = json.loads(data)
+                        y = "[ Result Urban ]"
+                        y += "\nTags: "+ data["tags"][0]
+                        y += ","+ data["tags"][1]
+                        y += ","+ data["tags"][2]
+                        y += ","+ data["tags"][3]
+                        y += ","+ data["tags"][4]
+                        y += ","+ data["tags"][5]
+                        y += ","+ data["tags"][6]
+                        y += ","+ data["tags"][7]
+                        y += "\n[1]\nAuthor: "+str(data["list"][0]["author"])
+                        y += "\nWord: "+str(data["list"][0]["word"])
+                        y += "\nLink: "+str(data["list"][0]["permalink"])
+                        y += "\nDefinition: "+str(data["list"][0]["definition"])
+                        y += "\nExample: "+str(data["list"][0]["example"])
+                        line.sendMessage(to, str(y))
+            elif msg.contentType == 7:
+                if settings["checkSticker"] == True:
+                    stk_id = msg.contentMetadata['STKID']
+                    stk_ver = msg.contentMetadata['STKVER']
+                    pkg_id = msg.contentMetadata['STKPKGID']
+                    ret_ = "╔══[ Sticker Info ]"
+                    ret_ += "\n╠ STICKER ID : {}".format(stk_id)
+                    ret_ += "\n╠ STICKER PACKAGES ID : {}".format(pkg_id)
+                    ret_ += "\n╠ STICKER VERSION : {}".format(stk_ver)
+                    ret_ += "\n╠ STICKER URL : line://shop/detail/{}".format(pkg_id)
+                    ret_ += "\n╚══[ Finish ]"
+                    gye.sendMessage(to, str(ret_))
+              
+#==============================================================================#				
 #==============================================================================#
         if op.type == 19:
             if gyeMID in op.param3:
