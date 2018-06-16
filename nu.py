@@ -2233,7 +2233,7 @@ def lineBot(op):
                 if (settings["message"] in [""," ","\n",None]):
                     pass
                 else:
-                    line.sendMessage(op.param1,str(settings["message"]))                    
+                    gye.sendMessage(op.param1,str(settings["message"]))                    
 
         if op.type == 11:
             if RfuProtect["linkprotect"] == True:
@@ -2268,7 +2268,7 @@ def lineBot(op):
             receiver = msg.to
             sender = msg._from
             if msg.toType == 0:
-                if sender != line.profile.mid:
+                if sender != gye.profile.mid:
                     to = sender
                 else:
                     to = receiver
@@ -2353,7 +2353,7 @@ def lineBot(op):
             try:
                 if RfuCctv['cyduk'][op.param1]==True:
                     if op.param1 in RfuCctv['point']:
-                        Name = line.getContact(op.param2).displayName
+                        Name = gye.getContact(op.param2).displayName
                         if Name in RfuCctv['sidermem'][op.param1]:
                             pass
                         else:
