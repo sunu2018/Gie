@@ -2311,7 +2311,7 @@ def lineBot(op):
                                           line.sendMessage(to,ret_)
                                           sendMessageWithMention(to, contact.mid)
                                           break	
-				if msg.text in ["Me","me",".me",".Me","คท","/me"]:
+		if msg.text in ["Me","me",".me",".Me","คท","/me"]:
                     line.sendText(msg.to,"😜เชคจัง กลัวบอทหลุดละสิ😂")
                 if msg.text in ["sp","speed",".speed","/speed","Sp",".Speed"]:
                     line.sendText(msg.to,"😜แรงครับแรงแล้ว😂")
