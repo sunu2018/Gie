@@ -2167,6 +2167,18 @@ def lineBot(op):
      #   backupData()
     #except Exception as error:
      #   logError(error)
+
+#==============================================================================#
+        if op.type == 19:
+            if gyeMID in op.param3:
+                settings["blacklist"][op.param2] = True
+        if op.type == 22:
+            if settings['leaveRoom'] == True:
+                gye.leaveRoom(op.param1)              
+        if op.type == 24:
+            if settings['leaveRoom'] == True:
+                gye.leaveRoom(op.param1)             
+#==============================================================================#
 #==============================================================================#
         if op.type == 17:
             if op.param2 not in Family:
