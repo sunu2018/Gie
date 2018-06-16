@@ -2311,80 +2311,14 @@ def lineBot(op):
                                           gye.sendMessage(to,ret_)
                                           sendMessageWithMention(to, contact.mid)
                                           break										  
-                if msg.text in ["Me","me",".me",".Me","คท","/me"]:
-                    gye.sendText(msg.to,"😜เชคจัง กลัวบอทหลุดละสิ😂")
-                if msg.text in ["sp","speed",".speed","/speed","Sp",".Speed"]:
-                    gye.sendText(msg.to,"😜แรงครับแรงแล้ว😂")
-                if msg.text in ["runtime","Runtime","/uptime","ออน",".uptime"]:
-                    gye.sendText(msg.to,"จะล็อคเซลนานไปไหน")				
-                if msg.text in dangerMessage:
-                    random.choice(Rfu).kickoutFromGroup(receiver,[sender])
-                    random.choice(Rfu).sendText(msg.to,"ตรวจพบคำสั่งของบอทลบกลุ่ม จำเป็นต้องนำออกเพื่อความปลอดภัยของสมาชิก (｀・ω・´)")										
-        if op.type == 17:
-        	dan = gye.getContact(op.param2)
-        	tgb = gye.getGroup(op.param1)
-        	gye.sendMessage(op.param1, "สวัสดี {}, Welcome to Group {}\nเข้ามาแล้วทำตัวดีๆละ\nอ่ย่าไปเป็นบ้าลบเพื่อนๆออกกลุ่มนะ (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
-        	gye.sendContact(op.param1, op.param2)
-        	gye.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
-        if op.type == 15:
-        	dan = gye.getContact(op.param2)
-        	tgb = gye.getGroup(op.param1)
-        	gye.sendMessage(op.param1, "เอ้า {}, ได้ออกจากกลุ่ม {} \nยืนไว้อาลัยแด่เขาเป็นเวลา3วินาที  (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
-        	gye.sendContact(op.param1, op.param2)
-        if op.type == 55:
-            try:
-                if RfuCctv['cyduk'][op.param1]==True:
-                    if op.param1 in RfuCctv['point']:
-                        Name = gye.getContact(op.param2).displayName
-                        if Name in RfuCctv['sidermem'][op.param1]:
-                            pass
-                        else:
-                            RfuCctv['sidermem'][op.param1] += "\n🔰" + Name
-                            pref=['eh ada','hai kak','hay kamu','nah ada','halo lg ngapain','halo','sini kak','cctv yah kak']
-                            line.sendMessage(op.param1, str(random.choice(pref))+' '+Name)
-                    else:
-                        pass
-                else:
-                    pass
-            except:
-                pass
-
-        if op.type == 55:
-            try:
-                if RfuCctv['cyduk'][op.param1]==True:
-                    if op.param1 in RfuCctv['point']:
-                        Name = gye.getContact(op.param2).displayName
-                        if Name in RfuCctv['sidermem'][op.param1]:
-                            pass
-                        else:
-                            RfuCctv['sidermem'][op.param1] += "\n⌬ " + Name + "\n╚════════════════┛"
-                            if " " in Name:
-                            	nick = Name.split(' ')
-                            if len(nick) == 2:
-                            	gye.sendMessage(op.param1, "Nah " +nick[0])
-                            summon(op.param1, [op.param2])
-                    else:
-                        pass
-                else:
-                    pass
-            except:
-                pass
-        if op.type == 55:
-            print ("[ 55 ] ตรวจพบข้อความ")
-            try:
-                if op.param1 in read['readPoint']:
-                    if op.param2 in read['readMember'][op.param1]:
-                        pass
-                    else:
-                        read['readMember'][op.param1] += op.param2
-                    read['ROM'][op.param1][op.param2] = op.param2
-                    backupData()
-                else:
-                   pass
-            except:
-                pass
-    except Exception as error:
-        logError(error)
+                
+		
+		
+        	
+        	
+                
+                
+        
 #==============================================================================#	
 #==============================================================================#
         if op.type == 25:
