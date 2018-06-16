@@ -221,9 +221,13 @@ backup.pictureStatus = contact.pictureStatus
 mulai = time.time() 
 dangerMessage = ["cleanse","group cleansed.","mulai",".winebot",".kickall","mayhem","kick on","makasih :d","!kickall","nuke","บิน",".???","งงไปดิ","บินไปดิ","เซลกากจัง","@พี่อาร์ท","@ATR","ขอคลิปหน่อยครับ"]
 
-myProfile["displayName"] = lineProfile.displayName
-myProfile["statusMessage"] = lineProfile.statusMessage
-myProfile["pictureStatus"] = lineProfile.pictureStatus
+myProfile["displayName"] = gyeProfile.displayName
+myProfile["statusMessage"] = gyeProfile.statusMessage
+myProfile["pictureStatus"] = gyeProfile.pictureStatus
+
+readOpen = codecs.open("read.json","r","utf-8")
+settingsOpen = codecs.open("temp.json","r","utf-8")
+
 #==============================================================================
 #==============================================================================#
 
