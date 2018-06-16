@@ -27,10 +27,10 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 #kalo mau login code qr disini pake
-gye = LINE()
-gye.log("Auth Token : " + str(gye.authToken))
-channelToken = gye.getChannelResult()
-gye.log("Channel Token : " + str(channelToken))
+#gye = LINE()
+#gye.log("Auth Token : " + str(gye.authToken))
+#channelToken = gye.getChannelResult()
+#gye.log("Channel Token : " + str(channelToken))
 
 #ais = LINE()
 #ais.log("Auth Token : " + str(ais.authToken))
@@ -57,7 +57,7 @@ gye.log("Channel Token : " + str(channelToken))
 #yg atas dinpagar atau bisa juga token di atas 
 #di dalam tanda LINE ("TOKEN MU ")
 
-#gye = LINE("EtHO8rZgTw1q6juRoVvf.4YSrMg2oNLZ3c2qS97Qi+W.k2TeLOz1HTtz2jJ+CuaaDHN+R9wcNMOY2hfRLRA6GvA=")
+gye = LINE("Et5gYrvSnIEOpWFK5m4f.4YSrMg2oNLZ3c2qS97Qi+W.fsNClszZfRIpi5y3C/DKfbTqc100zzXX0tWv5M3TZ/k=")
 ais = LINE("EtQQZ5O8Q9ZNn47rzMCd.ZumT2/Y29n7tOJ4IwPo4tq.1TFAsQAvYzlyAp1XEM5RsdIZwZtoEnir3y6dea1fo1E=")
 ki2 = LINE("Et0Oj6SRTe8eGtw9jK3d.SPS+quoffhJbcv30K1vAdq.gD9LSFBUBorGs552hX0ltdIVxai6oaF/Ox4aGWcOFJA=")
 ki3 = LINE("EtuabQyPa4w1jYNY3sm0.ZaBHUQRqncLKKv+uKgw/qa.uBKyRSqmAN14wzFVY5K/nO+ja0fHE1IoLuFUqDALCsA=")
