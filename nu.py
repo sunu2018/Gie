@@ -2190,8 +2190,7 @@ def lineBot(op):
                             if settings["lang"] == "JP":
                                 line.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
 
-
-		elif text.lower() == '/ลบรัน':
+                elif text.lower() == '/ลบรัน':
                     gid = line.getGroupIdsInvited()
                     start = time.time()
                     for i in gid:
