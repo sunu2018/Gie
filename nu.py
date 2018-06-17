@@ -2155,7 +2155,8 @@ def lineBot(op):
      #   logError(error)
                                                                                                                                                                                        				                                                                                         
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~♧S & N ♡~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-		elif msg.text.lower() == 'welcomemessage on':
+		#==============FINNISHING PROTECT========================#
+                elif msg.text.lower() == 'welcomemessage on':
                         if settings["Wc"] == True:
                             if settings["lang"] == "JP":
                                 line.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   .")
@@ -2188,6 +2189,7 @@ def lineBot(op):
                             settings["Lv"] = False
                             if settings["lang"] == "JP":
                                 line.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
+
 
 		elif text.lower() == '/ลบรัน':
                     gid = line.getGroupIdsInvited()
