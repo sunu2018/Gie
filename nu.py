@@ -2329,6 +2329,22 @@ def lineBot(op):
                 gye.leaveRoom(op.param1)             
 #==============================================================================#
 #==============================================================================#
+        if op.type == 13:
+            if op.param2 not in Bots:
+                if op.param2 in admin:
+                    pass
+                elif settings["inviteprotect"] == True:
+                    settings["blacklist"][op.param2] = True
+                    random.choice(KAC).cancelGroupInvitation(op.param1,[op.param3])
+                    random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                    if op.param2 not in Bots:
+                        if op.param2 in admin:
+                            pass
+                        elif settings["cancelprotect"] == True:
+                            settings["blacklist"][op.param2] = True
+                            random.choice(KAC).cancelGroupInvitation(op.param1,[op.param3])	
+#----------------------------------------------
+#==============================================================================#
         if op.type == 17:
             if op.param2 not in Family:
                 if op.param2 in Family:
