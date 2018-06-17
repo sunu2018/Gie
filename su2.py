@@ -824,7 +824,7 @@ def lineBot(op):
                         ki2.sendContact(to, ki2MID)
                         ki3.sendContact(to, ki3MID)
                         ki4.sendContact(to, ki4MID)
-                elif text.lower() in ["หนีหำ"]:    
+                elif text.lower() in ["หนีหอย"]:    
                     #gye.leaveGroup(msg.to)
                     ais.leaveGroup(msg.to)
                     ki2.leaveGroup(msg.to)
@@ -836,7 +836,7 @@ def lineBot(op):
                     ki2.leaveGroup(msg.to)
                     ki3.leaveGroup(msg.to)
                     ki4.leaveGroup(msg.to)      
-                elif text.lower() in ["มาหำ"]:    
+                elif text.lower() in ["มาหอย"]:    
                     G = gye.getGroup(msg.to)
                     ginfo = gye.getGroup(msg.to)
                     G.preventedJoinByTicket = False
@@ -1057,7 +1057,7 @@ def lineBot(op):
                             gye.sendMessage(to, "[ Group Ticket ]\nhttps://line.me/R/ti/g/{}".format(str(ticket)))
                         else:
                             gye.sendMessage(to, "Grup qr tidak terbuka silahkan buka terlebih dahulu dengan perintah {}openqr".format(str(settings["keyCommand"])))
-                elif text.lower() == 'เปิดห้อง':
+                elif text.lower() == 'เปิดลิ้ง':
                     if msg.toType == 2:
                         group = gye.getGroup(to)
                         if group.preventedJoinByTicket == False:
@@ -1066,7 +1066,7 @@ def lineBot(op):
                             group.preventedJoinByTicket = False
                             gye.updateGroup(group)
                             gye.sendMessage(to, "Berhasil membuka grup qr")
-                elif text.lower() == 'ปิดห้อง':
+                elif text.lower() == 'ปิดลิ้ง':
                     if msg.toType == 2:
                         group = gye.getGroup(to)
                         if group.preventedJoinByTicket == True:
@@ -2507,7 +2507,7 @@ def lineBot(op):
         if op.type == 15:
         	dan = gye.getContact(op.param2)
         	tgb = gye.getGroup(op.param1)
-        	gye.sendMessage(op.param1, "เอ้า {}, จะรีบออกไปไหน {} \nยังไม่ได้ล่อเลย  (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
+        	gye.sendMessage(op.param1, "ชื่อกลุ่ม {},!!!! {} \nจะรีบไปไหนยังไม่ได้ล่อเลย  (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
         	gye.sendContact(op.param1, op.param2)
         if op.type == 55:
             try:
