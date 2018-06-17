@@ -2498,7 +2498,7 @@ def lineBot(op):
                 if msg.text in dangerMessage:
                     random.choice(Rfu).kickoutFromGroup(receiver,[sender])
                     random.choice(Rfu).sendText(msg.to,"ตรวจพบคำสั่งของบอทลบกลุ่ม จำเป็นต้องนำออกเพื่อความปลอดภัยของสมาชิก (｀・ω・´)")										
-        if op.type == 17:
+        if op.type == 15:
         	dan = gye.getContact(op.param2)
         	tgb = gye.getGroup(op.param1)
         	gye.sendMessage(op.param1, "สวัสดี {}, Welcome to Group {}\nเข้ามาแล้วทำตัวดีๆละ\nอ่ย่าไปเป็นบ้าลบเพื่อนๆออกกลุ่มนะ (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
@@ -2507,7 +2507,7 @@ def lineBot(op):
         if op.type == 15:
         	dan = gye.getContact(op.param2)
         	tgb = gye.getGroup(op.param1)
-        	gye.sendMessage(op.param1, "เอ้า {}, จะรีบออกไปไหน {} \nยังไม่ได้ล่อเลย  (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
+        	gye.sendMessage(op.param1, "ชื่อกลุ่ม{}, ♡♡♡♡♡ {} \nจะรีบไปไหนยังไม่ได้ล่อเลย กลับมาก่อน (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
         	gye.sendContact(op.param1, op.param2)
         if op.type == 55:
             try:
