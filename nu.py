@@ -2154,7 +2154,7 @@ def lineBot(op):
     #except Exception as error:
      #   logError(error)
                                                                                                                                                                                        				                                                                                         
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~♧S & N ♡~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~♧S & N ♡~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 		elif msg.text.lower() == 'welcomemessage on':
                         if settings["Wc"] == True:
                             if settings["lang"] == "JP":
