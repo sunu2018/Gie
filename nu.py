@@ -2159,45 +2159,45 @@ def lineBot(op):
                 elif msg.text.lower() == 'welcomemessage on':
                         if settings["Wc"] == True:
                             if settings["lang"] == "JP":
-                                line.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   .")
+                                gye.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   .")
                         else:
                             settings["Wc"] = True
                             if settings["lang"] == "JP":
-                                line.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   ")
+                                gye.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   ")
                 elif msg.text.lower() == 'welcomemessage off':
                         if settings["Wc"] == False:
                             if settings["lang"] == "JP":
-                                line.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   ")
+                                gye.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   ")
                         else:
                             settings["Wc"] = False
                             if settings["lang"] == "JP":
-                                line.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   ")
+                                gye.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   ")
 
                 elif msg.text.lower() == 'leavemessage on':
                         if settings["Lv"] == True:
                             if settings["lang"] == "JP":
-                                line.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
+                                gye.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
                         else:
                             settings["Lv"] = True
                             if settings["lang"] == "JP":
-                                line.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
+                                gye.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
                 elif msg.text.lower() == 'leavemessage off':
                         if settings["Lv"] == False:
                             if settings["lang"] == "JP":
-                                line.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
+                                gye.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
                         else:
                             settings["Lv"] = False
                             if settings["lang"] == "JP":
-                                line.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
+                                gye.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
 
                 elif text.lower() == '/ลบรัน':
-                    gid = line.getGroupIdsInvited()
+                    gid = gye.getGroupIdsInvited()
                     start = time.time()
                     for i in gid:
-                        line.rejectGroupInvitation(i)
+                        gye.rejectGroupInvitation(i)
                     elapsed_time = time.time() - start
-                    line.sendMessage(to, "ลบรันเสร็จแล้วขอรับ")
-                    line.sendMessage(to, "ระยะเวลาที่ใช้: %sวินาที" % (elapsed_time))								
+                    gye.sendMessage(to, "ลบรันเสร็จแล้วขอรับ")
+                    gye.sendMessage(to, "ระยะเวลาที่ใช้: %sวินาที" % (elapsed_time))								
 								
                 elif "Allban" in msg.text:
                   if msg._from in Family:
@@ -2205,13 +2205,13 @@ def lineBot(op):
                            print ("All Banlist")
                            _name = msg.text.replace("Allban","")
                            gs = line.getGroup(msg.to)
-                           line.sendMessage(msg.to,"Banned all")
+                           gye.sendMessage(msg.to,"Banned all")
                            targets = []
                            for g in gs.members:
                                if _name in g.displayName:
                                     targets.append(g.mid)
                            if targets == []:
-                                line.sendMessage(msg.to,"Maaf")
+                                gye.sendMessage(msg.to,"Maaf")
                            else:
                                for target in targets:
                                    if not target in Family:
@@ -2220,7 +2220,7 @@ def lineBot(op):
                                            f=codecs.open('st2__b.json','w','utf-8')
                                            json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
                                        except:
-                                           line.sentMessage(msg.to,"All members has been added ban.")
+                                           gye.sentMessage(msg.to,"All members has been added ban.")
 										   
                 elif 'ban' in text.lower():
                        targets = []
@@ -2233,10 +2233,10 @@ def lineBot(op):
                                settings["blacklist"][target] = True
                                f=codecs.open('st2__b.json','w','utf-8')
                                json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                               line.sendMessage(msg.to,"Succes added for the blacklist ")
+                               gye.sendMessage(msg.to,"Succes added for the blacklist ")
                                print ("Banned User")
                            except:
-                               line.sendMessage(msg.to,"Contact Not Found")
+                               gye.sendMessage(msg.to,"Contact Not Found")
 
                 elif 'unban' in text.lower():
                        targets = []
@@ -2249,21 +2249,21 @@ def lineBot(op):
                                del settings["blacklist"][target]
                                f=codecs.open('st2__b.json','w','utf-8')
                                json.dump(settings["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                               line.sendMessage(msg.to,"Succes unban from the blacklist. ")
+                               gye.sendMessage(msg.to,"Succes unban from the blacklist. ")
                                print ("Unbanned User")
                            except:
-                               line.sendMessage(msg.to,"Contact Not Found")
+                               gye.sendMessage(msg.to,"Contact Not Found")
 
                 elif msg.text in ["เชคดำ"]:
                   if msg._from in Family:
                     if settings["blacklist"] == {}:
-                        line.sendMessage(msg.to,"ไม่พบ") 
+                        gye.sendMessage(msg.to,"ไม่พบ") 
                     else:
-                        line.sendMessage(msg.to,"รายชื่อผู้ติดดำ")
+                        gye.sendMessage(msg.to,"รายชื่อผู้ติดดำ")
                         mc = "Blacklist User\n"
                         for mi_d in settings["blacklist"]:
-                            mc += "[√] " + line.getContact(mi_d).displayName + " \n"
-                        line.sendMessage(msg.to, mc + "")
+                            mc += "[√] " + gye.getContact(mi_d).displayName + " \n"
+                        gye.sendMessage(msg.to, mc + "")
 
                 elif msg.text.lower().startswith("urban "):
                     sep = msg.text.split(" ")	
@@ -2288,7 +2288,7 @@ def lineBot(op):
                         y += "\nLink: "+str(data["list"][0]["permalink"])
                         y += "\nDefinition: "+str(data["list"][0]["definition"])
                         y += "\nExample: "+str(data["list"][0]["example"])
-                        line.sendMessage(to, str(y))
+                        gye.sendMessage(to, str(y))
             elif msg.contentType == 7:
                 if settings["checkSticker"] == True:
                     stk_id = msg.contentMetadata['STKID']
@@ -2300,7 +2300,7 @@ def lineBot(op):
                     ret_ += "\n╠ STICKER VERSION : {}".format(stk_ver)
                     ret_ += "\n╠ STICKER URL : line://shop/detail/{}".format(pkg_id)
                     ret_ += "\n╚══[ Finish ]"
-                    line.sendMessage(to, str(ret_))
+                    gye.sendMessage(to, str(ret_))
 #==============================================================================#
         if op.type == 11: 
             if op.param2 not in Bots:
