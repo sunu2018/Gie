@@ -2141,21 +2141,7 @@ def lineBot(op):
                             settings["blacklist"][op.param2] = True
                             random.choice(KAC).cancelGroupInvitation(op.param1,[op.param3])	
 #-------------------------------------------------------------------------------
-        if op.type == 11:
-            if op.param2 not in Bots:
-                if op.param2 in admin and Bots and Owner:
-                    pass
-                elif settings["qrprotect"] == True:
-                    settings["blacklist"][op.param2] = True
-                    G = ais.getGroup(op.param1)
-                    G.preventedJoinByTicket = True
-                    ais.updateGroup(G)
-                    random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                else:
-                    gye.sendMessage(op.param1,"Jangan Buka Qr")
-            else:
-                gye.sendMessage(op.param1,"")
-#==============================================================================#
+#=========================================================#
        # if op.type == 55:
         #    print ("[ 55 ] GYEVHA BOTS EMPAT")
          #   if op.param1 in read["readPoint"]:
@@ -2512,6 +2498,22 @@ def lineBot(op):
                     ret_ += "\n╚══[ Finish ]"
                     line.sendMessage(to, str(ret_))
 #==============================================================================#
+        if op.type == 11: 
+            if op.param2 not in Bots:
+                if op.param2 in admin and Bots and Owner:
+                    pass
+                elif settings["qrprotect"] == True:
+                    settings["blacklist"][op.param2] = True
+                    G = ais.getGroup(op.param1)
+                    G.preventedJoinByTicket = True
+                    ais.updateGroup(G)
+                    random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                else:
+                    gye.sendMessage(op.param1,"Jangan Buka Qr")
+            else:
+                gye.sendMessage(op.param1,"")
+#=================================================
+
         if op.type == 19:
             if gyeMID in op.param3:
                 settings["blacklist"][op.param2] = True
