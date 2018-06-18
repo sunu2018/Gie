@@ -2012,7 +2012,7 @@ def lineBot(op):
                         data = r.text
                         data = json.loads(data)
                         line.sendImageWithURL(to, data["result"])
-			elif "checkdate" in msg.text.lower():
+		elif "checkdate" in msg.text.lower():
                     sep = msg.text.split(" ")
                     tanggal = msg.text.replace(sep[0] + " ","")
                     r=requests.get('https://script.google.com/macros/exec?service=AKfycbw7gKzP-WYV2F5mc9RaR7yE3Ve1yN91Tjs91hp_jHSE02dSv9w&nama=ervan&tanggal='+tanggal)
@@ -2086,7 +2086,7 @@ def lineBot(op):
                             a = items.index(path)
                             b = len(items)
                             line.sendImageWithURL(to, str(path))
-			elif "image" in msg.text.lower():
+		elif "image" in msg.text.lower():
                     separate = msg.text.split(" ")
                     search = msg.text.replace(separate[0] + " ","")
                     with requests.session() as web:
@@ -2217,7 +2217,8 @@ def lineBot(op):
                             line.leaveGroup(receiver)							
                         except:
                             pass
-elif msg.text in ["Tagimage on","Tag2 on"]:
+
+                elif msg.text in ["Tagimage on","Tag2 on"]:
                         settings['potoMention'] = True
                         line.sendMessage(msg.to,"Respon enabled.")
                 
