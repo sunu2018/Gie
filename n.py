@@ -771,7 +771,7 @@ def lineBot(op):
                         arr = []
                         owner = "u104e95aaefb53cf411f77353f6a96ece"
                         creator = gye.getContact(owner)
-                        contact = gye.getContact(lineMID)
+                        contact = gye.getContact(gyeMID)
                         grouplist = gye.getGroupIdsJoined()
                         contactlist = gye.getAllContactIds()
                         blockedlist = gye.getBlockedContactIds()
