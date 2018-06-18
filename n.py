@@ -1965,11 +1965,6 @@ def lineBot(op):
                               try:
                                   pesan="Over Text Limit! Please Click link\n"
                                   pesan+=wikipedia.page(wiki).url
-                                  line.sendMessage(msg.to, pesan)
-                      except:
-                              try:
-                                  pesan="Over Text Limit! Please Click link\n"
-                                  pesan+=wikipedia.page(wiki).url
                                   line.sendText(msg.to, pesan)
                               except Exception as e:
                                   line.sendMessage(msg.to, str(e))
