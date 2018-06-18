@@ -876,55 +876,9 @@ def lineBot(op):
                     settings["checkSticker"] = False
                     gye.sendMessage(to, "Check sticker disabled.")                
 #==============================================================================#
-                elif text.lower() == 'เช็คป้องกัน':
-                    try:
-                        ret_ = "╭════════╬♥╬════════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
-                        if settings["PROTECT"] == True: ret_ += "║͜͡☆➣ Protect ✅"
-                        else: ret_ += "║͜͡☆➣  Protect ❌"
-                        if settings["qrprotect"] == True: ret_ += "\n║͜͡☆➣ Qr Protect ✅"
-                        else: ret_ += "\n║͜͡☆➣ Qr Protect ❌"
-                        if settings["inviteprotect"] == True: ret_ += "\n║͜͡☆➣ Invite Protect ✅"
-                        else: ret_ += "\n║͜͡☆➣ Invite Protect ❌"
-                        if settings["cancelprotect"] == True: ret_ += "\n║͜͡☆➣ Cancel Protect ✅"
-                        else: ret_ += "\n║͜͡☆➣ Cancel Protect ❌"
-                        if settings["autoAdd"] == True: ret_ += "\n║͜͡☆➣ Auto Add ✅"
-                        else: ret_ += "\n║͜͡☆➣ Auto Add ❌"
-                        if settings["autoJoin"] == True: ret_ += "\n║͜͡☆➣ Auto Join ✅"
-                        else: ret_ += "\n║͜͡☆➣ Auto Join ❌"
-                        if settings["autoLeave"] == True: ret_ += "\n║͜͡☆➣ Auto Leave ✅"
-                        else: ret_ += "\n║͜͡☆➣ Auto Leave ❌"
-                        if settings["autoRead"] == True: ret_ += "\n║͜͡☆➣ Auto Read ✅"
-                        else: ret_ += "\n║͜͡☆➣ Auto Read ❌"
-                        if settings["checkSticker"] == True: ret_ += "\n║͜͡☆➣ Check Sticker ✅"
-                        else: ret_ += "\n║͜͡☆➣ Check Sticker ❌"
-                        if settings["detectMention"] == True: ret_ += "\n║͜͡☆➣ Detect Mention ✅"
-                        else: ret_ += "\n║͜͡☆➣ Detect Mention ❌"
-                        ret_ += "\n╰════════╬♥╬════════╯\n╭════════╬♥╬════════╮\n  ║͜͡☆➣ ♥ GYEVHA BOTS ♥\n╰════════╬♥╬════════╯"
-                        gye.sendMessage(to, str(ret_))
-                    except Exception as e:
-                        gye.sendMessage(msg.to, str(e))
+                
                         
-                elif msg.text.lower().startswith("spaminvite "):
-                   #if msg._from in admin:
-                    dan = text.split("|")
-                    userid = dan[0]
-                    namagrup = dan[0]
-                    jumlah = int(dan[0])
-                    grups = gye.groups
-                    tgb = gye.findContactsByUserid(userid)
-                    if jumlah <= 10000000:
-                        for var in range(0,jumlah):
-                            try:
-                                gye.createGroup(str(namagrup), [tgb.mid])
-                                for i in grups:
-                                    grup = gye.getGroup(i)
-                                    if grup.name == namagrup:
-                                        gye.inviteIntoGroup(grup.id, [tgb.mid])
-                                        gye.sendMessage(to, "@! sukses spam grup!\n\nkorban: @!\njumlah: {}\nnama grup: {}".format(jumlah, str(namagrup)), [sender, tgb.mid])
-                            except Exception as Nigga:
-                                gye.sendMessage(to, str(Nigga))
-                            #else:
-                                gye.sendMessage(to, "@! kebanyakan njer!!", [sender])
+                             
 #-------------------------------------------------------------------------------
                 elif msg.text.lower().startswith("owneradd "):
                         key = eval(msg.contentMetadata["MENTION"])
