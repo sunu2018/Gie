@@ -875,10 +875,310 @@ def lineBot(op):
                 elif text.lower() == 'sticker off':
                     settings["checkSticker"] = False
                     gye.sendMessage(to, "Check sticker disabled.")                
-#==============================================================================#
-                
-                        
-                             
+#==============================================================================#                                     
+                #==============================================================================#
+                elif msg.text.lower().startswith("mimicadd "):
+                    targets = []
+                    key = eval(msg.contentMetadata["MENTION"])
+                    key["MENTIONEES"][0]["M"]
+                    for x in key["MENTIONEES"]:
+                        targets.append(x["M"])
+                    for target in targets:
+                        try:
+                            settings["mimic"]["target"][target] = True
+                            line.sendMessage(msg.to,"Mimic has been added as")
+                            break
+                        except:
+                            line.sendMessage(msg.to,"Added Target Fail !")
+                            break
+                elif msg.text.lower().startswith("mimicdel "):
+                    targets = []
+                    key = eval(msg.contentMetadata["MENTION"])
+                    key["MENTIONEES"][0]["M"]
+                    for x in key["MENTIONEES"]:
+                        targets.append(x["M"])
+                    for target in targets:
+                        try:
+                            del settings["mimic"]["target"][target]
+                            line.sendMessage(msg.to,"Mimic deleting succes...")
+                            break
+                        except:
+                            line.sendMessage(msg.to,"Deleted Target Fail !")
+                            break
+                elif text.lower() == 'mimiclist':
+                    if settings["mimic"]["target"] == {}:
+                        line.sendMessage(msg.to,"Tidak Ada Target")
+                    else:
+                        mc = "╔══[ Mimic List ]"
+                        for mi_d in settings["mimic"]["target"]:
+                            mc += "\n╠ "+line.getContact(mi_d).displayName
+                        line.sendMessage(msg.to,mc + "\n╚══[ Finish ]")
+                    
+                elif "mimic" in msg.text.lower():
+                    sep = text.split(" ")
+                    mic = text.replace(sep[0] + " ","")
+                    if mic == "on":
+                        if settings["mimic"]["status"] == False:
+                            settings["mimic"]["status"] = True
+                            line.sendMessage(msg.to,"Mimic enabled.")
+                    elif mic == "off":
+                        if settings["mimic"]["status"] == True:
+                            settings["mimic"]["status"] = False
+                            line.sendMessage(msg.to,"Mimic disabled.")
+             #==============================================================================#
+                elif text.lower() == 'groupcreator':
+                    group = line.getGroup(to)
+                    GS = group.creator.mid
+                    line.sendContact(to, GS)
+                    line.sendMessage(to, "Itu Pembuat Groupnya")
+                elif text.lower() == 'groupid':
+                    gid = line.getGroup(to)
+                    line.sendMessage(to, "ID GROUP \n" + gid.id)
+                elif text.lower() == 'grouppicture':
+                    group = line.getGroup(to)
+                    path = "http://dl.profile.line-cdn.net/" + group.pictureStatus
+                    line.sendImageWithURL(to, path)
+                elif text.lower() == 'groupname':
+                    gid = line.getGroup(to)
+                    line.sendMessage(to, "Name Group -> \n" + gid.name)
+                elif text.lower() == 'url':
+                    if msg.toType == 2:
+                        group = line.getGroup(to)
+                        if group.preventedJoinByTicket == False:
+                            ticket = line.reissueGroupTicket(to)
+                            line.sendMessage(to, "Link Qr Group\nhttps://line.me/R/ti/g/{}".format(str(ticket)))
+                elif text.lower() == 'link on':
+                    if msg.toType == 2:
+                        group = line.getGroup(to)
+                        if group.preventedJoinByTicket == False:
+                            line.sendMessage(to, "Link Qr to open")
+                        else:
+                            group.preventedJoinByTicket = False
+                            line.updateGroup(group)
+                            line.sendMessage(to, "Link Qr to open")
+                elif text.lower() == 'link off':
+                    if msg.toType == 2:
+                        group = line.getGroup(to)
+                        if group.preventedJoinByTicket == True:
+                            line.sendMessage(to, "Link Qr to closed.")
+                        else:
+                            group.preventedJoinByTicket = True
+                            line.updateGroup(group)
+                            line.sendMessage(to, "Link Qr to closed.")
+                elif text.lower() == 'groupinfo':
+                    group = line.getGroup(to)
+                    try:
+                        gCreator = group.creator.displayName
+                    except:
+                        gCreator = "Tidak ditemukan"
+                    if group.invitee is None:
+                        gPending = "0"
+                    else:
+                        gPending = str(len(group.invitee))
+                    if group.preventedJoinByTicket == True:
+                        gQr = "Tertutup"
+                        gTicket = "Tidak ada"
+                    else:
+                        gQr = "Terbuka"
+			gTicket = "https://line.me/R/ti/g/{}".format(str(line.reissueGroupTicket(group.id)))
+                    path = "http://dl.profile.line-cdn.net/" + group.pictureStatus
+                    ret_ = "╔══[ Group Info ]"
+                    ret_ += "\n╠ Nama Group : {}".format(str(group.name))
+                    ret_ += "\n╠ ID Group : {}".format(group.id)
+                    ret_ += "\n╠ Pembuat : {}".format(str(gCreator))
+                    ret_ += "\n╠ Jumlah Member : {}".format(str(len(group.members)))
+                    ret_ += "\n╠ Jumlah Pending : {}".format(gPending)
+                    ret_ += "\n╠ Group Qr : {}".format(gQr)
+                    ret_ += "\n╠ Group Ticket : {}".format(gTicket)
+                    ret_ += "\n╚══[ Finish ]"
+                    line.sendMessage(to, str(ret_))
+                    line.sendImageWithURL(to, path)
+                elif text.lower() == 'groupmemberlist':
+                    if msg.toType == 2:
+                        group = line.getGroup(to)
+                        ret_ = "╔══[ Member List ]"
+                        no = 0 + 1
+                        for mem in group.members:
+                            ret_ += "\n╠ {}. {}".format(str(no), str(mem.displayName))
+                            no += 1
+                        ret_ += "\n╚══[ จำนวน {} ]".format(str(len(group.members)))
+                        line.sendMessage(to, str(ret_))
+                elif text.lower() == 'grouplist':
+                        groups = line.groups
+                        ret_ = "╔══[ Group List ]"
+                        no = 0 + 1
+                        for gid in groups:
+                            group = line.getGroup(gid)
+                            ret_ += "\n╠ {}. {} | {}".format(str(no), str(group.name), str(len(group.members)))
+                            no += 1
+                        ret_ += "\n╚══[ จำนวน {} Groups ]".format(str(len(groups)))
+                        line.sendMessage(to, str(ret_))				
+                elif ".invitetocall" == msg.text.lower():
+                    line.inviteIntoGroupCall(msg.to,[uid.mid for uid in line.getGroup(msg.to).members if uid.mid != line.getProfile().mid])
+                    line.sendMessage(msg.to,"เชิญเข้าร่วมการโทรสำเร็จ(｀・ω・´)")	
+                elif ".sh " in msg.text.lower():
+                    spl = re.split(".sh ",msg.text,flags=re.IGNORECASE)
+                    if spl[0] == "":
+                        try:
+                            line.sendText(msg.to,subprocess.getoutput(spl[1]))
+                        except:
+                            pass	
+                elif msg.text.lower() == ".getjoined":
+                    line.sendText(msg.to,"กรุณารอสักครู่ ใจเย็นๆ")
+                    all = line.getGroupIdsJoined()
+                    text = ""
+                    cnt = 0
+                    for i in all:
+                        text += line.getGroup(i).name + "\n" + i + "\n\n"
+                        cnt += 1
+                        if cnt == 10:
+                            line.sendText(msg.to,text[:-2])
+                            text = ""
+                            cnt = 0
+                    line.sendText(msg.to,text[:-2])
+                    cnt = 0				
+                elif ".info " in msg.text.lower():
+                    spl = re.split(".info ",msg.text,flags=re.IGNORECASE)
+                    if spl[0] == "":
+                        prov = eval(msg.contentMetadata["MENTION"])["MENTIONEES"]
+                        for i in range(len(prov)):
+                            uid = prov[i]["M"]
+                            userData = line.getContact(uid)
+                            try:
+                                line.sendImageWithUrl(msg.to,"http://dl.profile.line.naver.jp/"+userData.pictureStatus)
+                            except:
+                                pass
+                            line.sendText(msg.to,"ชื่อที่แสดง: "+userData.displayName)
+                            line.sendText(msg.to,"ข้อความสเตตัส:\n"+userData.statusMessage)
+                            line.sendText(msg.to,"ไอดีบัญชี: "+userData.mid)
+                            msg.contentType = 13
+                            msg.text = None
+                            msg.contentMetadata = {'mid': userData.mid}
+                            line.sendMessage(msg)
+				elif "|!" in msg.text:
+                    spl = msg.text.split("|!")
+                    if spl[len(spl)-1] == "":
+                        line.sendText(msg.to,"กดที่นี่เพื่อเขย่าข้อความด้านบน:\nline://nv/chatMsg?chatId="+msg.to+"&messageId="+msg.id)	
+                elif ".denyall" in msg.text.lower():
+                    spl = re.split(".denyall",msg.text,flags=re.IGNORECASE)
+                    if spl[0] == "":
+                        spl[1] = spl[1].strip()
+                        ag = line.getGroupIdsInvited()
+                        txt = "กำลังยกเลิกค้างเชิญจำนวน "+str(len(ag))+" กลุ่ม"
+                        if spl[1] != "":
+                            txt = txt + " ด้วยข้อความ \""+spl[1]+"\""
+                        txt = txt + "\nกรุณารอสักครู่.."
+                        line.sendText(msg.to,txt)
+                        procLock = len(ag)
+                        for gr in ag:
+                            try:
+                                line.acceptGroupInvitation(gr)
+                                if spl[1] != "":
+                                    line.sendText(gr,spl[1])
+                                line.leaveGroup(gr)
+                            except:
+                                pass
+                        line.sendText(msg.to,"สำเร็จแล้ว")	
+                elif ".whois " in msg.text.lower():
+                    spl = re.split(".whois ",msg.text,flags=re.IGNORECASE)
+                    if spl[0] == "":
+                        msg.contentType = 13
+                        msg.text = None
+                        msg.contentMetadata = {"mid":spl[1]}
+                        line.sendMessage(msg)
+                elif ".remove " in msg.text.lower():
+                    if msg.toType == 2:
+                        prov = eval(msg.contentMetadata["MENTION"])["MENTIONEES"]
+                        for i in range(len(prov)):
+                            random.choice(Exc).kickoutFromGroup(msg.to,[prov[i]["M"]])
+                elif ".bye " in msg.text.lower():
+                    if msg.toType == 2:
+                        prov = eval(msg.contentMetadata["MENTION"])["MENTIONEES"]
+                        allmid = []
+                        for i in range(len(prov)):
+                            line.kickoutFromGroup(msg.to,[prov[i]["M"]])
+                            allmid.append(prov[i]["M"])
+                        line.findAndAddContactsByMids(allmid)
+                        line.inviteIntoGroup(msg.to,allmid)
+                        line.cancelGroupInvitation(msg.to,allmid)
+                     elif msg.text.lower() == ".myid":
+                    line.sendText(msg.to,user1)
+                elif ".tx " in msg.text.lower():
+                    spl = re.split(".tx ",msg.text,flags=re.IGNORECASE)
+                    if spl[0] == "":
+                        line.kedapkedip(msg.to,spl[1])
+                elif ".name " in msg.text.lower():
+                    spl = re.split(".name ",msg.text,flags=re.IGNORECASE)
+                    if spl[0] == "":
+                        prof = line.getProfile()
+                        prof.displayName = spl[1]
+                        line.updateProfile(prof)
+                        line.sendText(msg.to,"สำเร็จแล้ว")
+                elif ".nmx " in msg.text.lower():
+                    spl = re.split(".nmx ",msg.text,flags=re.IGNORECASE)
+                    if spl[0] == "":
+                        prof = line.getProfile()
+                        prof.displayName = line.nmxstring(spl[1])
+                        line.updateProfile(prof)
+                        line.sendText(msg.to,"สำเร็จแล้ว")
+                elif ".join " in msg.text.lower():
+                    spl = re.split(".join ",msg.text,flags=re.IGNORECASE)
+                    if spl[0] == "":
+                        try:
+                            gid = spl[1].split(" ")[0]
+                            ticket = spl[1].split(" ")[1].replace("line://ti/g/","") if "line://ti/g/" in spl[1].split(" ")[1] else spl[1].split(" ")[1].replace("http://line.me/R/ti/g/","") if "http://line.me/R/ti/g/" in spl[1].split(" ")[1] else spl[1].split(" ")[1]
+                            line.acceptGroupInvitationByTicket(gid,ticket)
+                        except Exception as e:
+                            line.sendText(msg.to,str(e))	
+                elif msg.text.lower().startswith(".ctt "):
+                    try:
+                        text = msg.text.split(" ",1)[1]
+                        headers = {
+                        "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36"
+                        }
+                        data = {
+                        "q":text
+                        }
+                        conv = BeautifulSoup(requests.post("http://lullar-de-2.appspot.com/",headers=headers,data=data).content,"html.parser").find("span",attrs={"style":"font-size:40px"}).text
+                        if msg.toType != 0:
+                                line.sendText(msg.to,"Conversion:\n"+conv)
+                        else:
+                                line.sendText(msg.from_,"Conversion:\n"+conv)
+                    except Exception as e:
+                        print(e)						
+                elif msg.text.lower().startswith("pz:gac "):
+			
+			pnum = re.split("pz:gac ",msg.text,flags=re.IGNORECASE)[1]
+                    pnum = "66"+pnum[1:]
+                    GACReq = GACSender.send(pnum)
+                    if GACReq.responseNum == 0:
+                        if msg.toType != 0:
+                                line.sendText(msg.to,"ส่ง SMS สำเร็จแล้ว (｀・ω・´)")
+                        else:
+                                line.sendText(msg.from_,"ส่ง SMS สำเร็จแล้ว (｀・ω・´)")
+                    elif GACReq.responseNum == 1:
+                        if msg.toType != 0:
+                                line.sendText(msg.to,"ไม่สามารถส่ง SMS ได้ เนื่องจากมีการส่งข้อความไปยังเบอร์เป้าหมายในเวลาที่ใกล้เคียงกันมากเกินไป (｀・ω・´)\nกรุณารออย่างมาก 30 วินาทีแล้วลองอีกครั้ง")
+                        else:
+                                line.sendText(msg.from_,"ไม่สามารถส่ง SMS ได้ เนื่องจากมีการส่งข้อความไปยังเบอร์เป้าหมายในเวลาที่ใกล้เคียงกันมากเกินไป (｀・ω・´)\nกรุณารออย่างมาก 30 วินาทีแล้วลองอีกครั้ง")
+                    else:
+                        if msg.toType != 0:
+                                line.sendText(msg.to,"พบข้อผิดพลาดที่ไม่รู้จัก (｀・ω・´)")
+                        else:
+                                line.sendText(msg.from_,"พบข้อผิดพลาดที่ไม่รู้จัก (｀・ω・´)")
+                elif msg.text.lower() == ".groupurl":
+                    if msg.toType == 2:
+                        line.sendText(msg.to,"http://line.me/R/ti/g/"+str(line.reissueGroupTicket(msg.to)))
+                    else:
+                        line.sendText(msg.to,"คำสั่งนี้ใช้ได้เฉพาะในกลุ่มเท่านั้น")
+                elif ".groupurl " in msg.text.lower():
+                    spl = re.split(".groupurl ",msg.text,flags=re.IGNORECASE)
+                    if spl[0] == "":
+                        try:
+                            line.sendText(msg.to,"http://line.me/R/ti/g/"+str(line.reissueGroupTicket(spl[1])))
+                        except Exception as e:
+                            line.sendText(msg.to,"พบข้อผิดพลาด (เหตุผล \""+e.reason+"\")")				
+#========================================ถึงนี้======================================#
 #-------------------------------------------------------------------------------
                 elif msg.text.lower().startswith("owneradd "):
                         key = eval(msg.contentMetadata["MENTION"])
