@@ -746,56 +746,49 @@ def lineBot(op):
                 if text is None:
                     return
 #==============================================================================#
-                if text.lower() == 'help':
-                    helpMessage = helpmessage()
-                    gye.sendMessage(to, str(helpMessage))
-                    gye.sendContact(to, "u5068fff4398601a4b5fa1c9876ea170c")
-                    gye.sendMessage(to,"█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
-                elif text.lower() == 'help1':
-                    helpTextToSpeech = helptexttospeech()
-                    gye.sendMessage(to, str(helpTextToSpeech))
-                    gye.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
-                elif text.lower() == 'help2':
-                    helpTranslate = helptranslate()
-                    gye.sendMessage(to, str(helpTranslate))
-                    gye.sendMessage(to, "█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█\n█░░║║║╠─║─║─║║║║║╠─░░█\n█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█")
 #==============================================================================#
+                elif text.lower() == 'speed':
+                    start = time.time()
+                    gye.sendMessage(to, "กำลังทดสอบ")
+                    elapsed_time = time.time() - start
+                    gye.sendMessage(msg.to, "[ %s Seconds ] [ " % (elapsed_time) + str(int(round((time.time() - start) * 1000)))+" ms ]")
                 elif text.lower() == 'sp':
                     start = time.time()
-                    gye.sendMessage(to, "Cek Speed...")
+                    gye.sendMessage(to, "กำลังทดสอบ")
                     elapsed_time = time.time() - start
-                    gye.sendMessage(to,format(str(elapsed_time)))
-                elif text.lower() == 'restart':    
-                    gye.sendMessage(to, "Please Wait...")
-                    time.sleep(5)
-                    gye.sendMessage(to, "Restart Sukses")
+                    gye.sendMessage(msg.to, "[ %s Seconds ] [ " % (elapsed_time) + str(int(round((time.time() - start) * 1000)))+" ms ]")						
+                elif text.lower() == 'รีบอท':
+                    gye.sendMessage(to, "กำลังเริ่มต้นใหม่ ... โปรดรอสักครู่ ..")
+                    gye.sendMessage(to, "Success Restarting.")
                     restartBot()
                 elif text.lower() == 'runtime':
                     timeNow = time.time()
                     runtime = timeNow - botStart
                     runtime = format_timespan(runtime)
-                    gye.sendMessage(to, "login bot selama {}".format(str(runtime)))
+                    gye.sendMessage(to, "ระยะเวลาการทำงานของบอท {}".format(str(runtime)))
                 elif text.lower() == 'about':
                     try:
                         arr = []
                         owner = "u104e95aaefb53cf411f77353f6a96ece"
                         creator = gye.getContact(owner)
-                        contact = gye.getContact(gyeMID)
+                        contact = gye.getContact(lineMID)
                         grouplist = gye.getGroupIdsJoined()
                         contactlist = gye.getAllContactIds()
                         blockedlist = gye.getBlockedContactIds()
-                        ret_ = "╭════════╬♥╬════════╮\nStatus Bots\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
-                        ret_ += "\n╠ akun : {}".format(contact.displayName)
-                        ret_ += "\n╠ group : {}".format(str(len(grouplist)))
-                        ret_ += "\n╠ teman : {}".format(str(len(contactlist)))
-                        ret_ += "\n╠ Blokir : {}".format(str(len(blockedlist)))
-                        ret_ += "\n╠══[ About Selfbot ]"
-                        ret_ += "\n╠ Version : Premium"
-                        ret_ += "\n╠ Creator : {}".format(creator.displayName)
-                        ret_ += "\n╰════════╬♥╬════════╯\n\nGYEVHA BOTS╭════════╬♥╬════════╮\n╰════════╬♥╬════════╯"
+                        ret_ = "╔══[ ✯ɢʜᴏsᴛ ᴛᴇᴀᴍ✯ ]"
+                        ret_ += "\n╠۝ ชื่อ ═ {}".format(contact.displayName)
+                        ret_ += "\n╠۝ กลุ่ม ═ {}".format(str(len(grouplist)))
+                        ret_ += "\n╠۝ เพื่อน ═ {}".format(str(len(contactlist)))
+                        ret_ += "\n╠۝ บล็อค ═ {}".format(str(len(blockedlist)))
+                        ret_ += "\n╠══[สถานะ]"
+                        ret_ += "\n╠۝ ผู้สร้าง ═ {}".format(creator.displayName)
+                        ret_ += "\n╚══[ ✯ɢʜᴏsᴛ ᴛᴇᴀᴍ✯ ]"
+                        gyee.sendContact(to, owner)
                         gye.sendMessage(to, str(ret_))
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
+#==============================================================================#
+#==============================================================================#                                                                           
 #==============================================================================#
                 elif text.lower() == 'เช็คป้องกัน':
                     try:
