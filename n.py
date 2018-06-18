@@ -879,7 +879,7 @@ def lineBot(op):
                 elif text.lower() == 'เช็คป้องกัน':
                     try:
                         ret_ = "╭════════╬♥╬════════╮\n ║͜͡☆➣ ♥ Status Bots ♥\n ╰════════╬♥╬════════╯\n ╭════════╬♥╬════════╮\n"
-                        if settings["protect"] == True: ret_ += "║͜͡☆➣ Protect ✅"
+                        if settings["PROTECT"] == True: ret_ += "║͜͡☆➣ Protect ✅"
                         else: ret_ += "║͜͡☆➣  Protect ❌"
                         if settings["qrprotect"] == True: ret_ += "\n║͜͡☆➣ Qr Protect ✅"
                         else: ret_ += "\n║͜͡☆➣ Qr Protect ❌"
