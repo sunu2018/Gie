@@ -3262,7 +3262,7 @@ def lineBot(op):
                         ke.acceptGroupInvitationByTicket(to,format(str(ticket)))
                         time.sleep(0.01)                        
                         group.preventedJoinByTicket = True
-                        line.updateGroup(group)
+                        gye.updateGroup(group)
                         print ("Kicker Join")
 
                 elif 'kick' in text.lower():
@@ -3286,10 +3286,10 @@ def lineBot(op):
                            targets.append(x["M"])
                        for target in targets:
                            try:
-                               line.kickoutFromGroup(msg.to,[target])             
+                               gye.kickoutFromGroup(msg.to,[target])             
                                print ("Sb Kick User")
                            except:
-                               line.sendMessage(msg.to,"Limit kaka 😫")                               
+                               gye.sendMessage(msg.to,"Limit kaka 😫")                               
 
                 elif 'k1 kick' in text.lower():
                        targets = []
@@ -3351,10 +3351,10 @@ def lineBot(op):
                            targets.append(x["M"])
                        for target in targets:
                            try:
-                               line.inviteIntoGroup(msg.to,[target])
-                               line.sendMessage(receiver, "Type👉 Invite Succes")
+                               gye.inviteIntoGroup(msg.to,[target])
+                               gye.sendMessage(receiver, "Type👉 Invite Succes")
                            except:
-                               line.sendMessage(msg.to,"Type👉 Limit Invite")
+                               gye.sendMessage(msg.to,"Type👉 Limit Invite")
 
                 elif 'k1 invite' in text.lower():
                        targets = []
@@ -3416,34 +3416,34 @@ def lineBot(op):
                 	if msg.toType == 2:
                          _name = msg.text.replace("Cleanse","")
                          gs = line.getGroup(receiver)
-                         line.sendMessage(receiver,"Just some casual cleansing ô")
+                         gye.sendMessage(receiver,"Just some casual cleansing ô")
                          targets = []
                          for g in gs.members:
                              if _name in g.displayName:
                                  targets.append(g.mid)
                          if targets == []:
-                             line.sendMessage(receiver,"Not found.")
+                             gye.sendMessage(receiver,"Not found.")
                          else:
                              for target in targets:
                              	if not target in Rfu:
                                      try:
-                                         klist=[line,ki,kk,kc,ke]
+                                         klist=[gye,ki,kk,kc,ke]
                                          kicker=random.choice(klist)
                                          kicker.kickoutFromGroup(receiver,[target])
                                          print((receiver,[g.mid]))
                                      except:
-                                         line.sendMessage(receiver,"Group cleanse")
+                                         gye.sendMessage(receiver,"Group cleanse")
                                          print ("Cleanse Group")
 
                 elif msg.text in ["Scan blacklist"]:
                 	if msg.toType == 2:
-                         group = line.getGroup(receiver)
+                         group = gye.getGroup(receiver)
                          gMembMids = [contact.mid for contact in group.members]
                          matched_list = []
                          for tag in settings["blacklist"]:
                              matched_list+=[str for str in gMembMids if str == tag]
                          if matched_list == []:
-                             line.sendMessage(receiver,"Nots in Blacklist")
+                             gye.sendMessage(receiver,"Nots in Blacklist")
                          else:
                              for jj in matched_list:
                                  try:
@@ -3452,7 +3452,7 @@ def lineBot(op):
                                      kicker.kickoutFromGroup(receiver,[jj])
                                      print((receiver,[jj]))
                                  except:
-                                     line.sendMessage(receiver,"sorry bl ke cyduk")
+                                     gye.sendMessage(receiver,"sorry bl ke cyduk")
                                      print ("Blacklist di Kick")
 
                 elif text.lower() == "removechat":
@@ -3491,8 +3491,8 @@ def lineBot(op):
                         string = text.replace(proses[0] + ": ","")
                         profile_A = line.getProfile()
                         profile_A.displayName = string
-                        line.updateProfile(profile_A)
-                        line.sendMessage(msg.to,"Update to " + string)
+                        gye.updateProfile(profile_A)
+                        gye.sendMessage(msg.to,"Update to " + string)
                         print ("Update Name")
 
                 elif "upbio: " in msg.text.lower():
@@ -3501,8 +3501,8 @@ def lineBot(op):
                         string = text.replace(proses[0] + ": ","")
                         profile_A = line.getProfile()
                         profile_A.statusMessage = string
-                        line.updateProfile(profile_A)
-                        line.sendMessage(msg.to,"Succes Update 👉 " + string)
+                        gye.updateProfile(profile_A)
+                        gye.sendMessage(msg.to,"Succes Update 👉 " + string)
                         print ("Update Bio Succes")
 
                 elif "nameall: " in text.lower():
@@ -3521,7 +3521,7 @@ def lineBot(op):
                         kk.updateProfile(profile_B)
                         kc.updateProfile(profile_C)
                         ke.updateProfile(profile_D)                        
-                        line.sendMessage(msg.to,"Update Name All Kicker to : " + string)
+                        gye.sendMessage(msg.to,"Update Name All Kicker to : " + string)
                         print ("Update Name All Kicker")
 
                 elif "bioall: " in text.lower():
@@ -3540,7 +3540,7 @@ def lineBot(op):
                         kk.updateProfile(profile_B)
                         kc.updateProfile(profile_C)
                         ke.updateProfile(profile_D)                        
-                        line.sendMessage(msg.to,"Update Bio All Kicker to : " + string)
+                        gye.sendMessage(msg.to,"Update Bio All Kicker to : " + string)
                         print ("Update Bio All Kicker")
 
                 elif text.lower() == "รายงาน":
@@ -3577,7 +3577,7 @@ def lineBot(op):
                        hasil += "\nPrice : " +str(data["btc"])                                
                        hasil += "\nExpensive : " +str(data["high"])
                        hasil += "\nCheap : " +str(data["low"])               
-                       line.sendMessage(to, str(hasil))
+                       gye.sendMessage(to, str(hasil))
 #=============COMMAND PROTECT=========================#
                 elif msg.text.lower() == 'protect on':
                     if RfuProtect["protect"] == True:
