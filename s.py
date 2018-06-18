@@ -3163,13 +3163,13 @@ def lineBot(op):
                     sep = msg.text.split(" ")
                     textnya = msg.text.replace(sep[0] + " ","")
                     urlnya = "http://chart.apis.google.com/chart?chs=480x80&cht=p3&chtt=" + textnya + "&chts=FFFFFF,70&chf=bg,s,000000"
-                    line.sendImageWithURL(msg.to, urlnya)
+                    gye.sendImageWithURL(msg.to, urlnya)
 
                 elif "kedip " in msg.text:
                     txt = msg.text.replace("kedip ", "")
                     t1 = "\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xa0\x81\xf4\x80\xa0\x81\xf4\x80\xa0\x81"
                     t2 = "\xf4\x80\x82\xb3\xf4\x8f\xbf\xbf"
-                    line.sendMessage(msg.to, t1 + txt + t2)						
+                    gye.sendMessage(msg.to, t1 + txt + t2)						
                 elif msg.text in ["บอท1ลบสิริ"]:
                     if msg.toType == 2:
                         print("Kick Siri")
@@ -3225,21 +3225,21 @@ def lineBot(op):
                                     pass									
                 elif msg.text in ["Inviteuser"]:
                         settings["winvite"] = True
-                        line.sendMessage(msg.to,"send a contact to invite user")                            
+                        gye.sendMessage(msg.to,"send a contact to invite user")                            
                 elif msg.text.lower() == ".invitecancel":
                     if msg.toType == 2:
                         group = line.getGroup(msg.to)
                         gMembMids = [contact.mid for contact in group.invitee]
                         for i in gMembMids:
-                            line.cancelGroupInvitation(msg.to,[i])
+                            gye.cancelGroupInvitation(msg.to,[i])
                 elif msg.text.lower() == ".invitecancel2":
                     if msg.toType == 2:
-                        group = line.getGroup(msg.to)
+                        group = gye.getGroup(msg.to)
                         gMembMids = [contact.mid for contact in group.invitee]
                         for i in gMembMids:
                             random.choice(Exc).cancelGroupInvitation(msg.to,[i])
                 elif msg.text.lower() == "ออน":
-                    line.sendText(msg.to,(str(datetime.datetime.now() - start_runtime)[:-7].split(" days, ")[0]+" วัน "+str(datetime.datetime.now() - start_runtime)[:-7].split(" days, ")[1].split(":")[0]+" ชั่วโมง " if "days" in str(datetime.datetime.now() - start_runtime) else str(datetime.datetime.now() - start_runtime)[:-7].split(" day, ")[0]+" วัน "+str(datetime.datetime.now() - start_runtime)[:-7].split(" day, ")[1].split(":")[0]+" ชั่วโมง " if "day" in str(datetime.datetime.now() - start_runtime) else str(datetime.datetime.now() - start_runtime)[:-7].split(":")[0]+" ชั่วโมง ")+str(datetime.datetime.now() - start_runtime)[:-7].split(":")[1]+" นาที "+str(datetime.datetime.now() - start_runtime)[:-7].split(":")[2]+" วินาที")
+                    gye.sendText(msg.to,(str(datetime.datetime.now() - start_runtime)[:-7].split(" days, ")[0]+" วัน "+str(datetime.datetime.now() - start_runtime)[:-7].split(" days, ")[1].split(":")[0]+" ชั่วโมง " if "days" in str(datetime.datetime.now() - start_runtime) else str(datetime.datetime.now() - start_runtime)[:-7].split(" day, ")[0]+" วัน "+str(datetime.datetime.now() - start_runtime)[:-7].split(" day, ")[1].split(":")[0]+" ชั่วโมง " if "day" in str(datetime.datetime.now() - start_runtime) else str(datetime.datetime.now() - start_runtime)[:-7].split(":")[0]+" ชั่วโมง ")+str(datetime.datetime.now() - start_runtime)[:-7].split(":")[1]+" นาที "+str(datetime.datetime.now() - start_runtime)[:-7].split(":")[2]+" วินาที")
 #=============COMMAND KICKER===========================#
                 elif msg.text in ["cb"]:
                     settings["blacklist"] = {}
