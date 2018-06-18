@@ -61,9 +61,9 @@ ke = LINE("EtRhFIGABsjUHKYKVoqe.lVN3XpWByvHZ/lHSAQFaBG.Fo8l69iIhSLOiMhTWoKoj6JIg
 
 print ("Login Succes")
 
-gyeMID = line.profile.mid
-gyeProfile = line.getProfile()
-gyeSettings = line.getSettings()
+gyeMID = gye.profile.mid
+gyeProfile = gye.getProfile()
+gyeSettings = gyee.getSettings()
 
 kiMID = ki.profile.mid
 kiProfile = ki.getProfile()
