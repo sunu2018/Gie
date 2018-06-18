@@ -886,9 +886,9 @@ def lineBot(op):
                             if mention["M"] not in lists:
                                 lists.append(mention["M"])
                         for ls in lists:
-                            contact = line.getContact(ls)
+                            contact = gye.getContact(ls)
                             mi_d = contact.mid
-                            line.sendContact(msg.to, mi_d)
+                            gye.sendContact(msg.to, mi_d)
                 elif msg.text.lower().startswith("mid "):
                     if 'MENTION' in list(msg.contentMetadata.keys())!= None:
                         names = re.findall(r'@(\w+)', text)
@@ -949,7 +949,7 @@ def lineBot(op):
                                 lists.append(mention["M"])
                         for ls in lists:
                             path = "http://dl.profile.line.naver.jp/" + line.getContact(ls).pictureStatus + "/vp"
-                            line.sendImageWithURL(msg.to, str(path))
+                            gye.sendImageWithURL(msg.to, str(path))
                 elif msg.text.lower().startswith("cover "):
                     if line != None:
                         if 'MENTION' in list(msg.contentMetadata.keys())!= None:
@@ -1538,7 +1538,7 @@ def lineBot(op):
                     gye.sendMessage(msg)						
 #==============================================================================#
                 elif text.lower() == 'แทค':
-                    group = line.getGroup(msg.to)
+                    group = gye.getGroup(msg.to)
                     nama = [contact.mid for contact in group.members]
                     k = len(nama)//500
                     for a in range(k+1):
@@ -1549,12 +1549,12 @@ def lineBot(op):
                             b.append({"S":str(s), "E" :str(s+6), "M":i.mid})
                             s += 7
                             txt += '@Alin \n'
-                        line.sendMessage(to, text=txt, contentMetadata={'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
-                        line.sendMessage(to, "จำนวน {} คน".format(str(len(nama))))          
+                        gye.sendMessage(to, text=txt, contentMetadata={'MENTION': json.dumps({'MENTIONEES':b})}, contentType=0)
+                        gye.sendMessage(to, "จำนวน {} คน".format(str(len(nama))))          
 
                 elif text.lower() == 'k1 tag':
-                    group = line.getGroup(msg.to)
-                    nama = [contact.mid for contact in group.members if contact.mid != lineMID]
+                    group = gye.getGroup(msg.to)
+                    nama = [contact.mid for contact in group.members if contact.mid != gyeMID]
                     k = len(nama)//500
                     for a in range(k+1):
                         txt = ''
@@ -1593,7 +1593,7 @@ def lineBot(op):
                             read['ROM'][msg.to] = {}
                             with open('read.json', 'w') as fp:
                                 json.dump(read, fp, sort_keys=True, indent=4)
-                                line.sendMessage(msg.to,"Lurking enabled")
+                                gye.sendMessage(msg.to,"Lurking enabled")
                     else:
                         try:
                             del read['readPoint'][msg.to]
@@ -1607,7 +1607,7 @@ def lineBot(op):
                         read['ROM'][msg.to] = {}
                         with open('read.json', 'w') as fp:
                             json.dump(read, fp, sort_keys=True, indent=4)
-                            line.sendMessage(msg.to, "Set reading point:\n" + readTime)
+                            gye.sendMessage(msg.to, "Set reading point:\n" + readTime)
                             
                 elif text.lower() == 'lurking off':
                     tz = pytz.timezone("Asia/Jakarta")
@@ -1623,7 +1623,7 @@ def lineBot(op):
                         if bln == str(k): bln = bulan[k-1]
                     readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nJam : [ " + timeNow.strftime('%H:%M:%S') + " ]"
                     if msg.to not in read['readPoint']:
-                        line.sendMessage(msg.to,"Lurking disabled")
+                        gye.sendMessage(msg.to,"Lurking disabled")
                     else:
                         try:
                             del read['readPoint'][msg.to]
@@ -1631,7 +1631,7 @@ def lineBot(op):
                             del read['readTime'][msg.to]
                         except:
                               pass
-                        line.sendMessage(msg.to, "Delete reading point:\n" + readTime)
+                        gye.sendMessage(msg.to, "Delete reading point:\n" + readTime)
     
                 elif text.lower() == 'lurking reset':
                     tz = pytz.timezone("Asia/Jakarta")
@@ -1653,9 +1653,9 @@ def lineBot(op):
                             del read["readTime"][msg.to]
                         except:
                             pass
-                        line.sendMessage(msg.to, "Reset reading point:\n" + readTime)
+                        gye.sendMessage(msg.to, "Reset reading point:\n" + readTime)
                     else:
-                        line.sendMessage(msg.to, "Lurking belum diaktifkan ngapain di reset?")
+                        gye.sendMessage(msg.to, "Lurking belum diaktifkan ngapain di reset?")
                         
                 elif text.lower() == 'lurking':
                     tz = pytz.timezone("Asia/Jakarta")
@@ -1672,7 +1672,7 @@ def lineBot(op):
                     readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nJam : [ " + timeNow.strftime('%H:%M:%S') + " ]"
                     if receiver in read['readPoint']:
                         if list(read["ROM"][receiver].items()) == []:
-                            line.sendMessage(receiver,"[ Reader ]:\nNone")
+                            gye.sendMessage(receiver,"[ Reader ]:\nNone")
                         else:
                             chiya = []
                             for rom in list(read["ROM"][receiver].items()):
@@ -1693,12 +1693,12 @@ def lineBot(op):
                             zxc += pesan2
                         text = xpesan+ zxc + "\n[ Lurking time ]: \n" + readTime
                         try:
-                            line.sendMessage(receiver, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}, contentType=0)
+                            gye.sendMessage(receiver, text, contentMetadata={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}, contentType=0)
                         except Exception as error:
                             print (error)
                         pass
                     else:
-                        line.sendMessage(receiver,"Lurking has not been set.")
+                        gye.sendMessage(receiver,"Lurking has not been set.")
 #==============================================================================#
                 elif msg.text.lower().startswith("say-af "):
                     sep = text.split(" ")
@@ -1706,7 +1706,7 @@ def lineBot(op):
                     lang = 'af'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
         
                 elif msg.text.lower().startswith("say-sq "):
                     sep = text.split(" ")
@@ -1714,7 +1714,7 @@ def lineBot(op):
                     lang = 'sq'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-ar "):
                     sep = text.split(" ")
@@ -1722,7 +1722,7 @@ def lineBot(op):
                     lang = 'ar'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-hy "):
                     sep = text.split(" ")
@@ -1730,7 +1730,7 @@ def lineBot(op):
                     lang = 'hy'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-bn "):
                     sep = text.split(" ")
@@ -1738,7 +1738,7 @@ def lineBot(op):
                     lang = 'bn'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-ca "):
                     sep = text.split(" ")
@@ -1746,7 +1746,7 @@ def lineBot(op):
                     lang = 'ca'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-zh "):
                     sep = text.split(" ")
@@ -1754,7 +1754,7 @@ def lineBot(op):
                     lang = 'zh'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-zh-cn "):
                     sep = text.split(" ")
@@ -1762,7 +1762,7 @@ def lineBot(op):
                     lang = 'zh-cn'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-zh-tw "):
                     sep = text.split(" ")
@@ -1770,7 +1770,7 @@ def lineBot(op):
                     lang = 'zh-tw'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-zh-yue "):
                     sep = text.split(" ")
@@ -1778,7 +1778,7 @@ def lineBot(op):
                     lang = 'zh-yue'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-hr "):
                     sep = text.split(" ")
@@ -1786,7 +1786,7 @@ def lineBot(op):
                     lang = 'hr'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-cs "):
                     sep = text.split(" ")
@@ -1794,7 +1794,7 @@ def lineBot(op):
                     lang = 'cs'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-da "):
                     sep = text.split(" ")
@@ -1802,7 +1802,7 @@ def lineBot(op):
                     lang = 'da'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-nl "):
                     sep = text.split(" ")
@@ -1810,7 +1810,7 @@ def lineBot(op):
                     lang = 'nl'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-en "):
                     sep = text.split(" ")
@@ -1818,7 +1818,7 @@ def lineBot(op):
                     lang = 'en'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-en-au "):
                     sep = text.split(" ")
@@ -1826,7 +1826,7 @@ def lineBot(op):
                     lang = 'en-au'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-en-uk "):
                     sep = text.split(" ")
@@ -1834,7 +1834,7 @@ def lineBot(op):
                     lang = 'en-uk'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-en-us "):
                     sep = text.split(" ")
@@ -1842,7 +1842,7 @@ def lineBot(op):
                     lang = 'en-us'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-eo "):
                     sep = text.split(" ")
@@ -1850,7 +1850,7 @@ def lineBot(op):
                     lang = 'eo'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-fi "):
                     sep = text.split(" ")
@@ -1858,7 +1858,7 @@ def lineBot(op):
                     lang = 'fi'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-fr "):
                     sep = text.split(" ")
@@ -1866,7 +1866,7 @@ def lineBot(op):
                     lang = 'fr'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-de "):
                     sep = text.split(" ")
@@ -1874,7 +1874,7 @@ def lineBot(op):
                     lang = 'de'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-el "):
                     sep = text.split(" ")
@@ -1882,7 +1882,7 @@ def lineBot(op):
                     lang = 'el'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-hi "):
                     sep = text.split(" ")
@@ -1890,7 +1890,7 @@ def lineBot(op):
                     lang = 'hi'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-hu "):
                     sep = text.split(" ")
@@ -1898,7 +1898,7 @@ def lineBot(op):
                     lang = 'hu'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-is "):
                     sep = text.split(" ")
@@ -1906,7 +1906,7 @@ def lineBot(op):
                     lang = 'is'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-id "):
                     sep = text.split(" ")
@@ -1914,7 +1914,7 @@ def lineBot(op):
                     lang = 'id'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-it "):
                     sep = text.split(" ")
@@ -1922,7 +1922,7 @@ def lineBot(op):
                     lang = 'it'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-ja "):
                     sep = text.split(" ")
@@ -1930,7 +1930,7 @@ def lineBot(op):
                     lang = 'ja'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-km "):
                     sep = text.split(" ")
@@ -1938,7 +1938,7 @@ def lineBot(op):
                     lang = 'km'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-ko "):
                     sep = text.split(" ")
@@ -1946,7 +1946,7 @@ def lineBot(op):
                     lang = 'ko'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-la "):
                     sep = text.split(" ")
@@ -1954,7 +1954,7 @@ def lineBot(op):
                     lang = 'la'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-lv "):
                     sep = text.split(" ")
@@ -1962,7 +1962,7 @@ def lineBot(op):
                     lang = 'lv'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-mk "):
                     sep = text.split(" ")
@@ -1970,7 +1970,7 @@ def lineBot(op):
                     lang = 'mk'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-no "):
                     sep = text.split(" ")
@@ -1978,7 +1978,7 @@ def lineBot(op):
                     lang = 'no'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-pl "):
                     sep = text.split(" ")
@@ -1986,7 +1986,7 @@ def lineBot(op):
                     lang = 'pl'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-pt "):
                     sep = text.split(" ")
@@ -1994,7 +1994,7 @@ def lineBot(op):
                     lang = 'pt'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-do "):
                     sep = text.split(" ")
@@ -2002,7 +2002,7 @@ def lineBot(op):
                     lang = 'ro'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-ru "):
                     sep = text.split(" ")
@@ -2010,7 +2010,7 @@ def lineBot(op):
                     lang = 'ru'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-sr "):
                     sep = text.split(" ")
@@ -2018,7 +2018,7 @@ def lineBot(op):
                     lang = 'sr'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-si "):
                     sep = text.split(" ")
@@ -2026,7 +2026,7 @@ def lineBot(op):
                     lang = 'si'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-sk "):
                     sep = text.split(" ")
@@ -2034,7 +2034,7 @@ def lineBot(op):
                     lang = 'sk'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-es "):
                     sep = text.split(" ")
@@ -2042,7 +2042,7 @@ def lineBot(op):
                     lang = 'es'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-es-es "):
                     sep = text.split(" ")
@@ -2050,7 +2050,7 @@ def lineBot(op):
                     lang = 'es-es'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-es-us "):
                     sep = text.split(" ")
@@ -2058,7 +2058,7 @@ def lineBot(op):
                     lang = 'es-us'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-sw "):
                     sep = text.split(" ")
@@ -2066,7 +2066,7 @@ def lineBot(op):
                     lang = 'sw'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-sv "):
                     sep = text.split(" ")
@@ -2074,7 +2074,7 @@ def lineBot(op):
                     lang = 'sv'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-ta "):
                     sep = text.split(" ")
@@ -2082,7 +2082,7 @@ def lineBot(op):
                     lang = 'ta'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-th "):
                     sep = text.split(" ")
@@ -2090,7 +2090,7 @@ def lineBot(op):
                     lang = 'th'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-tr "):
                     sep = text.split(" ")
@@ -2098,7 +2098,7 @@ def lineBot(op):
                     lang = 'tr'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-uk "):
                     sep = text.split(" ")
@@ -2106,7 +2106,7 @@ def lineBot(op):
                     lang = 'uk'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-vi "):
                     sep = text.split(" ")
@@ -2114,7 +2114,7 @@ def lineBot(op):
                     lang = 'vi'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
                     
                 elif msg.text.lower().startswith("say-cy "):
                     sep = text.split(" ")
@@ -2122,7 +2122,7 @@ def lineBot(op):
                     lang = 'cy'
                     tts = gTTS(text=say, lang=lang)
                     tts.save("hasil.mp3")
-                    line.sendAudio(msg.to,"hasil.mp3")
+                    gye.sendAudio(msg.to,"hasil.mp3")
 #==============================================================================# 
                 elif msg.text.lower().startswith("tr-af "):
                     sep = text.split(" ")
@@ -3243,16 +3243,16 @@ def lineBot(op):
 #=============COMMAND KICKER===========================#
                 elif msg.text in ["cb"]:
                     settings["blacklist"] = {}
-                    line.sendMessage(msg.to,"ทำการลบัญชีดำทั้งหมดเรียร้อย")
+                    gye.sendMessage(msg.to,"ทำการลบัญชีดำทั้งหมดเรียร้อย")
                     print ("Clear Ban")
 
                 elif text.lower() == 'มาเหอะ':
                     if msg.toType == 2:
-                        group = line.getGroup(to)
+                        group = gye.getGroup(to)
                         group.preventedJoinByTicket = False
                         line.updateGroup(group)
                         invsend = 0
-                        ticket = line.reissueGroupTicket(to)
+                        ticket = gye.reissueGroupTicket(to)
                         ki.acceptGroupInvitationByTicket(to,format(str(ticket)))
                         time.sleep(0.01)
                         kk.acceptGroupInvitationByTicket(to,format(str(ticket)))
