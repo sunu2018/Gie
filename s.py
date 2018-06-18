@@ -1,22 +1,37 @@
 # -*- coding: utf-8 -*-
-from linepy import *
-from akad.ttypes import *
-from multiprocessing import Pool, Process
+
+from gyevha import *
 from datetime import datetime
 from time import sleep
 from bs4 import BeautifulSoup
 from humanfriendly import format_timespan, format_size, format_number, format_length
-import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib.request, urllib.parse, urllib.error, urllib.parse,antolib,subprocess,unicodedata,GACSender
+import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib.parse
 from gtts import gTTS
 from googletrans import Translator
+ 
+# Ini Untuk Login Via Lik Dan Via Emal
+#gye = LINE()
+#gye = LINE("Email","Password")
+#gye.log("Auth Token : " + str(gye.authToken))
+#channelToken = gye.getChannelResult()
+#gye.log("Channel Token : " + str(channelToken))
 
+# Silahkan Edit Sesukamu
+# Asalkan Rapih Dan Respon
+# jika ingin login Via qr Ganti Saja
+# Atau Login Via Emal
+# Mudeng Orang kalo Ra Mudeng
+# Sungguh Terlalu
+# Jangan Lupa Add Admin 
+# id Line ( aisyagye )
+#==============================================================================#
 #==============================================================================#
 botStart = time.time()
 #==============================================================================#
-line = LINE()
+gye = LINE()
 #line = LINE('EsWxrB4tKn6gC6TFI5C7.6s2jZdrOy8zaUkEfxHsR1W.DgrqvMHxZTAtX3m4jYOE8Ur7iqZm4P7/VvXmsYU0RHY=')
-line.log("Auth Token : " + str(line.authToken))
-line.log("Timeline Token : " + str(line.tl.channelAccessToken))
+gye.log("Auth Token : " + str(gye.authToken))
+gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
 
 #ki = LINE()
 ki = LINE('EsTzmCy8rYjFOuH5kR83.GCNKB40ZZcsiFISzLQG8mW.TrpI1PFDTSHvsNRyD2RdVLU0oZddJWC6RblrpyRk8D4=')
@@ -41,9 +56,9 @@ ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
 print ("Login Succes")
 
-lineMID = line.profile.mid
-lineProfile = line.getProfile()
-lineSettings = line.getSettings()
+gyeMID = line.profile.mid
+gyeProfile = line.getProfile()
+gyeSettings = line.getSettings()
 
 kiMID = ki.profile.mid
 kiProfile = ki.getProfile()
@@ -66,23 +81,23 @@ oepoll = OEPoll(ke)
 oepoll = OEPoll(kc)
 oepoll = OEPoll(kk)
 oepoll = OEPoll(ki)
-oepoll = OEPoll(line)
+oepoll = OEPoll(gye)
 #call = Call(line)
 readOpen = codecs.open("read.json","r","utf-8")
 settingsOpen = codecs.open("temp.json","r","utf-8")
 read = json.load(readOpen)
 settings = json.load(settingsOpen)
-Rfu = [line,ki,kk,kc,ke]
+Rfu = [gye,ki,kk,kc,ke]
 Exc = [ki,kk,kc,ke]
-lineMID = line.getProfile().mid
+gyeMID = gye.getProfile().mid
 kiMID = ki.getProfile().mid
 kkMID = kk.getProfile().mid
 kcMID = kc.getProfile().mid
 kcMID = ke.getProfile().mid
-bot1 = line.getProfile().mid
-RfuBot=[lineMID,kiMID,kkMID,kcMID,keMID]
-Family=["u9ed31efc986199adedb27386c9b1f458",lineMID,kiMID,kkMID,kcMID,keMID]
-admin=['u9ed31efc986199adedb27386c9b1f458',lineMID]
+bot1 = gye.getProfile().mid
+RfuBot=[gyeMID,kiMID,kkMID,kcMID,keMID]
+Family=["u9ed31efc986199adedb27386c9b1f458",gyeMID,kiMID,kkMID,kcMID,keMID]
+admin=['u9ed31efc986199adedb27386c9b1f458',gyeMID]
 RfuFamily = RfuBot + Family
 
 protectname = []
@@ -198,14 +213,14 @@ rfuSet = {
     'ricoinvite':{},
     }
 
-user1 = lineMID
+user1 = gyeMID
 user2 = ""
 	
 setTime = {}
 setTime = rfuSet['setTime']
 
-contact = line.getProfile() 
-backup = line.getProfile() 
+contact = gye.getProfile() 
+backup = gye.getProfile() 
 backup.dispalyName = contact.displayName 
 backup.statusMessage = contact.statusMessage
 backup.pictureStatus = contact.pictureStatus
@@ -213,13 +228,13 @@ backup.pictureStatus = contact.pictureStatus
 mulai = time.time() 
 dangerMessage = ["cleanse","group cleansed.","mulai",".winebot",".kickall","mayhem","kick on","makasih :d","!kickall","nuke","บิน",".???","งงไปดิ","บินไปดิ","เซลกากจัง","@พี่อาร์ท","@ATR","ขอคลิปหน่อยครับ"]
 
-myProfile["displayName"] = lineProfile.displayName
-myProfile["statusMessage"] = lineProfile.statusMessage
-myProfile["pictureStatus"] = lineProfile.pictureStatus
+myProfile["displayName"] = gyeProfile.displayName
+myProfile["statusMessage"] = gyeProfile.statusMessage
+myProfile["pictureStatus"] = gyeProfile.pictureStatus
 #==============================================================================#
 #==============================================================================#
 def Rapid1Say(mtosay):
-    line.sendText(Rapid1To,mtosay)
+    gye.sendText(Rapid1To,mtosay)
 
 def summon(to, nama):
     aa = ""
@@ -240,7 +255,7 @@ def summon(to, nama):
     msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+aa+']}','EMTVER':'4'}
     print ("TAG ALL")
     try:
-       line.sendMessage(msg)
+       gye.sendMessage(msg)
     except Exception as error:
        print(error)
 
@@ -251,7 +266,7 @@ def restartBot():
     os.execl(python, python, *sys.argv)
     
 def logError(text):
-    line.log("[ แจ้งเตือน ] " + str(text))
+    gye.log("[ แจ้งเตือน ] " + str(text))
     time_ = datetime.now()
     with open("errorLog.txt","a") as error:
         error.write("\n[%s] %s" % (str(time), text))
@@ -265,11 +280,11 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
         messageReq[to] = -1
     messageReq[to] += 1
         
-def sendMessageWithMention(to, lineMID):
+def sendMessageWithMention(to, gyeMID):
     try:
-        aa = '{"S":"0","E":"3","M":'+json.dumps(lineMID)+'}'
+        aa = '{"S":"0","E":"3","M":'+json.dumps(gyeMID)+'}'
         text_ = '@x '
-        line.sendMessage(to, text_, contentMetadata={'MENTION':'{"MENTIONEES":['+aa+']}'}, contentType=0)
+        gye.sendMessage(to, text_, contentMetadata={'MENTION':'{"MENTIONEES":['+aa+']}'}, contentType=0)
     except Exception as error:
         logError(error)
  
@@ -607,13 +622,13 @@ def lineBot(op):
             return
         if op.type == 5:
             if settings["autoAdd"] == True:
-                line.blockContact(op.param1)
+                gye.blockContact(op.param1)
                 ki.blockContact(op.param1)
                 kk.blockContact(op.param1)
                 kc.blockContact(op.param1)
                 ke.blockContact(op.param1)                
         if op.type == 13:
-            if lineMID in op.param3:
+            if gyeMID in op.param3:
                 G = line.getGroup(op.param1)
                 if settings["autoJoin"] == True:
                     if settings["autoCancel"]["on"] == True:
