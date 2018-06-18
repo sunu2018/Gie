@@ -1929,7 +1929,7 @@ def lineBot(op):
                         pass
                     else:
                         gye.sendMessage(receiver,"Lurking has not been set.")
-			elif "Film:" in msg.text:
+		elif "Film:" in msg.text:
                     proses = msg.text.split(":")
                     get = msg.text.replace(proses[0] + ":","")
                     getfilm = get.split()
