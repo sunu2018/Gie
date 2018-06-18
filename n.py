@@ -227,7 +227,7 @@ myProfile["pictureStatus"] = gyeProfile.pictureStatus
 #==============================================================================#
 #==============================================================================#
 def Rapid1Say(mtosay):
-    line.sendText(Rapid1To,mtosay)
+    gye.sendText(Rapid1To,mtosay)
 
 def summon(to, nama):
     aa = ""
@@ -248,7 +248,7 @@ def summon(to, nama):
     msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+aa+']}','EMTVER':'4'}
     print ("TAG ALL")
     try:
-       line.sendMessage(msg)
+       gye.sendMessage(msg)
     except Exception as error:
        print(error)
 
@@ -259,7 +259,7 @@ def restartBot():
     os.execl(python, python, *sys.argv)
     
 def logError(text):
-    line.log("[ แจ้งเตือน ] " + str(text))
+    gye.log("[ แจ้งเตือน ] " + str(text))
     time_ = datetime.now()
     with open("errorLog.txt","a") as error:
         error.write("\n[%s] %s" % (str(time), text))
@@ -273,11 +273,11 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
         messageReq[to] = -1
     messageReq[to] += 1
         
-def sendMessageWithMention(to, lineMID):
+def sendMessageWithMention(to, gyeMID):
     try:
         aa = '{"S":"0","E":"3","M":'+json.dumps(lineMID)+'}'
         text_ = '@x '
-        line.sendMessage(to, text_, contentMetadata={'MENTION':'{"MENTIONEES":['+aa+']}'}, contentType=0)
+        gye.sendMessage(to, text_, contentMetadata={'MENTION':'{"MENTIONEES":['+aa+']}'}, contentType=0)
     except Exception as error:
         logError(error)
  def myhelp():
