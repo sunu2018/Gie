@@ -63,7 +63,7 @@ print ("Login Succes")
 
 gyeMID = gye.profile.mid
 gyeProfile = gye.getProfile()
-gyeSettings = gyee.getSettings()
+gyeSettings = gye.getSettings()
 
 kiMID = ki.profile.mid
 kiProfile = ki.getProfile()
