@@ -207,7 +207,7 @@ rfuSet = {
     'ricoinvite':{},
     }
 
-user1 = lineMID
+user1 = gyeMID
 user2 = ""
 	
 setTime = {}
