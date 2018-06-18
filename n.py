@@ -226,148 +226,386 @@ myProfile["statusMessage"] = gyeProfile.statusMessage
 myProfile["pictureStatus"] = gyeProfile.pictureStatus
 #==============================================================================#
 #==============================================================================#
+def Rapid1Say(mtosay):
+    line.sendText(Rapid1To,mtosay)
 
-read = json.load(readOpen)
-settings = json.load(settingsOpen)
+def summon(to, nama):
+    aa = ""
+    bb = ""
+    strt = int(14)
+    akh = int(14)
+    nm = nama
+    for mm in nm:
+      akh = akh + 2
+      aa += """{"S":"""+json.dumps(str(strt))+""","E":"""+json.dumps(str(akh))+""","M":"""+json.dumps(mm)+"},"""
+      strt = strt + 6
+      akh = akh + 4
+      bb += "\xe2\x95\xa0 @x \n"
+    aa = (aa[:int(len(aa)-1)])
+    msg = Message()
+    msg.to = to
+    msg.text = "\xe2\x95\x94\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\n"+bb+"\xe2\x95\x9a\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90\xe2\x95\x90"
+    msg.contentMetadata ={'MENTION':'{"MENTIONEES":['+aa+']}','EMTVER':'4'}
+    print ("TAG ALL")
+    try:
+       line.sendMessage(msg)
+    except Exception as error:
+       print(error)
 
 def restartBot():
-    print ("[ INFO ] BOT RESETTED")
-    backupData()
+    print ("RESTART SERVER")
+    time.sleep(3)
     python = sys.executable
     os.execl(python, python, *sys.argv)
     
 def logError(text):
-    gye.log("[ ERROR ] " + str(text))
+    line.log("[ แจ้งเตือน ] " + str(text))
     time_ = datetime.now()
     with open("errorLog.txt","a") as error:
         error.write("\n[%s] %s" % (str(time), text))
+
+def sendMessage(to, text, contentMetadata={}, contentType=0):
+    mes = Message()
+    mes.to, mes.from_ = to, profile.mid
+    mes.text = text
+    mes.contentType, mes.contentMetadata = contentType, contentMetadata
+    if to not in messageReq:
+        messageReq[to] = -1
+    messageReq[to] += 1
         
-def sendMessageWithMention(to, mid):
+def sendMessageWithMention(to, lineMID):
     try:
-        aa = '{"S":"0","E":"3","M":'+json.dumps(mid)+'}'
+        aa = '{"S":"0","E":"3","M":'+json.dumps(lineMID)+'}'
         text_ = '@x '
-        gye.sendMessage(to, text_, contentMetadata={'MENTION':'{"MENTIONEES":['+aa+']}'}, contentType=0)
+        line.sendMessage(to, text_, contentMetadata={'MENTION':'{"MENTIONEES":['+aa+']}'}, contentType=0)
     except Exception as error:
         logError(error)
+ def myhelp():
+    myHelp = "╭════✰ɢʜᴏsᴛ ᴛᴇᴀᴍ✰   " + "\n" \
+                  "║About" + "\n" + \
+                  "║Help media" + "\n" + \
+                  "║Help kicker" + "\n" + \
+                  "║Help group" + "\n" + \
+                  "║Help protect" + "\n" + \
+                  "║Help setting" + "\n" + \
+                  "║textTospeech" + "\n" + \
+                  "║Languange" + "\n" + \
+                  "║Me" + "\n" + \
+                  "║Mymid" + "\n" + \
+                  "║Myname" + "\n" + \
+                  "║Mybio" + "\n" + \
+                  "║Mypict" + "\n" + \
+                  "║Mycover" + "\n" + \
+                  "║Myvideo" + "\n" + \
+                  "║Mid" + "\n" + \
+                  "║Name" + "\n" + \
+                  "║Bio" + "\n" + \
+                  "║Pict" + "\n" + \
+                  "║Cover" + "\n" + \
+                  "║Video" + "\n" + \
+                  "║Copy" + "\n" + \
+                  "║Restore" + "\n" + \
+                  "║Mimic on/off" + "\n" + \
+                  "║MimicList" + "\n" + \
+                  "║MimicAdd" + "\n" + \
+                  "║MimicDel" + "\n" + \
+                  "║Broadcastvoice" + "\n" + \
+                  "║Cbroadcastvoice" + "\n" + \
+                  "║Restart" + "\n" + \
+                  "║Runtime" + "\n" + \
+                  "╰════"
+    return myHelp
+def listgrup():
+    listGrup = "╭════HelpGroup " + "\n" + \
+                  "║GroupCreator" + "\n" + \
+                  "║GroupId" + "\n" + \
+                  "║GroupName" + "\n" + \
+                  "║GroupPicture" + "\n" + \
+                  "║GroupList" + "\n" + \
+                  "║GroupMemberList" + "\n" + \
+                  "║GroupInfo" + "\n" + \
+                  "║Url" + "\n" + \
+                  "║Link on/off" + "\n" + \
+                  "║Gurl" + "\n" + \
+                  "║Friendlist" + "\n" + \
+                  "║Blocklist" + "\n" + \
+                  "║Friendlist mid" + "\n" + \
+                  "║Invite:gcreator" + "\n" + \
+                  "║Spam on/off" + "\n" + \
+                  "║Reject inv" + "\n" + \
+                  "║Allban" + "\n" + \
+                  "║Grouplist" + "\n" + \
+                  "║Blist" + "\n" + \
+                  "║Mention" + "\n" + \
+                  "║Lurking on" + "\n" + \
+                  "║Lurking off" + "\n" + \
+                  "║Lurking reset" + "\n" + \
+                  "║Lurking" + "\n" + \
+                  "║Invite" + "\n" + \
+                  "║uninstall" + "\n" + \
+                  "║Kick" + "\n" + \
+                  "║Ban:on" + "\n" + \
+                  "║Unban:on" + "\n" + \
+                  "╰════"
+    return listGrup
+def socmedia():
+    socMedia = "╭════HelpMedia " + "\n" + \
+                  "║Instagram" + "\n" + \
+                  "║Fotoig" + "\n" + \
+                  "║Youtube" + "\n" + \
+                  "║Music" + "\n" + \
+                  "║Lyric" + "\n" + \
+                  "║ScreenshootWebsite" + "\n" + \
+                  "║Film:" + "\n" + \
+                  "║Kalender" + "\n" + \
+                  "║CheckDate" + "\n" + \
+                  "║Textig" + "\n" + \
+                  "║Wikipedia" + "\n" + \
+                  "║Urban" + "\n" + \
+                  "║Anime" + "\n" + \
+                  "║Image" + "\n" + \
+                  "║Pornhub" + "\n" + \
+                  "╰════"
+    return socMedia
         
-def helpmessage():
-    helpMessage = "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ คำสั่งทั้งหมด" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ help1" + "\n" + \
-                  "║͜͡☆➣ help2" + "\n" + \
-                  "║͜͡☆➣ Tag" + "\n" + \
-                  "║͜͡☆➣ Halo ( panggil bot ) " + "\n" + \
-                  "║͜͡☆➣ Absen" + "\n" + \
-                  "║͜͡☆➣ Balik ( usir bot ) " + "\n" + \
-                  "║͜͡☆➣ Aku balik ( kluar semua ) " + "\n" + \
-                  "║͜͡☆➣ Cekk ( cek semua bot )" + "\n" + \
-                  "║͜͡☆➣ Me" + "\n" + \
-                  "║͜͡☆➣ Sp" + "\n" + \
-                  "║͜͡☆➣ Status" + "\n" + \
-                  "║͜͡☆➣ Ciak @" + "\n" + \
-                  "║͜͡☆➣ Kickallmember" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════════╬♥╬════════╯"
-    return helpMessage
+def helpset():
+    helpSet = "╭════HelpMySet " + "\n" + \
+    "║ᴍʏ sᴇʟғ" + "\n" + \
+    "║sᴏᴄᴍᴇᴅɪᴀ" + "\n" + \
+    "║ʟɪsᴛ ɢʀᴜᴘ" + "\n" + \
+    "║ʟɪsᴛ ᴘʀᴏᴛᴇᴄᴛ" + "\n" + \
+    "║ʟɪsᴛ ᴋɪᴄᴋᴇʀ" + "\n" + \
+    "║sᴛᴀᴛᴜs" + "\n" + \
+    "║ᴛᴇxᴛᴛᴏsᴘᴇᴇᴄʜ" + "\n" + \
+    "║ʟɪsᴛ ᴛʀᴀɴsʟᴀᴛᴇ" + "\n" + \
+    "╰════"
+    return helpSet 
+def helpkicker():
+    helpKicker = "╭════HelpKicker " + "\n" + \
+    "║K1 kick" + "\n" + \
+    "║K2 kick" + "\n" + \
+    "║K3 kick" + "\n" + \
+    "║K1 invite" + "\n" + \
+    "║K2 inv" + "\n" + \
+    "║K3 vit" + "\n" + \
+    "║K1 tag" + "\n" + \
+    "║K1gruplist" + "\n" + \
+    "║K2listgrup" + "\n" + \
+    "║K3listrom" + "\n" + \
+    "║Cleanse" + "\n" + \
+    "║Scan blacklist" + "\n" + \
+    "║cb" + "\n" + \
+    "║Nameall:" + "\n" + \
+    "║Bioall" + "\n" + \
+    "╰════"
+    return helpKicker
     
+def helpsetting():
+    helpSetting = "╭════SettingList " + "\n" + \
+    "║Protect on/off" + "\n" + \
+    "║Cancel pro on/off" + "\n" + \
+    "║Invit pro on/off" + "\n" + \
+    "║Link pro on/off" + "\n" + \
+    "║Join pro on/off" + "\n" + \
+    "║Proall on/off" + "\n" + \
+    "║Autojoin on/off" + "\n" + \
+    "║Autoadd on/off" + "\n" + \
+    "║Autoleave on/off" + "\n" + \
+    "║Autoread on/off" + "\n" + \
+    "║Tag on/off" + "\n" + \
+    "║Selfbot on/off" + "\n" + \
+    "║Tag2 on/off" + "\n" + \
+    "║Checksticker on/off" + "\n" + \
+    "║Sider on/off" + "\n" + \
+    "║Welcomemessage on/off" + "\n" + \
+    "║Leavemessage on/off" + "\n" + \
+    "╰════"
+    return helpSetting
+
 def helptexttospeech():
-    helpTextToSpeech =   "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ คำสั่งที่ 2" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ help1" + "\n" + \
-                  "║͜͡☆➣ help2" + "\n" + \
-                  "║͜͡☆➣ Protect on/off" + "\n" + \
-                  "║͜͡☆➣ QrProtect on/off" + "\n" + \
-                  "║͜͡☆➣ InviteProtect on/off" + "\n" + \
-                  "║͜͡☆➣ CancelProtect on/off" + "\n" + \
-                  "║͜͡☆➣ AutoAdd on/off" + "\n" + \
-                  "║͜͡☆➣ AutoJoin on/off" + "\n" + \
-                  "║͜͡☆➣ AutoLeave on/off" + "\n" + \
-                  "║͜͡☆➣ CheckSticker on/off" + "\n" + \
-                  "║͜͡☆➣ AutoRead on/off" + "\n" + \
-                  "║͜͡☆➣ DetectMention on/off" + "\n" + \
-                  "║͜͡☆➣ Join link on/off" + "\n" + \
-                  "║͜͡☆➣ GroupCreator" + "\n" + \
-                  "║͜͡☆➣ GroupId" + "\n" + \
-                  "║͜͡☆➣ GroupName" + "\n" + \
-                  "║͜͡☆➣ GroupPicture" + "\n" + \
-                  "║͜͡☆➣ GroupList" + "\n" + \
-                  "║͜͡☆➣ GroupMemberList" + "\n" + \
-                  "║͜͡☆➣ GroupInfo" + "\n" + \
-                  "║͜͡☆➣ Gt" + "\n" + \
-                  "║͜͡☆➣ Gt on/off" + "\n" + \
-                  "║͜͡☆➣ Mimic on" + "\n" + \
-                  "║͜͡☆➣ Mimic off" + "\n" + \
-                  "║͜͡☆➣ MimicAdd" + "\n" + \
-                  "║͜͡☆➣ MimicDel" + "\n" + \
-                  "║͜͡☆➣ Lurking on/off" + "\n" + \
-                  "║͜͡☆➣ Lurking" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════════╬♥╬════════╯"
+    helpTextToSpeech =   "╔══════════════┓" + "\n" + \
+                         "╠⌬ ✰self protect✰    ⌬" + "\n" + \
+                         "╚══════════════┛" + "\n" + \
+                         "────┅═ই۝ई═┅────" + "\n" + \
+                         "          ʜᴇʟᴘ ᴛᴇxᴛᴛᴏsᴘᴇᴇᴄʜ" + "\n" + \
+                         "────┅═ই۝ई═┅────" + "\n" + \
+                         "╔══════════════┓" + "\n" + \
+                         "╠❂ af : Afrikaans" + "\n" + \
+                         "╠❂ sq : Albanian" + "\n" + \
+                         "╠❂ ar : Arabic" + "\n" + \
+                         "╠❂ hy : Armenian" + "\n" + \
+                         "╠❂ bn : Bengali" + "\n" + \
+                         "╠❂ ca : Catalan" + "\n" + \
+                         "╠❂ zh : Chinese" + "\n" + \
+                         "╠❂ zh-cn : Chinese (Mandarin/China)" + "\n" + \
+                         "╠❂ zh-tw : Chinese (Mandarin/Taiwan)" + "\n" + \
+                         "╠❂ zh-yue : Chinese (Cantonese)" + "\n" + \
+                         "╠❂ hr : Croatian" + "\n" + \
+                         "╠❂ cs : Czech" + "\n" + \
+                         "╠❂ da : Danish" + "\n" + \
+                         "╠❂ nl : Dutch" + "\n" + \
+                         "╠❂ en : English" + "\n" + \
+                         "╠❂ en-au : English (Australia)" + "\n" + \
+                         "╠❂ en-uk : English (United Kingdom)" + "\n" + \
+                         "╠❂ en-us : English (United States)" + "\n" + \
+                         "╠❂ eo : Esperanto" + "\n" + \
+                         "╠❂ fi : Finnish" + "\n" + \
+                         "╠❂ fr : French" + "\n" + \
+                         "╠❂ de : German" + "\n" + \
+                         "╠❂ el : Greek" + "\n" + \
+                         "╠❂ hi : Hindi" + "\n" + \
+                         "╠❂ hu : Hungarian" + "\n" + \
+                         "╠❂ is : Icelandic" + "\n" + \
+                         "╠❂ id : Indonesian" + "\n" + \
+                         "╠❂ it : Italian" + "\n" + \
+                         "╠❂ ja : Japanese" + "\n" + \
+                         "╠❂ km : Khmer (Cambodian)" + "\n" + \
+                         "╠❂ ko : Korean" + "\n" + \
+                         "╠❂ la : Latin" + "\n" + \
+                         "╠❂ lv : Latvian" + "\n" + \
+                         "╠❂ mk : Macedonian" + "\n" + \
+                         "╠❂ no : Norwegian" + "\n" + \
+                         "╠❂ pl : Polish" + "\n" + \
+                         "╠❂ pt : Portuguese" + "\n" + \
+                         "╠❂ ro : Romanian" + "\n" + \
+                         "╠❂ ru : Russian" + "\n" + \
+                         "╠❂ sr : Serbian" + "\n" + \
+                         "╠❂ si : Sinhala" + "\n" + \
+                         "╠❂ sk : Slovak" + "\n" + \
+                         "╠❂ es : Spanish" + "\n" + \
+                         "╠❂ es-es : Spanish (Spain)" + "\n" + \
+                         "╠❂ es-us : Spanish (United States)" + "\n" + \
+                         "╠❂ sw : Swahili" + "\n" + \
+                         "╠❂ sv : Swedish" + "\n" + \
+                         "╠❂ ta : Tamil" + "\n" + \
+                         "╠❂ th : Thai" + "\n" + \
+                         "╠❂ tr : Turkish" + "\n" + \
+                         "╠❂ uk : Ukrainian" + "\n" + \
+                         "╠❂ vi : Vietnamese" + "\n" + \
+                         "╠❂ cy : Welsh" + "\n" + \
+                         "╚══════════════┛" + "\n" + "\n\n" + \
+                          "「Contoh : say-id Pengen Anu」"
     return helpTextToSpeech
-    
-def helptranslate():
-    helpTranslate =    "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ คำสั่ง 3" + "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ AdminLit" + "\n" + \
-                  "║͜͡☆➣ OwnerList" + "\n" + \
-                  "║͜͡☆➣ BanContact" + "\n" + \
-                  "║͜͡☆➣ UnbanContact" + "\n" + \
-                  "║͜͡☆➣ BanList" + "\n" + \
-                  "║͜͡☆➣ Clearban" + "\n" + \
-                  "║͜͡☆➣ Restart" + "\n" + \
-                  "║͜͡☆➣ About" + "\n" + \
-                  "║͜͡☆➣ Me" + "\n" + \
-                  "║͜͡☆➣ MyMid" + "\n" + \
-                  "║͜͡☆➣ Midnya @" + "\n" + \
-                  "║͜͡☆➣ MyName" + "\n" + \
-                  "║͜͡☆➣ MyBio" + "\n" + \
-                  "║͜͡☆➣ MyPicture" + "\n" + \
-                  "║͜͡☆➣ MyVideoProfile" + "\n" + \
-                  "║͜͡☆➣ MyCover" + "\n" + \
-                  "║͜͡☆➣ StealContact @" + "\n" + \
-                  "║͜͡☆➣ StealMid @" + "\n" + \
-                  "║͜͡☆➣ StealName「Mention」" + "\n" + \
-                  "║͜͡☆➣ StealBio @" + "\n" + \
-                  "║͜͡☆➣ StealPicture @" + "\n" + \
-                  "║͜͡☆➣ StealVideoProfile @" + "\n" + \
-                  "║͜͡☆➣ StealCover @" + "\n" + \
-                  "║͜͡☆➣ CloneProfile @" + "\n" + \
-                  "║͜͡☆➣ RestoreProfile" + "\n" + \
-                  "║͜͡☆➣ GroupCreator" + "\n" + \
-                  "║͜͡☆➣ GroupId" + "\n" + \
-                  "║͜͡☆➣ GroupName" + "\n" + \
-                  "║͜͡☆➣ GroupPicture" + "\n" + \
-                  "║͜͡☆➣ Gt" + "\n" + \
-                  "║͜͡☆➣ Gt「On/Off」" + "\n" + \
-                  "║͜͡☆➣ GroupList" + "\n" + \
-                  "║͜͡☆➣ GroupMemberList" + "\n" + \
-                  "║͜͡☆➣ GroupInfo" + "\n" + \
-                  "║͜͡☆➣ Ciak @" + "\n" + \
-                  "║͜͡☆➣ KickAllMember"+ "\n" + \
-                  "╰════════╬♥╬════════╯" + "\n" + \
-                  "╭════════╬♥╬════════╮" + "\n" + \
-                  "║͜͡☆➣ GYEVHA BOTS" + "\n" + \
-                  "╰════════╬♥╬════════╯"
-    return helpTranslate
+    def helplanguange():
+    helpLanguange =    "╔══════════════┓" + "\n" + \
+                       "╠⌬ ✰self protect✰    ⌬" + "\n" + \
+                       "╚══════════════┛" + "\n" + \
+                       "────┅═ই۝ई═┅────" + "\n" + \
+                       "          ʜᴇʟᴘ ᴛʀᴀɴsʟᴀᴛᴇ" + "\n" + \
+                       "────┅═ই۝ई═┅────" + "\n" + \
+                       "╔══════════════┓" + "\n" + \
+                       "╠❂ af : afrikaans" + "\n" + \
+                       "╠❂ sq : albanian" + "\n" + \
+                       "╠❂ am : amharic" + "\n" + \
+                       "╠❂ ar : arabic" + "\n" + \
+                       "╠❂ hy : armenian" + "\n" + \
+                       "╠❂ az : azerbaijani" + "\n" + \
+                       "╠❂ eu : basque" + "\n" + \
+                       "╠❂ be : belarusian" + "\n" + \
+                       "╠❂ bn : bengali" + "\n" + \
+                       "╠❂ bs : bosnian" + "\n" + \
+                       "╠❂ bg : bulgarian" + "\n" + \
+                       "╠❂ ca : catalan" + "\n" + \
+                       "╠❂ ceb : cebuano" + "\n" + \
+                       "╠❂ ny : chichewa" + "\n" + \
+                       "╠❂ zh-cn : chinese (simplified)" + "\n" + \
+                       "╠❂ zh-tw : chinese (traditional)" + "\n" + \
+                       "╠❂ co : corsican" + "\n" + \
+                       "╠❂ hr : croatian" + "\n" + \
+                       "╠❂ cs : czech" + "\n" + \
+                       "╠❂ da : danish" + "\n" + \
+                       "╠❂ nl : dutch" + "\n" + \
+                       "╠❂ en : english" + "\n" + \
+                       "╠❂ eo : esperanto" + "\n" + \
+                       "╠❂ et : estonian" + "\n" + \
+                       "╠❂ tl : filipino" + "\n" + \
+                       "╠❂ fi : finnish" + "\n" + \
+                       "╠❂ fr : french" + "\n" + \
+                       "╠❂ fy : frisian" + "\n" + \
+                       "╠❂ gl : galician" + "\n" + \
+                       "╠❂ ka : georgian" + "\n" + \
+                       "╠❂ de : german" + "\n" + \
+                       "╠❂ el : greek" + "\n" + \
+                       "╠❂ gu : gujarati" + "\n" + \
+                       "╠❂ ht : haitian creole" + "\n" + \
+                       "╠❂ ha : hausa" + "\n" + \
+                       "╠❂ haw : hawaiian" + "\n" + \
+                       "╠❂ iw : hebrew" + "\n" + \
+                       "╠❂ hi : hindi" + "\n" + \
+                       "╠❂ hmn : hmong" + "\n" + \
+                       "╠❂ hu : hungarian" + "\n" + \
+                       "╠❂ is : icelandic" + "\n" + \
+                       "╠❂ ig : igbo" + "\n" + \
+                       "╠❂ id : indonesian" + "\n" + \
+                       "╠❂ ga : irish" + "\n" + \
+                       "╠❂ it : italian" + "\n" + \
+                       "╠❂ ja : japanese" + "\n" + \
+                       "╠❂ jw : javanese" + "\n" + \
+                       "╠❂ kn : kannada" + "\n" + \
+                       "╠❂ kk : kazakh" + "\n" + \
+                       "╠❂ km : khmer" + "\n" + \
+                       "╠❂ ko : korean" + "\n" + \
+                       "╠❂ ku : kurdish (kurmanji)" + "\n" + \
+                       "╠❂ ky : kyrgyz" + "\n" + \
+                       "╠❂ lo : lao" + "\n" + \
+                       "╠❂ la : latin" + "\n" + \
+                       "╠❂ lv : latvian" + "\n" + \
+                       "╠❂ lt : lithuanian" + "\n" + \
+                       "╠❂ lb : luxembourgish" + "\n" + \
+                       "╠❂ mk : macedonian" + "\n" + \
+                       "╠❂ mg : malagasy" + "\n" + \
+                       "╠❂ ms : malay" + "\n" + \
+                       "╠❂ ml : malayalam" + "\n" + \
+                       "╠❂ mt : maltese" + "\n" + \
+                       "╠❂ mi : maori" + "\n" + \
+                       "╠❂ mr : marathi" + "\n" + \
+                       "╠❂ mn : mongolian" + "\n" + \
+                       "╠❂ my : myanmar (burmese)" + "\n" + \
+                       "╠❂ ne : nepali" + "\n" + \
+                       "╠❂ no : norwegian" + "\n" + \
+                       "╠❂ ps : pashto" + "\n" + \
+                       "╠❂ fa : persian" + "\n" + \
+                       "╠❂ pl : polish" + "\n" + \
+                       "╠❂ pt : portuguese" + "\n" + \
+                       "╠❂ pa : punjabi" + "\n" + \
+                       "╠❂ ro : romanian" + "\n" + \
+                       "╠❂ ru : russian" + "\n" + \
+                       "╠❂ sm : samoan" + "\n" + \
+                       "╠❂ gd : scots gaelic" + "\n" + \
+                       "╠❂ sr : serbian" + "\n" + \
+                       "╠❂ st : sesotho" + "\n" + \
+                       "╠❂ sn : shona" + "\n" + \
+                       "╠❂ sd : sindhi" + "\n" + \
+                       "╠❂ si : sinhala" + "\n" + \
+                       "╠❂ sk : slovak" + "\n" + \
+                       "╠❂ sl : slovenian" + "\n" + \
+                       "╠❂ so : somali" + "\n" + \
+                       "╠❂ es : spanish" + "\n" + \
+                       "╠❂ su : sundanese" + "\n" + \
+                       "╠❂ sw : swahili" + "\n" + \
+                       "╠❂ sv : swedish" + "\n" + \
+                       "╠❂ tg : tajik" + "\n" + \
+                       "╠❂ ta : tamil" + "\n" + \
+                       "╠❂ te : telugu" + "\n" + \
+                       "╠❂ th : thai" + "\n" + \
+                       "╠❂ tr : turkish" + "\n" + \
+                       "╠❂ uk : ukrainian" + "\n" + \
+                       "╠❂ ur : urdu" + "\n" + \
+                       "╠❂ uz : uzbek" + "\n" + \
+                       "╠❂ vi : vietnamese" + "\n" + \
+                       "╠❂ cy : welsh" + "\n" + \
+                       "╠❂ xh : xhosa" + "\n" + \
+                       "╠❂ yi : yiddish" + "\n" + \
+                       "╠❂ yo : yoruba" + "\n" + \
+                       "╠❂ zu : zulu" + "\n" + \
+                       "╠❂ fil : Filipino" + "\n" + \
+                       "╠❂ he : Hebrew" + "\n" + \
+                       "╚══════════════┛" + "\n" + "\n\n" + \
+                       "「Contoh : tr-id Pengen Anu」"
+    return helpLanguange
+#==============================================================================#
+#==============================================================================#
+
 #==============================================================================#
 def backupData():
     try:
