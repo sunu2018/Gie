@@ -276,12 +276,13 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
         
 def sendMessageWithMention(to, gyeMID):
     try:
-        aa = '{"S":"0","E":"3","M":'+json.dumps(lineMID)+'}'
+        aa = '{"S":"0","E":"3","M":'+json.dumps(gyeMID)+'}'
         text_ = '@x '
         gye.sendMessage(to, text_, contentMetadata={'MENTION':'{"MENTIONEES":['+aa+']}'}, contentType=0)
     except Exception as error:
         logError(error)
- def myhelp():
+ 
+def myhelp():
     myHelp = "╭════✰ɢʜᴏsᴛ ᴛᴇᴀᴍ✰   " + "\n" \
                   "║About" + "\n" + \
                   "║Help media" + "\n" + \
