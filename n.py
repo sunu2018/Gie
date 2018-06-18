@@ -1929,7 +1929,52 @@ def lineBot(op):
                         pass
                     else:
                         gye.sendMessage(receiver,"Lurking has not been set.")
-		elif "Film:" in msg.text:
+#==============================================================================#   
+                elif "Broadcastvoice " in msg.text:
+                    bctxt = msg.text.replace("Bcvoice ", "")
+                    bc = (".Bdw.. Ini adalah Broadcast.. Salam Owner ARDIAN PURNAMA.. by. RFU boot sekawan")
+                    cb = (bctxt + bc)
+                    tts = gTTS(cb, lang='id', slow=False)
+                    tts.save('tts.mp3')
+                    n = line.getGroupIdsJoined()
+                    for manusia in n:
+                        line.sendAudio(manusia, 'tts.mp3')
+
+                elif "Cbroadcastvoice " in msg.text:
+                    bctxt = msg.text.replace("Cbcvoice ", "")
+                    bc = (".Bdw.. Ini adalah Broadcast.. Salam Owner ARDIAN PURNAMA.. by. RFU boot sekawan")
+                    cb = (bctxt + bc)
+                    tts = gTTS(cb, lang='id', slow=False)
+                    tts.save('tts.mp3')
+                    n = line.getAllContactIdsJoined()
+                    for manusia in n:
+                        line.sendAudio(manusia, 'tts.mp3')
+
+                elif "Wikipedia " in msg.text:
+                      try:
+                          wiki = msg.text.lower().replace("Wikipedia ","")
+                          wikipedia.set_lang("id")
+                          pesan="Title ("
+                          pesan+=wikipedia.page(wiki).title
+                          pesan+=")\n\n"
+                          pesan+=wikipedia.summary(wiki, sentences=1)
+                          pesan+="\n"
+                          pesan+=wikipedia.page(wiki).url
+                          line.sendMessage(msg.to, pesan)
+                      except:
+                              try:
+                                  pesan="Over Text Limit! Please Click link\n"
+                                  pesan+=wikipedia.page(wiki).url
+                                  line.sendMessage(msg.to, pesan)
+                      except:
+                              try:
+                                  pesan="Over Text Limit! Please Click link\n"
+                                  pesan+=wikipedia.page(wiki).url
+                                  line.sendText(msg.to, pesan)
+                              except Exception as e:
+                                  line.sendMessage(msg.to, str(e))
+
+                elif "Film:" in msg.text:
                     proses = msg.text.split(":")
                     get = msg.text.replace(proses[0] + ":","")
                     getfilm = get.split()
