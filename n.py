@@ -1177,6 +1177,7 @@ def lineBot(op):
                         except Exception as e:
                             gye.sendText(msg.to,"พบข้อผิดพลาด (เหตุผล \""+e.reason+"\")")				
 #========================================ถึงนี้======================================#
+
 #-------------------------------------------------------------------------------
                 elif msg.text.lower().startswith("owneradd "):
                         key = eval(msg.contentMetadata["MENTION"])
@@ -1387,53 +1388,8 @@ def lineBot(op):
                         gye.sendMessage(msg.to,"➲ All Protect Set To Modar")
             #        else:
              #           gye.sendMessage(msg.to,"Just for Owner")
-#-------------------------------------------------------------------------------
-                elif text.lower() == 'autoadd on':
-                    settings["autoAdd"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Add")
-                elif text.lower() == 'autoadd off':
-                    settings["autoAdd"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Add")
-                elif text.lower() == 'autojoin on':
-             #     if msg._from in Owner:    
-                    settings["autoJoin"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Join")
-                elif text.lower() == 'autojoin off':
-                #  if msg._from in Owner:    
-                    settings["autoJoin"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Join")
-                elif text.lower() == 'autoleave on':
-               #   if msg._from in Owner:
-                    settings["autoLeave"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Leave")
-                elif text.lower() == 'autoleave off':
-             #     if msg._from in Owner:
-                    settings["autoLeave"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Leave")
-                elif text.lower() == 'autoread on':
-                    settings["autoRead"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Read")
-                elif text.lower() == 'autoread off':
-                    settings["autoRead"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Read")
-                elif text.lower() == 'checksticker on':
-                    settings["checkSticker"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Check Details Sticker")
-                elif text.lower() == 'checksticker off':
-                    settings["checkSticker"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Check Details Sticker")
-                elif text.lower() == 'detectmention on':
-                    settings["datectMention"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Detect Mention")
-                elif text.lower() == 'detectmention off':
-                    settings["datectMention"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Detect Mention")
-                elif text.lower() == 'join link on':
-                    settings["autoJoinTicket"] = True
-                    gye.sendMessage(to, "Berhasil mengaktifkan Auto Join Link")
-                elif text.lower() == 'join link off':
-                    settings["autoJoinTicket"] = False
-                    gye.sendMessage(to, "Berhasil menonaktifkan Auto Join Link")                    
+#-------------------------------------------------------------------------------               
+                                                                                        
 #==============================================================================#
                 elif msg.text.lower() == 'โชว์':
                         gye.sendContact(to, gyeMID)
@@ -1973,6 +1929,336 @@ def lineBot(op):
                         pass
                     else:
                         gye.sendMessage(receiver,"Lurking has not been set.")
+			elif "Film:" in msg.text:
+                    proses = msg.text.split(":")
+                    get = msg.text.replace(proses[0] + ":","")
+                    getfilm = get.split()
+                    title = getfilm[0]
+                    tahun = getfilm[1]
+                    r = requests.get('http://www.omdbapi.com/?t='+title+'&y='+tahun+'&plot=full&apikey=4bdd1d70')
+                    start = time.time()
+                    data=r.text
+                    data=json.loads(data)
+                    hasil = "Informasi \n" +str(data["Title"])+ " (" +str(data["Year"])+ ")"
+                    hasil += "\n\n " +str(data["Plot"])
+                    hasil += "\n\nDirector : " +str(data["Director"])
+                    hasil += "\nActors   : " +str(data["Actors"])
+                    hasil += "\nRelease : " +str(data["Released"])
+                    hasil += "\nGenre    : " +str(data["Genre"])
+                    hasil += "\nRuntime   : " +str(data["Runtime"])
+                    path = data["Poster"]
+                    line.sendImageWithURL(msg.to, str(path))
+                    line.sendMessage(msg.to,hasil)
+
+                elif text.lower() == 'kalender':
+                    tz = pytz.timezone("Asia/Makassar")
+                    timeNow = datetime.now(tz=tz)
+                    day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday","Friday", "Saturday"]
+                    hari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"]
+                    bulan = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+                    hr = timeNow.strftime("%A")
+                    bln = timeNow.strftime("%m")
+                    for i in range(len(day)):
+                        if hr == day[i]: hasil = hari[i]
+                    for k in range(0, len(bulan)):
+                        if bln == str(k): bln = bulan[k-1]
+                    readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nJam : [ " + timeNow.strftime('%H:%M:%S') + " ]"
+                    line.sendMessage(msg.to, readTime)                 
+                elif "screenshotwebsite" in msg.text.lower():
+                    sep = text.split(" ")
+                    query = text.replace(sep[0] + " ","")
+                    with requests.session() as web:
+                        r = web.get("http://rahandiapi.herokuapp.com/sswebAPI?key=betakey&link={}".format(urllib.parse.quote(query)))
+                        data = r.text
+                        data = json.loads(data)
+                        line.sendImageWithURL(to, data["result"])
+			elif "checkdate" in msg.text.lower():
+                    sep = msg.text.split(" ")
+                    tanggal = msg.text.replace(sep[0] + " ","")
+                    r=requests.get('https://script.google.com/macros/exec?service=AKfycbw7gKzP-WYV2F5mc9RaR7yE3Ve1yN91Tjs91hp_jHSE02dSv9w&nama=ervan&tanggal='+tanggal)
+                    data=r.text
+                    data=json.loads(data)
+                    ret_ = "╔══[ D A T E ]"
+                    ret_ += "\n╠ Date Of Birth : {}".format(str(data["data"]["lahir"]))
+                    ret_ += "\n╠ Age : {}".format(str(data["data"]["usia"]))
+                    ret_ += "\n╠ Birthday : {}".format(str(data["data"]["ultah"]))
+                    ret_ += "\n╠ Zodiak : {}".format(str(data["data"]["zodiak"]))
+                    ret_ += "\n╚══[ Success ]"
+                    line.sendMessage(to, str(ret_))
+                
+                elif "instagram" in msg.text.lower():
+                    sep = text.split(" ")
+                    search = text.replace(sep[0] + " ","")
+                    with requests.session() as web:
+                        web.headers["User-Agent"] = random.choice(settings["userAgent"])
+                        r = web.get("https://www.instagram.com/{}/?__a=1".format(search))
+                        try:
+                            data = json.loads(r.text)
+			ret_ = "╔══[ Profile Instagram ]"
+                            ret_ += "\n╠ Nama : {}".format(str(data["user"]["full_name"]))
+                            ret_ += "\n╠ Username : {}".format(str(data["user"]["username"]))
+                            ret_ += "\n╠ Bio : {}".format(str(data["user"]["biography"]))
+                            ret_ += "\n╠ Pengikut : {}".format(format_number(data["user"]["followed_by"]["count"]))
+                            ret_ += "\n╠ Diikuti : {}".format(format_number(data["user"]["follows"]["count"]))
+                            if data["user"]["is_verified"] == True:
+                                ret_ += "\n╠ Verifikasi : Sudah"
+                            else:
+                                ret_ += "\n╠ Verifikasi : Belum"
+                            if data["user"]["is_private"] == True:
+                                ret_ += "\n╠ Akun Pribadi : Iya"
+                            else:
+                                ret_ += "\n╠ Akun Pribadi : Tidak"
+                            ret_ += "\n╠ จำนวน Post : {}".format(format_number(data["user"]["media"]["count"]))
+                            ret_ += "\n╚══[ https://www.instagram.com/{} ]".format(search)
+                            path = data["user"]["profile_pic_url_hd"]
+                            line.sendImageWithURL(to, str(path))
+                            line.sendMessage(to, str(ret_))
+                        except:
+                            line.sendMessage(to, "Pengguna tidak ditemukan")
+                elif "fotoig" in msg.text.lower():
+                    separate = msg.text.split(" ")
+                    user = msg.text.replace(separate[0] + " ","")
+                    profile = "https://www.instagram.com/" + user
+                    with requests.session() as x:
+                        x.headers['user-agent'] = 'Mozilla/5.0'
+			end_cursor = ''
+                        for count in range(1):
+                            print(('send foto : ', count))
+                            r = x.get(profile, params={'max_id': end_cursor})                        
+                            data = re.search(r'window._sharedData = (\{.+?});</script>', r.text).group(1)
+                            j    = json.loads(data)                        
+                            for node in j['entry_data']['ProfilePage'][0]['user']['media']['nodes']: 
+                                page = 'https://www.instagram.com/p/' + node['code']
+                                r = x.get(page)
+                                print((node['display_src']))
+                                line.sendImageWithURL(msg.to,node['display_src'])
+                elif "image" in msg.text.lower():
+                    separate = msg.text.split(" ")
+                    search = msg.text.replace(separate[0] + " ","")
+                    with requests.session() as web:
+                        web.headers["User-Agent"] = random.choice(settings["userAgent"])
+                        r = web.get("http://rahandiapi.herokuapp.com/imageapi?key=betakey&q={}".format(urllib.parse.quote(search)))
+                        data = r.text
+                        data = json.loads(data)
+                        if data["result"] != []:
+                            items = data["result"]
+                            path = random.choice(items)
+                            a = items.index(path)
+                            b = len(items)
+                            line.sendImageWithURL(to, str(path))
+			elif "image" in msg.text.lower():
+                    separate = msg.text.split(" ")
+                    search = msg.text.replace(separate[0] + " ","")
+                    with requests.session() as web:
+                        web.headers["User-Agent"] = random.choice(settings["userAgent"])
+                        r = web.get("http://rahandiapi.herokuapp.com/imageapi?key=betakey&q={}".format(urllib.parse.quote(search)))
+                        data = r.text
+                        data = json.loads(data)
+                        if data["result"] != []:
+                            items = data["result"]
+                            path = random.choice(items)
+                            a = items.index(path)
+                            b = len(items)
+                            line.sendImageWithURL(to, str(path))
+                elif "anime" in msg.text.lower():
+                    separate = msg.text.split(" ")
+                    search = msg.text.replace(separate[0] + " ","")
+                    with requests.session() as web:
+                        web.headers["User-Agent"] = random.choice(settings["userAgent"])
+                        r = web.get("http://rahandiapi.herokuapp.com/imageapi?key=betakey&q={}".format(urllib.parse.quote(search)))
+                        data = r.text
+                        data = json.loads(data)
+                        if data["result"] != []:
+                            items = data["result"]
+                            path = random.choice(items)
+                            a = items.index(path)
+                            b = len(items)
+				elif "youtube" in msg.text.lower():
+                    sep = text.split(" ")
+                    search = text.replace(sep[0] + " ","")
+                    params = {"search_query": search}
+                    with requests.session() as web:
+                        web.headers["User-Agent"] = random.choice(settings["userAgent"])
+                        r = web.get("https://www.youtube.com/results", params = params)
+                        soup = BeautifulSoup(r.content, "html.parser")
+                        ret_ = "╔══[ ผมการค้นหา ]"
+                        datas = []
+                        for data in soup.select(".yt-lockup-title > a[title]"):
+                            if "&lists" not in data["href"]:
+                                datas.append(data)
+                        for data in datas:
+                            ret_ += "\n╠══[ {} ]".format(str(data["title"]))
+                            ret_ += "\n╠ https://www.youtube.com{}".format(str(data["href"]))
+                        ret_ += "\n╚══[ จำนวนที่พบ {} ]".format(len(datas))
+                        line.sendMessage(to, str(ret_))
+			elif msg.text in ["Cctv on"]:
+                    try:
+                        del RfuCctv['point'][msg.to]
+                        del RfuCctv['sidermem'][msg.to]
+                        del RfuCctv['cyduk'][msg.to]
+                    except:
+                        pass
+                    RfuCctv['point'][msg.to] = msg.id
+                    RfuCctv['sidermem'][msg.to] = ""
+                    RfuCctv['cyduk'][msg.to]=True
+                    line.sendMessage(msg.to,"Cctv on Ready")
+                elif msg.text in ["Cctv off"]:
+                    if msg.to in RfuCctv['point']:
+                        RfuCctv['cyduk'][msg.to]=False
+                        line.sendText(msg.to, RfuCctv['sidermem'][msg.to])
+                    else:
+                        line.sendMessage(msg.to, "Cctv Already Off")
+
+                elif text.lower() == 'selfbot off':
+                    line.sendMessage(receiver, 'หยุดการทำงานเซลบอทเรียบร้อย')
+                    print ("Selfbot Off")
+                    exit(1)
+elif text.lower() == 'friendlist':
+                    contactlist = line.getAllContactIds()
+                    kontak = line.getContacts(contactlist)
+                    num=1
+                    msgs="🎎List Friend🎎"
+                    for ids in kontak:
+                        msgs+="\n[%i] %s" % (num, ids.displayName)
+                        num=(num+1)
+                    msgs+="\n🎎List Friend🎎\n\nTotal Teman : %i" % len(kontak)
+                    line.sendMessage(msg.to, msgs)
+
+                elif msg.text in ["Blocklist"]: 
+                    blockedlist = line.getBlockedContactIds()
+                    kontak = line.getContacts(blockedlist)
+                    num=1
+                    msgs="═════Daftar Akun Yang di Blocked═════"
+                    for ids in kontak:
+                        msgs+="\n[%i] %s" % (num, ids.displayName)
+                        num=(num+1)
+                    msgs+="\n════════List Blocked════════\n\nTotal Blocked : %i" % len(kontak)
+                    line.sendMessage(receiver, msgs)
+
+                elif msg.text in ["Friendlist mid"]: 
+                    gruplist = line.getAllContactIds()
+                    kontak = line.getContacts(gruplist)
+                    num=1
+                    msgs="═════════List FriendMid═════════"
+                    for ids in kontak:
+                        msgs+="\n[%i] %s" % (num, ids.mid)
+                        num=(num+1)
+                    msgs+="\n═════════List FriendMid═════════\n\nTotal Friend : %i" % len(kontak)
+                    line.sendMessage(receiver, msgs)
+			
+			elif msg.text.lower() == 'gurl':
+                	if msg.toType == 2:
+                         g = line.getGroup(receiver)
+                         line.updateGroup(g)
+                         gurl = line.reissueGroupTicket(receiver)
+                         line.sendMessage(receiver,"╔══════════════┓\n╠❂line://ti/g/" + gurl + "\n╠\n╠❂Link Groupnya Tanpa Buka Qr\n╚══════════════┛")
+
+                elif msg.text == "Pornhub":
+                	line.sendMessage(receiver,">nekopoi.host\n>sexvideobokep.com\n>memek.com\n>pornktube.com\n>faketaxi.com\n>videojorok.com\n>watchmygf.mobi\n>xnxx.com\n>pornhd.com\n>xvideos.com\n>vidz7.com\n>m.xhamster.com\n>xxmovies.pro\n>youporn.com\n>pornhub.com\n>youjizz.com\n>thumzilla.com\n>anyporn.com\n>brazzers.com\n>redtube.com\n>youporn.com")
+
+                elif msg.text.lower() == 'invite:gcreator':
+                	if msg.toType == 2:                
+                           ginfo = line.getGroup(receiver)
+                           try:
+                               gcmid = ginfo.creator.mid
+                           except:
+                               gcmid = "Error"
+                           if settings["lang"] == "JP":
+                               line.inviteIntoGroup(receiver,[gcmid])
+                               line.sendMessage(receiver, "Type👉 Invite Pembuat Group Succes")
+                           else:
+                               line.inviteIntoGroup(receiver,[gcmid])
+                               line.sendMessage(receiver, "Pembuat Group Sudah di dalam")
+
+                elif msg.text in ["/uninstall"]:
+                    if msg.toType == 2:
+                        ginfo = line.getGroup(receiver)
+                        try:
+                            line.leaveGroup(receiver)							
+                        except:
+                            pass
+elif msg.text in ["Tagimage on","Tag2 on"]:
+                        settings['potoMention'] = True
+                        line.sendMessage(msg.to,"Respon enabled.")
+                
+                elif msg.text in ["Tagimage off","Tag2 off"]:
+                        settings['potoMention'] = False
+                        line.sendMessage(msg.to,"Respon disabled.")
+
+                elif msg.text in ["Respontag on","Tag on","My respon on","Respon:on"]:
+                    settings["detectMention"] = True
+                    line.sendMessage(msg.to,"AutoRespon enabled.")
+                
+                elif msg.text in ["Respontag off","Tag off","My respon off","Respon:off"]:
+                    settings["detectMention"] = False
+                    line.sendMessage(msg.to,"Autorespon disabled.")
+
+                elif msg.text.lower().startswith("textig "):
+                    sep = msg.text.split(" ")
+                    textnya = msg.text.replace(sep[0] + " ","")
+                    urlnya = "http://chart.apis.google.com/chart?chs=480x80&cht=p3&chtt=" + textnya + "&chts=FFFFFF,70&chf=bg,s,000000"
+                    line.sendImageWithURL(msg.to, urlnya)
+
+                elif "kedip " in msg.text:
+                    txt = msg.text.replace("kedip ", "")
+                    t1 = "\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xa0\x81\xf4\x80\xa0\x81\xf4\x80\xa0\x81"
+                    t2 = "\xf4\x80\x82\xb3\xf4\x8f\xbf\xbf"
+                    line.sendMessage(msg.to, t1 + txt + t2)						
+                elif msg.text in ["Inviteuser"]:
+                        settings["winvite"] = True
+                        line.sendMessage(msg.to,"send a contact to invite user")                            
+                elif msg.text.lower() == ".invitecancel":
+                    if msg.toType == 2:
+                        group = line.getGroup(msg.to)
+                        gMembMids = [contact.mid for contact in group.invitee]
+                        for i in gMembMids:
+                            line.cancelGroupInvitation(msg.to,[i])
+                elif msg.text.lower() == ".invitecancel2":
+                    if msg.toType == 2:
+                        group = line.getGroup(msg.to)
+                        gMembMids = [contact.mid for contact in group.invitee]
+                        for i in gMembMids:
+                            random.choice(Exc).cancelGroupInvitation(msg.to,[i])
+#=============COMMAND KICKER===========================#
+#==============================================================================#   
+                elif "Broadcastvoice " in msg.text:
+                    bctxt = msg.text.replace("Bcvoice ", "")
+                    bc = (".Bdw.. Ini adalah Broadcast.. Salam Owner ARDIAN PURNAMA.. by. RFU boot sekawan")
+                    cb = (bctxt + bc)
+                    tts = gTTS(cb, lang='id', slow=False)
+                    tts.save('tts.mp3')
+                    n = line.getGroupIdsJoined()
+                    for manusia in n:
+                        line.sendAudio(manusia, 'tts.mp3')
+
+                elif "Cbroadcastvoice " in msg.text:
+                    bctxt = msg.text.replace("Cbcvoice ", "")
+                    bc = (".Bdw.. Ini adalah Broadcast.. Salam Owner ARDIAN PURNAMA.. by. RFU boot sekawan")
+                    cb = (bctxt + bc)
+                    tts = gTTS(cb, lang='id', slow=False)
+                    tts.save('tts.mp3')
+                    n = line.getAllContactIdsJoined()
+                    for manusia in n:
+                        line.sendAudio(manusia, 'tts.mp3')
+
+                elif "Wikipedia " in msg.text:
+                      try:
+                          wiki = msg.text.lower().replace("Wikipedia ","")
+                          wikipedia.set_lang("id")
+                          pesan="Title ("
+                          pesan+=wikipedia.page(wiki).title
+                          pesan+=")\n\n"
+                          pesan+=wikipedia.summary(wiki, sentences=1)
+                          pesan+="\n"
+                          pesan+=wikipedia.page(wiki).url
+                          line.sendMessage(msg.to, pesan)
+                      except:
+                              try:
+                                  pesan="Over Text Limit! Please Click link\n"
+                                  pesan+=wikipedia.page(wiki).url
+                                  line.sendText(msg.to, pesan)
+                              except Exception as e:
+                                  line.sendMessage(msg.to, str(e))
                         
 #===============================================================================[gyeMID - kiMID]
         if op.type == 19:
