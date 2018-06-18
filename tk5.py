@@ -1,3 +1,4 @@
+
 # -*- coding: utf-8 -*-
 
 from gyevha import *
@@ -8,6 +9,7 @@ from humanfriendly import format_timespan, format_size, format_number, format_le
 import time, random, sys, json, codecs, threading, glob, re, string, os, requests, subprocess, six, ast, pytz, urllib, urllib.parse
 from gtts import gTTS
 from googletrans import Translator
+ 
 # Ini Untuk Login Via Lik Dan Via Emal
 #gye = LINE()
 #gye = LINE("Email","Password")
@@ -23,6 +25,7 @@ from googletrans import Translator
 # Sungguh Terlalu
 # Jangan Lupa Add Admin 
 # id Line ( aisyagye )
+#==============================================================================#
 #==============================================================================#
 botStart = time.time()
 #kalo mau login code qr disini pake
@@ -56,26 +59,32 @@ botStart = time.time()
 #yg atas dinpagar atau bisa juga token di atas 
 #di dalam tanda LINE ("TOKEN MU ")
 
-gye = LINE("EtHO8rZgTw1q6juRoVvf.4YSrMg2oNLZ3c2qS97Qi+W.k2TeLOz1HTtz2jJ+CuaaDHN+R9wcNMOY2hfRLRA6GvA=")
+gye = LINE("Et5gYrvSnIEOpWFK5m4f.4YSrMg2oNLZ3c2qS97Qi+W.fsNClszZfRIpi5y3C/DKfbTqc100zzXX0tWv5M3TZ/k=")
 ki = LINE("EtQQZ5O8Q9ZNn47rzMCd.ZumT2/Y29n7tOJ4IwPo4tq.1TFAsQAvYzlyAp1XEM5RsdIZwZtoEnir3y6dea1fo1E=")
 ki2 = LINE("Et0Oj6SRTe8eGtw9jK3d.SPS+quoffhJbcv30K1vAdq.gD9LSFBUBorGs552hX0ltdIVxai6oaF/Ox4aGWcOFJA=")
 ki3 = LINE("EtuabQyPa4w1jYNY3sm0.ZaBHUQRqncLKKv+uKgw/qa.uBKyRSqmAN14wzFVY5K/nO+ja0fHE1IoLuFUqDALCsA=")
 ki4 = LINE("EtRhFIGABsjUHKYKVoqe.lVN3XpWByvHZ/lHSAQFaBG.Fo8l69iIhSLOiMhTWoKoj6JIgftT7HEjwC0RykLYwZc=")
 ki5 = LINE("Eti3jixZyomSekysnkab.KjDN9JBsWpSVnKHbTD0jYW.bDcL2DBnnsO3e/zhHO1kzyp3ghMmwx+R5iMRlbnqz6E=")
 
-#KAC = [gye,ais,ki2,ki3,ki4]
-#GUE = [ais,ki2,ki3,ki4]  #ini jangan luh hapus peak ini fungsi Ciak alias kick
-#maksudnya agar bot sb/induk gak ikutan nge kick Mudeng ora
-#gyeMID = gye.profile.mid
-#aisMID = ais.profile.mid
-#ki2MID = ki2.profile.mid
-#ki3MID = ki3.profile.mid
-#ki4MID = ki4.profile.mid
-#Bots = [gyeMID,aisMID,ki2MID,ki3MID,ki4MID]# ini jangan dinrubah Gunanya agar bot tidak saling kick
-#creator = ["ue32b11986d8e9e5cf70b642cf7ba88ff"]
-#Owner = ["ue32b11986d8e9e5cf70b642cf7ba88ff"]
-#admin = ["ue32b11986d8e9e5cf70b642cf7ba88ff"]
+#==============================================================================#
+with open('Owner.json', 'r') as fp:
+    Owner = json.load(fp)
+    
+with open('admin.json', 'r') as fp:
+    admin = json.load(fp)
+    
+myProfile = {
+	"displayName": "",
+	"statusMessage": "",
+	"pictureStatus": ""
+}
 
+myProfile["displayName"] = gyeProfile.displayName
+myProfile["statusMessage"] = gyeProfile.statusMessage
+myProfile["pictureStatus"] = gyeProfile.pictureStatus
+
+readOpen = codecs.open("read.json","r","utf-8")
+settingsOpen = codecs.open("temp.json","r","utf-8")
 
 #==============================================================================#
 
@@ -139,7 +148,6 @@ __̴ı̴̴̡̡̡ ̡͌l̡̡̡ ̡͌l̡*̡̡ ̴̡ı̴̴̡ ̡̡͡|̲̲̲͡͡͡ ̲▫
 
 Support By ~ ҳ̸Ҳ̸ҳ Сўв∝я тҝ ҳ̸Ҳ̸ҳ
 """
-helo=""
 
 KAC=[gye,ki,ki2,ki3,ki4,ki5]
 mid = gye.getProfile().mid
@@ -149,36 +157,8 @@ ki3mid = ki3.getProfile().mid
 ki4mid = ki4.getProfile().mid
 ki5mid = ki5.getProfile().mid
 Bots = [mid,kimid,ki2mid,ki3mid,ki4mid,ki5mid]
-admsa = 'ue32b11986d8e9e5cf70b642cf7ba88ff'
-admin = 'ue32b11986d8e9e5cf70b642cf7ba88ff'
-
-gyeProfile = gye.getProfile()
-kiProfile = ki.getProfile()
-ki2Profile = ki2.getProfile()
-ki2Profile = ki3.getProfile()
-ki2Profile = ki4.getProfile()
-ki5Profile = ki5.getProfile()
-
-lineSettings = gye.getSettings()
-aisSettings = ais.getSettings()
-ki2Settings = ki2.getSettings()
-ki3Settings = ki3.getSettings()
-ki4Settings = ki4.getSettings()
-ki5Settings = ki5.getSettings()
-
-oepoll = OEPoll(gye)
-oepoll1 = OEPoll(ki)
-oepoll2 = OEPoll(ki2)
-oepoll3 = OEPoll(ki3)
-oepoll4 = OEPoll(ki4)
-oepoll5 = OEPoll(ki5)
-
-responsename = gye.getProfile().displayName
-responsename2 = ki.getProfile().displayName
-responsename3 = ki2.getProfile().displayName
-responsename2 = ki3.getProfile().displayName
-responsename3 = ki4.getProfile().displayName
-responsename4 = ki5.getProfile().displayName
+admsa = 'u6a66b6b389d27052f7c8ac0bdc2cee7e'
+admin = 'u6a66b6b389d27052f7c8ac0bdc2cee7e'
 
 wait = {
     'contact':False,
@@ -242,11 +222,11 @@ def bot(op):
             return
         if op.type == 13:
             if mid in op.param3:
-                G = cl.getGroup(op.param1)
+                G = gye.getGroup(op.param1)
                 if wait["autoJoin"] == True:
                     if wait["autoCancel"]["on"] == True:
                         if len(G.members) <= wait["autoCancel"]["members"]:
-                            cl.rejectGroupInvitation(op.param1)
+                            gye.rejectGroupInvitation(op.param1)
                             ki.rejectGroupInvitation(op.param1)
                             ki2.rejectGroupInvitation(op.param1)
                             ki3.rejectGroupInvitation(op.param1)
@@ -258,7 +238,7 @@ def bot(op):
                             ki9.rejectGroupInvitation(op.param1)
                             ki10.rejectGroupInvitation(op.param1)
                         else:
-                            cl.acceptGroupInvitation(op.param1)
+                            gye.acceptGroupInvitation(op.param1)
                             ki.acceptGroupInvitation(op.param1)
                             ki2.acceptGroupInvitation(op.param1)
                             ki3.acceptGroupInvitation(op.param1)
@@ -270,7 +250,7 @@ def bot(op):
                             ki9.acceptGroupInvitation(op.param1)
                             ki10.acceptGroupInvitation(op.param1)
                     else:  
-                        cl.acceptGroupInvitation(op.param1)
+                        gye.acceptGroupInvitation(op.param1)
                         ki.acceptGroupInvitation(op.param1)
                         ki2.acceptGroupInvitation(op.param1)
                         ki3.acceptGroupInvitation(op.param1)
@@ -283,7 +263,7 @@ def bot(op):
                         ki10.acceptGroupInvitation(op.param1)
                 elif wait["autoCancel"]["on"] == True:
                     if len(G.members) <= wait["autoCancel"]["members"]:
-                        cl.rejectGroupInvitation(op.param1)   
+                        gye.rejectGroupInvitation(op.param1)   
             else:
                 Inviter = op.param3.replace("",',')
                 InviterX = Inviter.split(",")
