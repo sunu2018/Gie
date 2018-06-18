@@ -1099,7 +1099,8 @@ def lineBot(op):
                         gye.findAndAddContactsByMids(allmid)
                         gye.inviteIntoGroup(msg.to,allmid)
                         gye.cancelGroupInvitation(msg.to,allmid)
-                     elif msg.text.lower() == ".myid":
+
+                elif msg.text.lower() == ".myid":
                     gye.sendText(msg.to,user1)
                 elif ".tx " in msg.text.lower():
                     spl = re.split(".tx ",msg.text,flags=re.IGNORECASE)
