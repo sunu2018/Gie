@@ -615,21 +615,21 @@ def lineBot(op):
             return
         if op.type == 5:
             if settings["autoAdd"] == True:
-                line.blockContact(op.param1)           
+                gye.blockContact(op.param1)           
         if op.type == 13:
-            if lineMID in op.param3:
-                G = line.getGroup(op.param1)
+            if gyeMID in op.param3:
+                G = gye.getGroup(op.param1)
                 if settings["autoJoin"] == True:
                     if settings["autoCancel"]["on"] == True:
                         if len(G.members) <= settings["autoCancel"]["members"]:
-                            line.rejectGroupInvitation(op.param1)
+                            gye.rejectGroupInvitation(op.param1)
                         else:
-                            line.acceptGroupInvitation(op.param1)
+                            gye.acceptGroupInvitation(op.param1)
                     else:
-                        line.acceptGroupInvitation(op.param1)
+                        gye.acceptGroupInvitation(op.param1)
                 elif settings["autoCancel"]["on"] == True:
                     if len(G.members) <= settings["autoCancel"]["members"]:
-                        line.rejectGroupInvitation(op.param1)
+                        gye.rejectGroupInvitation(op.param1)
             else:
                 Inviter = op.param3.replace("",',')
                 InviterX = Inviter.split(",")
@@ -639,7 +639,7 @@ def lineBot(op):
                 if matched_list == []:
                     pass
                 else:
-                    line.cancelGroupInvitation(op.param1, matched_list)				
+                    gye.cancelGroupInvitation(op.param1, matched_list)				
 #        if op.type == 13:
 #            group = line.getGroup(op.param1)
 #            if settings["autoJoin"] == True:
@@ -684,29 +684,29 @@ def lineBot(op):
                         p.close()
                 if text.lower() == 'my help':
                     myHelp = myhelp()
-                    line.sendMessage(to, str(myHelp))
+                    gye.sendMessage(to, str(myHelp))
                 elif text.lower() == 'help set':
                     helpSet = helpset()
-                    line.sendMessage(to, str(helpSet))
+                    gye.sendMessage(to, str(helpSet))
                     sendMessageWithMention(to, lineMID)
                 elif text.lower() == 'help kicker':
                     helpKicker = helpkicker()
-                    line.sendMessage(to, str(helpKicker))
+                    gye.sendMessage(to, str(helpKicker))
                 elif text.lower() == 'help group':
                     listGrup = listgrup()
-                    line.sendMessage(to, str(listGrup))
+                    gye.sendMessage(to, str(listGrup))
                 elif text.lower() == 'help setting':
                     helpSetting = helpsetting()
-                    line.sendMessage(to, str(helpSetting))
+                    gye.sendMessage(to, str(helpSetting))
                 elif text.lower() == 'help media':
                     socMedia = socmedia()
-                    line.sendMessage(to, str(socMedia))
+                    gye.sendMessage(to, str(socMedia))
                 elif text.lower() == 'texttospeech':
                     helpTextToSpeech = helptexttospeech()
-                    line.sendMessage(to, str(helpTextToSpeech))
+                    gye.sendMessage(to, str(helpTextToSpeech))
                 elif text.lower() == 'languange':
                     helpLanguange = helplanguange()
-                    line.sendMessage(to, str(helpLanguange))
+                    gye.sendMessage(to, str(helpLanguange))
 #==============================ถึงนี่เเล้ว================================================#
                 elif settings["wblacklist"] == True:
                     if msg.contentMetadata["mid"] in settings["blacklist"]:
