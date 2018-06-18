@@ -788,7 +788,93 @@ def lineBot(op):
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
 #==============================================================================#
-#==============================================================================#                                                                           
+#==============================================================================#
+                elif text.lower() == 'set':
+                    try:
+                        ret_ = "╔════[ Status ]═════┓"
+                        if settings["autoAdd"] == True: ret_ += "\n╠ รับแอดออโต้ ✔"
+                        else: ret_ += "\n╠ รับแอดออโต้    ✘ "
+                        if settings["autoJoin"] == True: ret_ += "\n╠ เข้าห้องออโต้ ✔"
+                        else: ret_ += "\n╠ เข้าห้องออโต้    ✘ "
+                        if settings["autoCancel"]["on"] == True:ret_+="\n╠ ยกเลิกเชิญกลุ่มเมื่อมีสมาชิกต่ำกว่า: " + str(settings["autoCancel"]["members"]) + " → ✔"
+                        else: ret_ += "\n╠ ยกเลิกเชิญกลุ่ม    ✘ "						
+                        if settings["autoLeave"] == True: ret_ += "\n╠ ออกแชทรวม ✔"
+                        else: ret_ += "\n╠ ออกแชทรวม ✘ "
+                        if settings["autoRead"] == True: ret_ += "\n╠ อ่านออโต้ ✔"
+                        else: ret_ += "\n╠ อ่านออโต้   ✘ "				
+                        if settings["checkSticker"] == True: ret_ += "\n╠ Sticker ✔"
+                        else: ret_ += "\n╠ Sticker        ✘ "
+                        if settings["detectMention"] == True: ret_ += "\n╠ ตอบกลับคนแทค ✔"
+                        else: ret_ += "\n╠ ตอบกลับคนแทค ✘ "
+                        if settings["potoMention"] == True: ret_ += "\n╠ แสดงภาพคนแทค ✔"
+                        else: ret_ += "\n╠ แสดงภาพคนแทค ✘ "						
+                        if RfuProtect["inviteprotect"] == True: ret_ += "\n╠ กันเชิญ ✔"
+                        else: ret_ += "\n╠ กันเชิญ ✘ "
+                        if RfuProtect["cancelprotect"] == True: ret_ += "\n╠ กันยกเชิญ ✔"
+                        else: ret_ += "\n╠ กันยกเชิญ ✘ "
+                        if RfuProtect["protect"] == True: ret_ += "\n╠ ป้องกัน ✔"
+                        else: ret_ += "\n╠ ป้องกัน ✘ "
+                        if RfuProtect["linkprotect"] == True: ret_ += "\n╠ ป้องกันเปิดลิ้ง ✔"
+                        else: ret_ += "\n╠ ป้องกันเปิดลิ้ง ✘ "
+                        if RfuProtect["Protectguest"] == True: ret_ += "\n╠ ป้องกันสมาชิก ✔"
+                        else: ret_ += "\n╠ ป้องกันสมาชิก ✘ "
+                        if RfuProtect["Protectjoin"] == True: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✔"
+                        else: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✘ "						
+                        ret_ += "\n╚════[ Status ]═════┛"
+                        gye.sendMessage(to, str(ret_))
+                    except Exception as e:
+                        gye.sendMessage(msg.to, str(e))
+                elif text.lower() == 'autoadd on':
+                    settings["autoAdd"] = True
+                    gye.sendMessage(to, "Autoadd enabled.")
+                elif text.lower() == 'autoadd off':
+                    settings["autoAdd"] = False
+                    gye.sendMessage(to, "Autoadd disabled.")
+                elif text.lower() == 'autojoin on':
+                    settings["autoJoin"] = True
+                    gye.sendMessage(to, "Autojoin enabled.")
+                elif text.lower() == 'autojoin off':
+                    settings["autoJoin"] = False
+                    gye.sendMessage(to, "Auto Join disabled.")
+                elif "Gcancel:" in msg.text:
+                    try:
+                        strnum = msg.text.replace("Gcancel:","")
+                        if strnum == "off":
+                                settings["autoCancel"]["on"] = False
+                                if settings["lang"] == "JP":
+                                    gye.sendText(msg.to,"Invitation refused turned off\nTo turn on please specify the number of people and send")
+                                else:
+                                    gye.sendText(msg.to,"关了邀请拒绝。要时开请指定人数发送")
+                        else:
+                                num =  int(strnum)
+                                settings["autoCancel"]["on"] = True
+                                if settings["lang"] == "JP":
+                                    gye.sendText(msg.to,strnum + " สมาชิกในกลุ่มจะปฏิเสธคำเชิญโดยอัตโนมัติ")
+                                else:
+                                    gye.sendText(msg.to,strnum + "使人以下的小组用自动邀请拒绝")
+                    except:
+                        if settings["lang"] == "JP":
+                                gye.sendText(msg.to,"Value is wrong")
+                        else:
+                                gye.sendText(msg.to,"Bizarre ratings")					
+                elif text.lower() == 'autoleave on':
+                    settings["autoLeave"] = True
+                    gye.sendMessage(to, "Autoleave enabled.")
+                elif text.lower() == 'autoleave off':
+                    settings["autoLeave"] = False
+                    gye.sendMessage(to, "Autoleave disabled.")
+                elif text.lower() == 'autoread on':
+                    settings["autoRead"] = True
+                    gye.sendMessage(to, "Autoread message enabled.")
+                elif text.lower() == 'autoread off':
+                    settings["autoRead"] = False
+                    gye.sendMessage(to, "Autoread message disabled.")
+                elif text.lower() == 'sticker on':
+                    settings["checkSticker"] = True
+                    gye.sendMessage(to, "Check sticker enabled.")
+                elif text.lower() == 'sticker off':
+                    settings["checkSticker"] = False
+                    gye.sendMessage(to, "Check sticker disabled.")                
 #==============================================================================#
                 elif text.lower() == 'เช็คป้องกัน':
                     try:
