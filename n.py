@@ -1146,8 +1146,7 @@ def lineBot(op):
                     except Exception as e:
                         print(e)						
                 elif msg.text.lower().startswith("pz:gac "):
-			
-			pnum = re.split("pz:gac ",msg.text,flags=re.IGNORECASE)[1]
+                    pnum = re.split("pz:gac ",msg.text,flags=re.IGNORECASE)[1]
                     pnum = "66"+pnum[1:]
                     GACReq = GACSender.send(pnum)
                     if GACReq.responseNum == 0:
