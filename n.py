@@ -1053,8 +1053,8 @@ def lineBot(op):
                             msg.text = None
                             msg.contentMetadata = {'mid': userData.mid}
                             gye.sendMessage(msg)
-				elif "|!" in msg.text:
-                    spl = msg.text.split("|!")
+                elif "|!" in msg.text:
+                    spl = msg.text.split("|!")                    
                     if spl[len(spl)-1] == "":
                         gye.sendText(msg.to,"กดที่นี่เพื่อเขย่าข้อความด้านบน:\nline://nv/chatMsg?chatId="+msg.to+"&messageId="+msg.id)	
                 elif ".denyall" in msg.text.lower():
