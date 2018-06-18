@@ -489,8 +489,9 @@ def helptexttospeech():
                          "╚══════════════┛" + "\n" + "\n\n" + \
                           "「Contoh : say-id Pengen Anu」"
     return helpTextToSpeech
-    def helplanguange():
-    helpLanguange =    "╔══════════════┓" + "\n" + \
+    
+def helplanguange():
+    helpLanguange = "╔══════════════┓" + "\n" + \
                        "╠⌬ ✰self protect✰    ⌬" + "\n" + \
                        "╚══════════════┛" + "\n" + \
                        "────┅═ই۝ई═┅────" + "\n" + \
