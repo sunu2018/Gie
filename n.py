@@ -783,7 +783,7 @@ def lineBot(op):
                         ret_ += "\n╠══[สถานะ]"
                         ret_ += "\n╠۝ ผู้สร้าง ═ {}".format(creator.displayName)
                         ret_ += "\n╚══[ ✯ɢʜᴏsᴛ ᴛᴇᴀᴍ✯ ]"
-                        gyee.sendContact(to, owner)
+                        gye.sendContact(to, owner)
                         gye.sendMessage(to, str(ret_))
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
