@@ -367,7 +367,7 @@ def socmedia():
                   "║Pornhub" + "\n" + \
                   "╰════"
     return socMedia
-        
+      
 def helpset():
     helpSet = "╭════HelpMySet " + "\n" + \
     "║ᴍʏ sᴇʟғ" + "\n" + \
@@ -380,6 +380,7 @@ def helpset():
     "║ʟɪsᴛ ᴛʀᴀɴsʟᴀᴛᴇ" + "\n" + \
     "╰════"
     return helpSet 
+
 def helpkicker():
     helpKicker = "╭════HelpKicker " + "\n" + \
     "║K1 kick" + "\n" + \
