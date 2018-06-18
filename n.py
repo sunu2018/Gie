@@ -2153,10 +2153,10 @@ def lineBot(op):
                     line.sendMessage(receiver, 'หยุดการทำงานเซลบอทเรียบร้อย')
                     print ("Selfbot Off")
                     exit(1)
-elif text.lower() == 'friendlist':
+
+                elif text.lower() == 'friendlist':
                     contactlist = line.getAllContactIds()
-                    kontak = line.getContacts(contactlist)
-                    num=1
+                    kontak = line
                     msgs="🎎List Friend🎎"
                     for ids in kontak:
                         msgs+="\n[%i] %s" % (num, ids.displayName)
