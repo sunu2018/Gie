@@ -980,10 +980,8 @@ def lineBot(op):
                         gTicket = "Tidak ada"
                     else:
                         gQr = "Terbuka"
-			gTicket = "https://line.me/R/ti/g/{}".format(str(line.reissueGroupTicket(group.id)))
+                        gTicket = "https://line.me/R/ti/g/{}".format(str(line.reissueGroupTicket(group.id)))
                     path = "http://dl.profile.line-cdn.net/" + group.pictureStatus
-                    ret_ = "╔══[ Group Info ]"
-                    ret_ += "\n╠ Nama Group : {}".format(str(group.name))
                     ret_ += "\n╠ ID Group : {}".format(group.id)
                     ret_ += "\n╠ Pembuat : {}".format(str(gCreator))
                     ret_ += "\n╠ Jumlah Member : {}".format(str(len(group.members)))
