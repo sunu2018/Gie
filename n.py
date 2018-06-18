@@ -609,56 +609,105 @@ def helplanguange():
     return helpLanguange
 #==============================================================================#
 #==============================================================================#
-
-#==============================================================================#
-def backupData():
-    try:
-        backup = settings
-        f = codecs.open('temp.json','w','utf-8')
-        json.dump(backup, f, sort_keys=True, indent=4, ensure_ascii=False)
-        backup = read
-        f = codecs.open('read.json','w','utf-8')
-        json.dump(backup, f, sort_keys=True, indent=4, ensure_ascii=False)
-        return True
-    except Exception as error:
-        logError(error)
-        return False
-        
-def command(text):
-    pesan = text.lower()
-    if pesan.startswith(settings["keyCommand"]):
-        cmd = pesan.replace(settings["keyCommand"],"")
-    else:
-        cmd = "Undefined command"
-    return cmd        
-
-
 def lineBot(op):
     try:
         if op.type == 0:
-            print ("[ 0 ] GYEVHA BOTS SATU")
             return
-#-------------------------------------------------------------------------------
+        if op.type == 5:
+            if settings["autoAdd"] == True:
+                line.blockContact(op.param1)           
+        if op.type == 13:
+            if lineMID in op.param3:
+                G = line.getGroup(op.param1)
+                if settings["autoJoin"] == True:
+                    if settings["autoCancel"]["on"] == True:
+                        if len(G.members) <= settings["autoCancel"]["members"]:
+                            line.rejectGroupInvitation(op.param1)
+                        else:
+                            line.acceptGroupInvitation(op.param1)
+                    else:
+                        line.acceptGroupInvitation(op.param1)
+                elif settings["autoCancel"]["on"] == True:
+                    if len(G.members) <= settings["autoCancel"]["members"]:
+                        line.rejectGroupInvitation(op.param1)
+            else:
+                Inviter = op.param3.replace("",',')
+                InviterX = Inviter.split(",")
+                matched_list = []
+                for tag in settings["blacklist"]:
+                    matched_list+=[str for str in InviterX if str == tag]
+                if matched_list == []:
+                    pass
+                else:
+                    line.cancelGroupInvitation(op.param1, matched_list)				
+#        if op.type == 13:
+#            group = line.getGroup(op.param1)
+#            if settings["autoJoin"] == True:
+#                line.acceptGroupInvitation(op.param1)
+#        if op.type == 24:
+#            if settings["autoLeave"] == True:
+#                line.leaveRoom(op.param1)
         if op.type == 25:
             msg = op.message
-            if msg.contentType == 13:
-                if settings["wblack"] == True:
-                    if msg.contentMetadata["mid"] in settings["commentBlack"]:
-                        gye.sendMessage(msg.to,"sudah masuk daftar hitam")
-                        settings["wblack"] = False
-                    else:
-                        settings["commentBlack"][msg.contentMetadata["mid"]] = True
-                        settings["wblack"] = False
-                        gye.sendMessage(msg.to,"Itu tidak berkomentar")
-                elif settings["dblack"] == True:
-                    if msg.contentMetadata["mid"] in settings["commentBlack"]:
-                        del settings["commentBlack"][msg.contentMetadata["mid"]]
-                        gye.sendMessage(msg.to,"Done")
-                        settings["dblack"] = False
-                    else:
-                        settings["dblack"] = False
-                        gye.sendMessage(msg.to,"Tidak ada dalam daftar hitam")
-#-------------------------------------------------------------------------------
+            text = msg.text
+            msg_id = msg.id
+            receiver = msg.to
+            sender = msg._from
+            if msg.toType == 0:
+                if sender != line.profile.mid:
+                    to = sender
+                else:
+                    to = receiver
+            else:
+                to = receiver
+            if msg.contentType == 0:
+                if text is None:
+                    return
+#==============================================================================#
+                if ".say " in msg.text.lower():
+                    spl = re.split(".say ",msg.text,flags=re.IGNORECASE)
+                    if spl[0] == "":
+                        mts = spl[1]
+                        mtsl = mts.split()
+                        mtsTimeArg = len(mtsl) - 1
+                        mtsTime = mtsl[mtsTimeArg]
+                        del mtsl[mtsTimeArg]
+                        mtosay = " ".join(mtsl)
+                        global Rapid1To
+                        Rapid1To = msg.to
+                        RapidTime = mtsTime
+                        rmtosay = []
+                        for count in range(0,int(RapidTime)):
+                            rmtosay.insert(count,mtosay)
+                        p = Pool(20)
+                        p.map(Rapid1Say,rmtosay)
+                        p.close()
+                if text.lower() == 'my help':
+                    myHelp = myhelp()
+                    line.sendMessage(to, str(myHelp))
+                elif text.lower() == 'help set':
+                    helpSet = helpset()
+                    line.sendMessage(to, str(helpSet))
+                    sendMessageWithMention(to, lineMID)
+                elif text.lower() == 'help kicker':
+                    helpKicker = helpkicker()
+                    line.sendMessage(to, str(helpKicker))
+                elif text.lower() == 'help group':
+                    listGrup = listgrup()
+                    line.sendMessage(to, str(listGrup))
+                elif text.lower() == 'help setting':
+                    helpSetting = helpsetting()
+                    line.sendMessage(to, str(helpSetting))
+                elif text.lower() == 'help media':
+                    socMedia = socmedia()
+                    line.sendMessage(to, str(socMedia))
+                elif text.lower() == 'texttospeech':
+                    helpTextToSpeech = helptexttospeech()
+                    line.sendMessage(to, str(helpTextToSpeech))
+                elif text.lower() == 'languange':
+                    helpLanguange = helplanguange()
+                    line.sendMessage(to, str(helpLanguange))
+#==============================ถึงนี่เเล้ว================================================#
                 elif settings["wblacklist"] == True:
                     if msg.contentMetadata["mid"] in settings["blacklist"]:
                         gye.sendMessage(msg.to,"sudah masuk daftar hitam")
