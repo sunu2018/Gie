@@ -621,7 +621,7 @@ def helplanguange():
                        "「Contoh : tr-id Pengen Anu」"
     return helpLanguange
 #==============================================================================#
-def lineBot(op):
+def gyeBot(op):
     try:
         if op.type == 0:
             return
@@ -726,12 +726,12 @@ def lineBot(op):
 #==============================================================================#
                 elif text.lower() == 'speed':
                     start = time.time()
-                    gye.sendMessage(to, "ดูความกากของเชลเเปป")
+                    gye.sendMessage(to, "ความเร็วของบอทที่...")
                     elapsed_time = time.time() - start
                     gye.sendMessage(msg.to, "[ %s Seconds ] [ " % (elapsed_time) + str(int(round((time.time() - start) * 1000)))+" ms ]")
                 elif text.lower() == 'sp':
                     start = time.time()
-                    gye.sendMessage(to, "ใช้ตัวย่อง่ายๆขี้เกียจ")
+                    gye.sendMessage(to, "ความเร็วของบอทที่...")
                     elapsed_time = time.time() - start
                     gye.sendMessage(msg.to, "[ %s Seconds ] [ " % (elapsed_time) + str(int(round((time.time() - start) * 1000)))+" ms ]")						
                 elif text.lower() == 'รีบอท':
@@ -951,7 +951,7 @@ def lineBot(op):
                             path = "http://dl.profile.line.naver.jp/" + line.getContact(ls).pictureStatus + "/vp"
                             gye.sendImageWithURL(msg.to, str(path))
                 elif msg.text.lower().startswith("cover "):
-                    if line != None:
+                    if gye != None:
                         if 'MENTION' in list(msg.contentMetadata.keys())!= None:
                             names = re.findall(r'@(\w+)', text)
                             mention = ast.literal_eval(msg.contentMetadata['MENTION'])
