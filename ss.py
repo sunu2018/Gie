@@ -53,11 +53,11 @@ botStart = time.time()
 #ke.log("Auth Token : " + str(ke.authToken))
 #ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
-gye = LINE("Et5gYrvSnIEOpWFK5m4f.4YSrMg2oNLZ3c2qS97Qi+W.fsNClszZfRIpi5y3C/DKfbTqc100zzXX0tWv5M3TZ/k=")
-ki = LINE("EtQQZ5O8Q9ZNn47rzMCd.ZumT2/Y29n7tOJ4IwPo4tq.1TFAsQAvYzlyAp1XEM5RsdIZwZtoEnir3y6dea1fo1E=")
-kk = LINE("Et0Oj6SRTe8eGtw9jK3d.SPS+quoffhJbcv30K1vAdq.gD9LSFBUBorGs552hX0ltdIVxai6oaF/Ox4aGWcOFJA=")
-kc = LINE("EtZREl8uhl6VAapUjlTc.WSbM8Imh8gKzhGhc98UuVa.feeQQaWBEpieqDeI+TBL9t7uKaW9tBVFmRZfAB9tHUk=")
-ke = LINE("EtRhFIGABsjUHKYKVoqe.lVN3XpWByvHZ/lHSAQFaBG.Fo8l69iIhSLOiMhTWoKoj6JIgftT7HEjwC0RykLYwZc=")
+gye = LINE("Et6sEigK6EKPFGK1Tyu8.06A+2McPvSYG9y8QflROca.Trv+J5Cfue9yFqTzeEHl4bvBIKplhQeaw5r2AMftjJ0=")
+ki = LINE("Et03oL51UZsrgvvtipI8.Wt/YUebfKcqU+KFC8aE2Qa.gRgQxQXy3zImfzS+V3nHyUQ7qUKOp/q6sP7akLBsLZ0=")
+kk = LINE("EtZQYCljPB20vFk7lhMf.C6uUUOle4xvTyhRqRUt3ZW.g5dl2gYOW8cbMUMQtEiGBZxCAyq7Cewzl4b0w95zPl8=")
+kc = LINE("EtLmQUwgi4aaqMpxpeja.CS3aZ7gG42fDqnPSw7Eh6G.WyY2R6c7P/pjNdH4xp68kAnAYAiSiS/i3ouRPrMRmMs=")
+ke = LINE("Eti3jixZyomSekysnkab.KjDN9JBsWpSVnKHbTD0jYW.bDcL2DBnnsO3e/zhHO1kzyp3ghMmwx+R5iMRlbnqz6E=")
 
 print ("Login Succes")
 
@@ -3251,7 +3251,7 @@ def gyeBot(op):
                     gye.sendMessage(msg.to,"ทำการลบัญชีดำทั้งหมดเรียร้อย")
                     print ("Clear Ban")
 
-                elif text.lower() == 'มาหำ':
+                elif text.lower() == 'มาหอย':
                     if msg.toType == 2:
                         group = gye.getGroup(to)
                         group.preventedJoinByTicket = False
@@ -3472,7 +3472,7 @@ def gyeBot(op):
                                 pass
                                 print ("Remove Chat Kicker")
 
-                elif text.lower() == "หนีหำ":
+                elif text.lower() == "หนีหอย":
                     if msg._from in Family:
                         ki.leaveGroup(msg.to)
                         kk.leaveGroup(msg.to)
