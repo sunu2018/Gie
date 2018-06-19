@@ -1199,7 +1199,7 @@ def gyeBot(op):
                         prov = eval(msg.contentMetadata["MENTION"])["MENTIONEES"]
                         for i in range(len(prov)):
                             uid = prov[i]["M"]
-                            userData = line.getContact(uid)
+                            userData = gye.getContact(uid)
                             try:
                                 gye.sendImageWithUrl(msg.to,"http://dl.profile.line.naver.jp/"+userData.pictureStatus)
                             except:
@@ -1305,7 +1305,7 @@ def gyeBot(op):
                             gye.sendText(msg.to,"[[NO MENTION]]")
                     elif data[0] == "<":
                         mentargs = int(data[1:].strip())
-                        group = line.getGroup(msg.to)
+                        group = gye.getGroup(msg.to)
                         nama = [contact.mid for contact in group.members if contact.mid != user1]
                         cb = ""
                         cb2 = ""
@@ -1454,7 +1454,7 @@ def gyeBot(op):
                 elif ".nmx " in msg.text.lower():
                     spl = re.split(".nmx ",msg.text,flags=re.IGNORECASE)
                     if spl[0] == "":
-                        prof = line.getProfile()
+                        prof = gye.getProfile()
                         prof.displayName = line.nmxstring(spl[1])
                         gye.updateProfile(prof)
                         gye.sendText(msg.to,"สำเร็จแล้ว")
@@ -1511,7 +1511,7 @@ def gyeBot(op):
                     spl = re.split(".groupurl ",msg.text,flags=re.IGNORECASE)
                     if spl[0] == "":
                         try:
-                            gye.sendText(msg.to,"http://line.me/R/ti/g/"+str(line.reissueGroupTicket(spl[1])))
+                            gye.sendText(msg.to,"http://line.me/R/ti/g/"+str(gye.reissueGroupTicket(spl[1])))
                         except Exception as e:
                             gye.sendText(msg.to,"พบข้อผิดพลาด (เหตุผล \""+e.reason+"\")")
 
@@ -1677,7 +1677,7 @@ def gyeBot(op):
                             chiya = []
                             for rom in list(read["ROM"][receiver].items()):
                                 chiya.append(rom[1])
-                            cmem = line.getContacts(chiya) 
+                            cmem = gye.getContacts(chiya) 
                             zx = ""
                             zxc = ""
                             zx2 = []
@@ -3040,7 +3040,7 @@ def gyeBot(op):
                         web.headers["User-Agent"] = random.choice(settings["userAgent"])
                         r = web.get("https://www.youtube.com/results", params = params)
                         soup = BeautifulSoup(r.content, "html.parser")
-                        ret_ = "╔══[ ผมการค้นหา ]"
+                        ret_ = "╔══[ ผลการค้นหา ]"
                         datas = []
                         for data in soup.select(".yt-lockup-title > a[title]"):
                             if "&lists" not in data["href"]:
@@ -3110,7 +3110,7 @@ def gyeBot(op):
                 elif msg.text.lower() == 'gurl':
                 	if msg.toType == 2:
                          g = gye.getGroup(receiver)
-                         line.updateGroup(g)
+                         gye.updateGroup(g)
                          gurl = gye.reissueGroupTicket(receiver)
                          gye.sendMessage(receiver,"╔══════════════┓\n╠❂line://ti/g/" + gurl + "\n╠\n╠❂Link Groupnya Tanpa Buka Qr\n╚══════════════┛")
 
@@ -3246,11 +3246,11 @@ def gyeBot(op):
                     gye.sendMessage(msg.to,"ทำการลบัญชีดำทั้งหมดเรียร้อย")
                     print ("Clear Ban")
 
-                elif text.lower() == 'มาเหอะ':
+                elif text.lower() == 'มาหำ':
                     if msg.toType == 2:
                         group = gye.getGroup(to)
                         group.preventedJoinByTicket = False
-                        line.updateGroup(group)
+                        gye.updateGroup(group)
                         invsend = 0
                         ticket = gye.reissueGroupTicket(to)
                         ki.acceptGroupInvitationByTicket(to,format(str(ticket)))
@@ -3415,7 +3415,7 @@ def gyeBot(op):
                 elif "Cleanse" in msg.text:
                 	if msg.toType == 2:
                          _name = msg.text.replace("Cleanse","")
-                         gs = line.getGroup(receiver)
+                         gs = gye.getGroup(receiver)
                          gye.sendMessage(receiver,"Just some casual cleansing ô")
                          targets = []
                          for g in gs.members:
@@ -3447,7 +3447,7 @@ def gyeBot(op):
                          else:
                              for jj in matched_list:
                                  try:
-                                     klist=[line,ki,kk,kc,ke]
+                                     klist=[gye,ki,kk,kc,ke]
                                      kicker=random.choice(klist)
                                      kicker.kickoutFromGroup(receiver,[jj])
                                      print((receiver,[jj]))
@@ -3462,12 +3462,12 @@ def gyeBot(op):
                                 kk.removeAllMessages(op.param2)
                                 kc.removeAllMessages(op.param2)
                                 ke.removeAllMessages(op.param2)                                
-                                line.sendMessage(msg.to,"Remove chat Kicker success....")
+                                gye.sendMessage(msg.to,"Remove chat Kicker success....")
                             except:
                                 pass
                                 print ("Remove Chat Kicker")
 
-                elif text.lower() == "ออกเหอะ":
+                elif text.lower() == "หนีหำ":
                     if msg._from in Family:
                         ki.leaveGroup(msg.to)
                         kk.leaveGroup(msg.to)
@@ -3477,7 +3477,7 @@ def gyeBot(op):
 
                 elif text.lower() == "leaveall":
                     if msg._from in Family:
-                        gid = line.getGroupIdsJoined()
+                        gid = gye.getGroupIdsJoined()
                         for i in gid:
                             ki.leaveGroup(i)
                             kk.leaveGroup(i)
@@ -3489,7 +3489,7 @@ def gyeBot(op):
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
-                        profile_A = line.getProfile()
+                        profile_A = gye.getProfile()
                         profile_A.displayName = string
                         gye.updateProfile(profile_A)
                         gye.sendMessage(msg.to,"Update to " + string)
@@ -3499,7 +3499,7 @@ def gyeBot(op):
                     if msg._from in Family:
                         proses = text.split(": ")
                         string = text.replace(proses[0] + ": ","")
-                        profile_A = line.getProfile()
+                        profile_A = gye.getProfile()
                         profile_A.statusMessage = string
                         gye.updateProfile(profile_A)
                         gye.sendMessage(msg.to,"Succes Update 👉 " + string)
@@ -3899,7 +3899,7 @@ def gyeBot(op):
                                 gye.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกออกกลุ่ม   ")
 
                 elif text.lower() == '/ลบรัน':
-                    gid = line.getGroupIdsInvited()
+                    gid = gye.getGroupIdsInvited()
                     start = time.time()
                     for i in gid:
                         gye.rejectGroupInvitation(i)
@@ -4026,7 +4026,7 @@ def gyeBot(op):
                   G.preventedJoinByTicket = False
                   kk.updateGroup(G)
                   ticket = kk.reissueGroupTicket(op.param1)
-                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
@@ -4241,7 +4241,7 @@ def gyeBot(op):
                         G.preventedJoinByTicket = False
                         ki.updateGroup(G)
                         ticket = ki.reissueGroupTicket(op.param1)
-                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
@@ -4261,7 +4261,7 @@ def gyeBot(op):
                         G.preventedJoinByTicket = False
                         kk.updateGroup(G)
                         ticket = kk.reissueGroupTicket(op.param1)
-                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
@@ -4279,7 +4279,7 @@ def gyeBot(op):
                         G.preventedJoinByTicket = False
                         kk.updateGroup(G)
                         ticket = kk.reissueGroupTicket(op.param1)
-                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
@@ -4301,7 +4301,7 @@ def gyeBot(op):
                         ticket = ki.reissueGroupTicket(op.param1)
                         kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
-                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
@@ -4319,7 +4319,7 @@ def gyeBot(op):
                         ticket = ki.reissueGroupTicket(op.param1)
                         kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
-                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
@@ -4337,7 +4337,7 @@ def gyeBot(op):
                         ticket = kk.reissueGroupTicket(op.param1)
                         kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
-                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
@@ -4355,7 +4355,7 @@ def gyeBot(op):
                         ticket = kk.reissueGroupTicket(op.param1)
                         kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
-                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
@@ -4374,7 +4374,7 @@ def gyeBot(op):
                         ticket = ke.reissueGroupTicket(op.param1)
                         kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
-                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
@@ -4392,7 +4392,7 @@ def gyeBot(op):
                         ticket = ke.reissueGroupTicket(op.param1)
                         kc.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
-                        line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                        gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
                         ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                         time.sleep(0.0001)
@@ -4547,7 +4547,7 @@ def gyeBot(op):
                          if settings['detectMention'] == True:
                              contact = gye.getContact(msg._from)
                              cName = contact.displayName
-                             balas = ["『 Auto Respon』\n " + cName + "\n『แทคทำไมหรอ?』"]
+                             balas = ["『 Auto Respon』\n " + cName + "\nถ้าจะแท็กขนาดนี้มาเอาเราไปทำแฟนเลยดีกว่า มั๊ย"]
                              ret_ = "" + random.choice(balas)
                              name = re.findall(r'@(\w+)', msg.text)
                              mention = ast.literal_eval(msg.contentMetadata["MENTION"])
@@ -4573,7 +4573,7 @@ def gyeBot(op):
                 return
             ginfo = gye.getGroup(op.param1)
             contact = gye.getContact(op.param2)
-            image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus			
+            image = "http://dl.profile.gye-cdn.net/" + contact.pictureStatus			
             gye.sendText(op.param1, " ยินดีต้อนรับ. เข้ามาแล้วก็อย่าลืมปิดแจ้งเตือนกันน่ะครับ" + gye.getContact(op.param2).displayName + " สู่กลุ่ม " + "👉" + str(ginfo.name) + "👈""\nถ้าสนใจเชลบอทpy2&py3หรือไม่ก็jsบิน&รันสใจทัก\nhttp://line.me/ti/p/~nunu_kap123")			
 # ----------------- NOTIFED MEMBER OUT GROUP
         if op.type == 15:
@@ -4642,7 +4642,7 @@ while True:
         ops = oepoll.singleTrace(count=50)
         if ops is not None:
             for op in ops:
-                lineBot(op)
+                gyeBot(op)
                 oepoll.setRevision(op.revision)
     except Exception as e:
         logError(e)
