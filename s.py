@@ -2536,327 +2536,327 @@ def lineBot(op):
                     translator = Translator()
                     hasil = translator.translate(isi, dest='ms')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-ml "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='ml')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-mt "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='mt')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-mi "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='mi')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-mr "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='mr')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-mn "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='mn')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-my "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='my')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-ne "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='ne')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-no "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='no')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-ps "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='ps')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-fa "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='fa')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-pl "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='pl')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-pt "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='pt')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-pa "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='pa')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-ro "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='ro')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-ru "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='ru')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-sm "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='sm')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-gd "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='gd')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-sr "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='sr')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-st "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='st')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-sn "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='sn')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-sd "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='sd')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-si "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='si')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-sk "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='sk')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-sl "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='sl')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-so "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='so')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-es "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='es')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-su "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='su')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-sw "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='sw')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-sv "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='sv')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-tg "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='tg')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-ta "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='ta')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-te "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='te')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-th "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='th')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-tr "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='tr')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-uk "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='uk')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-ur "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='ur')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-uz "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='uz')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-vi "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='vi')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-cy "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='cy')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-xh "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='xh')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-yi "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='yi')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-yo "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='yo')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-zu "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='zu')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-fil "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='fil')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-he "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
                     translator = Translator()
                     hasil = translator.translate(isi, dest='he')
                     A = hasil.text
-                    line.sendMessage(msg.to, A)
+                    gye.sendMessage(msg.to, A)
 
                 elif msg.text in ["Jumanji"]:
                     hasil = "https://youtu.be/2QKg5SZ_35I"
                     A = hasil
-                    line.sendVideoWithURL(msg.to, A)
+                    gye.sendVideoWithURL(msg.to, A)
 
 #sender = msg._from
 #            if msg.toType == 0:
@@ -2868,9 +2868,9 @@ def lineBot(op):
                     cb = (bctxt + bc)
                     tts = gTTS(cb, lang='id', slow=False)
                     tts.save('tts.mp3')
-                    n = line.getGroupIdsJoined()
+                    n = gye.getGroupIdsJoined()
                     for manusia in n:
-                        line.sendAudio(manusia, 'tts.mp3')
+                        gye.sendAudio(manusia, 'tts.mp3')
 
                 elif "Cbroadcastvoice " in msg.text:
                     bctxt = msg.text.replace("Cbcvoice ", "")
@@ -2878,9 +2878,9 @@ def lineBot(op):
                     cb = (bctxt + bc)
                     tts = gTTS(cb, lang='id', slow=False)
                     tts.save('tts.mp3')
-                    n = line.getAllContactIdsJoined()
+                    n = gye.getAllContactIdsJoined()
                     for manusia in n:
-                        line.sendAudio(manusia, 'tts.mp3')
+                        gye.sendAudio(manusia, 'tts.mp3')
 
                 elif "Wikipedia " in msg.text:
                       try:
@@ -2892,14 +2892,14 @@ def lineBot(op):
                           pesan+=wikipedia.summary(wiki, sentences=1)
                           pesan+="\n"
                           pesan+=wikipedia.page(wiki).url
-                          line.sendMessage(msg.to, pesan)
+                          gye.sendMessage(msg.to, pesan)
                       except:
                               try:
                                   pesan="Over Text Limit! Please Click link\n"
                                   pesan+=wikipedia.page(wiki).url
-                                  line.sendText(msg.to, pesan)
+                                  gye.sendText(msg.to, pesan)
                               except Exception as e:
-                                  line.sendMessage(msg.to, str(e))
+                                  gye.sendMessage(msg.to, str(e))
 
                 elif "Film:" in msg.text:
                     proses = msg.text.split(":")
@@ -2919,8 +2919,8 @@ def lineBot(op):
                     hasil += "\nGenre    : " +str(data["Genre"])
                     hasil += "\nRuntime   : " +str(data["Runtime"])
                     path = data["Poster"]
-                    line.sendImageWithURL(msg.to, str(path))
-                    line.sendMessage(msg.to,hasil)
+                    gye.sendImageWithURL(msg.to, str(path))
+                    gye.sendMessage(msg.to,hasil)
 
                 elif text.lower() == 'kalender':
                     tz = pytz.timezone("Asia/Makassar")
@@ -2935,7 +2935,7 @@ def lineBot(op):
                     for k in range(0, len(bulan)):
                         if bln == str(k): bln = bulan[k-1]
                     readTime = hasil + ", " + timeNow.strftime('%d') + " - " + bln + " - " + timeNow.strftime('%Y') + "\nJam : [ " + timeNow.strftime('%H:%M:%S') + " ]"
-                    line.sendMessage(msg.to, readTime)                 
+                    gye.sendMessage(msg.to, readTime)                 
                 elif "screenshotwebsite" in msg.text.lower():
                     sep = text.split(" ")
                     query = text.replace(sep[0] + " ","")
@@ -2943,7 +2943,7 @@ def lineBot(op):
                         r = web.get("http://rahandiapi.herokuapp.com/sswebAPI?key=betakey&link={}".format(urllib.parse.quote(query)))
                         data = r.text
                         data = json.loads(data)
-                        line.sendImageWithURL(to, data["result"])
+                        gye.sendImageWithURL(to, data["result"])
                 elif "checkdate" in msg.text.lower():
                     sep = msg.text.split(" ")
                     tanggal = msg.text.replace(sep[0] + " ","")
@@ -2956,7 +2956,7 @@ def lineBot(op):
                     ret_ += "\n╠ Birthday : {}".format(str(data["data"]["ultah"]))
                     ret_ += "\n╠ Zodiak : {}".format(str(data["data"]["zodiak"]))
                     ret_ += "\n╚══[ Success ]"
-                    line.sendMessage(to, str(ret_))
+                    gye.sendMessage(to, str(ret_))
                 
                 elif "instagram" in msg.text.lower():
                     sep = text.split(" ")
@@ -2983,10 +2983,10 @@ def lineBot(op):
                             ret_ += "\n╠ จำนวน Post : {}".format(format_number(data["user"]["media"]["count"]))
                             ret_ += "\n╚══[ https://www.instagram.com/{} ]".format(search)
                             path = data["user"]["profile_pic_url_hd"]
-                            line.sendImageWithURL(to, str(path))
-                            line.sendMessage(to, str(ret_))
+                            gye.sendImageWithURL(to, str(path))
+                            gye.sendMessage(to, str(ret_))
                         except:
-                            line.sendMessage(to, "Pengguna tidak ditemukan")
+                            gye.sendMessage(to, "Pengguna tidak ditemukan")
                 elif "fotoig" in msg.text.lower():
                     separate = msg.text.split(" ")
                     user = msg.text.replace(separate[0] + " ","")
@@ -3003,7 +3003,7 @@ def lineBot(op):
                                 page = 'https://www.instagram.com/p/' + node['code']
                                 r = x.get(page)
                                 print((node['display_src']))
-                                line.sendImageWithURL(msg.to,node['display_src'])
+                                gye.sendImageWithURL(msg.to,node['display_src'])
                 elif "image" in msg.text.lower():
                     separate = msg.text.split(" ")
                     search = msg.text.replace(separate[0] + " ","")
@@ -3017,7 +3017,7 @@ def lineBot(op):
                             path = random.choice(items)
                             a = items.index(path)
                             b = len(items)
-                            line.sendImageWithURL(to, str(path))
+                            gye.sendImageWithURL(to, str(path))
                 elif "anime" in msg.text.lower():
                     separate = msg.text.split(" ")
                     search = msg.text.replace(separate[0] + " ","")
@@ -3031,7 +3031,7 @@ def lineBot(op):
                             path = random.choice(items)
                             a = items.index(path)
                             b = len(items)
-                            line.sendImageWithURL(to, str(path))
+                            gye.sendImageWithURL(to, str(path))
                 elif "youtube" in msg.text.lower():
                     sep = text.split(" ")
                     search = text.replace(sep[0] + " ","")
@@ -3049,7 +3049,7 @@ def lineBot(op):
                             ret_ += "\n╠══[ {} ]".format(str(data["title"]))
                             ret_ += "\n╠ https://www.youtube.com{}".format(str(data["href"]))
                         ret_ += "\n╚══[ จำนวนที่พบ {} ]".format(len(datas))
-                        line.sendMessage(to, str(ret_))
+                        gye.sendMessage(to, str(ret_))
 
                 elif msg.text in ["Cctv on"]:
                     try:
@@ -3061,81 +3061,81 @@ def lineBot(op):
                     RfuCctv['point'][msg.to] = msg.id
                     RfuCctv['sidermem'][msg.to] = ""
                     RfuCctv['cyduk'][msg.to]=True
-                    line.sendMessage(msg.to,"Cctv on Ready")
+                    gye.sendMessage(msg.to,"Cctv on Ready")
                 elif msg.text in ["Cctv off"]:
                     if msg.to in RfuCctv['point']:
                         RfuCctv['cyduk'][msg.to]=False
-                        line.sendText(msg.to, RfuCctv['sidermem'][msg.to])
+                        gye.sendText(msg.to, RfuCctv['sidermem'][msg.to])
                     else:
-                        line.sendMessage(msg.to, "Cctv Already Off")
+                        gye.sendMessage(msg.to, "Cctv Already Off")
 
                 elif text.lower() == 'selfbot off':
-                    line.sendMessage(receiver, 'หยุดการทำงานเซลบอทเรียบร้อย')
+                    gye.sendMessage(receiver, 'หยุดการทำงานเซลบอทเรียบร้อย')
                     print ("Selfbot Off")
                     exit(1)
 
                 elif text.lower() == 'เพื่อนทั้งหมด':
-                    contactlist = line.getAllContactIds()
-                    kontak = line.getContacts(contactlist)
+                    contactlist = gye.getAllContactIds()
+                    kontak = gye.getContacts(contactlist)
                     num=1
                     msgs="🎎List Friend🎎"
                     for ids in kontak:
                         msgs+="\n[%i] %s" % (num, ids.displayName)
                         num=(num+1)
                     msgs+="\n🎎List Friend🎎\n\nTotal Teman : %i" % len(kontak)
-                    line.sendMessage(msg.to, msgs)
+                    gye.sendMessage(msg.to, msgs)
 
                 elif msg.text in ["Blocklist"]: 
-                    blockedlist = line.getBlockedContactIds()
-                    kontak = line.getContacts(blockedlist)
+                    blockedlist = gye.getBlockedContactIds()
+                    kontak = gye.getContacts(blockedlist)
                     num=1
                     msgs="═════Daftar Akun Yang di Blocked═════"
                     for ids in kontak:
                         msgs+="\n[%i] %s" % (num, ids.displayName)
                         num=(num+1)
                     msgs+="\n════════List Blocked════════\n\nTotal Blocked : %i" % len(kontak)
-                    line.sendMessage(receiver, msgs)
+                    gye.sendMessage(receiver, msgs)
 
                 elif msg.text in ["Friendlist mid"]: 
-                    gruplist = line.getAllContactIds()
-                    kontak = line.getContacts(gruplist)
+                    gruplist = gye.getAllContactIds()
+                    kontak = gye.getContacts(gruplist)
                     num=1
                     msgs="═════════List FriendMid═════════"
                     for ids in kontak:
                         msgs+="\n[%i] %s" % (num, ids.mid)
                         num=(num+1)
                     msgs+="\n═════════List FriendMid═════════\n\nTotal Friend : %i" % len(kontak)
-                    line.sendMessage(receiver, msgs)
+                    gye.sendMessage(receiver, msgs)
 
                 elif msg.text.lower() == 'gurl':
                 	if msg.toType == 2:
-                         g = line.getGroup(receiver)
+                         g = gye.getGroup(receiver)
                          line.updateGroup(g)
-                         gurl = line.reissueGroupTicket(receiver)
-                         line.sendMessage(receiver,"╔══════════════┓\n╠❂line://ti/g/" + gurl + "\n╠\n╠❂Link Groupnya Tanpa Buka Qr\n╚══════════════┛")
+                         gurl = gye.reissueGroupTicket(receiver)
+                         gye.sendMessage(receiver,"╔══════════════┓\n╠❂line://ti/g/" + gurl + "\n╠\n╠❂Link Groupnya Tanpa Buka Qr\n╚══════════════┛")
 
                 elif msg.text == "Pornhub":
-                	line.sendMessage(receiver,">nekopoi.host\n>sexvideobokep.com\n>memek.com\n>pornktube.com\n>faketaxi.com\n>videojorok.com\n>watchmygf.mobi\n>xnxx.com\n>pornhd.com\n>xvideos.com\n>vidz7.com\n>m.xhamster.com\n>xxmovies.pro\n>youporn.com\n>pornhub.com\n>youjizz.com\n>thumzilla.com\n>anyporn.com\n>brazzers.com\n>redtube.com\n>youporn.com")
+                	gye.sendMessage(receiver,">nekopoi.host\n>sexvideobokep.com\n>memek.com\n>pornktube.com\n>faketaxi.com\n>videojorok.com\n>watchmygf.mobi\n>xnxx.com\n>pornhd.com\n>xvideos.com\n>vidz7.com\n>m.xhamster.com\n>xxmovies.pro\n>youporn.com\n>pornhub.com\n>youjizz.com\n>thumzilla.com\n>anyporn.com\n>brazzers.com\n>redtube.com\n>youporn.com")
 
                 elif msg.text.lower() == 'invite:gcreator':
                 	if msg.toType == 2:                
-                           ginfo = line.getGroup(receiver)
+                           ginfo = gye.getGroup(receiver)
                            try:
                                gcmid = ginfo.creator.mid
                            except:
                                gcmid = "Error"
                            if settings["lang"] == "JP":
-                               line.inviteIntoGroup(receiver,[gcmid])
-                               line.sendMessage(receiver, "Type👉 Invite Pembuat Group Succes")
+                               gye.inviteIntoGroup(receiver,[gcmid])
+                               gye.sendMessage(receiver, "Type👉 Invite Pembuat Group Succes")
                            else:
-                               line.inviteIntoGroup(receiver,[gcmid])
-                               line.sendMessage(receiver, "Pembuat Group Sudah di dalam")
+                               gye.inviteIntoGroup(receiver,[gcmid])
+                               gye.sendMessage(receiver, "Pembuat Group Sudah di dalam")
 
                 elif msg.text in ["/uninstall"]:
                     if msg.toType == 2:
-                        ginfo = line.getGroup(receiver)
+                        ginfo = gye.getGroup(receiver)
                         try:
-                            line.leaveGroup(receiver)
+                            gye.leaveGroup(receiver)
                             ki.leaveGroup(receiver)
                             kk.leaveGroup(receiver)
                             kc.leaveGroup(receiver)
@@ -3145,19 +3145,19 @@ def lineBot(op):
 
                 elif msg.text in ["Tagimage on","Tag2 on"]:
                         settings['potoMention'] = True
-                        line.sendMessage(msg.to,"Respon enabled.")
+                        gye.sendMessage(msg.to,"Respon enabled.")
                 
                 elif msg.text in ["Tagimage off","Tag2 off"]:
                         settings['potoMention'] = False
-                        line.sendMessage(msg.to,"Respon disabled.")
+                        gye.sendMessage(msg.to,"Respon disabled.")
 
                 elif msg.text in ["Respontag on","Tag on","My respon on","Respon:on"]:
                     settings["detectMention"] = True
-                    line.sendMessage(msg.to,"AutoRespon enabled.")
+                    gye.sendMessage(msg.to,"AutoRespon enabled.")
                 
                 elif msg.text in ["Respontag off","Tag off","My respon off","Respon:off"]:
                     settings["detectMention"] = False
-                    line.sendMessage(msg.to,"Autorespon disabled.")
+                    gye.sendMessage(msg.to,"Autorespon disabled.")
 
                 elif msg.text.lower().startswith("textig "):
                     sep = msg.text.split(" ")
