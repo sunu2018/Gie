@@ -101,8 +101,8 @@ kcMID = kc.getProfile().mid
 kcMID = ke.getProfile().mid
 bot1 = gye.getProfile().mid
 RfuBot=[gyeMID,kiMID,kkMID,kcMID,keMID]
-Family=["u9ed31efc986199adedb27386c9b1f458",gyeMID,kiMID,kkMID,kcMID,keMID]
-admin=['u9ed31efc986199adedb27386c9b1f458',gyeMID]
+Family=["ue32b11986d8e9e5cf70b642cf7ba88ff",gyeMID,kiMID,kkMID,kcMID,keMID]
+admin=['ue32b11986d8e9e5cf70b642cf7ba88ff',gyeMID]
 RfuFamily = RfuBot + Family
 
 protectname = []
@@ -231,7 +231,7 @@ backup.statusMessage = contact.statusMessage
 backup.pictureStatus = contact.pictureStatus
 
 mulai = time.time() 
-dangerMessage = ["cleanse","group cleansed.","mulai",".winebot",".kickall","mayhem","kick on","makasih :d","!kickall","nuke","บิน",".???","งงไปดิ","บินไปดิ","เซลกากจัง","@พี่อาร์ท","@ATR","ขอคลิปหน่อยครับ"]
+dangerMessage = ["cleanse","group cleansed.","mulai",".winebot",".kickall","mayhem","kick on","makasih :d","!kickall","nuke","บิน",".???","งงไปดิ","บินไปดิ","เซลกากจัง","@น้องสุ พี่นุ พี่โจ","@ATR","ขอคลิปหน่อยครับ"]
 
 myProfile["displayName"] = gyeProfile.displayName
 myProfile["statusMessage"] = gyeProfile.statusMessage
@@ -857,7 +857,7 @@ def gyeBot(op):
                     gye.sendContact(to, gyeMID)
                 elif text.lower() == 'mee':
                     sendMessageWithMention(to, gyeMID)
-                    gye.sendContact(to, "u9ed31efc986199adedb27386c9b1f458")
+                    gye.sendContact(to, "ue32b11986d8e9e5cf70b642cf7ba88ff")
                 elif text.lower() == 'mymid':
                     gye.sendMessage(msg.to,"[MID]\n" +  gyeMID)
                 elif text.lower() == 'myname':
@@ -1045,7 +1045,7 @@ def gyeBot(op):
                     gye.sendMessage(to, "Itu Pembuat Groupnya")
                 elif text.lower() == 'groupid':
                     gid = gye.getGroup(to)
-                    gye.sendMessage(to, "ID GROUP \n" + gid.id)
+                    gye.sendMessage(to, "ID NUNU_KAP123 \n" + gid.id)
                 elif text.lower() == 'grouppicture':
                     group = gye.getGroup(to)
                     path = "http://dl.profile.line-cdn.net/" + group.pictureStatus
