@@ -385,14 +385,19 @@ def socmedia():
     
 def helpset():
     helpSet = "╭════HelpMySet " + "\n" + \
-    "║ᴍʏ sᴇʟғ" + "\n" + \
-    "║sᴏᴄᴍᴇᴅɪᴀ" + "\n" + \
-    "║ʟɪsᴛ ɢʀᴜᴘ" + "\n" + \
-    "║ʟɪsᴛ ᴘʀᴏᴛᴇᴄᴛ" + "\n" + \
-    "║ʟɪsᴛ ᴋɪᴄᴋᴇʀ" + "\n" + \
-    "║sᴛᴀᴛᴜs" + "\n" + \
-    "║ᴛᴇxᴛᴛᴏsᴘᴇᴇᴄʜ" + "\n" + \
-    "║ʟɪsᴛ ᴛʀᴀɴsʟᴀᴛᴇ" + "\n" + \
+    "║ออโต้แอด > autoAdd ~ on ~ off" + "\n" + \
+    "║เข้าห้องออโต้ > autoJoin ~on ~off" + "\n" + \
+    "║กำหนดการเข้ากลุ่ม >autoCancel~on~off" + "\n" + \
+    "║ออกจากแชทรวม > autoLeave ~on~off" + "\n" + \
+    "║อ่านออโต้ > autoRead~on~off" + "\n" + \
+    "║อะไรไม่รู้ลองเอา>checkSticker~on~off" + "\n" + \
+    "║ตอบกลับคนแท็ก >  detectMention ~on~off" + "\n" + \
+    "║แสดงภาพคนแท็ก>potoMeention ~on~off" + "\n" + \
+    "║กันยกเลิกเชิญ>cancelprotect~on~off" + "\n" + \
+    "║ป้องกัน>protect~on~off" + "\n" + \
+    "║ป้องกันลิ่ง>linkprotect~on~off" + "\n" + \
+    "║ป้องกันสมาชิค>Protectguest~on~off" + "\n" + \
+    "║ป้องกันเข้ากลุ่ม > Protectjoin~on~off" + "\n" + \
     "╰════"
     return helpSet 
 
