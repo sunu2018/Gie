@@ -116,7 +116,7 @@ targets = []
 settings = {
     "autoAdd": True,
     "autoJoin": False,
-    'autoCancel':{"on":True,"members":10},	
+    'autoCancel':{"on":True,"members":5},	
     "autoLeave": False,
     "autoRead": False,
     "leaveRoom": False,
