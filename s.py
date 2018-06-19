@@ -2141,9 +2141,9 @@ def lineBot(op):
                 elif msg.text.lower().startswith("tr-am "):
                     sep = text.split(" ")
                     isi = text.replace(sep[0] + " ","")
-                    translator = Translator()
-                    hasil = translator.translate(isi, dest='am')
-        0            A = hasil.text
+                    translator = Translator()                    
+                    hasil = translator.translate(isi, dest='az')
+                    A = hasil.text
                     gye.sendMessage(msg.to, A)
                 elif msg.text.lower().startswith("tr-ar "):
                     sep = text.split(" ")
