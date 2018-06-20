@@ -48,16 +48,16 @@ botStart = time.time()
 #kc.log("Auth Token : " + str(kc.authToken))
 #kc.log("Timeline Token : " + str(kc.tl.channelAccessToken))
 
-ke = LINE()
+#ke = LINE()
 #ke = LINE('Es66hx3Gwt0FYtiiY6z6.SKp5IWnTswfjkJhVVqD15G.u/adxOv8mDD0ZjOuGzLsFofqqtF8ujAmN1daHKuxwW8=')
-ke.log("Auth Token : " + str(ke.authToken))
-ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
+#ke.log("Auth Token : " + str(ke.authToken))
+#ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
 gye = LINE("Eu88NpQMMbltL2vyPcJc.ugJ+9dMgaAs1/HYyDUOxda.KSNaV0pMHu634cdJNC7+X8RKcLD5gWDu6RSH2VeqhPM=")
 ki = LINE("Eubr8660jkJvhlYqTqYd.1nbyMEq08x6C7rz2+Bti7q.gtV0YuRxOnKtIDI6lbEIR8ZD118FNQquE6+WL20tNDg=")
 kk = LINE("Eu6JZcJ0ID0ESrdY6APc.WSbM8Imh8gKzhGhc98UuVa.iAsvmXtDjHsCiLAWUxyXHv+nN+NQg5UWA1gAiysRCAk=")
 kc = LINE("Et1R1XGdZj2GVVWVYRud.dCZhkZtrJsP18XdGxTjDlq.oMaLwiyz0XGoj5+69rFNYbV65stIZKnfe4kqjE/YMKE=")
-#ke = LINE("Et8llZ0PwVr5fdkv0zz9.NLEdVUFE9zK89Wsdc4+xQq.Mrlvk46xgkmNFquNEzwbx46i1km7wRtssu1wEHYhxFM=")
+ke = LINE("EuU0fDO8njjFe7wD8rF9.NLEdVUFE9zK89Wsdc4+xQq.1mFA0tYGDKpAfxjnZVkeo3XPYpM7A7jaxUQbCwxp/tw=")
 
 print ("Login Succes")
 
