@@ -4571,15 +4571,73 @@ def gyeBot(op):
                 if msg.text in dangerMessage:
                     random.choice(Rfu).kickoutFromGroup(receiver,[sender])
                     random.choice(Rfu).sendText(msg.to,"ตรวจพบคำสั่งของบอทลบกลุ่ม จำเป็นต้องนำออกเพื่อความปลอดภัยของสมาชิก (｀・ω・´)")										
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~# 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#  
         if op.type == 17:
-          if settings["Wc"] == True:
-            if op.param2 in admin:
-                return
-            ginfo = gye.getGroup(op.param1)
-            contact = gye.getContact(op.param2)
-            image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus			
-            gye.sendText(op.param1, " ยินดีต้อนรับ. เข้ามาแล้วก็อย่าลืมปิดแจ้งเตือนกันน่ะครับ" + line.getContact(op.param2).displayName + " สู่กลุ่ม " + "👉" + str(ginfo.name) + "👈""\nหรือสนใจลงบอทป้องกันบอทแท็ก ติดต่อได้ที่Line ID : klkl191\nhttp://line.me/ti/p/~klkl191")
+        	dan = gye.getContact(op.param2)
+        	tgb = gye.getGroup(op.param1)
+        	gye.sendMessage(op.param1, "สวัสดี {}, Welcome to Group {}\nเข้ามาแล้วทำตัวดีๆละ\nอ่ย่าไปเป็นบ้าลบเพื่อนๆออกกลุ่มนะ (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
+        	gye.sendContact(op.param1, op.param2)
+        	gye.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
+        if op.type == 15:
+        	dan = gye.getContact(op.param2)
+        	tgb = gye.getGroup(op.param1)
+        	gye.sendMessage(op.param1, "เอ้า {}, ได้ออกจากกลุ่ม {} \nยืนไว้อาลัยแด่เขาเป็นเวลา3วินาที  (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
+        	gye.sendContact(op.param1, op.param2)
+        if op.type == 55:
+            try:
+                if RfuCctv['cyduk'][op.param1]==True:
+                    if op.param1 in RfuCctv['point']:
+                        Name = gye.getContact(op.param2).displayName
+                        if Name in RfuCctv['sidermem'][op.param1]:
+                            pass
+                        else:
+                            RfuCctv['sidermem'][op.param1] += "\n🔰" + Name
+                            pref=['eh ada','hai kak','hay kamu','nah ada','halo lg ngapain','halo','sini kak','cctv yah kak']
+                            line.sendMessage(op.param1, str(random.choice(pref))+' '+Name)
+                    else:
+                        pass
+                else:
+                    pass
+            except:
+                pass
+
+        if op.type == 55:
+            try:
+                if RfuCctv['cyduk'][op.param1]==True:
+                    if op.param1 in RfuCctv['point']:
+                        Name = line.getContact(op.param2).displayName
+                        if Name in RfuCctv['sidermem'][op.param1]:
+                            pass
+                        else:
+                            RfuCctv['sidermem'][op.param1] += "\n⌬ " + Name + "\n╚════════════════┛"
+                            if " " in Name:
+                            	nick = Name.split(' ')
+                            if len(nick) == 2:
+                            	line.sendMessage(op.param1, "Nah " +nick[0])
+                            summon(op.param1, [op.param2])
+                    else:
+                        pass
+                else:
+                    pass
+            except:
+                pass
+        if op.type == 55:
+            print ("[ 55 ] ตรวจพบข้อความ")
+            try:
+                if op.param1 in read['readPoint']:
+                    if op.param2 in read['readMember'][op.param1]:
+                        pass
+                    else:
+                        read['readMember'][op.param1] += op.param2
+                    read['ROM'][op.param1][op.param2] = op.param2
+                    backupData()
+                else:
+                   pass
+            except:
+                pass
+    except Exception as error:
+        logError(error)
+#==============================================================================#
 #==============================================================================#
 while True:
     try:
