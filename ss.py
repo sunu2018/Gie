@@ -4562,7 +4562,7 @@ def gyeBot(op):
                                           gye.sendMessage(to,ret_)
                                           sendMessageWithMention(to, contact.mid)
                                           break										                  
-        if msg.text in ["Me","me",".me",".Me","คท","/me"]:
+                if msg.text in ["Me","me",".me",".Me","คท","/me"]:
                     gye.sendText(msg.to,"😜เชคจัง กลัวบอทหลุดละสิ😂")
                 if msg.text in ["sp","speed",".speed","/speed","Sp",".Speed"]:
                     gye.sendText(msg.to,"😜แรงครับแรงแล้ว😂")
