@@ -28,10 +28,10 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 #==============================================================================#
-#gye = LINE()
+gye = LINE()
 #line = LINE('EsWxrB4tKn6gC6TFI5C7.6s2jZdrOy8zaUkEfxHsR1W.DgrqvMHxZTAtX3m4jYOE8Ur7iqZm4P7/VvXmsYU0RHY=')
-#gye.log("Auth Token : " + str(gye.authToken))
-#gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
+gye.log("Auth Token : " + str(gye.authToken))
+gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
 
 #ki = LINE()
 #ki = LINE('EsTzmCy8rYjFOuH5kR83.GCNKB40ZZcsiFISzLQG8mW.TrpI1PFDTSHvsNRyD2RdVLU0oZddJWC6RblrpyRk8D4=')
@@ -53,7 +53,7 @@ botStart = time.time()
 #ke.log("Auth Token : " + str(ke.authToken))
 #ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
-gye = LINE("Eu88NpQMMbltL2vyPcJc.ugJ+9dMgaAs1/HYyDUOxda.KSNaV0pMHu634cdJNC7+X8RKcLD5gWDu6RSH2VeqhPM=")
+#gye = LINE("Eu88NpQMMbltL2vyPcJc.ugJ+9dMgaAs1/HYyDUOxda.KSNaV0pMHu634cdJNC7+X8RKcLD5gWDu6RSH2VeqhPM=")
 ki = LINE("Eubr8660jkJvhlYqTqYd.1nbyMEq08x6C7rz2+Bti7q.gtV0YuRxOnKtIDI6lbEIR8ZD118FNQquE6+WL20tNDg=")
 kk = LINE("Eu6JZcJ0ID0ESrdY6APc.WSbM8Imh8gKzhGhc98UuVa.iAsvmXtDjHsCiLAWUxyXHv+nN+NQg5UWA1gAiysRCAk=")
 kc = LINE("Et1R1XGdZj2GVVWVYRud.dCZhkZtrJsP18XdGxTjDlq.oMaLwiyz0XGoj5+69rFNYbV65stIZKnfe4kqjE/YMKE=")
