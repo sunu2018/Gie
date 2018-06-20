@@ -38,10 +38,10 @@ botStart = time.time()
 #ki.log("Auth Token : " + str(ki.authToken))
 #ki.log("Timeline Token : " + str(ki.tl.channelAccessToken))
 
-#kk = LINE()
+kk = LINE()
 #kk = LINE('EszPWJmujvMoxgVlwRS4.bhuuhE9n4vD06YV3BbNEna.gK5WN3MmKTQqW0joaLY22XhSP0qaW/NLnIsST2siDKc')
-#kk.log("Auth Token : " + str(kk.authToken))
-#kk.log("Timeline Token : " + str(kk.tl.channelAccessToken))
+kk.log("Auth Token : " + str(kk.authToken))
+kk.log("Timeline Token : " + str(kk.tl.channelAccessToken))
 
 #kc = LINE()
 #kc = LINE('Es9zLVTjE3JQEqj3pWN0.NlxeMFV/nw/F1ROlLvrSGa.gFMRtRynru6BMcEQxIskV7rDt024VoKBh4N5e6LEwvQ=')
@@ -55,7 +55,7 @@ botStart = time.time()
 
 gye = LINE("EuHs2t8M3nJl4nYtAqef.4YSrMg2oNLZ3c2qS97Qi+W.gUMzYISBieUHaj4QxIG/QFTO0VlpR0SRdWN2Z2vXlFM=")
 ki = LINE("EuJMO4zMJuVIB9Q7r6Kd.ZumT2/Y29n7tOJ4IwPo4tq.7iNJvgf7kfqhYzxqffWaZ9Xy/sPVnTXDvSOAi5zoGVc=")
-kk = LINE("Et0Oj6SRTe8eGtw9jK3d.SPS+quoffhJbcv30K1vAdq.gD9LSFBUBorGs552hX0ltdIVxai6oaF/Ox4aGWcOFJA=")
+#kk = LINE("Et0Oj6SRTe8eGtw9jK3d.SPS+quoffhJbcv30K1vAdq.gD9LSFBUBorGs552hX0ltdIVxai6oaF/Ox4aGWcOFJA=")
 kc = LINE("EtZREl8uhl6VAapUjlTc.WSbM8Imh8gKzhGhc98UuVa.feeQQaWBEpieqDeI+TBL9t7uKaW9tBVFmRZfAB9tHUk=")
 ke = LINE("EtRhFIGABsjUHKYKVoqe.lVN3XpWByvHZ/lHSAQFaBG.Fo8l69iIhSLOiMhTWoKoj6JIgftT7HEjwC0RykLYwZc=")
 
