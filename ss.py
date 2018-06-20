@@ -294,7 +294,7 @@ def sendMessageWithMention(to, gyeMID):
         logError(error)
  
 def myhelp():
-    myHelp = "╭════[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ]   " + "\n" \
+    myHelp = "╭═[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ]   " + "\n" \
                   "║About" + "\n" + \
                   "║Help media" + "\n" + \
                   "║Help kicker" + "\n" + \
@@ -330,7 +330,7 @@ def myhelp():
     return myHelp
 
 def listgrup():
-    listGrup = "╭════[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ]" + "\n" + \
+    listGrup = "╭═[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ]" + "\n" + \
                   "║GroupCreator" + "\n" + \
                   "║GroupId" + "\n" + \
                   "║GroupName" + "\n" + \
@@ -364,7 +364,7 @@ def listgrup():
     return listGrup
 
 def socmedia():
-    socMedia = "╭════[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ] " + "\n" + \
+    socMedia = "╭═[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ] " + "\n" + \
                   "║Instagram" + "\n" + \
                   "║Fotoig" + "\n" + \
                   "║Youtube" + "\n" + \
@@ -384,7 +384,7 @@ def socmedia():
     return socMedia
     
 def helpset():
-    helpSet = "╭════[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ] " + "\n" + \
+    helpSet = "╭═[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ] " + "\n" + \
     "║ออโต้แอด > autoAdd ~ on ~ off" + "\n" + \
     "║เข้าห้องออโต้ > autoJoin ~on ~off" + "\n" + \
     "║กำหนดการเข้ากลุ่ม >autoCancel~on~off" + "\n" + \
@@ -402,7 +402,7 @@ def helpset():
     return helpSet 
 
 def helpkicker():
-    helpKicker = "╭════[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ] " + "\n" + \
+    helpKicker = "╭═[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ] " + "\n" + \
     "║K1 kick" + "\n" + \
     "║K2 kick" + "\n" + \
     "║K3 kick" + "\n" + \
@@ -422,7 +422,7 @@ def helpkicker():
     return helpKicker
     
 def helpsetting():
-    helpSetting = "╭════[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT] " + "\n" + \
+    helpSetting = "╭═[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT] " + "\n" + \
     "║Protect on/off" + "\n" + \
     "║Cancel pro on/off" + "\n" + \
     "║Invit pro on/off" + "\n" + \
@@ -757,7 +757,7 @@ def gyeBot(op):
                         grouplist = gye.getGroupIdsJoined()
                         contactlist = gye.getAllContactIds()
                         blockedlist = gye.getBlockedContactIds()
-                        ret_ = "╔══[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT]"
+                        ret_ = "╔[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT]"
                         ret_ += "\n╠۝ ชื่อ ═ {}".format(contact.displayName)
                         ret_ += "\n╠۝ กลุ่ม ═ {}".format(str(len(grouplist)))
                         ret_ += "\n╠۝ เพื่อน ═ {}".format(str(len(contactlist)))
@@ -772,7 +772,7 @@ def gyeBot(op):
 #==============================================================================#
                 elif text.lower() == 'set':
                     try:
-                        ret_ = "╔════[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT]═════┓"
+                        ret_ = "╔[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT]┓"
                         if settings["autoAdd"] == True: ret_ += "\n╠ รับแอดออโต้ ✔"
                         else: ret_ += "\n╠ รับแอดออโต้    ✘ "
                         if settings["autoJoin"] == True: ret_ += "\n╠ เข้าห้องออโต้ ✔"
@@ -801,7 +801,7 @@ def gyeBot(op):
                         else: ret_ += "\n╠ ป้องกันสมาชิก ✘ "
                         if RfuProtect["Protectjoin"] == True: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✔"
                         else: ret_ += "\n╠ ป้องกันเข้ากลุ่ม ✘ "						
-                        ret_ += "\n╚════[ Status ]═════┛"
+                        ret_ += "\n╚[ TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ]┛"
                         gye.sendMessage(to, str(ret_))
                     except Exception as e:
                         gye.sendMessage(msg.to, str(e))
@@ -1107,7 +1107,7 @@ def gyeBot(op):
                     ret_ += "\n╠ Jumlah Pending : {}".format(gPending)
                     ret_ += "\n╠ Group Qr : {}".format(gQr)
                     ret_ += "\n╠ Group Ticket : {}".format(gTicket)
-                    ret_ += "\n╚══[ ⊑sᴀsᴛᴏs☬sᴇʟғʙᴏᴛ⊒ ]"
+                    ret_ += "\n╚══[ TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ]"
                     gye.sendMessage(to, str(ret_))
                     gye.sendImageWithURL(to, path)
                 elif text.lower() == 'groupmemberlist':
@@ -3740,7 +3740,7 @@ def gyeBot(op):
                         else:
                             gye.sendMessage(msg.to,"ปิดป้องกันคนเข้า   ")
 
-                elif msg.text.lower() == 'proall on':
+                elif msg.text.lower() == 'หอย on':
                     if RfuProtect["inviteprotect"] == True:
                         if settings["lang"] == "JP":
                             gye.sendMessage(msg.to,"✰เปิดป้องกันทั้งหมด✰")
@@ -3804,7 +3804,7 @@ def gyeBot(op):
                         else:
                             gye.sendMessage(msg.to,"เปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
 
-                elif msg.text.lower() == 'proall off':
+                elif msg.text.lower() == 'หอย off':
                     if RfuProtect["inviteprotect"] == False:
                         if settings["lang"] == "JP":
                             gye.sendMessage(msg.to,"✰ปิดป้องกันทั้งหมด✰")
@@ -3869,7 +3869,7 @@ def gyeBot(op):
                             gye.sendMessage(msg.to,"ปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
 
 #==============FINNISHING PROTECT========================#
-                elif msg.text.lower() == 'welcomemessage on':
+                elif msg.text.lower() == 'เปิดต้อนรับ':
                         if settings["Wc"] == True:
                             if settings["lang"] == "JP":
                                 gye.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   .")
@@ -3877,7 +3877,7 @@ def gyeBot(op):
                             settings["Wc"] = True
                             if settings["lang"] == "JP":
                                 gye.sendMessage(to,"เปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   ")
-                elif msg.text.lower() == 'welcomemessage off':
+                elif msg.text.lower() == 'ปิดต้อนรับ':
                         if settings["Wc"] == False:
                             if settings["lang"] == "JP":
                                 gye.sendMessage(to,"ปิดข้อความต้อนรับมีคนสมาชิกเข้ากลุ่ม   ")
@@ -3978,7 +3978,7 @@ def gyeBot(op):
                             mc += "[√] " + gye.getContact(mi_d).displayName + " \n"
                         gye.sendMessage(msg.to, mc + "")
 
-                elif msg.text.lower().startswith("urban "):
+                elif msg.text.lower().startswith("urban"):
                     sep = msg.text.split(" ")
                     judul = msg.text.replace(sep[0] + " ","")
                     url = "http://api.urbandictionary.com/v0/define?term="+str(judul)
@@ -4079,7 +4079,7 @@ def gyeBot(op):
                   ticket = kc.reissueGroupTicket(op.param1)
                   ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
-                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
@@ -4100,7 +4100,7 @@ def gyeBot(op):
                   ticket = random.choice(Rfu).reissueGroupTicket(op.param1)
                   ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
-                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
@@ -4552,7 +4552,7 @@ def gyeBot(op):
                          if settings['detectMention'] == True:
                              contact = gye.getContact(msg._from)
                              cName = contact.displayName
-                             balas = ["『 Auto Respon』\n " + cName + "\nถ้าจะแท็กขนาดนี้มาเอาเราไปทำแฟนเลยดีกว่า มั๊ย"]
+                             balas = ["『 นี้ๆคนนี้ อ่ะ 』\n " + cName + "\nแทคทำไม.. นัดyesเลยมั้ยเทอ โวโวโว้เยเย้ 😋🤘"]
                              ret_ = "" + random.choice(balas)
                              name = re.findall(r'@(\w+)', msg.text)
                              mention = ast.literal_eval(msg.contentMetadata["MENTION"])
@@ -4626,7 +4626,7 @@ def gyeBot(op):
             except:
                 pass
         if op.type == 55:
-            print ("[ 55 ] บอทเชลby.สุ นุ โจ")
+            print ("[ 55 ] บอทเชลby.")
             try:
                 if op.param1 in read['readPoint']:
                     if op.param2 in read['readMember'][op.param1]:
