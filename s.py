@@ -53,7 +53,7 @@ gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
 #ke.log("Auth Token : " + str(ke.authToken))
 #ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
-#gye = LINE("Et5gYrvSnIEOpWFK5m4f.4YSrMg2oNLZ3c2qS97Qi+W.fsNClszZfRIpi5y3C/DKfbTqc100zzXX0tWv5M3TZ/k=")
+#gye = LINE("ใช้ได้แล้ว EuHs2t8M3nJl4nYtAqef.4YSrMg2oNLZ3c2qS97Qi+W.gUMzYISBieUHaj4QxIG/QFTO0VlpR0SRdWN2Z2vXlFM=")
 ki = LINE("EtQQZ5O8Q9ZNn47rzMCd.ZumT2/Y29n7tOJ4IwPo4tq.1TFAsQAvYzlyAp1XEM5RsdIZwZtoEnir3y6dea1fo1E=")
 kk = LINE("Et0Oj6SRTe8eGtw9jK3d.SPS+quoffhJbcv30K1vAdq.gD9LSFBUBorGs552hX0ltdIVxai6oaF/Ox4aGWcOFJA=")
 kc = LINE("EtZREl8uhl6VAapUjlTc.WSbM8Imh8gKzhGhc98UuVa.feeQQaWBEpieqDeI+TBL9t7uKaW9tBVFmRZfAB9tHUk=")
@@ -4079,7 +4079,7 @@ def gyeBot(op):
                   ticket = kc.reissueGroupTicket(op.param1)
                   ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
-                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
@@ -4100,7 +4100,7 @@ def gyeBot(op):
                   ticket = random.choice(Rfu).reissueGroupTicket(op.param1)
                   ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
-                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
@@ -4571,76 +4571,15 @@ def gyeBot(op):
                 if msg.text in dangerMessage:
                     random.choice(Rfu).kickoutFromGroup(receiver,[sender])
                     random.choice(Rfu).sendText(msg.to,"ตรวจพบคำสั่งของบอทลบกลุ่ม จำเป็นต้องนำออกเพื่อความปลอดภัยของสมาชิก (｀・ω・´)")										
-# ----------------- NOTIFED MEMBER JOIN GROUP
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~# 
         if op.type == 17:
           if settings["Wc"] == True:
             if op.param2 in admin:
                 return
             ginfo = gye.getGroup(op.param1)
             contact = gye.getContact(op.param2)
-            image = "http://dl.profile.gye-cdn.net/" + contact.pictureStatus			
-            gye.sendText(op.param1, " ยินดีต้อนรับ. เข้ามาแล้วก็อย่าลืมปิดแจ้งเตือนกันน่ะครับ" + gye.getContact(op.param2).displayName + " สู่กลุ่ม " + "👉" + str(ginfo.name) + "👈""\nถ้าสนใจเชลบอทpy2&py3หรือไม่ก็jsบิน&รันสใจทัก\nhttp://line.me/ti/p/~nunu_kap123")			
-# ----------------- NOTIFED MEMBER OUT GROUP
-        if op.type == 15:
-          if settings['Lv'] == True:
-            if op.param2 in bot1:
-                return
-            gye.sendText(op.param1,"good Bye" + gye.getContact(op.param2).displayName + "รีบไปไหนอ่ะ. ไม่เป็นไรไว้เจอกันใหม่น่ะจ๊ะ")
-# ----------------- NOTIFED MEMBER JOIN GROUP
-        if op.type == 55:
-            try:
-                if RfuCctv['cyduk'][op.param1]==True:
-                    if op.param1 in RfuCctv['point']:
-                        Name = gye.getContact(op.param2).displayName
-                        if Name in RfuCctv['sidermem'][op.param1]:
-                            pass
-                        else:
-                            RfuCctv['sidermem'][op.param1] += "\n🔰" + Name
-                            pref=['eh ada','hai kak','hay kamu','nah ada','halo lg ngapain','halo','sini kak','cctv yah kak']
-                            gye.sendMessage(op.param1, str(random.choice(pref))+' '+Name)
-                    else:
-                        pass
-                else:
-                    pass
-            except:
-                pass
-
-        if op.type == 55:
-            try:
-                if RfuCctv['cyduk'][op.param1]==True:
-                    if op.param1 in RfuCctv['point']:
-                        Name = gye.getContact(op.param2).displayName
-                        if Name in RfuCctv['sidermem'][op.param1]:
-                            pass
-                        else:
-                            RfuCctv['sidermem'][op.param1] += "\n⌬ " + Name + "\n╚════════════════┛"
-                            if " " in Name:
-                            	nick = Name.split(' ')
-                            if len(nick) == 2:
-                            	gye.sendMessage(op.param1, "Nah " +nick[0])
-                            summon(op.param1, [op.param2])
-                    else:
-                        pass
-                else:
-                    pass
-            except:
-                pass
-        if op.type == 55:
-            print ("[ 55 ] บอทเชลby.สุ นุ โจ")
-            try:
-                if op.param1 in read['readPoint']:
-                    if op.param2 in read['readMember'][op.param1]:
-                        pass
-                    else:
-                        read['readMember'][op.param1] += op.param2
-                    read['ROM'][op.param1][op.param2] = op.param2
-                    backupData()
-                else:
-                   pass
-            except:
-                pass
-    except Exception as error:
-        logError(error)
+            image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus			
+            gye.sendText(op.param1, " ยินดีต้อนรับ. เข้ามาแล้วก็อย่าลืมปิดแจ้งเตือนกันน่ะครับ" + line.getContact(op.param2).displayName + " สู่กลุ่ม " + "👉" + str(ginfo.name) + "👈""\nหรือสนใจลงบอทป้องกันบอทแท็ก ติดต่อได้ที่Line ID : klkl191\nhttp://line.me/ti/p/~klkl191")
 #==============================================================================#
 while True:
     try:
