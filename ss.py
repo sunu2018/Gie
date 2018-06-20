@@ -101,8 +101,8 @@ kcMID = kc.getProfile().mid
 kcMID = ke.getProfile().mid
 bot1 = gye.getProfile().mid
 RfuBot=[gyeMID,kiMID,kkMID,kcMID,keMID]
-Family=["ue32b11986d8e9e5cf70b642cf7ba88ff",gyeMID,kiMID,kkMID,kcMID,keMID]
-admin=['ue32b11986d8e9e5cf70b642cf7ba88ff',gyeMID]
+Family=["ud3a6bfda60a956cca0f58f2a14bae808",gyeMID,kiMID,kkMID,kcMID,keMID]
+admin=['ud3a6bfda60a956cca0f58f2a14bae808',gyeMID]
 RfuFamily = RfuBot + Family
 
 protectname = []
@@ -751,7 +751,7 @@ def gyeBot(op):
                 elif text.lower() == 'about':
                     try:
                         arr = []
-                        owner = "ue32b11986d8e9e5cf70b642cf7ba88ff"
+                        owner = "ud3a6bfda60a956cca0f58f2a14bae808"
                         creator = gye.getContact(owner)
                         contact = gye.getContact(gyeMID)
                         grouplist = gye.getGroupIdsJoined()
@@ -862,7 +862,7 @@ def gyeBot(op):
                     gye.sendContact(to, gyeMID)
                 elif text.lower() == 'mee':
                     sendMessageWithMention(to, gyeMID)
-                    gye.sendContact(to, "ue32b11986d8e9e5cf70b642cf7ba88ff")
+                    gye.sendContact(to, "[ud3a6bfda60a956cca0f58f2a14bae808")
                 elif text.lower() == 'mymid':
                     gye.sendMessage(msg.to,"[MID]\n" +  gyeMID)
                 elif text.lower() == 'myname':
