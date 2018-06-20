@@ -294,7 +294,7 @@ def sendMessageWithMention(to, gyeMID):
         logError(error)
  
 def myhelp():
-    myHelp = "╭════⊑sᴀsᴛᴏs☬sᴇʟғʙᴏᴛ⊒   " + "\n" \
+    myHelp = "╭════[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ]   " + "\n" \
                   "║About" + "\n" + \
                   "║Help media" + "\n" + \
                   "║Help kicker" + "\n" + \
@@ -330,7 +330,7 @@ def myhelp():
     return myHelp
 
 def listgrup():
-    listGrup = "╭════HelpGroup " + "\n" + \
+    listGrup = "╭════[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ]" + "\n" + \
                   "║GroupCreator" + "\n" + \
                   "║GroupId" + "\n" + \
                   "║GroupName" + "\n" + \
@@ -364,7 +364,7 @@ def listgrup():
     return listGrup
 
 def socmedia():
-    socMedia = "╭════HelpMedia " + "\n" + \
+    socMedia = "╭════[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ] " + "\n" + \
                   "║Instagram" + "\n" + \
                   "║Fotoig" + "\n" + \
                   "║Youtube" + "\n" + \
@@ -384,7 +384,7 @@ def socmedia():
     return socMedia
     
 def helpset():
-    helpSet = "╭════HelpMySet " + "\n" + \
+    helpSet = "╭════[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ] " + "\n" + \
     "║ออโต้แอด > autoAdd ~ on ~ off" + "\n" + \
     "║เข้าห้องออโต้ > autoJoin ~on ~off" + "\n" + \
     "║กำหนดการเข้ากลุ่ม >autoCancel~on~off" + "\n" + \
@@ -402,7 +402,7 @@ def helpset():
     return helpSet 
 
 def helpkicker():
-    helpKicker = "╭════HelpKicker " + "\n" + \
+    helpKicker = "╭════[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT ] " + "\n" + \
     "║K1 kick" + "\n" + \
     "║K2 kick" + "\n" + \
     "║K3 kick" + "\n" + \
@@ -422,7 +422,7 @@ def helpkicker():
     return helpKicker
     
 def helpsetting():
-    helpSetting = "╭════SettingList " + "\n" + \
+    helpSetting = "╭════[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT] " + "\n" + \
     "║Protect on/off" + "\n" + \
     "║Cancel pro on/off" + "\n" + \
     "║Invit pro on/off" + "\n" + \
@@ -445,7 +445,7 @@ def helpsetting():
 
 def helptexttospeech():
     helpTextToSpeech =   "╔══════════════┓" + "\n" + \
-                         "╠⌬ ⊑sᴀsᴛᴏs☬sᴇʟғʙᴏᴛ⊒    ⌬" + "\n" + \
+                         "╠⌬TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT⌬" + "\n" + \
                          "╚══════════════┛" + "\n" + \
                          "────┅═ই۝ई═┅────" + "\n" + \
                          "          ⊑sᴀsᴛᴏs☬sᴇʟғʙᴏᴛ⊒" + "\n" + \
@@ -510,7 +510,7 @@ def helptexttospeech():
     
 def helplanguange():
     helpLanguange =    "╔══════════════┓" + "\n" + \
-                       "╠⌬ ⊑sᴀsᴛᴏs☬sᴇʟғʙᴏᴛ⊒    ⌬" + "\n" + \
+                       "╠⌬TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT⌬" + "\n" + \
                        "╚══════════════┛" + "\n" + \
                        "────┅═ই۝ई═┅────" + "\n" + \
                        "          ⊑sᴀsᴛᴏs☬sᴇʟғʙᴏᴛ⊒" + "\n" + \
@@ -703,23 +703,23 @@ def gyeBot(op):
                         p = Pool(20)
                         p.map(Rapid1Say,rmtosay)
                         p.close()
-                if text.lower() == 'my help':
+                if text.lower() == 'help1':
                     myHelp = myhelp()
                     gye.sendMessage(to, str(myHelp))
-                elif text.lower() == 'help set':
+                elif text.lower() == 'help2':
                     helpSet = helpset()
                     gye.sendMessage(to, str(helpSet))
                     sendMessageWithMention(to, gyeMID)
-                elif text.lower() == 'help kicker':
+                elif text.lower() == 'help3':
                     helpKicker = helpkicker()
                     gye.sendMessage(to, str(helpKicker))
-                elif text.lower() == 'help group':
+                elif text.lower() == 'help4':
                     listGrup = listgrup()
                     gye.sendMessage(to, str(listGrup))
-                elif text.lower() == 'help setting':
+                elif text.lower() == 'help5':
                     helpSetting = helpsetting()
                     gye.sendMessage(to, str(helpSetting))
-                elif text.lower() == 'help media':
+                elif text.lower() == 'help6':
                     socMedia = socmedia()
                     gye.sendMessage(to, str(socMedia))
                 elif text.lower() == 'texttospeech':
@@ -751,13 +751,13 @@ def gyeBot(op):
                 elif text.lower() == 'about':
                     try:
                         arr = []
-                        owner = "u9ed31efc986199adedb27386c9b1f458"
+                        owner = "ue32b11986d8e9e5cf70b642cf7ba88ff"
                         creator = gye.getContact(owner)
                         contact = gye.getContact(gyeMID)
                         grouplist = gye.getGroupIdsJoined()
                         contactlist = gye.getAllContactIds()
                         blockedlist = gye.getBlockedContactIds()
-                        ret_ = "╔══[ ⊑sᴀsᴛᴏs☬sᴇʟғʙᴏᴛ⊒ ]"
+                        ret_ = "╔══[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT]"
                         ret_ += "\n╠۝ ชื่อ ═ {}".format(contact.displayName)
                         ret_ += "\n╠۝ กลุ่ม ═ {}".format(str(len(grouplist)))
                         ret_ += "\n╠۝ เพื่อน ═ {}".format(str(len(contactlist)))
@@ -772,7 +772,7 @@ def gyeBot(op):
 #==============================================================================#
                 elif text.lower() == 'set':
                     try:
-                        ret_ = "╔════[ Status ]═════┓"
+                        ret_ = "╔════[TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT]═════┓"
                         if settings["autoAdd"] == True: ret_ += "\n╠ รับแอดออโต้ ✔"
                         else: ret_ += "\n╠ รับแอดออโต้    ✘ "
                         if settings["autoJoin"] == True: ret_ += "\n╠ เข้าห้องออโต้ ✔"
