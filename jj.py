@@ -3740,7 +3740,7 @@ def gyeBot(op):
                         else:
                             gye.sendMessage(msg.to,"ปิดป้องกันคนเข้า   ")
 
-                elif msg.text.lower() == 'proall on':
+                elif msg.text.lower() == 'หำออนไลน์':
                     if RfuProtect["inviteprotect"] == True:
                         if settings["lang"] == "JP":
                             gye.sendMessage(msg.to,"✰เปิดป้องกันทั้งหมด✰")
@@ -3804,7 +3804,7 @@ def gyeBot(op):
                         else:
                             gye.sendMessage(msg.to,"เปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
 
-                elif msg.text.lower() == 'proall off':
+                elif msg.text.lower() == 'หำออฟไลน์':
                     if RfuProtect["inviteprotect"] == False:
                         if settings["lang"] == "JP":
                             gye.sendMessage(msg.to,"✰ปิดป้องกันทั้งหมด✰")
@@ -4079,7 +4079,7 @@ def gyeBot(op):
                   ticket = kc.reissueGroupTicket(op.param1)
                   ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
-                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
@@ -4100,7 +4100,7 @@ def gyeBot(op):
                   ticket = random.choice(Rfu).reissueGroupTicket(op.param1)
                   ki.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
-                  line.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
+                  gye.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
                   kk.acceptGroupInvitationByTicket(op.param1,format(str(ticket)))
                   time.sleep(0.01)
