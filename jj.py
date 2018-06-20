@@ -101,7 +101,7 @@ kcMID = kc.getProfile().mid
 #kcMID = ke.getProfile().mid
 bot1 = gye.getProfile().mid
 RfuBot=[gyeMID,kiMID,kkMID,kcMID]#,keMID]
-Family=["ue32b11986d8e9e5cf70b642cf7ba88ff",gyeMID,kiMID,kkMID,kcMID,keMID]
+Family=["ue32b11986d8e9e5cf70b642cf7ba88ff",gyeMID,kiMID,kkMID,kcMID]#,keMID]
 admin=['ue32b11986d8e9e5cf70b642cf7ba88ff',gyeMID]
 RfuFamily = RfuBot + Family
 
