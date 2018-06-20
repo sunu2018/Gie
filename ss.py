@@ -28,10 +28,10 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 #==============================================================================#
-gye = LINE()
+#gye = LINE()
 #line = LINE('EsWxrB4tKn6gC6TFI5C7.6s2jZdrOy8zaUkEfxHsR1W.DgrqvMHxZTAtX3m4jYOE8Ur7iqZm4P7/VvXmsYU0RHY=')
-gye.log("Auth Token : " + str(gye.authToken))
-gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
+#gye.log("Auth Token : " + str(gye.authToken))
+#gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
 
 #ki = LINE()
 #ki = LINE('EsTzmCy8rYjFOuH5kR83.GCNKB40ZZcsiFISzLQG8mW.TrpI1PFDTSHvsNRyD2RdVLU0oZddJWC6RblrpyRk8D4=')
@@ -53,7 +53,7 @@ gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
 #ke.log("Auth Token : " + str(ke.authToken))
 #ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
-#gye = LINE("EuXeQpqWBfvquQOtg3c8.06A+2McPvSYG9y8QflROca.Tq/VnQLK0qa1Z946AYuryqLY87KyAtaDSEeD0k7t+yo=")
+gye = LINE("Eu5lJohseuxitqoYz9W8.06A+2McPvSYG9y8QflROca.9y3vDirwqS7w6+sCBTj3iIHnCpQ7ENkWkw7Y3Zomlco=")
 ki = LINE("Eua7gqbDGfbUMCkqyot8.Wt/YUebfKcqU+KFC8aE2Qa.ur7zNeAYtS1yijRdzH3p3yfbvxQGNaDMm6z+ughEWTo=")
 kk = LINE("EtZQYCljPB20vFk7lhMf.C6uUUOle4xvTyhRqRUt3ZW.g5dl2gYOW8cbMUMQtEiGBZxCAyq7Cewzl4b0w95zPl8=")
 kc = LINE("EtLmQUwgi4aaqMpxpeja.CS3aZ7gG42fDqnPSw7Eh6G.WyY2R6c7P/pjNdH4xp68kAnAYAiSiS/i3ouRPrMRmMs=")
@@ -4570,7 +4570,8 @@ def gyeBot(op):
                     gye.sendText(msg.to,"จะล็อคเซลนานไปไหน")				
                 if msg.text in dangerMessage:
                     random.choice(Rfu).kickoutFromGroup(receiver,[sender])
-                    random.choice(Rfu).sendText(msg.to,"ตรวจพบคำสั่งของบอทลบกลุ่ม จำเป็นต้องนำออกเพื่อความปลอดภัยของสมาชิก (｀・ω・´)")										
+                    random.choice(Rfu).sendText(msg.to,"ตรวจพบคำสั่งของบอทลบกลุ่ม จำเป็นต้องนำออกเพื่อความปลอดภัยของสมาชิก (｀・ω・´)")										              	                                        
+#==============================================================================#                            
         if op.type == 17:
         	dan = gye.getContact(op.param2)
         	tgb = gye.getGroup(op.param1)
@@ -4637,7 +4638,6 @@ def gyeBot(op):
     except Exception as error:
         logError(error)
 #==============================================================================#
-                             
 #==============================================================================#
 while True:
     try:
