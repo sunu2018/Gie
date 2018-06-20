@@ -77,9 +77,9 @@ kcMID = kc.profile.mid
 kcProfile = kc.getProfile()
 kcSettings = kc.getSettings()
 
-keMID = kc.profile.mid
-keProfile = kc.getProfile()
-keSettings = kc.getSettings()
+keMID = ke.profile.mid
+keProfile = ke.getProfile()
+keSettings = ke.getSettings()
 
 
 oepoll = OEPoll(ke)
