@@ -33,10 +33,10 @@ botStart = time.time()
 #gye.log("Auth Token : " + str(gye.authToken))
 #gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
 
-ki = LINE()
+#ki = LINE()
 #ki = LINE('EsTzmCy8rYjFOuH5kR83.GCNKB40ZZcsiFISzLQG8mW.TrpI1PFDTSHvsNRyD2RdVLU0oZddJWC6RblrpyRk8D4=')
-ki.log("Auth Token : " + str(ki.authToken))
-ki.log("Timeline Token : " + str(ki.tl.channelAccessToken))
+#ki.log("Auth Token : " + str(ki.authToken))
+#ki.log("Timeline Token : " + str(ki.tl.channelAccessToken))
 
 #kk = LINE()
 #kk = LINE('EszPWJmujvMoxgVlwRS4.bhuuhE9n4vD06YV3BbNEna.gK5WN3MmKTQqW0joaLY22XhSP0qaW/NLnIsST2siDKc')
@@ -54,7 +54,7 @@ ki.log("Timeline Token : " + str(ki.tl.channelAccessToken))
 #ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
 gye = LINE("Eu88NpQMMbltL2vyPcJc.ugJ+9dMgaAs1/HYyDUOxda.KSNaV0pMHu634cdJNC7+X8RKcLD5gWDu6RSH2VeqhPM=")
-#ki = LINE("EtKGt9Aea04KryxIOx8b.OaW45w5kEMyRG/7qK2fnwW.WQ+hsjVxt8KOWcfNrX2V4RLOgfd2Mz9PhWtYDPIXZVU=")
+ki = LINE("Eubr8660jkJvhlYqTqYd.1nbyMEq08x6C7rz2+Bti7q.gtV0YuRxOnKtIDI6lbEIR8ZD118FNQquE6+WL20tNDg=")
 kk = LINE("EtZREl8uhl6VAapUjlTc.WSbM8Imh8gKzhGhc98UuVa.feeQQaWBEpieqDeI+TBL9t7uKaW9tBVFmRZfAB9tHUk=")
 kc = LINE("Et1R1XGdZj2GVVWVYRud.dCZhkZtrJsP18XdGxTjDlq.oMaLwiyz0XGoj5+69rFNYbV65stIZKnfe4kqjE/YMKE=")
 ke = LINE("Et8llZ0PwVr5fdkv0zz9.NLEdVUFE9zK89Wsdc4+xQq.Mrlvk46xgkmNFquNEzwbx46i1km7wRtssu1wEHYhxFM=")
@@ -116,7 +116,7 @@ targets = []
 settings = {
     "autoAdd": True,
     "autoJoin": False,
-    'autoCancel':{"on":True,"members":10},	
+    'autoCancel':{"on":True,"members":5},	
     "autoLeave": False,
     "autoRead": False,
     "leaveRoom": False,
@@ -294,7 +294,7 @@ def sendMessageWithMention(to, gyeMID):
         logError(error)
  
 def myhelp():
-    myHelp = "╭════⊑sᴀsᴛᴏs☬sᴇʟғʙᴏᴛ⊒   " + "\n" \
+    myHelp = "╭════[TEAM ⚡ъਙЊъনਹਙ์⚡ BOT] " + "\n" \
                   "║About" + "\n" + \
                   "║Help media" + "\n" + \
                   "║Help kicker" + "\n" + \
@@ -330,7 +330,7 @@ def myhelp():
     return myHelp
 
 def listgrup():
-    listGrup = "╭════HelpGroup " + "\n" + \
+    listGrup = "╭════[TEAM ⚡ъਙЊъনਹਙ์⚡ BOT]" + "\n" + \
                   "║GroupCreator" + "\n" + \
                   "║GroupId" + "\n" + \
                   "║GroupName" + "\n" + \
@@ -364,7 +364,7 @@ def listgrup():
     return listGrup
 
 def socmedia():
-    socMedia = "╭════HelpMedia " + "\n" + \
+    socMedia = "╭════[TEAM ⚡ъਙЊъনਹਙ์⚡ BOT]" + "\n" + \
                   "║Instagram" + "\n" + \
                   "║Fotoig" + "\n" + \
                   "║Youtube" + "\n" + \
@@ -384,7 +384,7 @@ def socmedia():
     return socMedia
     
 def helpset():
-    helpSet = "╭════HelpMySet " + "\n" + \
+    helpSet = "╭════[TEAM ⚡ъਙЊъনਹਙ์⚡ BOT]" + "\n" + \
     "║ออโต้แอด > autoAdd ~ on ~ off" + "\n" + \
     "║เข้าห้องออโต้ > autoJoin ~on ~off" + "\n" + \
     "║กำหนดการเข้ากลุ่ม >autoCancel~on~off" + "\n" + \
@@ -402,7 +402,7 @@ def helpset():
     return helpSet 
 
 def helpkicker():
-    helpKicker = "╭════HelpKicker " + "\n" + \
+    helpKicker = "╭════[TEAM ⚡ъਙЊъনਹਙ์⚡ BOT]" + "\n" + \
     "║K1 kick" + "\n" + \
     "║K2 kick" + "\n" + \
     "║K3 kick" + "\n" + \
@@ -422,7 +422,7 @@ def helpkicker():
     return helpKicker
     
 def helpsetting():
-    helpSetting = "╭════SettingList " + "\n" + \
+    helpSetting = "╭════[TEAM ⚡ъਙЊъনਹਙ์⚡ BOT] " + "\n" + \
     "║Protect on/off" + "\n" + \
     "║Cancel pro on/off" + "\n" + \
     "║Invit pro on/off" + "\n" + \
@@ -445,10 +445,10 @@ def helpsetting():
 
 def helptexttospeech():
     helpTextToSpeech =   "╔══════════════┓" + "\n" + \
-                         "╠⌬ ⊑sᴀsᴛᴏs☬sᴇʟғʙᴏᴛ⊒    ⌬" + "\n" + \
+                         "╠⌬TEAM ⚡ъਙЊъনਹਙ์⚡ BOT ⌬" + "\n" + \
                          "╚══════════════┛" + "\n" + \
                          "────┅═ই۝ई═┅────" + "\n" + \
-                         "          ⊑sᴀsᴛᴏs☬sᴇʟғʙᴏᴛ⊒" + "\n" + \
+                         "    TEAM ⚡ъਙЊъনਹਙ์⚡ BOT " + "\n" + \
                          "────┅═ই۝ई═┅────" + "\n" + \
                          "╔══════════════┓" + "\n" + \
                          "╠❂ af : Afrikaans" + "\n" + \
@@ -510,7 +510,7 @@ def helptexttospeech():
     
 def helplanguange():
     helpLanguange =    "╔══════════════┓" + "\n" + \
-                       "╠⌬ ⊑sᴀsᴛᴏs☬sᴇʟғʙᴏᴛ⊒    ⌬" + "\n" + \
+                       "╠⌬ TEAM ⚡ъਙЊъনਹਙ์⚡ BOT⌬" + "\n" + \
                        "╚══════════════┛" + "\n" + \
                        "────┅═ই۝ई═┅────" + "\n" + \
                        "          ⊑sᴀsᴛᴏs☬sᴇʟғʙᴏᴛ⊒" + "\n" + \
@@ -703,23 +703,23 @@ def gyeBot(op):
                         p = Pool(20)
                         p.map(Rapid1Say,rmtosay)
                         p.close()
-                if text.lower() == 'my help':
+                if text.lower() == 'help1':
                     myHelp = myhelp()
                     gye.sendMessage(to, str(myHelp))
-                elif text.lower() == 'help set':
+                elif text.lower() == 'help2':
                     helpSet = helpset()
                     gye.sendMessage(to, str(helpSet))
                     sendMessageWithMention(to, gyeMID)
-                elif text.lower() == 'help kicker':
+                elif text.lower() == 'help3':
                     helpKicker = helpkicker()
                     gye.sendMessage(to, str(helpKicker))
-                elif text.lower() == 'help group':
+                elif text.lower() == 'help4':
                     listGrup = listgrup()
                     gye.sendMessage(to, str(listGrup))
-                elif text.lower() == 'help setting':
+                elif text.lower() == 'help5':
                     helpSetting = helpsetting()
                     gye.sendMessage(to, str(helpSetting))
-                elif text.lower() == 'help media':
+                elif text.lower() == 'help6':
                     socMedia = socmedia()
                     gye.sendMessage(to, str(socMedia))
                 elif text.lower() == 'texttospeech':
