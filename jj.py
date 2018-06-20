@@ -48,10 +48,10 @@ botStart = time.time()
 #kc.log("Auth Token : " + str(kc.authToken))
 #kc.log("Timeline Token : " + str(kc.tl.channelAccessToken))
 
-ke = LINE()
+#ke = LINE()
 #ke = LINE('Es66hx3Gwt0FYtiiY6z6.SKp5IWnTswfjkJhVVqD15G.u/adxOv8mDD0ZjOuGzLsFofqqtF8ujAmN1daHKuxwW8=')
-ke.log("Auth Token : " + str(ke.authToken))
-ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
+#ke.log("Auth Token : " + str(ke.authToken))
+#ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
 gye = LINE("EuvQ6pcpbohmcZuGuPZc.ugJ+9dMgaAs1/HYyDUOxda.wj1JrZ03pQFZZE7By7AL7ogh4XWEsGxS0DvEQuLRaRo=")
 ki = LINE("EuMog9y5XK0HpLVD5NQd.1nbyMEq08x6C7rz2+Bti7q.AbZpd2NL+U67ENU7foUKRyx+rbCvL7JfxCSIgFep34E=")
