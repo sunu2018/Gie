@@ -4561,32 +4561,27 @@ def gyeBot(op):
                                    if mention['M'] in gyeMID:
                                           gye.sendMessage(to,ret_)
                                           sendMessageWithMention(to, contact.mid)
-                                          break										  
-                if msg.text in ["Me","me",".me",".Me","คท","/me"]:
-                    gye.sendText(msg.to,"เชคทำไมคท.อ่ะกลัวหลุดหรา")
+                                          break										                  
+        if msg.text in ["Me","me",".me",".Me","คท","/me"]:
+                    gye.sendText(msg.to,"😜เชคจัง กลัวบอทหลุดละสิ😂")
                 if msg.text in ["sp","speed",".speed","/speed","Sp",".Speed"]:
-                    gye.sendText(msg.to,"เร็วจัง....(โกหกอ่ะ)")
+                    gye.sendText(msg.to,"😜แรงครับแรงแล้ว😂")
                 if msg.text in ["runtime","Runtime","/uptime","ออน",".uptime"]:
-                    gye.sendText(msg.to,"เก็บเวลาหาพ่องมึงอ่ะ")				
+                    gye.sendText(msg.to,"จะล็อคเซลนานไปไหน")				
                 if msg.text in dangerMessage:
                     random.choice(Rfu).kickoutFromGroup(receiver,[sender])
                     random.choice(Rfu).sendText(msg.to,"ตรวจพบคำสั่งของบอทลบกลุ่ม จำเป็นต้องนำออกเพื่อความปลอดภัยของสมาชิก (｀・ω・´)")										
-# ----------------- NOTIFED MEMBER JOIN GROUP
         if op.type == 17:
-          if settings["Wc"] == True:
-            if op.param2 in admin:
-                return
-            ginfo = gye.getGroup(op.param1)
-            contact = gye.getContact(op.param2)
-            image = "http://dl.profile.gye-cdn.net/" + contact.pictureStatus			
-            gye.sendText(op.param1, " ยินดีต้อนรับ. เข้ามาแล้วก็อย่าลืมปิดแจ้งเตือนกันน่ะครับ" + gye.getContact(op.param2).displayName + " สู่กลุ่ม " + "👉" + str(ginfo.name) + "👈""\nถ้าสนใจเชลบอทpy2&py3หรือไม่ก็jsบิน&รันสใจทัก\nhttp://line.me/ti/p/~nunu_kap123")			
-# ----------------- NOTIFED MEMBER OUT GROUP
+        	dan = gye.getContact(op.param2)
+        	tgb = gye.getGroup(op.param1)
+        	gye.sendMessage(op.param1, "สวัสดี {}, Welcome to Group {}\nเข้ามาแล้วทำตัวดีๆละ\nอ่ย่าไปเป็นบ้าลบเพื่อนๆออกกลุ่มนะ (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
+        	gye.sendContact(op.param1, op.param2)
+        	gye.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
         if op.type == 15:
-          if settings['Lv'] == True:
-            if op.param2 in bot1:
-                return
-            gye.sendText(op.param1,"good Bye" + gye.getContact(op.param2).displayName + "รีบไปไหนอ่ะ. ไม่เป็นไรไว้เจอกันใหม่น่ะจ๊ะ")
-# ----------------- NOTIFED MEMBER JOIN GROUP
+        	dan = gye.getContact(op.param2)
+        	tgb = gye.getGroup(op.param1)
+        	gye.sendMessage(op.param1, "เอ้า {}, ได้ออกจากกลุ่ม {} \nยืนไว้อาลัยแด่เขาเป็นเวลา3วินาที  (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
+        	gye.sendContact(op.param1, op.param2)
         if op.type == 55:
             try:
                 if RfuCctv['cyduk'][op.param1]==True:
@@ -4626,7 +4621,7 @@ def gyeBot(op):
             except:
                 pass
         if op.type == 55:
-            print ("[ 55 ] บอทเชลby.")
+            print ("[ 55 ] ตรวจพบข้อความ")
             try:
                 if op.param1 in read['readPoint']:
                     if op.param2 in read['readMember'][op.param1]:
@@ -4641,6 +4636,8 @@ def gyeBot(op):
                 pass
     except Exception as error:
         logError(error)
+#==============================================================================#
+                             
 #==============================================================================#
 while True:
     try:
