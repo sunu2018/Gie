@@ -101,8 +101,8 @@ kcMID = kc.getProfile().mid
 kcMID = ke.getProfile().mid
 bot1 = gye.getProfile().mid
 RfuBot=[gyeMID,kiMID,kkMID,kcMID,keMID]
-Family=["ud3a6bfda60a956cca0f58f2a14bae808",gyeMID,kiMID,kkMID,kcMID,keMID]
-admin=['ud3a6bfda60a956cca0f58f2a14bae808',gyeMID]
+Family=["u5068fff4398601a4b5fa1c9876ea170c",gyeMID,kiMID,kkMID,kcMID,keMID]
+admin=['u5068fff4398601a4b5fa1c9876ea170c',gyeMID]
 RfuFamily = RfuBot + Family
 
 protectname = []
@@ -448,7 +448,7 @@ def helptexttospeech():
                          "╠⌬TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT⌬" + "\n" + \
                          "╚══════════════┛" + "\n" + \
                          "────┅═ই۝ई═┅────" + "\n" + \
-                         "          ⊑sᴀsᴛᴏs☬sᴇʟғʙᴏᴛ⊒" + "\n" + \
+                         "TEAM꧁🌸ℓຫຼี้छՃิ🌸􏿿꧂BOT " + "\n" + \
                          "────┅═ই۝ई═┅────" + "\n" + \
                          "╔══════════════┓" + "\n" + \
                          "╠❂ af : Afrikaans" + "\n" + \
@@ -722,10 +722,10 @@ def gyeBot(op):
                 elif text.lower() == 'help6':
                     socMedia = socmedia()
                     gye.sendMessage(to, str(socMedia))
-                elif text.lower() == 'texttospeech':
+                elif text.lower() == 'help7':
                     helpTextToSpeech = helptexttospeech()
                     gye.sendMessage(to, str(helpTextToSpeech))
-                elif text.lower() == 'languange':
+                elif text.lower() == 'help8':
                     helpLanguange = helplanguange()
                     gye.sendMessage(to, str(helpLanguange))
 #==============================================================================#
@@ -751,7 +751,7 @@ def gyeBot(op):
                 elif text.lower() == 'about':
                     try:
                         arr = []
-                        owner = "ud3a6bfda60a956cca0f58f2a14bae808"
+                        owner = "u5068fff4398601a4b5fa1c9876ea170c"
                         creator = gye.getContact(owner)
                         contact = gye.getContact(gyeMID)
                         grouplist = gye.getGroupIdsJoined()
@@ -862,7 +862,7 @@ def gyeBot(op):
                     gye.sendContact(to, gyeMID)
                 elif text.lower() == 'mee':
                     sendMessageWithMention(to, gyeMID)
-                    gye.sendContact(to, "[ud3a6bfda60a956cca0f58f2a14bae808")
+                    gye.sendContact(to, "u5068fff4398601a4b5fa1c9876ea170c")
                 elif text.lower() == 'mymid':
                     gye.sendMessage(msg.to,"[MID]\n" +  gyeMID)
                 elif text.lower() == 'myname':
@@ -919,7 +919,7 @@ def gyeBot(op):
                         for ls in lists:
                             contact = gye.getContact(ls)
                             gye.sendMessage(msg.to, "[ Display Name ]\n" + contact.displayName)
-                elif msg.text.lower().startswith("bio "):
+                elif msg.text.lower().startswith("ดูตัส "):
                     if 'MENTION' in list(msg.contentMetadata.keys())!= None:
                         names = re.findall(r'@(\w+)', text)
                         mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -931,7 +931,7 @@ def gyeBot(op):
                         for ls in lists:
                             contact = gye.getContact(ls)
                             gye.sendMessage(msg.to, "[ Status Message ]\n{}" + contact.statusMessage)
-                elif msg.text.lower().startswith("pict "):
+                elif msg.text.lower().startswith("ดูดิส "):
                     if 'MENTION' in list(msg.contentMetadata.keys())!= None:
                         names = re.findall(r'@(\w+)', text)
                         mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -955,7 +955,7 @@ def gyeBot(op):
                         for ls in lists:
                             path = "http://dl.profile.line.naver.jp/" + line.getContact(ls).pictureStatus + "/vp"
                             gye.sendImageWithURL(msg.to, str(path))
-                elif msg.text.lower().startswith("cover "):
+                elif msg.text.lower().startswith("ดูปก "):
                     if gye != None:
                         if 'MENTION' in list(msg.contentMetadata.keys())!= None:
                             names = re.findall(r'@(\w+)', text)
@@ -4572,7 +4572,7 @@ def gyeBot(op):
                     random.choice(Rfu).kickoutFromGroup(receiver,[sender])
                     random.choice(Rfu).sendText(msg.to,"ตรวจพบคำสั่งของบอทลบกลุ่ม จำเป็นต้องนำออกเพื่อความปลอดภัยของสมาชิก (｀・ω・´)")										              	                                        
 #==============================================================================#                            
-        if op.type == 17:
+        if op.type == 13:
         	dan = gye.getContact(op.param2)
         	tgb = gye.getGroup(op.param1)
         	gye.sendMessage(op.param1, "สวัสดี {}, Welcome to Group {}\nเข้ามาแล้วทำตัวดีๆละ\nอ่ย่าไปเป็นบ้าลบเพื่อนๆออกกลุ่มนะ (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
