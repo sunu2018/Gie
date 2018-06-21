@@ -28,10 +28,10 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 #==============================================================================#
-gye = LINE()
-#line = LINE('EsWxrB4tKn6gC6TFI5C7.6s2jZdrOy8zaUkEfxHsR1W.DgrqvMHxZTAtX3m4jYOE8Ur7iqZm4P7/VvXmsYU0RHY=')
-gye.log("Auth Token : " + str(gye.authToken))
-gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
+#gye = LINE()
+gye = LINE('EunL0Rs13ePESqxf7wa1.CULBHyZj+iOSxBrkgT8iKq.spaGf4jKmqsloDYewAOJ6nAfzFmnnXJfZ1Db3PCcnP0=')
+#gye.log("Auth Token : " + str(gye.authToken))
+#gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
 
 #ki = LINE()
 #ki = LINE('EsTzmCy8rYjFOuH5kR83.GCNKB40ZZcsiFISzLQG8mW.TrpI1PFDTSHvsNRyD2RdVLU0oZddJWC6RblrpyRk8D4=')
