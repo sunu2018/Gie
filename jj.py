@@ -48,10 +48,10 @@ botStart = time.time()
 #kc.log("Auth Token : " + str(kc.authToken))
 #kc.log("Timeline Token : " + str(kc.tl.channelAccessToken))
 
-#ke = LINE()
+ke = LINE()
 #ke = LINE('Es66hx3Gwt0FYtiiY6z6.SKp5IWnTswfjkJhVVqD15G.u/adxOv8mDD0ZjOuGzLsFofqqtF8ujAmN1daHKuxwW8=')
-#ke.log("Auth Token : " + str(ke.authToken))
-#ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
+ke.log("Auth Token : " + str(ke.authToken))
+ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
 gye = LINE("EuvQ6pcpbohmcZuGuPZc.ugJ+9dMgaAs1/HYyDUOxda.wj1JrZ03pQFZZE7By7AL7ogh4XWEsGxS0DvEQuLRaRo=")
 ki = LINE("EuMog9y5XK0HpLVD5NQd.1nbyMEq08x6C7rz2+Bti7q.AbZpd2NL+U67ENU7foUKRyx+rbCvL7JfxCSIgFep34E=")
@@ -77,17 +77,17 @@ kcMID = kc.profile.mid
 kcProfile = kc.getProfile()
 kcSettings = kc.getSettings()
 
-#keMID = ke.profile.mid
-#keProfile = ke.getProfile()
-#keSettings = ke.getSettings()
+keMID = ke.profile.mid
+keProfile = ke.getProfile()
+keSettings = ke.getSettings()
 
 
-#oepoll = OEPoll(ke)
+oepoll = OEPoll(ke)
 oepoll = OEPoll(kc)
 oepoll = OEPoll(kk)
 oepoll = OEPoll(ki)
 oepoll = OEPoll(gye)
-#call = Call(line)
+call = Call(line)
 readOpen = codecs.open("read.json","r","utf-8")
 settingsOpen = codecs.open("temp.json","r","utf-8")
 read = json.load(readOpen)
@@ -98,10 +98,10 @@ gyeMID = gye.getProfile().mid
 kiMID = ki.getProfile().mid
 kkMID = kk.getProfile().mid
 kcMID = kc.getProfile().mid
-#kcMID = ke.getProfile().mid
+kcMID = ke.getProfile().mid
 bot1 = gye.getProfile().mid
-RfuBot=[gyeMID,kiMID,kkMID,kcMID]#,keMID]
-Family=["ue32b11986d8e9e5cf70b642cf7ba88ff",gyeMID,kiMID,kkMID,kcMID]#,keMID]
+RfuBot=[gyeMID,kiMID,kkMID,kcMID,keMID]
+Family=["ue32b11986d8e9e5cf70b642cf7ba88ff",gyeMID,kiMID,kkMID,kcMID,keMID]
 admin=['ue32b11986d8e9e5cf70b642cf7ba88ff',gyeMID]
 RfuFamily = RfuBot + Family
 
