@@ -4575,13 +4575,13 @@ def gyeBot(op):
         if op.type == 17:
         	dan = gye.getContact(op.param2)
         	tgb = gye.getGroup(op.param1)
-        	gye.sendMessage(op.param1, "สวัสดี {}, Welcome to Group {}\nเข้ามาแล้วทำตัวดีๆละ\nอ่ย่าไปเป็นบ้าลบเพื่อนๆออกกลุ่มนะ (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
+        	gye.sendMessage(op.param1, "เฮ่โหลๆ {}, ยินดีต้อนรับเข้ากลุ่ม {}\nมาใหม่แก้ผ้าน่ะเจ๊ะ 😁\nไหนๆเอา หอย (หอย) หำ มาเบิ่งติล่ะ 😻😻😻 -_-".format(str(dan.displayName),str(tgb.name)))
         	gye.sendContact(op.param1, op.param2)
         	gye.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
         if op.type == 15:
         	dan = gye.getContact(op.param2)
         	tgb = gye.getGroup(op.param1)
-        	gye.sendMessage(op.param1, "เอ้า {}, ได้ออกจากกลุ่ม {} \nยืนไว้อาลัยแด่เขาเป็นเวลา3วินาที  (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
+        	gye.sendMessage(op.param1, "บ๊ายบาย 👋{}\n ไปละติ่ บ่ต้องกลับมาละเด้อ  {}\n ห่าขัว 💨💨 😠😠".format(str(dan.displayName),str(tgb.name)))
         	gye.sendContact(op.param1, op.param2)
         if op.type == 55:
             try:
