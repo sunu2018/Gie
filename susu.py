@@ -28,10 +28,10 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 #==============================================================================#
-#gye = LINE()
+gye = LINE()
 #line = LINE('EsWxrB4tKn6gC6TFI5C7.6s2jZdrOy8zaUkEfxHsR1W.DgrqvMHxZTAtX3m4jYOE8Ur7iqZm4P7/VvXmsYU0RHY=')
-#gye.log("Auth Token : " + str(gye.authToken))
-#gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
+gye.log("Auth Token : " + str(gye.authToken))
+gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
 
 #ki = LINE()
 #ki = LINE('EsTzmCy8rYjFOuH5kR83.GCNKB40ZZcsiFISzLQG8mW.TrpI1PFDTSHvsNRyD2RdVLU0oZddJWC6RblrpyRk8D4=')
@@ -53,11 +53,11 @@ botStart = time.time()
 #ke.log("Auth Token : " + str(ke.authToken))
 #ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
-gye = LINE("Eu5lJohseuxitqoYz9W8.06A+2McPvSYG9y8QflROca.9y3vDirwqS7w6+sCBTj3iIHnCpQ7ENkWkw7Y3Zomlco=")
-ki = LINE("Eua7gqbDGfbUMCkqyot8.Wt/YUebfKcqU+KFC8aE2Qa.ur7zNeAYtS1yijRdzH3p3yfbvxQGNaDMm6z+ughEWTo=")
-kk = LINE("EtZQYCljPB20vFk7lhMf.C6uUUOle4xvTyhRqRUt3ZW.g5dl2gYOW8cbMUMQtEiGBZxCAyq7Cewzl4b0w95zPl8=")
-kc = LINE("EtLmQUwgi4aaqMpxpeja.CS3aZ7gG42fDqnPSw7Eh6G.WyY2R6c7P/pjNdH4xp68kAnAYAiSiS/i3ouRPrMRmMs=")
-ke = LINE("Eti3jixZyomSekysnkab.KjDN9JBsWpSVnKHbTD0jYW.bDcL2DBnnsO3e/zhHO1kzyp3ghMmwx+R5iMRlbnqz6E=")
+#gye = LINE("Eu5lJohseuxitqoYz9W8.06A+2McPvSYG9y8QflROca.9y3vDirwqS7w6+sCBTj3iIHnCpQ7ENkWkw7Y3Zomlco=")
+#ki = LINE("Eua7gqbDGfbUMCkqyot8.Wt/YUebfKcqU+KFC8aE2Qa.ur7zNeAYtS1yijRdzH3p3yfbvxQGNaDMm6z+ughEWTo=")
+#kk = LINE("EtZQYCljPB20vFk7lhMf.C6uUUOle4xvTyhRqRUt3ZW.g5dl2gYOW8cbMUMQtEiGBZxCAyq7Cewzl4b0w95zPl8=")
+#kc = LINE("EtLmQUwgi4aaqMpxpeja.CS3aZ7gG42fDqnPSw7Eh6G.WyY2R6c7P/pjNdH4xp68kAnAYAiSiS/i3ouRPrMRmMs=")
+#ke = LINE("Eti3jixZyomSekysnkab.KjDN9JBsWpSVnKHbTD0jYW.bDcL2DBnnsO3e/zhHO1kzyp3ghMmwx+R5iMRlbnqz6E=")
 
 print ("Login Succes")
 
@@ -65,44 +65,44 @@ gyeMID = gye.profile.mid
 gyeProfile = gye.getProfile()
 gyeSettings = gye.getSettings()
 
-kiMID = ki.profile.mid
-kiProfile = ki.getProfile()
-kiSettings = ki.getSettings()
+#kiMID = ki.profile.mid
+#kiProfile = ki.getProfile()
+#kiSettings = ki.getSettings()
 
-kkMID = kk.profile.mid
-kkProfile = kk.getProfile()
-kkSettings = kk.getSettings()
+#kkMID = kk.profile.mid
+#kkProfile = kk.getProfile()
+#kkSettings = kk.getSettings()
 
-kcMID = kc.profile.mid
-kcProfile = kc.getProfile()
-kcSettings = kc.getSettings()
+#kcMID = kc.profile.mid
+#kcProfile = kc.getProfile()
+#kcSettings = kc.getSettings()
 
-keMID = ke.profile.mid
-keProfile = ke.getProfile()
-keSettings = ke.getSettings()
+#keMID = ke.profile.mid
+#keProfile = ke.getProfile()
+#keSettings = ke.getSettings()
 
 
-oepoll = OEPoll(ke)
-oepoll = OEPoll(kc)
-oepoll = OEPoll(kk)
-oepoll = OEPoll(ki)
+#oepoll = OEPoll(ke)
+#oepoll = OEPoll(kc)
+#oepoll = OEPoll(kk)
+#oepoll = OEPoll(ki)
 oepoll = OEPoll(gye)
 #call = Call(gye)
 readOpen = codecs.open("read.json","r","utf-8")
 settingsOpen = codecs.open("temp.json","r","utf-8")
 read = json.load(readOpen)
 settings = json.load(settingsOpen)
-Rfu = [gye,ki,kk,kc,ke]
-Exc = [ki,kk,kc,ke]
-gyeMID = gye.getProfile().mid
-kiMID = ki.getProfile().mid
-kkMID = kk.getProfile().mid
-kcMID = kc.getProfile().mid
-kcMID = ke.getProfile().mid
+Rfu = [gye]#,ki,kk,kc,ke]
+#Exc = [ki,kk,kc,ke]
+#gyeMID = gye.getProfile().mid
+#kiMID = ki.getProfile().mid
+#kkMID = kk.getProfile().mid
+#kcMID = kc.getProfile().mid
+#kcMID = ke.getProfile().mid
 bot1 = gye.getProfile().mid
-RfuBot=[gyeMID,kiMID,kkMID,kcMID,keMID]
-Family=["ud3a6bfda60a956cca0f58f2a14bae808",gyeMID,kiMID,kkMID,kcMID,keMID]
-admin=['ud3a6bfda60a956cca0f58f2a14bae808',gyeMID]
+RfuBot=[gyeMID]#,kiMID,kkMID,kcMID,keMID]
+Family=["u72e95b858cc9fc8a2c5db44a1adf0891",gyeMID]#,kiMID,kkMID,kcMID,keMID]
+admin=['u72e95b858cc9fc8a2c5db44a1adf0891',gyeMID]
 RfuFamily = RfuBot + Family
 
 protectname = []
