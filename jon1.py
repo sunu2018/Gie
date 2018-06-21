@@ -53,11 +53,11 @@ botStart = time.time()
 #ke.log("Auth Token : " + str(ke.authToken))
 #ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
-gye = LINE("Eu5lJohseuxitqoYz9W8.06A+2McPvSYG9y8QflROca.9y3vDirwqS7w6+sCBTj3iIHnCpQ7ENkWkw7Y3Zomlco=")
-ki = LINE("Eua7gqbDGfbUMCkqyot8.Wt/YUebfKcqU+KFC8aE2Qa.ur7zNeAYtS1yijRdzH3p3yfbvxQGNaDMm6z+ughEWTo=")
-kk = LINE("EtZQYCljPB20vFk7lhMf.C6uUUOle4xvTyhRqRUt3ZW.g5dl2gYOW8cbMUMQtEiGBZxCAyq7Cewzl4b0w95zPl8=")
-kc = LINE("EtLmQUwgi4aaqMpxpeja.CS3aZ7gG42fDqnPSw7Eh6G.WyY2R6c7P/pjNdH4xp68kAnAYAiSiS/i3ouRPrMRmMs=")
-ke = LINE("Eti3jixZyomSekysnkab.KjDN9JBsWpSVnKHbTD0jYW.bDcL2DBnnsO3e/zhHO1kzyp3ghMmwx+R5iMRlbnqz6E=")
+gye = LINE("EuvQ6pcpbohmcZuGuPZc.ugJ+9dMgaAs1/HYyDUOxda.wj1JrZ03pQFZZE7By7AL7ogh4XWEsGxS0DvEQuLRaRo=")
+ki = LINE("EuMog9y5XK0HpLVD5NQd.1nbyMEq08x6C7rz2+Bti7q.AbZpd2NL+U67ENU7foUKRyx+rbCvL7JfxCSIgFep34E=")
+kk = LINE("EuEI1iUJoxtcMCdjAwXa.O9c5p841tRUgzA9d0PcAkG.BmkT3cVrFLnqV5SDsGHtV2R+Bwk4tH7HpLYcJY1FbCk=")
+kc = LINE("EuB2nqViXB9yVC6Hv4id.dCZhkZtrJsP18XdGxTjDlq.lfF8ng308Ftvk0pwuhDN9xyhwzsJdtF8Rc5kytYYCd4=")
+ke = LINE("EuzzT05VEW5hnfk4S6v3.NONcEvn2cxU/zuRhr3ZHOW.1EusstaqkeTioe+S1j8fscJMoh2+NTFjrt/yDiclAp0=")
 
 print ("Login Succes")
 
@@ -3251,7 +3251,7 @@ def gyeBot(op):
                     gye.sendMessage(msg.to,"ทำการลบัญชีดำทั้งหมดเรียร้อย")
                     print ("Clear Ban")
 
-                elif text.lower() == 'มาหอย':
+                elif text.lower() == 'มาหำ':
                     if msg.toType == 2:
                         group = gye.getGroup(to)
                         group.preventedJoinByTicket = False
@@ -3472,7 +3472,7 @@ def gyeBot(op):
                                 pass
                                 print ("Remove Chat Kicker")
 
-                elif text.lower() == "หนีหอย":
+                elif text.lower() == "หนีหำ":
                     if msg._from in Family:
                         ki.leaveGroup(msg.to)
                         kk.leaveGroup(msg.to)
@@ -3740,7 +3740,7 @@ def gyeBot(op):
                         else:
                             gye.sendMessage(msg.to,"ปิดป้องกันคนเข้า   ")
 
-                elif msg.text.lower() == 'หอย on':
+                elif msg.text.lower() == 'หำออนไลน์':
                     if RfuProtect["inviteprotect"] == True:
                         if settings["lang"] == "JP":
                             gye.sendMessage(msg.to,"✰เปิดป้องกันทั้งหมด✰")
@@ -3804,7 +3804,7 @@ def gyeBot(op):
                         else:
                             gye.sendMessage(msg.to,"เปิดป้องกันบุคคลภายน้อกเข้ากลุ่ม")
 
-                elif msg.text.lower() == 'หอย off':
+                elif msg.text.lower() == 'หำออฟไลน์':
                     if RfuProtect["inviteprotect"] == False:
                         if settings["lang"] == "JP":
                             gye.sendMessage(msg.to,"✰ปิดป้องกันทั้งหมด✰")
