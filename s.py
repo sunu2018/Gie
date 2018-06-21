@@ -4593,7 +4593,7 @@ def gyeBot(op):
                         else:
                             RfuCctv['sidermem'][op.param1] += "\n🔰" + Name
                             pref=['eh ada','hai kak','hay kamu','nah ada','halo lg ngapain','halo','sini kak','cctv yah kak']
-                            line.sendMessage(op.param1, str(random.choice(pref))+' '+Name)
+                            gye.sendMessage(op.param1, str(random.choice(pref))+' '+Name)
                     else:
                         pass
                 else:
@@ -4605,7 +4605,7 @@ def gyeBot(op):
             try:
                 if RfuCctv['cyduk'][op.param1]==True:
                     if op.param1 in RfuCctv['point']:
-                        Name = line.getContact(op.param2).displayName
+                        Name = gye.getContact(op.param2).displayName
                         if Name in RfuCctv['sidermem'][op.param1]:
                             pass
                         else:
@@ -4613,7 +4613,7 @@ def gyeBot(op):
                             if " " in Name:
                             	nick = Name.split(' ')
                             if len(nick) == 2:
-                            	line.sendMessage(op.param1, "Nah " +nick[0])
+                            	gye.sendMessage(op.param1, "Nah " +nick[0])
                             summon(op.param1, [op.param2])
                     else:
                         pass
