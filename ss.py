@@ -4581,7 +4581,7 @@ def gyeBot(op):
         if op.type == 15:
         	dan = gye.getContact(op.param2)
         	tgb = gye.getGroup(op.param1)
-        	gye.sendMessage(op.param1, "บ๊ายบาย 👋{}\n ไปละติ่ บ่ต้องกลับมาละเด้อ  {}\n ห่าขัว 💨💨 😠😠".format(str(dan.displayName),str(tgb.name)))
+        	gye.sendMessage(op.param1, "~_~{}\n ได้ออกจากห้อง {}\n บ๊ายบาย 👋 ไปละติ่ บ่ต้องกลับมาละเด้อ ห่าขัว 💨💨 🐰🐰".format(str(dan.displayName),str(tgb.name)))
         	gye.sendContact(op.param1, op.param2)
         if op.type == 55:
             try:
