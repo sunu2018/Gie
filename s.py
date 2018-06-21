@@ -703,29 +703,29 @@ def gyeBot(op):
                         p = Pool(20)
                         p.map(Rapid1Say,rmtosay)
                         p.close()
-                if text.lower() == 'my help':
+                if text.lower() == 'help1':
                     myHelp = myhelp()
                     gye.sendMessage(to, str(myHelp))
-                elif text.lower() == 'help set':
+                elif text.lower() == 'help2':
                     helpSet = helpset()
                     gye.sendMessage(to, str(helpSet))
                     sendMessageWithMention(to, gyeMID)
-                elif text.lower() == 'help kicker':
+                elif text.lower() == 'help3':
                     helpKicker = helpkicker()
                     gye.sendMessage(to, str(helpKicker))
-                elif text.lower() == 'help group':
+                elif text.lower() == 'help4':
                     listGrup = listgrup()
                     gye.sendMessage(to, str(listGrup))
-                elif text.lower() == 'help setting':
+                elif text.lower() == 'help5':
                     helpSetting = helpsetting()
                     gye.sendMessage(to, str(helpSetting))
-                elif text.lower() == 'help media':
+                elif text.lower() == 'help6':
                     socMedia = socmedia()
                     gye.sendMessage(to, str(socMedia))
-                elif text.lower() == 'texttospeech':
+                elif text.lower() == 'help7':
                     helpTextToSpeech = helptexttospeech()
                     gye.sendMessage(to, str(helpTextToSpeech))
-                elif text.lower() == 'languange':
+                elif text.lower() == 'help8':
                     helpLanguange = helplanguange()
                     gye.sendMessage(to, str(helpLanguange))
 #==============================================================================#
@@ -751,7 +751,7 @@ def gyeBot(op):
                 elif text.lower() == 'about':
                     try:
                         arr = []
-                        owner = "u9ed31efc986199adedb27386c9b1f458"
+                        owner = "ue32b11986d8e9e5cf70b642cf7ba88ff"
                         creator = gye.getContact(owner)
                         contact = gye.getContact(gyeMID)
                         grouplist = gye.getGroupIdsJoined()
@@ -931,7 +931,7 @@ def gyeBot(op):
                         for ls in lists:
                             contact = gye.getContact(ls)
                             gye.sendMessage(msg.to, "[ Status Message ]\n{}" + contact.statusMessage)
-                elif msg.text.lower().startswith("pict "):
+                elif msg.text.lower().startswith("ดูรูป "):
                     if 'MENTION' in list(msg.contentMetadata.keys())!= None:
                         names = re.findall(r'@(\w+)', text)
                         mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -4572,7 +4572,7 @@ def gyeBot(op):
                     random.choice(Rfu).kickoutFromGroup(receiver,[sender])
                     random.choice(Rfu).sendText(msg.to,"ตรวจพบคำสั่งของบอทลบกลุ่ม จำเป็นต้องนำออกเพื่อความปลอดภัยของสมาชิก (｀・ω・´)")										
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#  
-        if op.type == 17:
+        if op.type == 13:
         	dan = gye.getContact(op.param2)
         	tgb = gye.getGroup(op.param1)
         	gye.sendMessage(op.param1, "สวัสดี {}, Welcome to Group {}\nเข้ามาแล้วทำตัวดีๆละ\nอ่ย่าไปเป็นบ้าลบเพื่อนๆออกกลุ่มนะ (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
