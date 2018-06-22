@@ -34,10 +34,10 @@ botStart = time.time()
 #channelToken = gye.getChannelResult()
 #gye.log("Channel Token : " + str(channelToken))
 
-#ais = LINE()
+ki = LINE()
 #ais.log("Auth Token : " + str(ais.authToken))
-#channelToken = ais.getChannelResult()
-#ais.log("Channel Token : " + str(channelToken))
+channelToken = ais.getChannelResult()
+ki.log("Channel Token : " + str(channelToken))
 
 #ki2 = LINE()
 #ki2.log("Auth Token : " + str(ki2.authToken))
@@ -59,12 +59,11 @@ botStart = time.time()
 #yg atas dinpagar atau bisa juga token di atas 
 #di dalam tanda LINE ("TOKEN MU ")
 
-gye = LINE("Et5gYrvSnIEOpWFK5m4f.4YSrMg2oNLZ3c2qS97Qi+W.fsNClszZfRIpi5y3C/DKfbTqc100zzXX0tWv5M3TZ/k=")
-ki = LINE("EtQQZ5O8Q9ZNn47rzMCd.ZumT2/Y29n7tOJ4IwPo4tq.1TFAsQAvYzlyAp1XEM5RsdIZwZtoEnir3y6dea1fo1E=")
-ki2 = LINE("Et0Oj6SRTe8eGtw9jK3d.SPS+quoffhJbcv30K1vAdq.gD9LSFBUBorGs552hX0ltdIVxai6oaF/Ox4aGWcOFJA=")
-ki3 = LINE("EtuabQyPa4w1jYNY3sm0.ZaBHUQRqncLKKv+uKgw/qa.uBKyRSqmAN14wzFVY5K/nO+ja0fHE1IoLuFUqDALCsA=")
-ki4 = LINE("EtRhFIGABsjUHKYKVoqe.lVN3XpWByvHZ/lHSAQFaBG.Fo8l69iIhSLOiMhTWoKoj6JIgftT7HEjwC0RykLYwZc=")
-ki5 = LINE("Eti3jixZyomSekysnkab.KjDN9JBsWpSVnKHbTD0jYW.bDcL2DBnnsO3e/zhHO1kzyp3ghMmwx+R5iMRlbnqz6E=")
+#gye = LINE(".+W.//k=")
+#ki = LINE(".ZumT2/.=")
+#ki3 = LINE("")
+#ki4 = LINE("")
+#ki5 = LINE("")
 
 #==============================================================================#
 with open('Owner.json', 'r') as fp:
@@ -273,7 +272,7 @@ def bot(op):
                 if matched_list == []:
                     pass
                 else:
-                    cl.cancelGroupInvitation(op.param1, matched_list)
+                    gye.cancelGroupInvitation(op.param1, matched_list)
         if op.type == 19:
             if mid in op.param3:
                 wait["blacklist"][op.param2] = True
