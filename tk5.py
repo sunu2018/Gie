@@ -29,15 +29,15 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 #kalo mau login code qr disini pake
-#gye = LINE()
-#gye.log("Auth Token : " + str(gye.authToken))
-#channelToken = gye.getChannelResult()
-#gye.log("Channel Token : " + str(channelToken))
+gye = LINE()
+gye.log("Auth Token : " + str(gye.authToken))
+channelToken = gye.getChannelResult()
+gye.log("Channel Token : " + str(channelToken))
 
-ki = LINE()
+#ki = LINE()
 #ais.log("Auth Token : " + str(ais.authToken))
-channelToken = ais.getChannelResult()
-ki.log("Channel Token : " + str(channelToken))
+#channelToken = ais.getChannelResult()
+#ki.log("Channel Token : " + str(channelToken))
 
 #ki2 = LINE()
 #ki2.log("Auth Token : " + str(ki2.authToken))
@@ -150,12 +150,12 @@ Support By ~ ҳ̸Ҳ̸ҳ Сўв∝я тҝ ҳ̸Ҳ̸ҳ
 
 KAC=[gye,ki,ki2,ki3,ki4,ki5]
 mid = gye.getProfile().mid
-kimid = ki.getProfile().mid
-ki2mid = ki2.getProfile().mid
-ki3mid = ki3.getProfile().mid
-ki4mid = ki4.getProfile().mid
-ki5mid = ki5.getProfile().mid
-Bots = [mid,kimid,ki2mid,ki3mid,ki4mid,ki5mid]
+#kimid = ki.getProfile().mid
+#ki2mid = ki2.getProfile().mid
+#ki3mid = ki3.getProfile().mid
+#ki4mid = ki4.getProfile().mid
+#ki5mid = ki5.getProfile().mid
+Bots = [mid]#,kimid,ki2mid,ki3mid,ki4mid,ki5mid]
 admsa = 'u6a66b6b389d27052f7c8ac0bdc2cee7e'
 admin = 'u6a66b6b389d27052f7c8ac0bdc2cee7e'
 
