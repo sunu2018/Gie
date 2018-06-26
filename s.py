@@ -53,7 +53,7 @@ botStart = time.time()
 #ke.log("Auth Token : " + str(ke.authToken))
 #ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
-gye = LINE("EuToPDHZaHe4m1hskSFf.4YSrMg2oNLZ3c2qS97Qi+W.5DEzh2XtROzcx664WCI3nO07jjLFjwFI321eqNzYKeU=")
+gye = LINE("EuYDLKLWJMd6fPMlc4wf.4YSrMg2oNLZ3c2qS97Qi+W.euhH6QE1ncQ/E2Din2fiy/WrkBt4YX4GgW38NFj6EcE=")
 ki = LINE("EuJMO4zMJuVIB9Q7r6Kd.ZumT2/Y29n7tOJ4IwPo4tq.7iNJvgf7kfqhYzxqffWaZ9Xy/sPVnTXDvSOAi5zoGVc=")
 kk = LINE("EufjpqADebzNQpbd6dEd.SPS+quoffhJbcv30K1vAdq.fILrF4NH6a+DGt2vwdX3nezm2rx6mbU+IjBd++1RgHQ=")
 kc = LINE("EuYHclxrzqW0XDSCiiw0.ZaBHUQRqncLKKv+uKgw/qa.VKgQeUjmWt79dLrKaLwJVzz8PCvzVj+FKBKI8Oezs/s=")
@@ -4572,16 +4572,16 @@ def gyeBot(op):
                     random.choice(Rfu).kickoutFromGroup(receiver,[sender])
                     random.choice(Rfu).sendText(msg.to,"ตรวจพบคำสั่งของบอทลบกลุ่ม จำเป็นต้องนำออกเพื่อความปลอดภัยของสมาชิก (｀・ω・´)")										
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#  
-        if op.type == 13:
+        if op.type == 17:
         	dan = gye.getContact(op.param2)
         	tgb = gye.getGroup(op.param1)
-        	gye.sendMessage(op.param1, "สวัสดี {}, Welcome to Group {}\nเข้ามาแล้วทำตัวดีๆละ\nอ่ย่าไปเป็นบ้าลบเพื่อนๆออกกลุ่มนะ (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
+        	gye.sendMessage(op.param1, "สวัสดี {}, ยินดีต้อนรับสู้ห้อง {}\nมาแล้วแก้ผ้าด้วย\n😁😁😁😁😁😁".format(str(dan.displayName),str(tgb.name)))
         	gye.sendContact(op.param1, op.param2)
         	gye.sendImageWithURL(op.param1, "http://dl.profile.line-cdn.net{}".format(dan.picturePath))
         if op.type == 15:
         	dan = gye.getContact(op.param2)
         	tgb = gye.getGroup(op.param1)
-        	gye.sendMessage(op.param1, "เอ้า {}, ได้ออกจากกลุ่ม {} \nยืนไว้อาลัยแด่เขาเป็นเวลา3วินาที  (｀・ω・´)".format(str(dan.displayName),str(tgb.name)))
+        	gye.sendMessage(op.param1, "-_- {},ออกจากกลุ่ม{} \nจะรีบไปไหนกลับมาก่อน ยังไม่ได้ ล่อเลย".format(str(dan.displayName),str(tgb.name)))
         	gye.sendContact(op.param1, op.param2)
         if op.type == 55:
             try:
