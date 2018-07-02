@@ -28,10 +28,10 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 #==============================================================================#
-#gye = LINE()
+gye = LINE()
 #line = LINE('EsWxrB4tKn6gC6TFI5C7.6s2jZdrOy8zaUkEfxHsR1W.DgrqvMHxZTAtX3m4jYOE8Ur7iqZm4P7/VvXmsYU0RHY=')
-#gye.log("Auth Token : " + str(gye.authToken))
-#gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
+gye.log("Auth Token : " + str(gye.authToken))
+gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
 
 #ki = LINE()
 #ki = LINE('EsTzmCy8rYjFOuH5kR83.GCNKB40ZZcsiFISzLQG8mW.TrpI1PFDTSHvsNRyD2RdVLU0oZddJWC6RblrpyRk8D4=')
@@ -53,7 +53,7 @@ botStart = time.time()
 #ke.log("Auth Token : " + str(ke.authToken))
 #ke.log("Timeline Token : " + str(ke.tl.channelAccessToken))
 
-gye = LINE("EuQFOCeRJ0X9qg9197S8.06A+2McPvSYG9y8QflROca.3r+x9dcNZ51yVPlLdXpXXV3S9A2pOzekjy6eljSyByk=")
+#gye = LINE("EuQFOCeRJ0X9qg9197S8.06A+2McPvSYG9y8QflROca.3r+x9dcNZ51yVPlLdXpXXV3S9A2pOzekjy6eljSyByk=")
 ki = LINE("Eua7gqbDGfbUMCkqyot8.Wt/YUebfKcqU+KFC8aE2Qa.ur7zNeAYtS1yijRdzH3p3yfbvxQGNaDMm6z+ughEWTo=")
 kk = LINE("EtZQYCljPB20vFk7lhMf.C6uUUOle4xvTyhRqRUt3ZW.g5dl2gYOW8cbMUMQtEiGBZxCAyq7Cewzl4b0w95zPl8=")
 kc = LINE("EtLmQUwgi4aaqMpxpeja.CS3aZ7gG42fDqnPSw7Eh6G.WyY2R6c7P/pjNdH4xp68kAnAYAiSiS/i3ouRPrMRmMs=")
@@ -4261,7 +4261,7 @@ def gyeBot(op):
                         settings["blacklist"][op.param2] = True                       
 
                 elif op.param3 in kiMID:
-                    if op.param2 in lineMID:
+                    if op.param2 in gyeMID:
                         G = kk.getGroup(op.param1)
                         G.preventedJoinByTicket = False
                         kk.updateGroup(G)
