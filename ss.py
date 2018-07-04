@@ -28,7 +28,7 @@ from googletrans import Translator
 #==============================================================================#
 botStart = time.time()
 #==============================================================================#
-gye = LINE()
+gye = LINE("Eu64EZmC0W0uYckLSYl8.06A+2McPvSYG9y8QflROca.V8wnlAg8mlE/8a8p0mOyGwcyJpTbFbG03fkUjBxCC0I=")
 #line = LINE('EsWxrB4tKn6gC6TFI5C7.6s2jZdrOy8zaUkEfxHsR1W.DgrqvMHxZTAtX3m4jYOE8Ur7iqZm4P7/VvXmsYU0RHY=')
 gye.log("Auth Token : " + str(gye.authToken))
 gye.log("Timeline Token : " + str(gye.tl.channelAccessToken))
